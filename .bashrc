@@ -140,6 +140,6 @@ export CAO_USERNAME=asd
 export CAO_PW=asdasdasd
 
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
-export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu:${PKG_CONFIG_PATH}"
+export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
 
 alias config='/usr/bin/git --git-dir=/home/dkiss/.cfg/ --work-tree=/home/dkiss'
