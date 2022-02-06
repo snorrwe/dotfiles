@@ -129,7 +129,7 @@ function register_path {
 register_path "$HOME/bin"
 register_path "/usr/local/go"
 register_path "/home/linuxbrew/.linuxbrew/bin"
-
+register_path "/home/linuxbrew/.linuxbrew/sbin"
 
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
@@ -143,3 +143,7 @@ export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
 
 alias config='/usr/bin/git --git-dir=/home/dkiss/.cfg/ --work-tree=/home/dkiss'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
