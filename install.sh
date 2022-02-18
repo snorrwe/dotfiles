@@ -4,8 +4,9 @@ set -ex
 
 function install_apt_stuff {
     # install some base tools
-    sudo apt-get update -y
-    sudo apt-get install -y \
+    apt-get update -y
+    apt-get upgrade -y
+    apt-get install -y \
         curl \
         tmux \
         build-essential \
@@ -14,7 +15,7 @@ function install_apt_stuff {
         fontconfig-config
 }
 (
-    set -ex
+    set -e
     install_apt_stuff
 )
 
@@ -36,7 +37,7 @@ function install_python_stuff {
     pip3 install visidata poetry
 }
 (
-    set -ex
+    set -e
     install_python_stuff
 )
 
@@ -58,13 +59,13 @@ function install_nvim {
     # install nvim
     curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
     chmod u+x nvim.appimage
-    sudo mv nvim.appimage /usr/bin/nvim
+    mv nvim.appimage /usr/bin/nvim
     # clone nvim config
     git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
     nvim --headless +PackerSync +q
 }
 (
-    set -ex
+    set -e
     install_nvim
 )
 
@@ -75,22 +76,22 @@ cargo install -f ripgrep zoxide fd-find
 
 function install_alacritty {
     # alacritty debian dependencies
-    sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+    apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
     # alacritty
     git clone https://github.com/alacritty/alacritty
     cd alacritty
     cargo build --release
-    sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+    tic -xe alacritty,alacritty-direct extra/alacritty.info
     # desktop stuff
-    sudo cp target/release/alacritty /usr/local/bin
-    sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
-    sudo desktop-file-install extra/linux/Alacritty.desktop
-    sudo update-desktop-database
+    cp target/release/alacritty /usr/local/bin
+    cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+    desktop-file-install extra/linux/Alacritty.desktop
+    update-desktop-database
     cd -
     rm -rf alacritty
 }
 
 (
-    set -ex
+    set -e
     install_alacritty
 )
