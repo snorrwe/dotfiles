@@ -1,28 +1,37 @@
 #!/usr/bin/bash
 
-set -ex
+function install_apt_stuff {
+    # install some base tools
+    sudo apt-get update
+    sudo apt-get install -y \
+        curl \
+        tmux \
+        build-essential \
+        cmake \
+        clang \
+        llvm \
+        clangd \
+        ninja-build \
+        python3 \
+        python-is-python3 \
+        python3-pip \
+        pkg-config \
+        vifm \
+        fontconfig-config
+}
+(
+    set -ex
+    install_apt_stuff
+)
 
-# install some base tools
-sudo apt-get update
-sudo apt-get install -y \
-    curl \
-    tmux \
-    build-essential \
-    cmake \
-    clang \
-    llvm \
-    clangd \
-    ninja-build \
-    python3 \
-    python-is-python3 \
-    python3-pip \
-    pkg-config \
-    vifm \
-    fontconfig-config
-
-
-# install python stuff
-pip3 install visidata poetry
+function install_python_stuff {
+    # install python stuff
+    pip3 install visidata poetry
+}
+(
+    set -ex
+    install_python_stuff
+)
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
@@ -50,7 +59,7 @@ function install_nvim {
     nvim --headless +PackerSync +q
 }
 (
-    set -e
+    set -ex
     install_nvim
 )
 
@@ -83,6 +92,6 @@ function install_alacritty {
 }
 
 (
-    set -e
+    set -ex
     install_alacritty
 )
