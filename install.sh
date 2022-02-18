@@ -3,7 +3,6 @@
 set -ex
 
 # install some base tools
-sudo add-apt-repository ppa:flatpak/stable
 sudo apt update
 sudo apt install -y \
     curl \
@@ -17,7 +16,6 @@ sudo apt install -y \
     python3 \
     python-is-python3 \
     python3-pip \
-    flatpak \
     pkg-config \
     fontconfig-config
 
@@ -30,7 +28,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 . "$HOME/.cargo/env"
 
 # install rust fluff
-cargo install ripgrep zoxide alacritty fd-find
+cargo install -f ripgrep zoxide alacritty fd-find
 # install rust-analyzer
 mkdir -p ~/.local/bin
 curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
