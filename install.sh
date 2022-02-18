@@ -121,7 +121,8 @@ function install_alacritty {
 
 function install_font {
     mkdir -p ~/.local/share/fonts
-    cd ~/.local/share/fonts && curl -fLo "CaskaydiaCove Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascaidaCode/Regular/complete/Caskaydia%20Cove%20Regular%20Nerd%20Font%20Complete.otf
+    cd ~/.local/share/fonts && curl -fLo "CaskaydiaCove Nerd Font Complete.otf" \
+        https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/CascadiaCode/Regular/complete/Caskaydia%20Cove%20Regular%20Nerd%20Font%20Complete.otf?raw=true
 }
 
 (
