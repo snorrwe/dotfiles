@@ -52,8 +52,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
-brew tap homebrew/cask-fonts
-brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-cove-nerd-font ninja python vifm
+brew install lazygit kind ctlptl tilt docker openssl ninja python vifm
 
 function install_python_stuff {
     # install python stuff
@@ -87,10 +86,7 @@ function install_nvim {
     git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
     nvim --headless +PackerSync +q
 }
-(
-    set -e
-    install_nvim
-)
+( install_nvim )
 
 cargo install sccache --no-default-features
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
@@ -117,4 +113,14 @@ function install_alacritty {
 (
     set -e
     install_alacritty
+)
+
+function install_font {
+    mkdir -p ~/.local/share/fonts
+    cd ~/.local/share/fonts && curl -fLo "CaskaydiaCove Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascaidaCode/Regular/complete/Caskaydia%20Cove%20Regular%20Nerd%20Font%20Complete.otf
+}
+
+(
+    set -e
+    install_font
 )
