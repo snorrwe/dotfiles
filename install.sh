@@ -12,6 +12,7 @@ function install_apt_stuff {
         build-essential \
         cmake \
         pkg-config \
+        flatpak \
         fontconfig-config
 }
 (
