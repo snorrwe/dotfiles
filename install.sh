@@ -109,7 +109,7 @@ function install_alacritty {
     sudo cp target/release/alacritty /usr/local/bin
     sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
     sudo desktop-file-install extra/linux/Alacritty.desktop
-    update-desktop-database
+    sudo update-desktop-database
     cd -
     rm -rf alacritty
 }
