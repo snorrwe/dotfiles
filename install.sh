@@ -40,7 +40,7 @@ chmod +x ~/.local/bin/rust-analyzer
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 
 # install brew
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
 # install nvim
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
