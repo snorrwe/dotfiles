@@ -3,8 +3,8 @@
 set -ex
 
 # install some base tools
-sudo apt update
-sudo apt install -y \
+sudo apt-get update
+sudo apt-get install -y \
     curl \
     tmux \
     build-essential \
@@ -18,6 +18,9 @@ sudo apt install -y \
     python3-pip \
     pkg-config \
     fontconfig-config
+
+# alacritty debian dependencies
+sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
 
 # install python stuff
 pip3 install visidata poetry
