@@ -19,8 +19,6 @@ sudo apt-get install -y \
     pkg-config \
     fontconfig-config
 
-# alacritty debian dependencies
-sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
 
 # install python stuff
 pip3 install visidata poetry
@@ -31,7 +29,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 . "$HOME/.cargo/env"
 
 # install rust fluff
-cargo install -f ripgrep zoxide alacritty fd-find
+cargo install -f ripgrep zoxide fd-find
 # install rust-analyzer
 mkdir -p ~/.local/bin
 curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
@@ -50,8 +48,22 @@ sudo mv nvim.appimage /usr/bin/nvim
 # clone nvim config
 git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
 
-#install stuff via brew
+# install stuff via brew
 brew install fzf
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 $(brew --prefix)/opt/fzf/install
 brew install lazygit
+
+# alacritty debian dependencies
+sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+# alacritty
+git clone https://github.com/alacritty/alacritty
+cd alacritty
+cargo build --release
+sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
+# desktop stuff
+sudo cp target/release/alacritty /usr/local/bin
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+sudo desktop-file-install extra/linux/Alacritty.desktop
+sudo update-desktop-database
+cd -
