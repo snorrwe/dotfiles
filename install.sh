@@ -3,7 +3,9 @@
 set -ex
 
 # install some base tools
-sudo apt install curl tmux build-essential cmake clang llvm clangd ninja-build -y
+sudo apt install -y curl tmux build-essential cmake clang llvm clangd ninja-build python3 python-is-python3
+# install python stuff
+pip3 install visidata
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
