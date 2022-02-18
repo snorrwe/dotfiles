@@ -83,7 +83,8 @@ function install_nvim {
     chmod u+x nvim.appimage
     sudo mv nvim.appimage /usr/bin/nvim
     # clone nvim config
-    if [ -d $HOME/.config/nvim ] then
+    if [ -d $HOME/.config/nvim ];
+    then
         rm -rf $HOME/.config/nvim
     fi
     git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
