@@ -60,7 +60,7 @@ brew install fzf
 $(brew --prefix)/opt/fzf/install --all
 brew install lazygit kind ctlptl tilt docker openssl
 
-cargo install sccache
+cargo install sccache --no-default-features
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 # install rust fluff
 cargo install -f ripgrep zoxide fd-find
