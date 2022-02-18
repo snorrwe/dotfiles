@@ -88,7 +88,7 @@ function install_nvim {
         rm -rf $HOME/.config/nvim
     fi
     git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
-    nvim --headless +PackerSync +q
+    nvim --headless -c 'autocmd User PackerSync quitall'
 }
 ( install_nvim )
 
