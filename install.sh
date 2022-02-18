@@ -18,7 +18,8 @@ sudo apt install -y \
     python-is-python3 \
     python3-pip \
     flatpak \
-    pkg-config
+    pkg-config \
+    fontconfig-config
 
 # install python stuff
 pip3 install visidata poetry
