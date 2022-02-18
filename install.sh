@@ -53,7 +53,7 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
 brew tap homebrew/cask-fonts
-brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-nerd-font ninja python vifm
+brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-cove-nerd-font ninja python vifm
 
 function install_python_stuff {
     # install python stuff
