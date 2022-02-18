@@ -5,7 +5,21 @@ set -ex
 # install some base tools
 sudo add-apt-repository ppa:flatpak/stable
 sudo apt update
-sudo apt install -y curl tmux build-essential cmake clang llvm clangd ninja-build python3 python-is-python3 python3-pip flatpak
+sudo apt install -y \
+    curl \
+    tmux \
+    build-essential \
+    cmake \
+    clang \
+    llvm \
+    clangd \
+    ninja-build \
+    python3 \
+    python-is-python3 \
+    python3-pip \
+    flatpak \
+    pkg-config
+
 # install python stuff
 pip3 install visidata poetry
 
