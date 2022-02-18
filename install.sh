@@ -44,8 +44,6 @@ function install_apt_stuff {
         python3-clang
 )
 
-bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
-
 # install brew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
