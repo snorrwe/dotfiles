@@ -3,9 +3,11 @@
 set -ex
 
 # install some base tools
-sudo apt install -y curl tmux build-essential cmake clang llvm clangd ninja-build python3 python-is-python3
+sudo add-apt-repository ppa:flatpak/stable
+sudo apt update
+sudo apt install -y curl tmux build-essential cmake clang llvm clangd ninja-build python3 python-is-python3 python3-pip flatpak
 # install python stuff
-pip3 install visidata
+pip3 install visidata poetry
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
