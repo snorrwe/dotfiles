@@ -11,7 +11,7 @@ function install_apt_stuff {
         build-essential \
         cmake \
         clang \
-        llvm \
+        llvm-13 \
         clangd \
         ninja-build \
         python3 \
@@ -25,6 +25,16 @@ function install_apt_stuff {
     set -ex
     install_apt_stuff
 )
+
+# install brew
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
+
+# install stuff via brew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+brew install fzf
+$(brew --prefix)/opt/fzf/install --all
+brew tap homebrew/cask-fonts
+brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-nerd-font
 
 function install_python_stuff {
     # install python stuff
@@ -48,8 +58,6 @@ chmod +x ~/.local/bin/rust-analyzer
 # install starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 
-# install brew
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
 function install_nvim {
     # install nvim
@@ -64,13 +72,6 @@ function install_nvim {
     set -ex
     install_nvim
 )
-
-# install stuff via brew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-brew install fzf
-$(brew --prefix)/opt/fzf/install --all
-brew tap homebrew/cask-fonts
-brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-nerd-font
 
 cargo install sccache --no-default-features
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
