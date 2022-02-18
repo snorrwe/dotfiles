@@ -1,7 +1,11 @@
 #!/usr/bin/bash
 
-# install rust
+set -ex
 
+# install some base tools
+sudo apt install curl tmux build-essential cmake clang llvm clangd ninja-build -y
+
+# install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
 . "$HOME/.cargo/env"
