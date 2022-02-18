@@ -52,7 +52,23 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
-brew install lazygit kind ctlptl tilt docker openssl ninja python vifm
+brew install lazygit kind ctlptl tilt openssl ninja python vifm
+
+function install_docker {
+    sudo apt-get remove docker docker-engine docker.io
+    sudo apt-get install -y docker.io
+
+    # auto start docker
+    sudo systemctl start docker
+    sudo systemctl enable docker
+
+    # setup
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
+}
+install_docker
+
 
 function install_python_stuff {
     # install python stuff
