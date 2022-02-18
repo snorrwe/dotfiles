@@ -29,8 +29,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
 . "$HOME/.cargo/env"
 
-# install rust fluff
-cargo install -f ripgrep zoxide fd-find
 # install rust-analyzer
 mkdir -p ~/.local/bin
 curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
@@ -54,7 +52,11 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install
 brew install lazygit
-brew install sccache
+
+cargo install sccache
+export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
+# install rust fluff
+cargo install -f ripgrep zoxide fd-find
 
 function install_alacritty {
     # alacritty debian dependencies
@@ -69,6 +71,8 @@ function install_alacritty {
     sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
     sudo desktop-file-install extra/linux/Alacritty.desktop
     sudo update-desktop-database
+    cd -
+    rm -rf alacritty
 }
 
 (
