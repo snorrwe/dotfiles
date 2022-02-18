@@ -12,6 +12,7 @@ function install_apt_stuff {
         cmake \
         python-is-python3 \
         pkg-config \
+        libz3-dev \
         fontconfig-config
 }
 (
