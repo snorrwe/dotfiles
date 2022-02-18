@@ -88,7 +88,7 @@ function install_nvim {
 }
 ( install_nvim )
 
-cargo install sccache --no-default-features
+cargo install -f sccache --no-default-features
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 # install rust fluff
 cargo install -f ripgrep zoxide fd-find
