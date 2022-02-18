@@ -50,7 +50,7 @@ git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
 # install stuff via brew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
-$(brew --prefix)/opt/fzf/install
+$(brew --prefix)/opt/fzf/install --all
 brew install lazygit kind ctlptl tilt
 
 cargo install sccache
