@@ -106,8 +106,8 @@ function install_alacritty {
     cargo build --release
     tic -xe alacritty,alacritty-direct extra/alacritty.info
     # desktop stuff
-    cp target/release/alacritty /usr/local/bin
-    cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
+    sudo cp target/release/alacritty /usr/local/bin
+    sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
     desktop-file-install extra/linux/Alacritty.desktop
     update-desktop-database
     cd -
