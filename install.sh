@@ -10,13 +10,7 @@ function install_apt_stuff {
         tmux \
         build-essential \
         cmake \
-        clang \
-        llvm-13 \
-        clangd \
-        ninja-build \
-        python3 \
         python-is-python3 \
-        python3-pip \
         pkg-config \
         vifm \
         fontconfig-config
@@ -26,6 +20,9 @@ function install_apt_stuff {
     install_apt_stuff
 )
 
+# install llvm
+bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+
 # install brew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
@@ -34,7 +31,7 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
 brew tap homebrew/cask-fonts
-brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-nerd-font
+brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-nerd-font ninja python
 
 function install_python_stuff {
     # install python stuff
