@@ -10,9 +10,7 @@ function install_apt_stuff {
         tmux \
         build-essential \
         cmake \
-        python-is-python3 \
         pkg-config \
-        libz3-dev \
         fontconfig-config
 }
 (
