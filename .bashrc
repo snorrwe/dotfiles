@@ -143,7 +143,7 @@ export CAO_PW=asdasdasd
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
 
-alias config='/usr/bin/git --git-dir=/home/dkiss/.cfg/ --work-tree=/home/dkiss'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -151,14 +151,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dkiss/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/dkiss/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/dkiss/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/dkiss/anaconda3/bin:$PATH"
+        export PATH="$HOME/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
