@@ -51,7 +51,7 @@ git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install
-brew install lazygit
+brew install lazygit kind ctlptl tilt
 
 cargo install sccache
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
