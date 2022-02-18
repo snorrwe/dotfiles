@@ -67,7 +67,7 @@ function install_nvim {
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
-brew install lazygit kind ctlptl tilt docker openssl
+brew install lazygit kind ctlptl tilt docker openssl font-caskaydia-nerd-font
 
 cargo install sccache --no-default-features
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
