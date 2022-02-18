@@ -40,13 +40,19 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 # install brew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
 
-# install nvim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/bin/nvim
-# clone nvim config
-git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
-nvim --headless +PackerSync +q
+function install_nvim {
+    # install nvim
+    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+    chmod u+x nvim.appimage
+    sudo mv nvim.appimage /usr/bin/nvim
+    # clone nvim config
+    git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
+    nvim --headless +PackerSync +q
+}
+(
+    set -e
+    install_nvim
+)
 
 # install stuff via brew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
