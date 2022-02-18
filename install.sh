@@ -95,7 +95,7 @@ cargo install -f ripgrep zoxide fd-find
 
 function install_alacritty {
     # alacritty debian dependencies
-    apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+    sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
     # alacritty
     git clone https://github.com/alacritty/alacritty
     cd alacritty
