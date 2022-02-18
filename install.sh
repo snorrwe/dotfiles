@@ -46,6 +46,7 @@ chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/bin/nvim
 # clone nvim config
 git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
+nvim --headless +PackerSync +q
 
 # install stuff via brew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
