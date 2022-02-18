@@ -12,7 +12,7 @@ If checkout fails with file exists then backup and delete those.
 # Install stuff
 
 ```
-sudo bash install.sh
+bash install.sh
 ```
 
 Assumes you have `apt` and `bash` installed

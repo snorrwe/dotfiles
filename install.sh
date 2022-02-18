@@ -4,9 +4,9 @@ set -ex
 
 function install_apt_stuff {
     # install some base tools
-    apt-get update -y
-    apt-get upgrade -y
-    apt-get install -y \
+    sudo apt-get update -y
+    sudo apt-get upgrade -y
+    sudo apt-get install -y \
         curl \
         tmux \
         build-essential \
@@ -21,7 +21,7 @@ function install_apt_stuff {
 # install llvm
 (
     set -e
-    apt-get install -y \
+    sudo apt-get install -y \
         clang-format \
         clang-tidy \
         clang-tools \
