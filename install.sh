@@ -52,5 +52,6 @@ git clone https://github.com/snorrwe/nvim-config $HOME/.config/nvim
 
 #install stuff via brew
 brew install fzf
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 $(brew --prefix)/opt/fzf/install
 brew install lazygit
