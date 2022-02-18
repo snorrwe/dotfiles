@@ -52,7 +52,7 @@ nvim --headless +PackerSync +q
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
-brew install lazygit kind ctlptl tilt docker
+brew install lazygit kind ctlptl tilt docker openssl
 
 cargo install sccache
 export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
