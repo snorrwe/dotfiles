@@ -144,3 +144,5 @@ function install_font {
     set -e
     install_font
 )
+
+mkdir -p dev
