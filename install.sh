@@ -55,7 +55,6 @@ $(brew --prefix)/opt/fzf/install --all
 brew install lazygit kind ctlptl tilt openssl ninja python vifm
 
 function install_docker {
-    sudo apt-get remove docker docker-engine docker.io
     sudo apt-get install -y docker.io
 
     # auto start docker
