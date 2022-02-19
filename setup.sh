@@ -28,7 +28,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
-brew install lazygit kind ctlptl tilt openssl ninja python vifm docker bat
+brew install lazygit kind ctlptl tilt openssl ninja python vifm bat
 
 ( bash _setup/setup_python_stuff.sh )
 ( bash _setup/setup_rust.sh )
@@ -39,5 +39,6 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 ( bash _setup/setup_nvim.sh )
 ( bash _setup/setup_alacritty.sh )
 ( bash _setup/setup_font.sh )
+( bash _setup/setup_docker.sh )
 
 mkdir -p dev
