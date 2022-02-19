@@ -2,6 +2,9 @@
 
 set -ex
 
+cd $HOME
+. "$HOME/.cargo/env"
+
 # alacritty debian dependencies
 sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
 # alacritty
