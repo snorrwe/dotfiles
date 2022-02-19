@@ -2,10 +2,9 @@
 
 set -ex
 
-brew install docker
+sudo apt install -y docker.io
 
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-sudo systemctl enable docker.service
-sudo systemctl enable containerd.service
+sudo systemctl start docker
