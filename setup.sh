@@ -19,7 +19,7 @@ function install_apt_stuff {
     set -e
     install_apt_stuff
 )
-( bash _setup/setup_llvm.sh )
+( bash .setup/setup_llvm.sh )
 
 # install brew
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
@@ -30,15 +30,15 @@ brew install fzf
 $(brew --prefix)/opt/fzf/install --all
 brew install lazygit kind ctlptl tilt openssl ninja python vifm bat kubectl
 
-( bash _setup/setup_python_stuff.sh )
-( bash _setup/setup_rust.sh )
+( bash .setup/setup_python_stuff.sh )
+( bash .setup/setup_rust.sh )
 
 # install starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 
-( bash _setup/setup_nvim.sh )
-( bash _setup/setup_alacritty.sh )
-( bash _setup/setup_font.sh )
-( bash _setup/setup_docker.sh )
+( bash .setup/setup_nvim.sh )
+( bash .setup/setup_alacritty.sh )
+( bash .setup/setup_font.sh )
+( bash .setup/setup_docker.sh )
 
 mkdir -p dev
