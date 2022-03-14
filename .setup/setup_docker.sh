@@ -2,7 +2,7 @@
 
 set -ex
 
-sudo apt install -y docker.io
+sudo pacman -Sq --noconfirm docker.io
 
 (
 sudo groupadd docker

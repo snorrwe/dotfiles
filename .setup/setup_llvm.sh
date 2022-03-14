@@ -2,7 +2,7 @@
 
 set -ex
 
-sudo apt-get install -y \
+sudo pacman -Sq --noconfirm \
     clang-format \
     clang-tidy \
     clang-tools \
@@ -21,5 +21,4 @@ sudo apt-get install -y \
     lldb \
     llvm-dev \
     llvm-runtime \
-    llvm \
-    python3-clang
+    llvm

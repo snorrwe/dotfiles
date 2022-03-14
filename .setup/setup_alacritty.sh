@@ -6,7 +6,8 @@ cd $HOME
 . "$HOME/.cargo/env"
 
 # alacritty debian dependencies
-sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
+# FIXME
+# sudo apt-get install -y libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev
 # alacritty
 git clone https://github.com/alacritty/alacritty
 cd alacritty
