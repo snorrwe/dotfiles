@@ -2,7 +2,7 @@
 
 set -ex
 
-sudo pacman -Sq --noconfirm docker.io
+sudo pacman -Sq --noconfirm docker
 
 (
 sudo groupadd docker
