@@ -91,6 +91,8 @@ eval "$(zoxide init bash)"
 
 alias lg=lazygit
 
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
 export CAO_USERNAME=asd
 export CAO_PW=asdasdasd
 
