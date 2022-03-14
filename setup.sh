@@ -15,7 +15,7 @@ function install_apt_stuff {
         tar \
         gzip \
         diffutils \
-        github-cli
+        github-cli \
         flatpak
 }
 (
