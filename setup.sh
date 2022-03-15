@@ -46,7 +46,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 brew install fzf
 $(brew --prefix)/opt/fzf/install --all
-brew install lazygit kind ctlptl tilt openssl ninja python vifm bat kubectl
+brew install lazygit kind ctlptl tilt openssl ninja vifm bat kubectl
 
 ( bash .setup/setup_python_stuff.sh )
 ( bash .setup/setup_rust.sh )
