@@ -16,7 +16,8 @@ function install_apt_stuff {
         gzip \
         diffutils \
         github-cli \
-        flatpak
+        flatpak \
+        kitty
 }
 (
     set -e
