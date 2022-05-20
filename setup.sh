@@ -52,8 +52,6 @@ brew install lazygit kind ctlptl tilt openssl ninja vifm bat kubectl
 ( bash .setup/setup_python_stuff.sh )
 ( bash .setup/setup_rust.sh )
 
-
-( bash .setup/setup_alacritty.sh )
 ( bash .setup/setup_font.sh )
 ( bash .setup/setup_docker.sh )
 ( bash .setup/setup_llvm.sh )
