@@ -17,6 +17,7 @@ function install_apt_stuff {
         diffutils \
         github-cli \
         flatpak \
+        topgrade \
         kitty
 }
 (
