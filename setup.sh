@@ -27,28 +27,8 @@ function install_apt_stuff {
 
 ( bash .setup/setup_nvim.sh )
 
-function install_brew {
-    curl -L get.rvm.io > rvm-install
-    bash < ./rvm-install
-    source ~/.bashrc
-    rm ./rvm-install
-    rvm install 2.6.8
-    rvm use 2.6.8
-    bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" </dev/null
-}
-(
-    set -e
-    install_brew
-)
-
-# install starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y
-
-# install stuff via brew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-brew install fzf
-$(brew --prefix)/opt/fzf/install --all
-brew install lazygit kind ctlptl tilt openssl ninja vifm bat kubectl k9s
+# install oh-my-zsh
+( sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" )
 
 ( bash .setup/setup_python_stuff.sh )
 ( bash .setup/setup_rust.sh )
