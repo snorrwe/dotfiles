@@ -36,5 +36,6 @@ function install_apt_stuff {
 ( bash .setup/setup_font.sh )
 ( bash .setup/setup_docker.sh )
 ( bash .setup/setup_llvm.sh )
+( bash .setup/setup_flatpak.sh )
 
 mkdir -p dev
