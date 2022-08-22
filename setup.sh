@@ -42,6 +42,7 @@ mkdir -p dev
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+( bash .setup/setup_brew.sh )
 
 # install oh-my-zsh
 ( sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" )
