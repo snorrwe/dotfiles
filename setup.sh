@@ -18,6 +18,7 @@ function install_apt_stuff {
         github-cli \
         flatpak \
         zsh \
+	firefox \
         kitty
 }
 (

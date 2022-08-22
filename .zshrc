@@ -98,8 +98,6 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.fly/bin"
 
-export CARGO_TARGET_DIR=/mnt/stuff/cargo/cache
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
