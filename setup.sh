@@ -21,6 +21,7 @@ function install_apt_stuff {
         firefox \
         rust-analyzer \
         fzf \
+        xclip \
         kitty
 }
 (
