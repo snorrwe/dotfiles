@@ -18,7 +18,8 @@ function install_apt_stuff {
         github-cli \
         flatpak \
         zsh \
-	firefox \
+        firefox \
+        rust-analyzer
         kitty
 }
 (
@@ -28,10 +29,7 @@ function install_apt_stuff {
 
 ( bash .setup/setup_nvim.sh )
 
-# install oh-my-zsh
-( sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" )
 
-( bash .setup/setup_python_stuff.sh )
 ( bash .setup/setup_rust.sh )
 
 ( bash .setup/setup_font.sh )
@@ -40,3 +38,6 @@ function install_apt_stuff {
 ( bash .setup/setup_flatpak.sh )
 
 mkdir -p dev
+
+# install oh-my-zsh
+( sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" )
