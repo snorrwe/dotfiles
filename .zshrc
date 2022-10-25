@@ -1,3 +1,4 @@
+source ~/zsh-snap/znap.zsh
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -118,3 +119,7 @@ ZSH_THEME="agnoster"
 plugins=(git dotenv python 1password node rust vi-mode docker kubectl zoxide)
 
 source $ZSH/oh-my-zsh.sh
+
+# start plugins
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
