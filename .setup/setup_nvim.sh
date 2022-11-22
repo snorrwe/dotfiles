@@ -5,10 +5,7 @@ set -ex
 # setup fuse
 sudo pacman -S fuse2
 
-
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-sudo mv nvim.appimage /usr/bin/nvim
+sudo pacman -S neovim
 # clone nvim config
 if [ -d $HOME/.config/nvim ];
 then
