@@ -15,4 +15,4 @@ If checkout fails with file exists then backup and delete those.
 bash setup.sh
 ```
 
-Assumes you have `apt` and `bash` installed
+Assumes you have `pacman` and `bash`
