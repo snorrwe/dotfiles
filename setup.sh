@@ -19,7 +19,6 @@ function install_apt_stuff {
         flatpak \
         zsh \
         firefox \
-        rust-analyzer \
         fzf \
         xclip \
         kitty
