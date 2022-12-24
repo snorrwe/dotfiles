@@ -14,4 +14,4 @@ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/
 chmod +x ~/.local/bin/rust-analyzer
 
 # install rust fluff
-cargo install -f ripgrep zoxide fd-find
+cargo install -f ripgrep zoxide fd-find bat nextest
