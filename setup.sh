@@ -21,6 +21,8 @@ function install_apt_stuff {
         firefox \
         fzf \
         xclip \
+        npm \
+        lazygit \
         kitty
 }
 (
