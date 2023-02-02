@@ -2,4 +2,4 @@
 
 set -ex
 
-brew install ctlptl tilt kind
+brew install ctlptl tilt kind tmuxinator

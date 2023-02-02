@@ -123,3 +123,5 @@ source $ZSH/oh-my-zsh.sh
 # start plugins
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
+
+alias mux='tmuxinator'
