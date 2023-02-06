@@ -49,7 +49,7 @@ windows:
   - run:
       layout: main-vertical
       panes:
-        - cd bevy-client && cargo watch -x r
+        - cd bevy-client && cargo watch -c -B 1 --why -x r
         - make up
 
   - sim:
