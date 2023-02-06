@@ -46,11 +46,11 @@ root: ~/dev/caolo/
 
 on_project_exit: tilt down
 windows:
-  - tilt:
+  - run:
       layout: main-vertical
       panes:
-        - make up
         - cd bevy-client && cargo watch -x r
+        - make up
 
   - sim:
       root: ~/dev/caolo/sim/
