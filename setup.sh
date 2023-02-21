@@ -23,6 +23,7 @@ function install_apt_stuff {
         xclip \
         npm \
         lazygit \
+        i3-gnome \
         kitty
 }
 (
@@ -39,6 +40,7 @@ function install_apt_stuff {
 ( bash .setup/setup_docker.sh )
 ( bash .setup/setup_llvm.sh )
 ( bash .setup/setup_flatpak.sh )
+( bash .setup/setup_i3.sh )
 
 mkdir -p dev
 
