@@ -92,7 +92,7 @@ bindsym Mod1+Shift+Up move up
 bindsym Mod1+Shift+Right move right
 
 # split in horizontal orientation
-bindsym Mod1+h split h
+# bindsym Mod1+h split h
 
 # split in vertical orientation
 bindsym Mod1+v split v
@@ -211,4 +211,3 @@ bar {
 #
 # Please remove the following exec line:
 #######################################################################
-exec i3-config-wizard
