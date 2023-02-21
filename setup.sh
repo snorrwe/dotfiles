@@ -33,7 +33,6 @@ function install_apt_stuff {
 
 ( bash .setup/setup_nvim.sh )
 
-
 ( bash .setup/setup_rust.sh )
 
 ( bash .setup/setup_font.sh )
@@ -41,6 +40,7 @@ function install_apt_stuff {
 ( bash .setup/setup_llvm.sh )
 ( bash .setup/setup_flatpak.sh )
 ( bash .setup/setup_i3.sh )
+( bash .setup/setup_tmux.sh )
 
 mkdir -p dev
 
