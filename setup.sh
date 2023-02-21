@@ -23,7 +23,7 @@ function install_apt_stuff {
         xclip \
         npm \
         lazygit \
-        i3-gnome \
+        i3-wm \
         kitty
 }
 (
