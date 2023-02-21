@@ -44,12 +44,11 @@ root: ~/dev/caolo/
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
-on_project_exit: tilt down
 windows:
   - run:
       layout: main-vertical
       panes:
-        - cd bevy-client && cargo watch -c -B 1 --why -x r
+        - cd ~/dev/caolo/bevy-client && cargo watch -c -B 1 --why -x r
         - make up
 
   - sim:
