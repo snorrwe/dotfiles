@@ -195,22 +195,22 @@ bar {
 
 # Setup workspaces
 #
-workspace 3 output "Screen 1"
-assign [class="^obsidian$"] 3
-exec md.obsidian.Obsidian
-
-workspace 4 output "Screen 0"
-assign [class="^Slack$"] 4
-exec com.slack.Slack
-
-workspace 1 output "Screen 0"
+workspace 1 output primary
 assign [class="^firefox$"] 1
 exec firefox
 
-workspace 5 output "Screen 1"
+workspace 4 output primary
+assign [class="^Slack$"] 4
+exec com.slack.Slack
+
+workspace 3 output HDMI-0
+assign [class="^obsidian$"] 3
+exec md.obsidian.Obsidian
+
+workspace 5 output HDMI-0
 assign [class="^Spotify$"] 5
 exec com.spotify.Client
 
-workspace 2 output "Screen 1"
+workspace 2 output HDMI-0
 assign [class="^kitty$"] 2
 exec kitty
