@@ -206,3 +206,7 @@ exec com.slack.Slack
 workspace 1 output Screen 0
 assign [class="^firefox$"] 1
 exec firefox
+
+workspace 5 output Screen 0
+assign [class="^spotify$"] 5
+exec com.spotify.Client
