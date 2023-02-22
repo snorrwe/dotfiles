@@ -3,7 +3,8 @@
 set -ex
 
 sudo pacman -Sq --noconfirm \
-    i3-gnome 
+    i3-wm \
+    commnuniy/rofi
 
 mkdir -p dev
 cd dev

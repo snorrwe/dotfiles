@@ -52,9 +52,9 @@ bindsym Mod1+Return exec i3-sensible-terminal
 bindsym Mod1+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym Mod1+d exec --no-startup-id dmenu_run
+# bindsym Mod1+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-# bindsym Mod1+d exec "rofi -modi drun,run -show drun"
+bindsym Mod1+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindsym Mod1+d exec --no-startup-id i3-dmenu-desktop
@@ -118,16 +118,16 @@ bindsym Mod1+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
+set $ws1 "1: browser"
+set $ws2 "2: terminal"
+set $ws3 "3: obsidian"
+set $ws4 "4: slack"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: music"
 
 # switch to workspace
 bindsym Mod1+1 workspace number $ws1
@@ -195,22 +195,22 @@ bar {
 
 # Setup workspaces
 #
-workspace "1: browser" output primary
-assign [class="^firefox$"] "1: browser"
+workspace $ws1 output primary
+assign [class="^firefox$"] $ws1
 exec firefox
 
-workspace "4: slack" output primary
-assign [class="^Slack$"] "4: slack"
+workspace $ws4 output primary
+assign [class="^Slack$"] $ws4
 exec com.slack.Slack
 
-workspace "3: obsidian" output HDMI-0
-assign [class="^obsidian$"] "3: obsidian"
+workspace $ws3 output HDMI-0
+assign [class="^obsidian$"] $ws3
 exec md.obsidian.Obsidian
 
-workspace "5: spotify" output HDMI-0
-assign [class="^Spotify$"] "5: spotify"
+workspace $ws10 output HDMI-0
+assign [class="^Spotify$"] $ws10
 exec com.spotify.Client
 
-workspace "2: terminal" output HDMI-0
-assign [class="^kitty$"] "2: terminal"
+workspace $ws2 output HDMI-0
+assign [class="^kitty$"] $ws2
 exec kitty
