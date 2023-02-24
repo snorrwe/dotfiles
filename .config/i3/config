@@ -121,7 +121,7 @@ bindsym Mod1+minus scratchpad show
 set $ws1 "1: browser"
 set $ws2 "2: terminal"
 set $ws3 "3: obsidian"
-set $ws4 "4: slack"
+set $ws4 "4: messages"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -202,6 +202,8 @@ exec firefox
 workspace $ws4 output primary
 assign [class="^Slack$"] $ws4
 exec com.slack.Slack
+assign [class="^TelegramDesktop$"] $ws4
+exec org.telegram.desktop
 
 workspace $ws3 output HDMI-0
 assign [class="^obsidian$"] $ws3
@@ -214,3 +216,7 @@ exec com.spotify.Client
 workspace $ws2 output HDMI-0
 assign [class="^kitty$"] $ws2
 exec kitty
+
+# alt+tab
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
