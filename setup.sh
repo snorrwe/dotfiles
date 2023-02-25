@@ -24,6 +24,7 @@ function install_apt_stuff {
         npm \
         lazygit \
         i3-wm \
+        picom \
         kitty
 }
 (
