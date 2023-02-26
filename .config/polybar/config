@@ -49,7 +49,8 @@ module-margin = 1
 separator = |
 separator-foreground = ${colors.disabled}
 
-font-0 = monospace;2
+font-0 = CaskaydiaCove Nerd Font:size=12
+font-1 = CaskaydiaCove Nerd Font:size=12
 
 modules-left = xworkspaces xwindow
 modules-right = pulseaudio cpu memory date filesystem 
@@ -172,5 +173,3 @@ label-foreground = ${colors.primary}
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
-
-; vim:ft=dosini
