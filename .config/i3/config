@@ -223,7 +223,6 @@ bindsym Mod1+Shift+Tab workspace prev
 
 exec_always picom -b
 
-
 # colors
 # class                 border  bground text    indicator child_border
 client.focused          #4C7899 #282A2E #FFFFFF #2E9EF4   #285577
