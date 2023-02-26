@@ -23,8 +23,6 @@ function install_apt_stuff {
         xclip \
         npm \
         lazygit \
-        i3-wm \
-        picom \
         kitty
 }
 (
