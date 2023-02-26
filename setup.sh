@@ -14,6 +14,8 @@ function install_apt_stuff {
         base-devel \
         tar \
         gzip \
+        zip \
+        unzip \
         diffutils \
         github-cli \
         flatpak \
