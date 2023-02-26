@@ -50,7 +50,6 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = CaskaydiaCove Nerd Font:size=12
-font-1 = CaskaydiaCove Nerd Font:size=12
 
 modules-left = xworkspaces xwindow
 modules-right = pulseaudio cpu memory date filesystem 
