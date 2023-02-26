@@ -45,8 +45,8 @@ root: ~/dev/iris/
 # attach: false
 
 windows:
+  - run: devenv up
   - editor:
       layout: main-vertical
       panes:
         - nvim
-  - server: devenv up
