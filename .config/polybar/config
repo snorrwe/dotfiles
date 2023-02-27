@@ -59,7 +59,7 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-tray-position = left
+tray-position = ${env:TRAY:}
 
 wm-restack = i3
 
