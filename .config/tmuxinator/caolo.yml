@@ -51,15 +51,6 @@ windows:
         - cd ~/dev/caolo/bevy-client && cargo watch -c -B 1 --why -x r
         - just up
 
-  - sim:
-      root: ~/dev/caolo/sim/
+  - editor:
       panes:
         - nvim
-  - client:
-      root: ~/dev/caolo/bevy-client/
-      panes:
-        - nvim
-  - api:
-      root: ~/dev/caolo/api/
-      panes:
-        - poetry run nvim
