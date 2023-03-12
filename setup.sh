@@ -25,7 +25,8 @@ function install_apt_stuff {
         xclip \
         npm \
         lazygit \
-        kitty
+        kitty \
+        ranger
 }
 (
     set -e
