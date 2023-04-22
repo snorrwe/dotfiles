@@ -48,7 +48,7 @@ windows:
   - run:
       layout: main-vertical
       panes:
-        - cd ~/dev/caolo/bevy-client && just watch
+        - just watch-client
         - just up
 
   - editor:
