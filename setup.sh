@@ -26,8 +26,7 @@ function install_apt_stuff {
         npm \
         lazygit \
         kitty \
-        llvm \
-        gnome-keyring
+        llvm
 }
 (
     set -e
