@@ -206,6 +206,8 @@ assign [class="^TelegramDesktop$"] $ws4
 exec org.telegram.desktop
 assign [class="^discord$"] $ws4
 exec com.discordapp.Discord
+assign [class="^Mail$"] $ws4
+exec org.mozilla.Thunderbird
 
 workspace $ws3 output HDMI-0
 assign [class="^obsidian$"] $ws3
