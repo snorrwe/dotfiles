@@ -8,4 +8,5 @@ flatpak install -y \
     com.slack.Slack \
     md.obsidian.Obsidian \
     org.mozilla.Thunderbird \ 
+    org.telegram.desktop \
     com.spotify.Client
