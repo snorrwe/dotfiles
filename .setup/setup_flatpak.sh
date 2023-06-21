@@ -7,4 +7,5 @@ flatpak install -y \
     com.discordapp.Discord \
     com.slack.Slack \
     md.obsidian.Obsidian \
-    org.mozilla.Thunderbird
+    org.mozilla.Thunderbird \ 
+    com.spotify.Client
