@@ -41,6 +41,7 @@ function install_apt_stuff {
 ( bash .setup/setup_docker.sh )
 ( bash .setup/setup_flatpak.sh )
 ( bash .setup/setup_i3.sh )
+( bash .setup/setup_yay.sh )
 
 mkdir -p dev
 
