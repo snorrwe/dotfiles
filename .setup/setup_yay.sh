@@ -12,3 +12,6 @@ cd $(mktemp -d)
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+
+yay -Sq --noconfirm nerd-fonts
