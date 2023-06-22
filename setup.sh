@@ -26,6 +26,7 @@ function install_apt_stuff {
         npm \
         lazygit \
         kitty \
+        thunar \
         llvm
 }
 (
