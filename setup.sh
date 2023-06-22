@@ -33,6 +33,8 @@ function install_apt_stuff {
     install_apt_stuff
 )
 
+mkdir -p dev
+
 ( bash .setup/setup_nvim.sh )
 
 ( bash .setup/setup_rust.sh )
@@ -42,11 +44,5 @@ function install_apt_stuff {
 ( bash .setup/setup_flatpak.sh )
 ( bash .setup/setup_i3.sh )
 ( bash .setup/setup_yay.sh )
+( bash .setup/setup_zsh.sh )
 
-mkdir -p dev
-
-# install oh-my-zsh
-( sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" )
-# install znap
-git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git
-source zsh-snap/znap.zsh
