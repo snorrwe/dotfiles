@@ -11,6 +11,7 @@ function install_apt_stuff {
         pkg-config \
         python3 \
         python-pip \
+        python-pipx \
         base-devel \
         tar \
         gzip \

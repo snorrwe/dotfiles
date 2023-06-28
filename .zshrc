@@ -73,6 +73,7 @@ register_path "/usr/local/go"
 register_path "/home/linuxbrew/.linuxbrew/bin"
 register_path "/home/linuxbrew/.linuxbrew/sbin"
 register_path "$HOME/go/bin"
+register_path "$HOME/.local/bin"
 
 export DENO_INSTALL="/home/snorrwe/.deno"
 register_path "$DENO_INSTALL/bin" 
