@@ -28,6 +28,7 @@ function install_apt_stuff {
         lazygit \
         kitty \
         thunar \
+        gitui \
         llvm
 }
 (
