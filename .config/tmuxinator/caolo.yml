@@ -51,6 +51,6 @@ windows:
         - just watch-client
         - just up
 
-  - editor:
-      panes:
-        - nvim
+  - editor: devenv shell nvim
+  - git: gitui
+
