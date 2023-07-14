@@ -131,3 +131,7 @@ znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 
 alias mux='tmuxinator'
+alias hx='helix'
+
+eval "$(direnv hook zsh)"
+

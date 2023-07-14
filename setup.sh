@@ -29,7 +29,8 @@ function install_apt_stuff {
         kitty \
         thunar \
         gitui \
-        llvm
+        llvm \
+        direnv
 }
 (
     set -e
