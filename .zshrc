@@ -97,3 +97,13 @@ function aliases {
 
 aliases
 unset aliases
+
+function completions() {
+    znap fpath _kubectl 'kubectl completion  zsh'
+    znap fpath _rustup  'rustup  completions zsh'
+    znap fpath _cargo   'rustup  completions zsh cargo'
+    znap fpath _just   'just --completions zsh'
+}
+
+completions
+unset completions
