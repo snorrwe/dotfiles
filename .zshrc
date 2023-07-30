@@ -1,4 +1,4 @@
-source ~/zsh-snap/znap.zsh
+source $HOME/zsh-snap/znap.zsh
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -70,8 +70,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 
 
-eval "$(direnv hook zsh)"
-eval "$(starship init zsh)"
+znap eval direnv "direnv hook zsh"
+znap eval starship "starship init zsh"
 
 function aliases {
     alias lg=lazygit
