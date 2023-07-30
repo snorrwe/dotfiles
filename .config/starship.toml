@@ -1,3 +1,5 @@
+# Config options https://starship.rs/config/
+
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
@@ -5,4 +7,7 @@
 add_newline = true
 
 [git_metrics]
+disabled = false
+
+[status]
 disabled = false
