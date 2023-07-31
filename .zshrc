@@ -73,6 +73,7 @@ export NVM_DIR="$HOME/.nvm"
 znap eval direnv "direnv hook zsh"
 znap eval starship "starship init zsh"
 znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
 
 function aliases {
     alias lg=lazygit
