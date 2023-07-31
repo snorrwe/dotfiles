@@ -74,6 +74,7 @@ znap eval direnv "direnv hook zsh"
 znap eval starship "starship init zsh"
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-completions
 
 function aliases {
     alias lg=lazygit
