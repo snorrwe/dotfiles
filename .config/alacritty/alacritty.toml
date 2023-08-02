@@ -1,3 +1,7 @@
+import = [".config/alacritty/frappe.toml"]
+
 [font]
-normal.family = "ComicMono"
 size = 14
+
+[font.normal]
+family = "ComicMono"
