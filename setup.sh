@@ -26,6 +26,7 @@ function install_apt_stuff {
         xclip \
         npm \
         lazygit \
+        kitty \
         thunar \
         gitui \
         llvm \
