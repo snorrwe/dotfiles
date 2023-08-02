@@ -14,4 +14,4 @@ cd yay
 makepkg -si
 
 
-yay -Sq --noconfirm nerd-fonts
+yay -Sq --noconfirm nerd-fonts alacritty-git
