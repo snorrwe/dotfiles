@@ -52,5 +52,4 @@ windows:
         - just up
 
   - editor: nvim
-  - git: gitui
 
