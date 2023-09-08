@@ -13,7 +13,7 @@ while true
 do
     case "$1" in
         '-h'| '--help') 
-            echo "Use fzf to switch a just command"
+            echo "Use fzf to select a just command"
             exit 0
         ;;
         '--')
