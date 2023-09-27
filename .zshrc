@@ -84,8 +84,6 @@ function aliases {
     alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
     alias cs='config status -uno'
     alias lcs='lazygit -g=$HOME/.cfg/ -w=$HOME'
-    alias mux='tmuxinator'
-    alias hx='helix'
     alias jt='just test'
     alias ll='ls -alF'
     alias la='ls -Al'
