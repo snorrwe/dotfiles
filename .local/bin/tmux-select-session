@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -e
+
+tmux list-sessions | fzf | sed 's/:.*//' | xargs tmux switch -t
