@@ -58,6 +58,7 @@ eval "$(zoxide init zsh)"
 
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+export SHELL="/usr/bin/zsh"
 
 [ -f $HOME/.cargo/bin/sccache ] && export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
