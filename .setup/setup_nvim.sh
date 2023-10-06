@@ -3,7 +3,7 @@
 set -ex
 
 # setup fuse
-sudo pacman -Syu --noconfirm fuse2 neovim
+sudo yay -Syu --noconfirm fuse2 neovim-git
 
 # clone nvim config
 if [ -d $HOME/.config/nvim ];
