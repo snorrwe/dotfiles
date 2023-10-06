@@ -39,6 +39,11 @@ function install_apt_stuff {
 
 mkdir -p dev
 
+# tmux setup
+if [ ! -f ~/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+
 ( bash .setup/setup_yay.sh )
 ( bash .setup/setup_nvim.sh )
 ( bash .setup/setup_rust.sh )
@@ -47,6 +52,3 @@ mkdir -p dev
 ( bash .setup/setup_flatpak.sh )
 ( bash .setup/setup_i3.sh )
 ( bash .setup/setup_zsh.sh )
-
-# tmux setup
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
