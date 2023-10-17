@@ -2,4 +2,4 @@
 
 set -e
 
-tmux list-sessions | fzf-tmux -p --reverse | sed 's/:.*//' | xargs tmux switch -t
+tmux list-sessions | fzf --reverse | sed 's/:.*//' | xargs tmux switch -t
