@@ -2,7 +2,7 @@
 
 set -ex
 
-function install_apt_stuff {
+function install_packages {
     # install some base tools
     sudo pacman -Sq --noconfirm \
         curl \
@@ -33,7 +33,7 @@ function install_apt_stuff {
 }
 (
     set -e
-    install_apt_stuff
+    install_packages
 )
 
 mkdir -p dev
