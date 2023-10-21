@@ -2,15 +2,18 @@
 
 set -ex
 
-sudo pacman -Sq --noconfirm \
-    git \
-    base-devel
+if ! command -v yay &> /dev/null
+then
+    sudo pacman -Sq --noconfirm \
+        git \
+        base-devel
 
-cd "$(mktemp -d)"
+    cd "$(mktemp -d)"
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+fi
 
 yay -Sq --noconfirm \
         nerd-fonts \
