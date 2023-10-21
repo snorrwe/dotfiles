@@ -21,4 +21,5 @@ yay -Sq --noconfirm \
         aur/slack-desktop \
         extra/discord \
         extra/thunderbird \
+        extra/telegram-desktop \
         aur/spotify
