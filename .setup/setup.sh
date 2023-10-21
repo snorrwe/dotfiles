@@ -19,7 +19,6 @@ function install_apt_stuff {
         unzip \
         diffutils \
         github-cli \
-        flatpak \
         zsh \
         firefox \
         fzf \
@@ -44,12 +43,11 @@ if [ ! -f ~/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
-( bash .setup/setup_yay.sh )
-( bash .setup/setup_nvim.sh )
-( bash .setup/setup_rust.sh )
-( bash .setup/setup_font.sh )
-( bash .setup/setup_docker.sh )
-( bash .setup/setup_flatpak.sh )
-( bash .setup/setup_i3.sh )
-( bash .setup/setup_brew.sh )
-( bash .setup/setup_zsh.sh )
+( bash "$HOME"/.setup/setup_yay.sh )
+( bash "$HOME"/.setup/setup_nvim.sh )
+( bash "$HOME"/.setup/setup_rust.sh )
+( bash "$HOME"/.setup/setup_font.sh )
+( bash "$HOME"/.setup/setup_docker.sh )
+( bash "$HOME"/.setup/setup_i3.sh )
+( bash "$HOME"/.setup/setup_brew.sh )
+( bash "$HOME"/.setup/setup_zsh.sh )
