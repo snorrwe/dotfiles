@@ -51,7 +51,7 @@ register_path "$HOME/.local/bin"
 register_path "$HOME/.rvm/bin"
 register_path "$HOME/.fly/bin"
 
-export DENO_INSTALL="/home/snorrwe/.deno"
+export DENO_INSTALL="$HOME/.deno"
 register_path "$DENO_INSTALL/bin" 
 
 eval "$(zoxide init zsh)"
