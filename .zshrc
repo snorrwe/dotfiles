@@ -113,3 +113,5 @@ function completions() {
 
 completions
 unset completions
+
+bindkey -v
