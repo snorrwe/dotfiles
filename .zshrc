@@ -75,9 +75,9 @@ znap eval starship "starship init zsh"
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
-znap source joshskidmore/zsh-fzf-history-search
 znap source zpm-zsh/clipboard
 znap source arzzen/calc.plugin.zsh
+eval "$(atuin init zsh)"
 
 function aliases {
     alias lg=lazygit
