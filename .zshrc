@@ -77,6 +77,7 @@ znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
 znap source arzzen/calc.plugin.zsh
+znap source zpm-zsh/tmux
 eval "$(atuin init zsh)"
 
 function aliases {
