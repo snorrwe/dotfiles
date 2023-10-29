@@ -210,7 +210,8 @@ exec discord
 workspace $ws3 output primary
 assign [class="^obsidian$"] $ws3
 exec obsidian
-assign [class="^thunderbird$"] $ws3
+assign [class="^zoom$"] $ws5
+assign [class="^Mail$"] $ws3
 exec thunderbird
 
 workspace $ws10 output HDMI-0
