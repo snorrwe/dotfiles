@@ -1,0 +1,9 @@
+options.numeric_binning = True
+
+
+def median(values):
+    L = sorted(values)
+    return L[len(L) // 2]
+
+
+vd.aggregator("median", median)
