@@ -222,10 +222,6 @@ workspace $ws2 output HDMI-0
 assign [class="^kitty$"] $ws2
 exec kitty
 
-# alt+tab
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
-
 exec_always picom -b
 
 # colors
