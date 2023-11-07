@@ -22,4 +22,5 @@ yay -Sq --noconfirm \
         extra/discord \
         extra/thunderbird \
         extra/telegram-desktop \
-        aur/spotify
+        aur/spotify \
+        flameshot

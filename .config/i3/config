@@ -236,3 +236,6 @@ client.background       #FFFFFF
 
 # lock
 bindsym Control+Mod1+l exec "i3lock -c 000000"
+
+# screenshot
+bindsym Print exec "flameshot gui"
