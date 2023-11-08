@@ -239,3 +239,5 @@ bindsym Control+Mod1+l exec "i3lock -c 000000"
 
 # screenshot
 bindsym Print exec "flameshot gui"
+
+exec 'xrandr --output DVI-D-0 --auto --left-of HDMI-0'
