@@ -15,11 +15,10 @@ curl -fLo "intelone-mono.zip" \
 unzip intelone-mono.zip
 mv ttf/* ./
 rm -rf ttf
+rm -f intelone-mono.zip
 
 curl -fLo "ComicMono.ttf" \
     https://dtinth.github.io/comic-mono-font/ComicMono.ttf
 curl -fLo "ComicMono-Bold.ttf" \
     https://dtinth.github.io/comic-mono-font/ComicMono-Bold.ttf
 
-unzip intelone-mono.zip
-mv ttf/* ./
