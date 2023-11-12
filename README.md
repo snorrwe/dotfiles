@@ -12,7 +12,7 @@ If checkout fails with file exists then backup and delete those.
 # Install stuff
 
 ```
-bash setup.sh
+bash .setup/setup.sh
 ```
 
 Assumes you have `pacman` and `bash`
