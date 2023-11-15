@@ -109,6 +109,7 @@ function completions() {
     znap fpath _rustup  'rustup  completions zsh'
     znap fpath _cargo   'rustup  completions zsh cargo'
     znap fpath _just   'just --completions zsh'
+    znap fpath _watchexec 'watchexec --completions zsh'
 }
 
 completions
