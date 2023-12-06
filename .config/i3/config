@@ -195,11 +195,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Setup workspaces
 #
-workspace $ws1 output primary
 assign [class="^firefox$"] $ws1
 exec firefox
 
-workspace $ws4 output primary
 assign [class="^Slack$"] $ws4
 exec com.slack.Slack
 assign [class="^TelegramDesktop$"] $ws4
@@ -207,22 +205,14 @@ exec telegram-desktop
 assign [class="^discord$"] $ws4
 exec discord
 
-workspace $ws3 output primary
 assign [class="^obsidian$"] $ws3
 exec obsidian
 assign [class="^zoom$"] $ws5
 assign [class="^Mail$"] $ws3
 exec thunderbird
 
-workspace $ws10 output HDMI-0
-assign [class="^Spotify$"] $ws10
-
-workspace $ws2 output HDMI-0
 assign [class="^org.wezfurlong.wezterm$"] $ws2
 exec wezterm
-
-workspace $ws5 output HDMI-0
-assign [class="^zoom$"] $ws5
 
 exec_always picom -b
 
