@@ -214,10 +214,6 @@ assign [class="^zoom$"] $ws5
 assign [class="^Mail$"] $ws3
 exec thunderbird
 
-workspace $ws10 output HDMI-0
-assign [class="^Spotify$"] $ws10
-exec spotify
-
 workspace $ws2 output HDMI-0
 assign [class="^org.wezfurlong.wezterm$"] $ws2
 exec wezterm
