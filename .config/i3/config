@@ -46,7 +46,7 @@ floating_modifier Mod1
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod1+Return exec kitty
+bindsym Mod1+Return exec wezterm
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -218,8 +218,8 @@ assign [class="^Spotify$"] $ws10
 exec spotify
 
 workspace $ws2 output HDMI-0
-assign [class="^kitty$"] $ws2
-exec kitty
+assign [class="^org.wezfurlong.wezterm$"] $ws2
+exec wezterm
 
 workspace $ws5 output HDMI-0
 assign [class="^zoom$"] $ws5
