@@ -206,12 +206,12 @@ assign [class="^TelegramDesktop$"] $ws4
 exec telegram-desktop
 assign [class="^discord$"] $ws4
 exec discord
-assign [class="^Mail$"] $ws3
-exec thunderbird
 
 workspace $ws3 output primary
 assign [class="^obsidian$"] $ws3
 exec obsidian
+assign [class="^thunderbird$"] $ws3
+exec thunderbird
 
 workspace $ws10 output HDMI-0
 assign [class="^Spotify$"] $ws10
