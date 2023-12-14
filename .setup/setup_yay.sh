@@ -23,4 +23,5 @@ yay -Sq --noconfirm \
         extra/thunderbird \
         extra/telegram-desktop \
         aur/spotify \
-        flameshot
+        flameshot \
+        otf-monaspace
