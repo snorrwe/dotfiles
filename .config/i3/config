@@ -212,7 +212,6 @@ exec thunderbird
 workspace $ws3 output primary
 assign [class="^obsidian$"] $ws3
 exec obsidian
-assign [class="^zoom$"] $ws3
 
 workspace $ws10 output HDMI-0
 assign [class="^Spotify$"] $ws10
@@ -221,6 +220,9 @@ exec spotify
 workspace $ws2 output HDMI-0
 assign [class="^kitty$"] $ws2
 exec kitty
+
+workspace $ws5 output HDMI-0
+assign [class="^zoom$"] $ws5
 
 exec_always picom -b
 
