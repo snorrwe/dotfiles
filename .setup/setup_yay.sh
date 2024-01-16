@@ -24,4 +24,5 @@ yay -Sq --noconfirm \
         extra/telegram-desktop \
         aur/spotify \
         flameshot \
+        wezterm-git \
         otf-monaspace
