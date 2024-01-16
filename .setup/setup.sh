@@ -25,7 +25,7 @@ function install_packages {
         xclip \
         npm \
         lazygit \
-        alacritty \
+        kitty \
         thunar \
         gitui \
         llvm \
@@ -42,8 +42,6 @@ mkdir -p dev
 if [ ! -f ~/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
-
-git clone https://github.com/catppuccin/alacritty.git ~/alacritty-catppuccin
 
 ( bash "$HOME"/.setup/setup_yay.sh )
 ( bash "$HOME"/.setup/setup_nvim.sh )

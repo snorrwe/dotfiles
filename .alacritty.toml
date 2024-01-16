@@ -1,7 +1,0 @@
-import = [
-    "~/alacritty-catppuccin/catppuccin-mocha.toml"
-]
-shell = "zsh"
-[font]
-normal = {family="Monaspace Neon"}
-size=14
