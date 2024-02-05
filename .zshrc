@@ -88,9 +88,9 @@ function aliases {
     alias ll='ls -alF'
     alias la='ls -Al'
     alias l='ls -CF'
-    alias icat='kitty +kitten icat'
-    alias jc='just --choose'
+    alias icat='wezterm imgcat'
     alias cdtmp='cd $(mktemp -d)'
+    alias pushtmp='pushd $(mktemp -d)'
     # enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
         alias ls='ls --color=auto'
