@@ -1,17 +1,22 @@
 # Setup
 
+Install [GNU Stow](https://www.gnu.org/software/stow/)
+
+```sh
+pacman -S stow
 ```
-echo ".cfg" >> .gitignore
-git clone --bare https://github.com/snorrwe/dotfiles $HOME/.cfg
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-config checkout
+
+```sh
+git clone https://github.com/snorrwe/dotfiles $HOME/dotfiles
+cd dotfiles
+stow --adopt .
 ```
 
 If checkout fails with file exists then backup and delete those.
 
 # Install stuff
 
-```
+```sh
 bash .setup/setup.sh
 ```
 
