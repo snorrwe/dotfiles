@@ -79,11 +79,16 @@ znap source zpm-zsh/clipboard
 znap source arzzen/calc.plugin.zsh
 eval "$(atuin init zsh)"
 
+function config() {
+    (
+    cd "$HOME/dotfiles/";
+    /usr/bin/git $@
+    )
+}
+
 function aliases {
     alias lg=lazygit
-    alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-    alias cs='config status -uno'
-    alias clg='lazygit -g=$HOME/.cfg/ -w=$HOME'
+    alias cs='config status'
     alias jt='just test'
     alias ll='ls -alF'
     alias la='ls -Al'
