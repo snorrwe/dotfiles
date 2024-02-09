@@ -209,6 +209,7 @@ assign [class="^obsidian$"] $ws3
 exec obsidian
 assign [class="^zoom$"] $ws5
 assign [class="^Mail$"] $ws3
+assign [class="^thunderbird$"] $ws3
 exec thunderbird
 
 assign [class="^org.wezfurlong.wezterm$"] $ws2
