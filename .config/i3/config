@@ -219,7 +219,7 @@ exec spotify
 
 workspace $ws2 output HDMI-0
 assign [class="^org.wezfurlong.wezterm$"] $ws2
-exec wezterm
+exec wezterm start -- tmux
 
 workspace $ws5 output HDMI-0
 assign [class="^zoom$"] $ws5
