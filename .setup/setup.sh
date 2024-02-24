@@ -39,15 +39,15 @@ function install_packages {
 mkdir -p dev
 
 # tmux setup
-if [ ! -f ~/.tmux/plugins/tpm ]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [ ! -d "$HOME"/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 fi
 
-( bash "$HOME"/.setup/setup_yay.sh )
-( bash "$HOME"/.setup/setup_nvim.sh )
-( bash "$HOME"/.setup/setup_rust.sh )
-( bash "$HOME"/.setup/setup_font.sh )
-( bash "$HOME"/.setup/setup_docker.sh )
-( bash "$HOME"/.setup/setup_i3.sh )
-( bash "$HOME"/.setup/setup_brew.sh )
-( bash "$HOME"/.setup/setup_zsh.sh )
+( bash ./.setup/setup_yay.sh )
+( bash ./.setup/setup_nvim.sh )
+( bash ./.setup/setup_rust.sh )
+( bash ./.setup/setup_font.sh )
+( bash ./.setup/setup_docker.sh )
+( bash ./.setup/setup_i3.sh )
+( bash ./.setup/setup_brew.sh )
+( bash ./.setup/setup_zsh.sh )
