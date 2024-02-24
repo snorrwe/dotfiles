@@ -97,7 +97,8 @@ label = %title:0:60:...%
 type = internal/fs
 interval = 25
 
-mount-0 = /
+mount-0 = /home
+mount-1 = /
 
 label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
 
