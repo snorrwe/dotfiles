@@ -36,8 +36,6 @@ function install_packages {
     install_packages
 )
 
-mkdir -p dev
-
 # tmux setup
 if [ ! -d "$HOME"/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
