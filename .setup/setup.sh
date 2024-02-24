@@ -51,3 +51,4 @@ fi
 ( bash ./.setup/setup_i3.sh )
 ( bash ./.setup/setup_brew.sh )
 ( bash ./.setup/setup_zsh.sh )
+chsh zsh
