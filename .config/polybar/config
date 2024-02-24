@@ -50,6 +50,7 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 font-0 = MonaspaceNeon:size=13
+font-1 = MesloLGL Nerd Font Propo:style=Italic:size=13
 
 modules-left = xworkspaces xwindow
 modules-right = pulseaudio cpu memory date filesystem battery 
@@ -180,6 +181,16 @@ type = internal/battery
 ; Default: 100
 full-at = 99
 low-at = 10
+format-charging = <ramp-capacity> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = ⚡ %percentage%%
+label-discharging = %percentage%%
+label-full = ⚡ %percentage%% ⚡
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
