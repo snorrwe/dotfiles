@@ -1,0 +1,8 @@
+.config/discord/*
+!.config/discord/settings.json
+.local/bin
+.tmux
+arzzen/calc.plugin.zsh
+marlonrichert/zsh-autocomplete
+zpm-zsh/clipboard
+zsh-users
