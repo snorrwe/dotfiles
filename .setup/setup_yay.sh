@@ -25,4 +25,6 @@ yay -Sq --noconfirm \
         aur/spotify \
         flameshot \
         wezterm-git \
-        otf-monaspace
+        otf-monaspace \
+        btop \
+        dust
