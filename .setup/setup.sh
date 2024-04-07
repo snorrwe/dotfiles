@@ -29,7 +29,8 @@ function install_packages {
         thunar \
         gitui \
         llvm \
-        direnv
+        direnv \
+        stow
 }
 (
     set -e
