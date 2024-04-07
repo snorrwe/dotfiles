@@ -25,7 +25,6 @@ function install_packages {
         xclip \
         npm \
         lazygit \
-        kitty \
         thunar \
         gitui \
         llvm \
