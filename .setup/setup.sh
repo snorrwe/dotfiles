@@ -31,7 +31,8 @@ function install_packages {
         direnv \
         stow \
         clang \
-        mold
+        mold \
+        git-lfs
 }
 (
     set -e
