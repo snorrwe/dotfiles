@@ -27,4 +27,5 @@ yay -Sq --noconfirm \
         wezterm-git \
         otf-monaspace \
         btop \
-        dust
+        dust \
+        flatpak
