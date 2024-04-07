@@ -29,7 +29,9 @@ function install_packages {
         gitui \
         llvm \
         direnv \
-        stow
+        stow \
+        clang \
+        mold
 }
 (
     set -e
