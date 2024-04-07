@@ -28,4 +28,6 @@ yay -Sq --noconfirm \
         otf-monaspace \
         btop \
         dust \
-        flatpak
+        flatpak \
+        xdg-desktop-portal-gtk
+
