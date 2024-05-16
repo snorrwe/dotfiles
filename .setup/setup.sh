@@ -2,6 +2,9 @@
 
 set -x
 
+pushd "$(dirname "$0")"
+trap popd EXIT
+
 function install_packages {
     # install some base tools
     sudo pacman -Sq --noconfirm \
