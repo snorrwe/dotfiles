@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-set -ex
+set -x
 
 function install_packages {
     # install some base tools
@@ -34,9 +34,13 @@ function install_packages {
         mold \
         git-lfs
 }
+
+echo "start" > install.log
+
 (
     set -e
     install_packages
+    echo "base packages" >> install.log
 )
 
 # tmux setup
@@ -44,10 +48,10 @@ if [ ! -d "$HOME"/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 fi
 
-( bash ./setup_yay.sh )
-( bash ./setup_nvim.sh )
-( bash ./setup_rust.sh )
-( bash ./setup_font.sh )
-( bash ./setup_docker.sh )
-( bash ./setup_i3.sh )
-( bash ./setup_zsh.sh )
+( bash ./setup_yay.sh && echo yay >> install.log )
+( bash ./setup_nvim.sh  && echo nvim >> install.log )
+( bash ./setup_rust.sh  && echo rust >> install.log )
+( bash ./setup_font.sh  && echo font >> install.log )
+( bash ./setup_docker.sh  && echo docker >> install.log )
+( bash ./setup_i3.sh  && echo i3 >> install.log )
+( bash ./setup_zsh.sh  && echo zsh >> install.log )
