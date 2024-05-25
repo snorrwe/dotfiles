@@ -43,7 +43,7 @@ function register_path {
 }
 
 register_path "$HOME/bin"
-register_path "/usr/local/go"
+register_path "/usr/local/go/bin"
 register_path "/home/linuxbrew/.linuxbrew/bin"
 register_path "/home/linuxbrew/.linuxbrew/sbin"
 register_path "$HOME/go/bin"
