@@ -203,7 +203,6 @@ exec com.slack.Slack
 assign [class="^TelegramDesktop$"] $ws4
 exec telegram-desktop
 assign [class="^discord$"] $ws4
-exec discord
 
 assign [class="^obsidian$"] $ws3
 exec obsidian
