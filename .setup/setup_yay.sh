@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -euxo pipefail
 
 if ! command -v yay &> /dev/null
 then
