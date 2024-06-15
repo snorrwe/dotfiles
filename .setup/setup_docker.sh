@@ -1,14 +1,26 @@
 #!/usr/bin/bash
 
-set -ex
+set -euxo pipefail
 
-sudo pacman -Sq --noconfirm docker
+sudo pacman -S --noconfirm docker docker-buildx docker-compose
 
-(
-sudo groupadd docker
-sudo usermod -aG docker $USER
-) || echo "Failed groupadd"
+sudo systemctl stop docker
 
-sudo systemctl start docker
+home_data_dir=${HOME}/docker-data
+
+if [ -d /var/lib/docker ]; then
+    sudo mv /var/lib/docker "$home_data_dir"
+else
+    mkdir -p "$home_data_dir"
+fi
+sudo ln -s "$home_data_dir" /var/lib/docker 
+
+if [ ! "$(getent group docker)" ]; then
+    sudo groupadd docker
+fi
+
+sudo usermod -aG docker "$USER"
+
 sudo systemctl enable docker
+sudo systemctl start docker
 sudo chmod 666 /var/run/docker.sock
