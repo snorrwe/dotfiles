@@ -15,6 +15,11 @@ then
     makepkg -si
 fi
 
+if [[ -f  /usr/share/terminfo/w/wezterm ]]; then
+    # if you're reinstalling then this file will exist and wezterm install will fail
+    sudo rm /usr/share/terminfo/w/wezterm
+fi
+
 yay -Sq --noconfirm \
         nerd-fonts \
         extra/obsidian \
@@ -29,5 +34,6 @@ yay -Sq --noconfirm \
         btop \
         dust \
         flatpak \
-        xdg-desktop-portal-gtk
+        xdg-desktop-portal-gtk \
+        ttf-nerd-fonts-symbols-mono
 
