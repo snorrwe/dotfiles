@@ -23,8 +23,6 @@ fi
 yay -Sq --noconfirm \
         nerd-fonts \
         extra/obsidian \
-        aur/slack-desktop \
-        extra/discord \
         extra/thunderbird \
         extra/telegram-desktop \
         aur/spotify \

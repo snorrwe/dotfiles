@@ -58,4 +58,5 @@ fi
 ( bash ./setup_font.sh  && echo font >> install.log )
 ( bash ./setup_docker.sh  && echo docker >> install.log )
 ( bash ./setup_i3.sh  && echo i3 >> install.log )
+( bash ./setup_flatpak.sh && echo flatpak >> install.log )
 ( bash ./setup_zsh.sh  && echo zsh >> install.log )
