@@ -33,5 +33,6 @@ yay -Sq --noconfirm \
         dust \
         flatpak \
         xdg-desktop-portal-gtk \
-        ttf-nerd-fonts-symbols-mono
+        ttf-nerd-fonts-symbols-mono \
+        jq
 
