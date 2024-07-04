@@ -13,7 +13,6 @@ flatpak install --noninteractive us.zoom.Zoom com.slack.Slack \
     chrome \
     org.videolan.VLC \
     io.github.martinrotter.rssguard \
-    brave \
     com.google.Chrome \
     blender \
     meshlab \
