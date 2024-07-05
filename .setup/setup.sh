@@ -35,8 +35,7 @@ function install_packages {
         stow \
         clang \
         mold \
-        git-lfs \
-        nnn
+        git-lfs
 }
 
 echo "start" > install.log

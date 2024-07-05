@@ -34,5 +34,6 @@ yay -Sq --noconfirm \
         flatpak \
         xdg-desktop-portal-gtk \
         ttf-nerd-fonts-symbols-mono \
-        jq
+        jq \
+        yazi
 
