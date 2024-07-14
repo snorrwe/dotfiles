@@ -112,6 +112,11 @@
       sccache
       lazygit
       ninja
+      starship
+      flatpak
+      pipx
+      bat
+      topgrade
     ];
     shell = pkgs.zsh;
   };
@@ -129,7 +134,7 @@
 	  enableCompletion=true;
 	  syntaxHighlighting.enable = true;
 	  shellAliases = {
-	  la = "ls -al";
+          la = "ls -al";
 	  };
   };
 
