@@ -2,4 +2,4 @@
 
 set -ex
 
-pip3 install visidata poetry
+pipx install visidata poetry
