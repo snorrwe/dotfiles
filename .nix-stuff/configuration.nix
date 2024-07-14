@@ -101,26 +101,31 @@
       pipx
       bat
       topgrade
+      btop
+      waybar
+      cmake
+      gzip
+      diffutils
+      github-cli
+      direnv
+      git-lfs
+      socat
+      jq
+      topgrade
     ];
     shell = pkgs.zsh;
   };
+
+  services.flatpak.enable = true;
 
   fonts.packages = with pkgs; [
 	  monaspace
 	  cascadia-code
   ];
 
-  # Install firefox.
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
-  programs.zsh = {
-	  enable = true;
-	  enableCompletion=true;
-	  syntaxHighlighting.enable = true;
-	  shellAliases = {
-          la = "ls -al";
-	  };
-  };
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
