@@ -8,24 +8,6 @@ HISTCONTROL=ignoreboth
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
-esac
-
-color_prompt=yes
-if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
 # enable color support of ls
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -71,12 +53,12 @@ eval "$(fzf --zsh)"
 
 znap eval direnv "direnv hook zsh"
 znap eval starship "starship init zsh"
+znap eval atuin "atuin init zsh"
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
 znap source arzzen/calc.plugin.zsh
-eval "$(atuin init zsh)"
 
 function config() {
     (
@@ -108,7 +90,7 @@ aliases
 unset aliases
 
 function completions() {
-    znap fpath _kubectl 'kubectl completion  zsh'
+    # znap fpath _kubectl 'kubectl completion  zsh'
     znap fpath _rustup  'rustup  completions zsh'
     znap fpath _cargo   'rustup  completions zsh cargo'
     znap fpath _just   'just --completions zsh'
