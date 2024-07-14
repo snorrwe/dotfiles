@@ -141,7 +141,14 @@
 	fzf
 	yazi
 	python3
+    xdg-desktop-portal
   ];
+
+  #Flakes
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = "experimental-features = nix-command flakes";
+ };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
