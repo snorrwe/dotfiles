@@ -2,9 +2,6 @@
 
 set -ex
 
-# setup fuse
-yay -Syu --noconfirm fuse2 neovim-git
-
 # clone nvim config
 if [ -d "$HOME"/.config/nvim ];
 then
