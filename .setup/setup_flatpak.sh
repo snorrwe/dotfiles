@@ -2,8 +2,6 @@
 
 set -euxo pipefail
 
-sudo pacman -S --noconfirm extra/flatpak extra/flatpak-xdg-utils
-
 flatpak install --noninteractive us.zoom.Zoom com.slack.Slack \
     com.jgraph.drawio.desktop \
     org.cloudcompare.CloudCompare \
@@ -17,5 +15,6 @@ flatpak install --noninteractive us.zoom.Zoom com.slack.Slack \
     blender \
     meshlab \
     geeqie \
+    md.obsidian.Obsidian \
     krita 
 
