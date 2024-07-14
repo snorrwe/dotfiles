@@ -13,8 +13,6 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-. "$HOME/.cargo/env"
-
 function register_path {
     case ":${PATH}:" in
         *:"$1":*)
@@ -25,10 +23,7 @@ function register_path {
 }
 
 register_path "$HOME/bin"
-register_path "/usr/local/go/bin"
-register_path "$HOME/go/bin"
 register_path "$HOME/.local/bin"
-register_path "$HOME/.fly/bin"
 
 eval "$(zoxide init zsh)"
 
