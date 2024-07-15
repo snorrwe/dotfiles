@@ -142,6 +142,8 @@
 	fzf
 	yazi
 	python3
+    xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
     xdg-desktop-portal
   ];
 
