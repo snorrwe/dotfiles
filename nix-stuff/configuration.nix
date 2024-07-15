@@ -73,7 +73,7 @@
       thunderbird
       hyprland
       wezterm
-      kitty
+      alacritty
       wofi
       tmux
       zsh
