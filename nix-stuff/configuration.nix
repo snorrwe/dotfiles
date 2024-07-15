@@ -47,6 +47,7 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  services.gnome.gnome-settings-daemon.enable=true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -119,10 +120,13 @@
 
   services.flatpak.enable = true;
 
-  fonts.packages = with pkgs; [
-	  monaspace
-	  cascadia-code
-  ];
+  fonts = {
+      fontDir.enable = true;
+      packages = with pkgs; [
+          monaspace
+          cascadia-code
+      ];
+  };
 
   programs.firefox.enable = true;
   programs.hyprland.enable = true;
@@ -142,10 +146,17 @@
 	fzf
 	yazi
 	python3
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-gtk
     xdg-desktop-portal
   ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-kde
+      xdg-desktop-portal-gtk
+    ];
+  };
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   #Flakes
   nix = {
