@@ -140,6 +140,11 @@
       socat
       jq
       topgrade
+      obsidian
+      slack
+      telegram-desktop
+      discord
+      spotify
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
