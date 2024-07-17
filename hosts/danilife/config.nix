@@ -175,6 +175,7 @@
     yazi
     python3
     xdg-desktop-portal
+    networkmanagerapplet
   ];
   xdg.portal = {
     enable = true;
