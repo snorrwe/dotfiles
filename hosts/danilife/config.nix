@@ -120,7 +120,7 @@
       rustup
       just
       watchexec
-      flameshot
+      grimblast
       sccache
       lazygit
       ninja
