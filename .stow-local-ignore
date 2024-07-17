@@ -23,3 +23,4 @@ _darcs
 
 .setup
 nix-stuff
+apply.sh

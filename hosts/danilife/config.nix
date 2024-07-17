@@ -146,6 +146,7 @@
       discord
       spotify
       zoom-us
+      blueberry
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
