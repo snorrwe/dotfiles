@@ -1,18 +1,47 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
+{ config
+, pkgs
+, host
+, username
+, options
+, ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware.nix
+  ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Kernel
+    kernelPackages = pkgs.linuxPackages_zen;
+    # This is for OBS Virtual Cam Support
+    kernelModules = [ "v4l2loopback" ];
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+    # Needed For Some Steam Games
+    kernel.sysctl = {
+      "vm.max_map_count" = 2147483642;
+    };
+    # Bootloader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    # Make /tmp a tmpfs
+    tmp = {
+      useTmpfs = false;
+      tmpfsSize = "30%";
+    };
+    # Appimage Support
+    binfmt.registrations.appimage = {
+      wrapInterpreterInShell = false;
+      interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+      recognitionType = "magic";
+      offset = 0;
+      mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+      magicOrExtension = ''\x7fELF....AI\x02'';
+    };
+    plymouth.enable = true;
+  };
+
 
   networking.hostName = "danilife"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -46,7 +75,7 @@
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.gnome.gnome-settings-daemon.enable=true;
+  services.gnome.gnome-settings-daemon.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -59,7 +88,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.snorrwe = {
@@ -113,16 +142,18 @@
       topgrade
     ];
     shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
+
   };
 
   services.flatpak.enable = true;
 
   fonts = {
-      fontDir.enable = true;
-      packages = with pkgs; [
-          monaspace
-          cascadia-code
-      ];
+    fontDir.enable = true;
+    packages = with pkgs; [
+      monaspace
+      cascadia-code
+    ];
   };
 
   programs.firefox.enable = true;
@@ -135,14 +166,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	neovim
-	git
-	stow
-	parallel
-	curl
-	fzf
-	yazi
-	python3
+    neovim
+    git
+    stow
+    parallel
+    curl
+    fzf
+    yazi
+    python3
     xdg-desktop-portal
   ];
   xdg.portal = {
@@ -159,7 +190,7 @@
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
- };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -187,5 +218,5 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }
+
