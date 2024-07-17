@@ -21,7 +21,6 @@ with lib;
         position = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
-          "custom/startmenu"
           "hyprland/window"
           "pulseaudio"
           "cpu"
@@ -240,7 +239,7 @@ with lib;
         }
         #clock {
           font-weight: bold;
-          color: #0D0E15;
+          color: white;
           margin: 0px;
           padding: 0px 15px 0px 30px;
           border-radius: 0px 0px 0px 40px;
