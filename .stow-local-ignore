@@ -24,3 +24,7 @@ _darcs
 .setup
 nix-stuff
 apply.sh
+hosts
+config
+flake.lock
+flake.nix
