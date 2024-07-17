@@ -72,7 +72,7 @@ with lib;
           tooltip = true;
         };
         "disk" = {
-          format = " free: {free}";
+          format = " {free}";
           tooltip = true;
         };
         "network" = {
@@ -231,7 +231,7 @@ with lib;
           padding: 0px 30px 0px 15px;
           border-radius: 0px 0px 40px 0px;
         }
-        #custom-hyprbindings, #network, #battery,
+        #custom-hyprbindings, #network, #battery, #disk
         #custom-notification, #tray, #custom-exit {
           font-weight: bold;
           margin: 4px 0px;
