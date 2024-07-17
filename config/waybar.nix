@@ -27,7 +27,6 @@ with lib;
           "cpu"
           "memory"
           "idle_inhibitor"
-          "network"
         ];
         modules-right = [
           "custom/hyprbindings"
@@ -231,7 +230,7 @@ with lib;
           padding: 0px 30px 0px 15px;
           border-radius: 0px 0px 40px 0px;
         }
-        #custom-hyprbindings, #network, #battery, #disk
+        #custom-hyprbindings, #network, #battery, #disk,
         #custom-notification, #tray, #custom-exit {
           font-weight: bold;
           margin: 4px 0px;
