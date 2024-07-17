@@ -69,6 +69,14 @@
     xkbVariant = "";
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    package = pkgs.bluez5-experimental;
+    settings.Policy.AutoEnable = "true";
+    settings.General.Enable = "Source,Sink,Media,Socket";
+  };
+  services.blueman.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -146,7 +154,9 @@
       discord
       spotify
       zoom-us
-      blueberry
+      bluez5-experimental
+      bluez-tools
+      bluez-alsa
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
