@@ -145,6 +145,7 @@
       telegram-desktop
       discord
       spotify
+      zoom-us
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
