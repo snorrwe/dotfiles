@@ -59,6 +59,7 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.snorrwe = {
