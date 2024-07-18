@@ -26,15 +26,9 @@ function register_path {
 
 register_path "$HOME/bin"
 register_path "/usr/local/go/bin"
-register_path "/home/linuxbrew/.linuxbrew/bin"
-register_path "/home/linuxbrew/.linuxbrew/sbin"
 register_path "$HOME/go/bin"
 register_path "$HOME/.local/bin"
-register_path "$HOME/.rvm/bin"
 register_path "$HOME/.fly/bin"
-
-export DENO_INSTALL="$HOME/.deno"
-register_path "$DENO_INSTALL/bin" 
 
 eval "$(zoxide init zsh)"
 
@@ -43,11 +37,6 @@ export EDITOR="$VISUAL"
 
 [ -f $HOME/.cargo/bin/sccache ] && export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 znap eval fzf "fzf --zsh"
 znap eval direnv "direnv hook zsh"
