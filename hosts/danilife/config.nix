@@ -198,6 +198,7 @@
     python3
     xdg-desktop-portal
     networkmanagerapplet
+    gnome-keyring
   ];
   xdg.portal = {
     enable = true;
