@@ -157,6 +157,7 @@
       bluez5-experimental
       bluez-tools
       bluez-alsa
+      nodejs_22
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
