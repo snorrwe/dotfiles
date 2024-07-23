@@ -108,7 +108,6 @@
       thunderbird
       hyprland
       wezterm
-      alacritty
       wofi
       tmux
       zsh
