@@ -9,7 +9,7 @@ end
 config.color_scheme = 'Catppuccin Mocha'
 
 config.font = wezterm.font('Monaspace Neon')
-config.font_size = 15
+config.font_size = 13
 
 config.enable_wayland = false;
 
