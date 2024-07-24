@@ -9,6 +9,7 @@
 {
   imports = [
     ./hardware.nix
+    ./sound.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -81,28 +82,6 @@
   services.blueman.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.gnome.gnome-settings-daemon.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-    pulse.enable = true;
-
-  };
-  services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
-    "monitor.bluez.properties" = {
-      "bluez5.enable-sbc-xq" = true;
-      "bluez5.enable-msbc" = true;
-      "bluez5.enable-hw-volume" = true;
-      "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
-    };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.snorrwe = {
