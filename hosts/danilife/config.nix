@@ -132,6 +132,7 @@
       zoxide
       wl-clipboard
       rustup
+      go
       just
       watchexec
       grimblast
