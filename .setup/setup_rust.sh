@@ -2,7 +2,6 @@
 
 set -ex
 
-
 rustup component add rust-analyzer
 
 # install rust fluff
