@@ -86,7 +86,7 @@
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       pavucontrol
       kdePackages.kate
@@ -138,10 +138,17 @@
       zoom-us
       nodejs_22
       bitwarden
+      lazydocker
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
+  };
+  virtualisation.docker = {
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
 
   services.flatpak.enable = true;
