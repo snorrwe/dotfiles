@@ -203,7 +203,7 @@ exec firefox
 
 workspace $ws4 output primary
 assign [class="^Slack$"] $ws4
-exec com.slack.Slack
+exec slack
 assign [class="^TelegramDesktop$"] $ws4
 exec telegram-desktop
 assign [class="^discord$"] $ws4
