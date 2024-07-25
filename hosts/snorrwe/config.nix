@@ -65,10 +65,12 @@
   services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
     enable = true;
+    videoDrivers = [ "nvidia" ];
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
