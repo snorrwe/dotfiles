@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Basic script to kill all old bars and launch new.
 
 # Terminate already running bad instances
