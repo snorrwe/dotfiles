@@ -108,7 +108,6 @@
       ripgrep
       zoxide
       wl-clipboard
-      rustup
       go
       just
       watchexec
