@@ -3,8 +3,9 @@
 set -euo pipefail
 
 # FIXME: username
-hostname=danilife
+hostname=snorrwe
 
+mkdir -p "./hosts/${hostname}"
 sudo nixos-generate-config --show-hardware-config > "./hosts/${hostname}/hardware.nix"
-sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake ".#${hostname}"
 stow --adopt .

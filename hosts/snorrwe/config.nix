@@ -46,7 +46,7 @@
   };
 
 
-  networking.hostName = "danilife"; # Define your hostname.
+  networking.hostName = "snorrwe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -62,24 +62,23 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
+    enable =true;
+    windowManager.i3 = {
+    enable = true;
+    extraPackages = with pkgs; [
+    dmenu
+    rofi
+    polybar
+    ];
+    };
   };
 
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    package = pkgs.bluez5-experimental;
-    settings.Policy.AutoEnable = "true";
-    settings.General.Enable = "Source,Sink,Media,Socket";
-  };
-  services.blueman.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -92,7 +91,6 @@
       pavucontrol
       kdePackages.kate
       thunderbird
-      hyprland
       wezterm
       wofi
       tmux
@@ -124,7 +122,6 @@
       bat
       topgrade
       btop
-      waybar
       cmake
       gzip
       diffutils
@@ -140,9 +137,6 @@
       discord
       spotify
       zoom-us
-      bluez5-experimental
-      bluez-tools
-      bluez-alsa
       nodejs_22
     ];
     shell = pkgs.zsh;
@@ -161,7 +155,6 @@
   };
 
   programs.firefox.enable = true;
-  programs.hyprland.enable = true;
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -190,7 +183,6 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
       xdg-desktop-portal-kde
       xdg-desktop-portal-gtk
     ];
@@ -214,7 +206,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
