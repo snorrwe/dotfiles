@@ -68,14 +68,14 @@
   services.xserver = {
     xkb.layout = "us";
     xkb.variant = "";
-    enable =true;
-    windowManager.i3 = {
     enable = true;
-    extraPackages = with pkgs; [
-    dmenu
-    rofi
-    polybar
-    ];
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        rofi
+        polybar
+      ];
     };
   };
 
@@ -138,6 +138,7 @@
       spotify
       zoom-us
       nodejs_22
+      bitwarden
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
