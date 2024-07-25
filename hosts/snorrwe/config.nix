@@ -141,6 +141,7 @@
       nodejs_22
       bitwarden
       lazydocker
+      rustup
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
