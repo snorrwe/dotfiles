@@ -154,6 +154,16 @@
     ignoreShellProgramCheck = true;
 
   };
+  virtualisation.docker = {
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
 
   services.flatpak.enable = true;
 
