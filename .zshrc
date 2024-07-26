@@ -25,7 +25,6 @@ function register_path {
 register_path "$HOME/bin"
 register_path "$HOME/.local/bin"
 
-eval "$(zoxide init zsh)"
 
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
@@ -33,10 +32,21 @@ export EDITOR="$VISUAL"
 [ -f $HOME/.cargo/bin/sccache ] && export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
 export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
 
-znap eval fzf "fzf --zsh"
-znap eval direnv "direnv hook zsh"
-znap eval starship "starship init zsh"
-znap eval atuin "atuin init zsh"
+if type fzf > /dev/null ; then
+    znap eval fzf "fzf --zsh"
+fi
+if type direnv > /dev/null; then
+    znap eval direnv "direnv hook zsh"
+fi
+if type starship > /dev/null ; then
+    znap eval starship "starship init zsh"
+fi
+if type atuin > /dev/null ; then
+    znap eval atuin "atuin init zsh"
+fi
+if type zoxide > /dev/null ; then
+    znap eval zoxide "zoxide init zsh"
+fi
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
