@@ -139,7 +139,6 @@
       telegram-desktop
       discord
       spotify
-      zoom-us
       bluez5-experimental
       bluez-tools
       bluez-alsa
