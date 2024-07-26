@@ -128,6 +128,7 @@
       rustup
       pkg-config
       sccache
+      distrobox
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
