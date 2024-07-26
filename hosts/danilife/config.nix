@@ -148,6 +148,7 @@
       lazydocker
       pkg-config
       distrobox
+      visidata
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
