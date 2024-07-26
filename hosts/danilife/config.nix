@@ -143,6 +143,7 @@
       bluez-tools
       bluez-alsa
       nodejs_22
+      visidata
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
