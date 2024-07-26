@@ -1,15 +1,10 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -ex
 
-
-# install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
-
-. "$HOME/.cargo/env"
-
+rustup default stable
 rustup component add rust-analyzer
 
 # install rust fluff
 cargo install -f cargo-binstall
-cargo binstall -y ripgrep zoxide fd-find bat cargo-nextest cargo-watch just topgrade starship atuin
+cargo binstall -y cargo-nextest cargo-watch cargo-clean-recursive
