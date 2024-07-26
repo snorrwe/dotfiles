@@ -144,6 +144,7 @@
       bluez-alsa
       nodejs_22
       visidata
+      bitwarden
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
