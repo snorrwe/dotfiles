@@ -129,6 +129,7 @@
       pkg-config
       sccache
       distrobox
+      visidata
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
