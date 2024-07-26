@@ -145,6 +145,9 @@
       nodejs_22
       visidata
       bitwarden
+      lazydocker
+      pkg-config
+      distrobox
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
