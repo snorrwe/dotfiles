@@ -53,23 +53,17 @@ znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
 znap source arzzen/calc.plugin.zsh
 
-function config() {
-    (
-    cd "$HOME/dotfiles/";
-    /usr/bin/git $@
-    )
-}
-
 function aliases {
     alias lg=lazygit
-    alias cs='config status'
     alias jt='just test'
     alias ll='ls -alF'
     alias la='ls -Al'
     alias l='ls -CF'
     alias icat='wezterm imgcat'
     alias cdtmp='cd $(mktemp -d)'
+    alias cdtemp='cdtmp'
     alias pushtmp='pushd $(mktemp -d)'
+    alias pushtemp='pushtmp'
     # enable color support of ls and also add handy aliases
     if [ -x /usr/bin/dircolors ]; then
         alias ls='ls --color=auto'
