@@ -150,6 +150,8 @@
       bitwarden
       lazydocker
       rustup
+      pkg-config
+      sccache
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
