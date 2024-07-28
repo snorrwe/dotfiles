@@ -3,7 +3,7 @@
 assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-#disable = ["system", "emacs"]
+disable = ["system"]
 
 # Ignore failures for these steps
 #ignore_failures = ["powershell"]
@@ -68,7 +68,8 @@ pull_predefined = false
 
 # Custom commands
 [commands]
-#"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
+"System flake" = "cd ~/.dotfiles && nix flake update && ./apply.sh"
+
 
 [brew]
 #greedy_cask = true
