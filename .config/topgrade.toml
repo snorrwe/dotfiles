@@ -68,8 +68,6 @@ pull_predefined = false
 
 # Custom commands
 [commands]
-#"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
-
 "System flake" = "cd ~/.dotfiles && nix flake update && ./apply.sh"
 
 [brew]
