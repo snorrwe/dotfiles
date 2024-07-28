@@ -149,6 +149,7 @@
       pkg-config
       distrobox
       visidata
+      geeqie
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
