@@ -102,7 +102,6 @@
       lazygit
       ninja
       starship
-      flatpak
       pipx
       bat
       topgrade
