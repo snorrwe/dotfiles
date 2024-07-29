@@ -3,6 +3,6 @@
 
 ```sh
 git clone https://github.com/snorrwe/dotfiles $HOME/.dotfiles
-cd $HOME/.dotfiles/.setup
-./setup.sh
+cd $HOME/.dotfiles
+./install.sh
 ```
