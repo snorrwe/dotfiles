@@ -16,14 +16,16 @@
 ;
 ;==========================================================
 
+[global/wm]
+include-file = $HOME/.config/polybar/mocha.ini
 [colors]
-background = #282A2E
-background-alt = #373B41
-foreground = #C5C8C6
-primary = #F0C674
-secondary = #8ABEB7
-alert = #A54242
-disabled = #707880
+background = ${colors.base}
+background-alt = ${colors.mantle}
+foreground = ${colors.teal}
+primary = ${colors.peach}
+secondary = ${colors.mantle}
+alert = ${colors.yellow}
+disabled = ${colors.red}
 
 [bar/main_bar]
 monitor=${env:MONITOR:}
@@ -39,7 +41,7 @@ foreground = ${colors.foreground}
 line-size = 3pt
 
 border-size = 4pt
-border-color = #00000000
+border-color = ${colors.crust}
 
 padding-left = 0
 padding-right = 1
