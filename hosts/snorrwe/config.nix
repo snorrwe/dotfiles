@@ -130,6 +130,7 @@
       distrobox
       visidata
       geeqie
+      flameshot
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
