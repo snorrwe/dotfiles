@@ -37,6 +37,7 @@ if type fzf > /dev/null ; then
 fi
 if type direnv > /dev/null; then
     znap eval direnv "direnv hook zsh"
+    alias tmux='direnv exec / tmux'
 fi
 if type starship > /dev/null ; then
     znap eval starship "starship init zsh"
