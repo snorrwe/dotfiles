@@ -90,7 +90,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       pavucontrol
-      kdePackages.kate
+      xfce.thunar
       thunderbird
       hyprland
       wezterm
