@@ -1,6 +1,6 @@
 {
-  "IS_MAXIMIZED": true,
-  "IS_MINIMIZED": false,
+  "IS_MAXIMIZED": false,
+  "IS_MINIMIZED": true,
   "WINDOW_BOUNDS": {
     "x": 642,
     "y": 68,
