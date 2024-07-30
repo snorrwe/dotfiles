@@ -11,4 +11,24 @@
 
   imports = [
   ];
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
+  programs.topgrade = {
+    enable = true;
+    package = pkgs.topgrade;
+    settings = {
+      misc = {
+        assume_yes = true;
+        cleanup = true;
+        disable = [ "system" "git_repos" ];
+      };
+      commands =
+        {
+          "System flake" = "cd /home/${username}/.dotfiles && ./update.sh";
+          "Run nix GC" = "nix-collect-garbage -d";
+        };
+    };
+
+  };
 }
