@@ -69,6 +69,7 @@ pull_predefined = false
 # Custom commands
 [commands]
 "System flake" = "cd ~ && ./update.sh"
+"Run nix GC" = "nix-collect-garbage -d"
 
 
 [brew]
