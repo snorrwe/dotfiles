@@ -1,8 +1,4 @@
-{ config
-, pkgs
-, host
-, username
-, options
+{ pkgs
 , ...
 }:
 
