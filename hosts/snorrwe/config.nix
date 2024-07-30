@@ -75,7 +75,7 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
       pavucontrol
-      kdePackages.kate
+      xfce.thunar
       thunderbird
       wezterm
       wofi
