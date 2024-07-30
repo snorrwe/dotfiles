@@ -183,6 +183,7 @@
     networkmanagerapplet
     gnome-keyring
     xorg.xhost
+    sshfs
   ];
   xdg.portal = {
     enable = true;
