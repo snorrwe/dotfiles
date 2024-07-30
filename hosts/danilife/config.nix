@@ -122,7 +122,6 @@
       flatpak
       pipx
       bat
-      topgrade
       btop
       waybar
       cmake
@@ -133,7 +132,6 @@
       git-lfs
       socat
       jq
-      topgrade
       obsidian
       slack
       telegram-desktop
@@ -249,5 +247,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
+
 }
 
