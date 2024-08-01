@@ -22,6 +22,7 @@
         assume_yes = true;
         cleanup = true;
         disable = [ "system" "git_repos" ];
+        pre_sudo = true;
       };
       commands =
         {
