@@ -184,6 +184,7 @@
     gnome-keyring
     xorg.xhost
     sshfs
+    xclip
   ];
   xdg.portal = {
     enable = true;
