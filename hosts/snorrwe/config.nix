@@ -131,6 +131,8 @@
       geeqie
       flameshot
       glow
+      pamixer
+      pulseaudio
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
