@@ -88,4 +88,5 @@ function completions() {
 completions
 unset completions
 
+# enable vi keybindings
 bindkey -v
