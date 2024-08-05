@@ -36,5 +36,6 @@
     enable = true;
     package = pkgs.rofi;
     theme = "Arc-Dark";
+    font = "Monaspace Neon 12";
   };
 }
