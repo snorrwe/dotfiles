@@ -18,3 +18,4 @@ echo "start" > install.log
 ( bash ./setup_rust.sh  && echo rust >> install.log )
 ( bash ./setup_flatpak.sh && echo flatpak >> install.log )
 ( bash ./setup_zsh.sh  && echo zsh >> install.log )
+echo done >> install.log
