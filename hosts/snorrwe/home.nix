@@ -27,7 +27,6 @@
       commands =
         {
           "System flake" = "cd /home/${username}/.dotfiles && ./update.sh";
-          "Run nix GC" = "nix-collect-garbage -d";
         };
     };
 
