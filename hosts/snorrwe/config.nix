@@ -135,6 +135,7 @@
       glow
       pamixer
       pulseaudio
+      units
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
