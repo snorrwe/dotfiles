@@ -12,6 +12,7 @@
     ./sound.nix
     ./video.nix
     ./udev.nix
+    ./commit-message.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

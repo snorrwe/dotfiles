@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+COMMIT_MSG_FILE="$(git rev-parse --show-toplevel)/hosts/${USER}/commit-message.nix"
+
+mkdir -p $(dirname "$COMMIT_MSG_FILE")
+
+process_commit_msg() {
+    local commit_msg="$1"
+    local first_line=$(echo "$commit_msg" | head -n 1)
+    local message=$(echo "$first_line" | sed -E 's/^\s+//g' | sed -E 's/\s+$//g' | sed 's/ /_/g' | sed -E 's/[^a-zA-Z0-9:_\.-]//g')
+
+    if [ ${#message} -gt 50 ]; then
+        message="${message:0:50}"
+    else
+        message="${message}$(printf '%*s' $((50-${#message})) | tr ' ' '_')"
+    fi
+
+    echo "$message"
+}
+
+# Get the latest commit message
+commit_msg=$(git log -1 --pretty=%B)
+
+# Process the commit message
+processed_msg=$(process_commit_msg "$commit_msg")
+
+commit_msg_file="$COMMIT_MSG_FILE"
+
+# Write the message to the target file
+printf "{\n  system.nixos.label = \"%s\";\n}" "$processed_msg" > "$commit_msg_file"
+
+# Check if there are changes to commit
+if [[ -n $(git status -s "$commit_msg_file") ]]; then
+    # Stage the changes to the target file
+    git add "$commit_msg_file"
+fi
+
+# Amend the current commit to include all changes
+if [[ -n $(git status -s) ]]; then
+    git commit --amend --no-edit
+fi
+
+exit 0
+

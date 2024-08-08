@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-set -e
-
-pushd .setup
-trap popd EXIT
+(
+cd .setup
 bash setup.sh
+)
+rm -rf .git/hooks
+ln -s $(pwd)/.githooks ./.git/hooks
