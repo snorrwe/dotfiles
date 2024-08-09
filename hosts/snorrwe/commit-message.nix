@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_units_package_________________________________";
+  system.nixos.label = "Remove_flameshot__________________________________";
 }

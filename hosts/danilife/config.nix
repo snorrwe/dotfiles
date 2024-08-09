@@ -151,7 +151,6 @@
       distrobox
       visidata
       geeqie
-      flameshot
       glow
       units
     ];
