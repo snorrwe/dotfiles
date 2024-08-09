@@ -153,6 +153,7 @@
       geeqie
       flameshot
       glow
+      units
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

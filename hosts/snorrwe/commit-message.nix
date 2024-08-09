@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_hyprland_keybinds__________________________";
+  system.nixos.label = "Add_units_package_________________________________";
 }
