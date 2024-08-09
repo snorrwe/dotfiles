@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-08-09__________________________";
+  system.nixos.label = "Update_hyprland_keybinds__________________________";
 }
