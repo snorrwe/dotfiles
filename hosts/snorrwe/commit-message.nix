@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_flameshot__________________________________";
+  system.nixos.label = "Remove_redundant_packages_________________________";
 }

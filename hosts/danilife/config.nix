@@ -95,11 +95,9 @@
       pavucontrol
       xfce.thunar
       thunderbird
-      hyprland
       wezterm
       wofi
       tmux
-      zsh
       stow
       parallel
       unzip
