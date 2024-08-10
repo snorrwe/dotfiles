@@ -3,6 +3,7 @@
 , host
 , username
 , options
+, inputs
 , ...
 }:
 
@@ -13,8 +14,10 @@
     ./commit-message.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
   nix.gc.automatic = true;
 
   # Bootloader.
@@ -178,7 +181,6 @@
   };
 
   programs.firefox.enable = true;
-  programs.hyprland.enable = true;
   programs.zsh.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_packages_________________________";
+  system.nixos.label = "Hyprland_home-manager_config______________________";
 }
