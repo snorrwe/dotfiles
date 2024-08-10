@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_flatpaks_from_install_script________";
+  system.nixos.label = "Add_zoom_script_that_enables_screenshare__________";
 }
