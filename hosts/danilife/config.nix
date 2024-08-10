@@ -18,7 +18,10 @@
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
   };
-  nix.gc.automatic = true;
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "10m";
+  };
 
   # Bootloader.
   boot = {

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-08-11__________________________";
+  system.nixos.label = "Add_a_delay_to_nix-gc_____________________________";
 }
