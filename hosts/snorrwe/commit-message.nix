@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Hyprland_home-manager_config______________________";
+  system.nixos.label = "Fix_hyprland_on_login_____________________________";
 }
