@@ -15,9 +15,14 @@
     ./commit-message.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.settings.auto-optimise-store = true;
-  nix.gc.automatic = true;
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "10m";
+  };
 
   # Bootloader.
   boot = {
