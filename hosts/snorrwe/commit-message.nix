@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Override_zoom_flatpak_xdg_session_type____________";
+  system.nixos.label = "System_update_2024-08-11__________________________";
 }
