@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_zoom_script_that_enables_screenshare__________";
+  system.nixos.label = "Override_zoom_flatpak_xdg_session_type____________";
 }

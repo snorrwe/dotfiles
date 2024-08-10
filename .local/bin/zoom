@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Zoom uses this variable to detect what DE you're running and denies screen sharing in hyprland
-# But seems to work perfectly fine if you unsed it
-unset XDG_SESSION_TYPE
-us.zoom.Zoom
