@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_secure_local_docker_registry________________";
+  system.nixos.label = "Add_home-1_to_insecure_registries_________________";
 }

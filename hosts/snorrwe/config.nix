@@ -153,7 +153,7 @@
       setSocketVariable = true;
       daemon.settings = {
         "insecure-registries" = [
-          "localhost:5000"
+          "192.168.0.87"
         ];
       };
     };
