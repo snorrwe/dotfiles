@@ -152,8 +152,8 @@
       enable = true;
       setSocketVariable = true;
       daemon.settings = {
-        "insecure-registries" = [
-          "192.168.0.87"
+        insecure-registries = [
+          "192.168.0.87:5000"
         ];
       };
     };
