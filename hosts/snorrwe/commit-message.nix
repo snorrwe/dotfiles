@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-08-11__________________________";
+  system.nixos.label = "Setup_secure_local_docker_registry________________";
 }

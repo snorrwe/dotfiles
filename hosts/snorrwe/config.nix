@@ -151,6 +151,11 @@
     rootless = {
       enable = true;
       setSocketVariable = true;
+      daemon.settings = {
+        "insecure-registries" = [
+          "localhost:5000"
+        ];
+      };
     };
   };
   virtualisation.podman = {
