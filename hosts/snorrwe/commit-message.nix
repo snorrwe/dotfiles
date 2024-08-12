@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_home-1_to_insecure_registries_________________";
+  system.nixos.label = "Remove_localhost_from_insecure_repos______________";
 }
