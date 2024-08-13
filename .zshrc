@@ -23,6 +23,7 @@ function register_path {
 }
 
 register_path "$HOME/bin"
+register_path "$HOME/.cargo/bin"
 register_path "$HOME/.local/bin"
 
 

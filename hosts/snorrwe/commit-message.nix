@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "use_port_5000_for_the_home_registry_______________";
+  system.nixos.label = "register_local_cargo_bin_path_____________________";
 }
