@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "register_local_cargo_bin_path_____________________";
+  system.nixos.label = "System_update_2024-08-14__________________________";
 }
