@@ -142,8 +142,7 @@
       pamixer
       pulseaudio
       units
-      # for cargo-update
-      openssl
+      cargo-update
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
