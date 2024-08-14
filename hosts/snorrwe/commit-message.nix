@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-08-14__________________________";
+  system.nixos.label = "Add_openssl_______________________________________";
 }
