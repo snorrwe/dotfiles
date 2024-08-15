@@ -54,6 +54,10 @@
     plymouth.enable = true;
   };
 
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
 
   networking.hostName = "danilife"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
