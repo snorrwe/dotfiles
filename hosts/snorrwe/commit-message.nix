@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reduce_systemd_timeout_from_90s_to_10s____________";
+  system.nixos.label = "Setup_home-0_docker_registry______________________";
 }
