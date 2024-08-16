@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_home-0_docker_registry______________________";
+  system.nixos.label = "Add_cloudflared___________________________________";
 }

@@ -161,6 +161,7 @@
       geeqie
       glow
       units
+      cloudflared
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
