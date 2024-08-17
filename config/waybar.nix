@@ -26,7 +26,6 @@ with lib;
           "memory"
         ];
         modules-right = [
-          "custom/hyprbindings"
           "custom/notification"
           "disk"
           "battery"
@@ -207,6 +206,7 @@ with lib;
 
         #clock,
         #battery,
+        #disk,
         #cpu,
         #memory,
         #backlight,
@@ -215,6 +215,7 @@ with lib;
         #custom-media,
         #tray,
         #custom-power,
+        #custom-exit,
         #bluetooth {
           padding: 5px 15px;
           color: #c4c4c4;
@@ -238,6 +239,12 @@ with lib;
           color: #ff0046;
           border-radius: 20px;
           transition: all 250ms ease-in-out;
+        }
+
+        #custom-exit
+        #disk {
+          border-radius: 20px;
+          margin: 0 5px;
         }
 
         #battery.charging {
