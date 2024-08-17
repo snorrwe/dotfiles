@@ -221,6 +221,7 @@
     gnome-keyring
     xorg.xhost
     sshfs
+    wlogout
   ];
   xdg.portal = {
     enable = true;

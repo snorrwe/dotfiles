@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_opengl_____________________________________";
+  system.nixos.label = "Add_wlogout_______________________________________";
 }
