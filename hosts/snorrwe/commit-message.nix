@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_yy_function___________________________________";
+  system.nixos.label = "Enable_opengl_____________________________________";
 }
