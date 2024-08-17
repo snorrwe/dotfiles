@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "nicer_muted_icon__________________________________";
+  system.nixos.label = "Larger_padding_for_disk_and_power_button__________";
 }

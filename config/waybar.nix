@@ -232,15 +232,10 @@ with lib;
           margin-right: 0;
         }
 
-        #custom-power {
-          color: #ff0046;
-          border-radius: 20px;
-          transition: all 250ms ease-in-out;
-        }
-
         #custom-exit,
         #disk {
           margin: 0 5px;
+          padding: 5px 15px;
           color: #c4c4c4;
           border-radius: 20px 0 0 20px;
           background-color: rgba(39, 42, 52, 0.6);
