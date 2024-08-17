@@ -1,5 +1,8 @@
 source $HOME/zsh-snap/znap.zsh
 
+# enable vi keybindings
+bindkey -v
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -88,5 +91,13 @@ function completions() {
 completions
 unset completions
 
-# enable vi keybindings
-bindkey -v
+if type yazi > /dev/null ; then
+    function yy() {
+        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+        yazi "$@" --cwd-file="$tmp"
+        trap "rm -f -- $tmp" EXIT
+        if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+            builtin cd -- "$cwd"
+        fi
+    }
+fi

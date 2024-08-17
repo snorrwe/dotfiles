@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_cloudflared___________________________________";
+  system.nixos.label = "Add_yy_function___________________________________";
 }
