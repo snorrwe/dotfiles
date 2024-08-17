@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_killall_package_______________________________";
+  system.nixos.label = "Fix_fzf_in_zsh____________________________________";
 }
