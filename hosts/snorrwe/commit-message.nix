@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_cargo-update_via_nix______________________";
+  system.nixos.label = "Add_killall_package_______________________________";
 }

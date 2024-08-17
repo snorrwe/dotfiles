@@ -143,6 +143,7 @@
       pulseaudio
       units
       cargo-update
+      killall
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
