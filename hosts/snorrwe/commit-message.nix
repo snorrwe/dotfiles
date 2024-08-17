@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_fzf_in_zsh____________________________________";
+  system.nixos.label = "Enable_sudo_module_in_starship____________________";
 }
