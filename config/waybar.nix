@@ -21,20 +21,18 @@ with lib;
         position = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-left = [
-          "hyprland/window"
           "pulseaudio"
           "cpu"
           "memory"
-          "idle_inhibitor"
         ];
         modules-right = [
           "custom/hyprbindings"
           "custom/notification"
-          "custom/exit"
           "disk"
           "battery"
           "tray"
           "clock"
+          "custom/exit"
         ];
 
         "hyprland/workspaces" = {
@@ -116,19 +114,6 @@ with lib;
           format = "";
           on-click = "sleep 0.1 && wlogout";
         };
-        "custom/hyprbindings" = {
-          tooltip = false;
-          format = "󱕴";
-          on-click = "sleep 0.1 && list-hypr-bindings";
-        };
-        "idle_inhibitor" = {
-          format = "{icon}";
-          format-icons = {
-            activated = "";
-            deactivated = "";
-          };
-          tooltip = "true";
-        };
         "custom/notification" = {
           tooltip = false;
           format = "{icon} {}";
@@ -150,6 +135,7 @@ with lib;
         };
         "battery" = {
           states = {
+            good = 95;
             warning = 30;
             critical = 15;
           };
@@ -176,74 +162,126 @@ with lib;
     style = concatStrings [
       ''
         * {
-          font-family: JetBrainsMono Nerd Font Mono;
-          font-size: 12px;
-          border-radius: 0px;
-          border: none;
-          min-height: 0px;
+          font-family: "Monaspace Neon";
+          font-size: 14px;
+          font-weight: 600;
         }
+
         window#waybar {
-          background: rgba(0,0,0,0);
+          background-color: rgba(39, 42, 52, 0.5);
+          color: #c4c4c4;
+          transition-property: background-color;
+          transition-duration: 0.5s;
         }
-        #workspaces {
-          margin: 4px 4px;
-          padding: 5px 5px;
-          border-radius: 16px;
+
+        button {
+          border: none;
+          border-radius: 0;
         }
+
+        button:hover {
+          background: inherit;
+        }
+
         #workspaces button {
-          font-weight: bold;
-          padding: 0px 5px;
-          margin: 0px 3px;
-          border-radius: 16px;
-          opacity: 0.5;
-          transition: ${betterTransition};
+          padding: 0 10px;
+          background-color: transparent;
+          color: #c4c4c4;
+          border-radius: 8px;
         }
-        #workspaces button.active {
-          font-weight: bold;
-          padding: 0px 5px;
-          margin: 0px 3px;
-          border-radius: 16px;
-          transition: ${betterTransition};
-          opacity: 1.0;
-          min-width: 40px;
-        }
+
         #workspaces button:hover {
-          font-weight: bold;
-          border-radius: 16px;
-          opacity: 0.8;
-          transition: ${betterTransition};
+          background-color: #74c7ec;
+          color: #1e1e2e;
         }
-        tooltip {
-          border-radius: 12px;
+
+        #workspaces button.active {
+          background-color: #74c7ec;
+          color: #1e1e2e;
         }
-        #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
-          font-weight: bold;
-          margin: 4px 0px;
-          margin-left: 7px;
-          padding: 0px 18px;
-          border-radius: 24px 10px 24px 10px;
+
+        #workspaces button.urgent {
+          background-color: #f38ba8;
         }
-        #custom-startmenu {
-          font-size: 28px;
-          margin: 0px;
-          padding: 0px 30px 0px 15px;
-          border-radius: 0px 0px 40px 0px;
+
+        #clock,
+        #battery,
+        #cpu,
+        #memory,
+        #backlight,
+        #network,
+        #pulseaudio,
+        #custom-media,
+        #tray,
+        #custom-power,
+        #bluetooth {
+          padding: 5px 15px;
+          color: #c4c4c4;
+          background-color: rgba(39, 42, 52, 0.6);
         }
-        #custom-hyprbindings, #network, #battery, #disk,
-        #custom-notification, #tray, #custom-exit {
-          font-weight: bold;
-          margin: 4px 0px;
-          margin-right: 7px;
-          border-radius: 10px 24px 10px 24px;
-          padding: 0px 18px;
+
+        #window,
+        #workspaces {
+          margin: 0 4px;
         }
+
+        .modules-left > widget:first-child > #workspaces {
+          margin-left: 0;
+        }
+
+        .modules-right > widget:last-child > #workspaces {
+          margin-right: 0;
+        }
+
+        #custom-power {
+          color: #ff0046;
+          border-radius: 20px;
+          transition: all 250ms ease-in-out;
+        }
+
+        #battery.charging {
+          color: #00ff1c;
+        }
+
         #clock {
-          font-weight: bold;
-          color: white;
-          margin: 0px;
-          padding: 0px 15px 0px 30px;
-          border-radius: 0px 0px 0px 40px;
+          border-radius: 20px;
+          margin: 0 5px;
         }
+
+        #battery {
+          border-radius: 0 20px 20px 0;
+        }
+
+        #pulseaudio {
+          border-radius: 20px 0 0 20px;
+        }
+
+        #pulseaudio.muted {
+          color: orange;
+        }
+
+        #network.disconnected {
+          color: red;
+        }
+
+        #tray {
+          border-radius: 20px;
+          margin: 0 5px;
+        }
+
+        #cpu {
+          border-radius: 20px 0 0 20px;
+        }
+
+        #memory {
+          border-radius: 0 20px 20px 0;
+        }
+
+        #bluetooth {
+          border-radius: 20px;
+          margin: 0 5px;
+        }
+
       ''
     ];
   };

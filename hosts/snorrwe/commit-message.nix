@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_wlogout_______________________________________";
+  system.nixos.label = "Update_waybar_config______________________________";
 }
