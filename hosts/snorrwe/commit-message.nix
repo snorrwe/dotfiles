@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Style_waybar______________________________________";
+  system.nixos.label = "nicer_muted_icon__________________________________";
 }
