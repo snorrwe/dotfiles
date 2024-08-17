@@ -14,3 +14,12 @@ disabled = false
 
 [sudo]
 disabled = false
+
+[direnv]
+disabled = false
+allowed_msg = "✓"
+format = "[$symbol$allowed$loaded]($style) "
+denied_msg = "x"
+loaded_msg = "󰡴"
+not_allowed_msg = "x"
+unloaded_msg = "󱦟"
