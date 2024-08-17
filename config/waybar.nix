@@ -197,6 +197,8 @@ with lib;
         #workspaces button.active {
           background-color: #89b4fa;
           color: #1e1e2e;
+          font-weight: bold;
+          min-width: 20px;
         }
 
         #workspaces button.urgent {
