@@ -202,6 +202,7 @@ with lib;
 
         #workspaces button.urgent {
           background-color: #f38ba8;
+          color: #1e1e2e;
         }
 
         #clock,
