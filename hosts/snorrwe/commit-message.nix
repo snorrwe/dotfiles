@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Battery_colors____________________________________";
+  system.nixos.label = "Add_killall_package_______________________________";
 }

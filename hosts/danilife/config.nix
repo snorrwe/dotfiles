@@ -155,6 +155,7 @@
       glow
       units
       cloudflared
+      killall
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
