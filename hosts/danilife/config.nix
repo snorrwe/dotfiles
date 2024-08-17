@@ -75,15 +75,8 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.wayland.enable = true;
   services.displayManager.sddm.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
 
   hardware.bluetooth = {
     enable = true;

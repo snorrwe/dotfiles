@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Style_waybar______________________________________";
+  system.nixos.label = "Remove_unused_settings____________________________";
 }
