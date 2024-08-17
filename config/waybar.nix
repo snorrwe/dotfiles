@@ -191,12 +191,12 @@ with lib;
         }
 
         #workspaces button:hover {
-          background-color: #74c7ec;
+          background-color: #89b4fa;
           color: #1e1e2e;
         }
 
         #workspaces button.active {
-          background-color: #74c7ec;
+          background-color: #89b4fa;
           color: #1e1e2e;
         }
 
