@@ -32,25 +32,7 @@ register_path "$HOME/.local/bin"
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
-[ -f $HOME/.cargo/bin/sccache ] && export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
-export PKG_CONFIG_PATH="/usr/lib/x86_64-linux-gnu/pkgconfig${PKG_CONFIG_PATH:+":${PKG_CONFIG_PATH}"}"
 
-if type fzf > /dev/null ; then
-    znap eval fzf "fzf --zsh"
-fi
-if type direnv > /dev/null; then
-    znap eval direnv "direnv hook zsh"
-    alias tmux='direnv exec / tmux'
-fi
-if type starship > /dev/null ; then
-    znap eval starship "starship init zsh"
-fi
-if type atuin > /dev/null ; then
-    znap eval atuin "atuin init zsh"
-fi
-if type zoxide > /dev/null ; then
-    znap eval zoxide "zoxide init zsh"
-fi
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
@@ -101,3 +83,23 @@ if type yazi > /dev/null ; then
         fi
     }
 fi
+
+if type fzf > /dev/null ; then
+    export FZF_DEFAULT_COMMAND="fd --type f -u"
+    export FZF_DEFAULT_OPTS="--height 60% --layout=reverse"
+    znap eval fzf "fzf --zsh"
+fi
+if type direnv > /dev/null; then
+    znap eval direnv "direnv hook zsh"
+    alias tmux='direnv exec / tmux'
+fi
+if type starship > /dev/null ; then
+    znap eval starship "starship init zsh"
+fi
+if type atuin > /dev/null ; then
+    znap eval atuin "atuin init zsh"
+fi
+if type zoxide > /dev/null ; then
+    znap eval zoxide "zoxide init zsh"
+fi
+[ -f $HOME/.cargo/bin/sccache ] && export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache

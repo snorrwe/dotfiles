@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_active_button_style________________________";
+  system.nixos.label = "Fix_fzf_in_zsh____________________________________";
 }
