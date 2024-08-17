@@ -245,6 +245,15 @@ with lib;
           color: #00ff1c;
         }
 
+        #battery.warning {
+          color: orange;
+        }
+
+        #battery.critical {
+          color: #ff0046;
+        }
+
+
         #clock {
           border-radius: 20px;
           margin: 0 5px;
