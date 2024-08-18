@@ -187,11 +187,13 @@ with lib;
           background-color: transparent;
           color: #c4c4c4;
           border-radius: 8px;
+          transition: ${betterTransition};
         }
 
         #workspaces button:hover {
           background-color: #89b4fa;
           color: #1e1e2e;
+          transition: ${betterTransition};
         }
 
         #workspaces button.active {
@@ -199,11 +201,13 @@ with lib;
           color: #1e1e2e;
           font-weight: bold;
           min-width: 20px;
+          transition: ${betterTransition};
         }
 
         #workspaces button.urgent {
           background-color: #f38ba8;
           color: #1e1e2e;
+          transition: ${betterTransition};
         }
 
         #clock,

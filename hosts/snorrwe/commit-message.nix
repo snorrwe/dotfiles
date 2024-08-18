@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_direnv_module_in_starshi___________________";
+  system.nixos.label = "Re-add_nicer_transition_for_workspaces____________";
 }
