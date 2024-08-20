@@ -203,6 +203,7 @@
     xorg.xhost
     sshfs
     xclip
+    linuxKernel.packages.linux_zen.perf
   ];
   xdg.portal = {
     enable = true;

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_direnv_module_in_starshi___________________";
+  system.nixos.label = "Add_perf__________________________________________";
 }
