@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_perf__________________________________________";
+  system.nixos.label = "Add_shotcut_______________________________________";
 }

@@ -144,6 +144,7 @@
       units
       cargo-update
       killall
+      shotcut
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
