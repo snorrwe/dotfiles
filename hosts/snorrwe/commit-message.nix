@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Re-add_nicer_transition_for_workspaces____________";
+  system.nixos.label = "Only_commit_the_flake.lock_on_update______________";
 }
