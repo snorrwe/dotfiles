@@ -56,7 +56,7 @@
   };
 
 
-  networking.hostName = "snorrwe"; # Define your hostname.
+  networking.hostName = "danipc";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

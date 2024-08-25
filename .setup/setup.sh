@@ -8,9 +8,10 @@ trap popd EXIT
 echo "start" > install.log
 
 (
-    set -e
+    set -eu
+    hostname=$1
     cd ..
-    ./apply
+    ./apply $hostname
     echo "apply nix flake" >> install.log
 )
 

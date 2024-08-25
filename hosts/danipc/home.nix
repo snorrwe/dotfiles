@@ -26,7 +26,7 @@
       };
       commands =
         {
-          "System flake" = "cd /home/${username}/.dotfiles && ./update.sh";
+          "System flake" = "cd /home/${username}/.dotfiles && ./update.sh ${host}";
         };
     };
 

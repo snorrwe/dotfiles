@@ -4,7 +4,6 @@ set -euo pipefail
 
 COMMIT_MSG_FILE="$(git rev-parse --show-toplevel)/hosts/${USER}/commit-message.nix"
 
-mkdir -p $(dirname "$COMMIT_MSG_FILE")
 
 process_commit_msg() {
     local commit_msg="$1"
@@ -26,16 +25,15 @@ commit_msg=$(git log -1 --pretty=%B)
 # Process the commit message
 processed_msg=$(process_commit_msg "$commit_msg")
 
-commit_msg_file="$COMMIT_MSG_FILE"
-
-# Write the message to the target file
-printf "{\n  system.nixos.label = \"%s\";\n}" "$processed_msg" > "$commit_msg_file"
-
-# Check if there are changes to commit
-if [[ -n $(git status -s "$commit_msg_file") ]]; then
-    # Stage the changes to the target file
-    git add "$commit_msg_file"
-fi
+for commit_msg_file in $(git rev-parse --show-toplevel)/hosts/*/commit-message.nix; do
+    # Write the message to the target file
+    printf "{\n  system.nixos.label = \"%s\";\n}" "$processed_msg" > "$commit_msg_file"
+    # Check if there are changes to commit
+    if [[ -n $(git status -s "$commit_msg_file") ]]; then
+        # Stage the changes to the target file
+        git add "$commit_msg_file"
+    fi
+done
 
 # Amend the current commit to include all changes
 if [[ -n $(git status -s) ]]; then
