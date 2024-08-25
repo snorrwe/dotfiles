@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Support_multiple_hosts____________________________";
+  system.nixos.label = "Configure_git_____________________________________";
 }

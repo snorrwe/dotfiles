@@ -183,6 +183,17 @@
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
+  programs.git = {
+    enable = true;
+    config = {
+      init = {
+        defaultBranch = "main";
+      };
+      pull = {
+        rebase = true;
+      };
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -191,7 +202,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
-    git
     stow
     parallel
     curl
