@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_direnv_to_use_nix-direnv________________";
+  system.nixos.label = "Disable_lid_and_powerkey__________________________";
 }

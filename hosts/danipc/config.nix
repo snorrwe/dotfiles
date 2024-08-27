@@ -266,21 +266,11 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    ports = [ 39420 ];
-  };
+  # my lifebook has trouble waking up after going to sleep so don't do that automatically
+  services.logind.lidSwitch = "ignore";
+  # certain elements in my life might press the button while I'm working :)
+  services.logind.powerKey = "ignore";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
