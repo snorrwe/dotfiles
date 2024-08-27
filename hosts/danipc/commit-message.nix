@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_git_____________________________________";
+  system.nixos.label = "Allow_olm_3.2.16__________________________________";
 }
