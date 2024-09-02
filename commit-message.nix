@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_wezterm_frontend______________________________";
+  system.nixos.label = "Fix_update_command________________________________";
 }
