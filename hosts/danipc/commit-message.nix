@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Allow_olm_3.2.16__________________________________";
+  system.nixos.label = "Fix_polybar_on_single_monitor_____________________";
 }

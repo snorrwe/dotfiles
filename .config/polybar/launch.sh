@@ -10,7 +10,11 @@ OTHERS=$(polybar --list-monitors | grep -v "primary" | cut -d":" -f1)
 MONITOR=$PRIMARY TRAY=right polybar --reload main_bar &
 sleep 1
 
-# Launch the bar on all monitors
-for m in $OTHERS; do
-    MONITOR=$m polybar --reload main_bar &
-done
+# only spawn for 'others' if we have a primary window
+# otherwise we get double bars
+if [ ${#PRIMARY[@]} -ne 0 ]; then
+    # Launch the bar on all monitors
+    for m in $OTHERS; do
+        MONITOR=$m polybar --reload main_bar &
+    done
+fi
