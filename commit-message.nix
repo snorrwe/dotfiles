@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_lid_and_powerkey__________________________";
+  system.nixos.label = "Set_wezterm_frontend______________________________";
 }
