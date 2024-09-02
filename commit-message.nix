@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_update_command________________________________";
+  system.nixos.label = "Fix_polybar_on_single_monitor_____________________";
 }
