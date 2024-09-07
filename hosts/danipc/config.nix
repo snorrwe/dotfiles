@@ -72,7 +72,11 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -219,6 +223,15 @@
     sshfs
     xclip
     linuxKernel.packages.linux_zen.perf
+    (
+      pkgs.catppuccin-sddm.override {
+        flavor = "mocha";
+        font = "Monaspace Radon";
+        fontSize = "13";
+        # background = "${./wallpaper.png}";
+        # loginBackground = true;
+      }
+    )
   ];
   xdg.portal = {
     enable = true;
