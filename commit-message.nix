@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_polybar_on_single_monitor_____________________";
+  system.nixos.label = "Use_catppucin_in_sddm_____________________________";
 }
