@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_catppucin_in_sddm_____________________________";
+  system.nixos.label = "Add_home-2_to_allowed_insecure_registries_________";
 }
