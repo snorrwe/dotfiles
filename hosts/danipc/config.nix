@@ -1,5 +1,6 @@
 { config
 , pkgs
+, inputs
 , host
 , username
 , options
@@ -90,7 +91,7 @@
       pavucontrol
       xfce.thunar
       thunderbird
-      wezterm
+      inputs.wezterm.packages.${pkgs.system}.default
       wofi
       tmux
       zsh

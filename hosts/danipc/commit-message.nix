@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-09-13__________________________";
+  system.nixos.label = "Use_flake_for_wezterm_____________________________";
 }
