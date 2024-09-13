@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_home-2_to_allowed_insecure_registries_________";
+  system.nixos.label = "System_update_2024-09-13__________________________";
 }
