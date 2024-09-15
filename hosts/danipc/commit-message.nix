@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_flake_for_wezterm_____________________________";
+  system.nixos.label = "Enable_usb_modeswitch_____________________________";
 }
