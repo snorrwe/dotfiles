@@ -169,6 +169,7 @@
     daemon.settings = {
       insecure-registries = [
         "192.168.0.87:5000"
+        "docker.home:5000"
       ];
     };
   };

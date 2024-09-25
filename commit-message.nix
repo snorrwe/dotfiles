@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_catppucin_in_sddm_____________________________";
+  system.nixos.label = "Add_docker.home_insecure_registry_________________";
 }
