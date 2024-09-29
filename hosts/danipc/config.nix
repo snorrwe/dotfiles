@@ -267,8 +267,6 @@
   };
 
 
-  # my lifebook has trouble waking up after going to sleep so don't do that automatically
-  services.logind.lidSwitch = "ignore";
   # certain elements in my life might press the button while I'm working :)
   services.logind.powerKey = "ignore";
 

@@ -242,6 +242,12 @@
     enable = true;
   };
 
+  # my lifebook has trouble waking up after going to sleep so don't do that automatically
+  services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
+  # certain elements in my life might press the button while I'm working :)
+  services.logind.powerKey = "ignore";
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

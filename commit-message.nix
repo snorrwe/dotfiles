@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_docker.home_insecure_registry_________________";
+  system.nixos.label = "Ignore_lid_switch_events__________________________";
 }
