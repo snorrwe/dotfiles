@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_docker.home_insecure_registry_________________";
+  system.nixos.label = "System_update_2024-09-30__________________________";
 }
