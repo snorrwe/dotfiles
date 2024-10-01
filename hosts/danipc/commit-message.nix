@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Run_gc_at_the_end_of_clean________________________";
+  system.nixos.label = "Revert_System_update_2024-09-30___________________";
 }
