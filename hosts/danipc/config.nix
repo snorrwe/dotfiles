@@ -149,6 +149,7 @@
       killall
       shotcut
       libreoffice
+      arc-theme
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

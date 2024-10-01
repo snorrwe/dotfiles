@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_the_global_zsh_package_____________________";
+  system.nixos.label = "Set_gtk_theme_to_Arc-Dark_________________________";
 }
