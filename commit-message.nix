@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_host_param_for_hostname_______________________";
+  system.nixos.label = "Remove_the_global_zsh_package_____________________";
 }
