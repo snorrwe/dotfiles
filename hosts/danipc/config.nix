@@ -57,8 +57,7 @@
   };
 
 
-  networking.hostName = "danipc";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = host;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

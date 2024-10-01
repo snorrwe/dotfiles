@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_libreoffice___________________________________";
+  system.nixos.label = "Use_host_param_for_hostname_______________________";
 }
