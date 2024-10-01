@@ -150,6 +150,7 @@
       cargo-update
       killall
       shotcut
+      libreoffice
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-09-30__________________________";
+  system.nixos.label = "Add_libreoffice___________________________________";
 }
