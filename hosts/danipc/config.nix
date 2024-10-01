@@ -246,7 +246,7 @@
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.shellInit = ''
-    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER || true
+    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
   '';
 
   #Flakes
