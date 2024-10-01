@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_home-2_to_insecure_docker_registries__________";
+  system.nixos.label = "Use_host_param_for_hostname_______________________";
 }
