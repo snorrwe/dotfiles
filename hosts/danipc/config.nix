@@ -93,7 +93,6 @@
       inputs.wezterm.packages.${pkgs.system}.default
       wofi
       tmux
-      zsh
       stow
       parallel
       unzip
@@ -184,7 +183,6 @@
   };
 
   programs.firefox.enable = true;
-  programs.zsh.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
