@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_gtk_theme_to_Arc-Dark_________________________";
+  system.nixos.label = "Run_gc_at_the_end_of_clean________________________";
 }
