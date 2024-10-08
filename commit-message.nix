@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "stow_ignore_repo-local_files______________________";
+  system.nixos.label = "Add_git_config_to_home____________________________";
 }

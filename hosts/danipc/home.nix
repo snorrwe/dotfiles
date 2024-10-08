@@ -37,4 +37,10 @@
     theme = "Arc-Dark";
     font = "Monaspace Neon 12";
   };
+  programs.git = {
+    enable = true;
+    userName = "Daniel Kiss";
+    userEmail = "littlesnorrboy@gmail.com";
+    lfs.enable = true;
+  };
 }
