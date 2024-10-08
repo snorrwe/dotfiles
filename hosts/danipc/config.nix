@@ -13,7 +13,7 @@
     ./sound.nix
     ./video.nix
     ./udev.nix
-    ./commit-message.nix
+    ../../commit-message.nix
   ];
 
   nix.settings = {
