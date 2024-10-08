@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_System_update_2024-09-30___________________";
+  system.nixos.label = "System_update_2024-10-08__________________________";
 }
