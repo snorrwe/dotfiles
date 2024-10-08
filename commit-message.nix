@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_a_single_commit-message_file__________________";
+  system.nixos.label = "stow_ignore_repo-local_files______________________";
 }

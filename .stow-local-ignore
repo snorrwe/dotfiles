@@ -21,10 +21,12 @@ _darcs
 ^/LICENSE.*
 ^/COPYING
 
-.setup
+\.setup
 nix-stuff
-apply.sh
 hosts
-config
-flake.lock
-flake.nix
+flake\.lock
+flake\.nix
+.*\.sh
+\.githooks
+.*\.nix
+\.gitmodules
