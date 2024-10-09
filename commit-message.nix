@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Run_gc_at_the_end_of_clean________________________";
+  system.nixos.label = "Lock_flake________________________________________";
 }
