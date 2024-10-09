@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Lock_flake________________________________________";
+  system.nixos.label = "Fix_commit_message________________________________";
 }

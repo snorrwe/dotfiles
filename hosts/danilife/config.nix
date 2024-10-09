@@ -11,7 +11,7 @@
   imports = [
     ./hardware.nix
     ./sound.nix
-    ./commit-message.nix
+    ../../commit-message.nix
   ];
 
   nix.settings = {
