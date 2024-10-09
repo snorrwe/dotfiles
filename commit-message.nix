@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_fragilisfs____________________________________";
+  system.nixos.label = "Add_video2gif_____________________________________";
 }
