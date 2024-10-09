@@ -81,6 +81,18 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  programs.direnv =
+    {
+      package = pkgs.direnv;
+      silent = false;
+      loadInNixShell = true;
+      direnvrcExtra = "";
+      nix-direnv = {
+        enable = true;
+        package = pkgs.nix-direnv;
+      };
+    };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.snorrwe = {
     isNormalUser = true;
