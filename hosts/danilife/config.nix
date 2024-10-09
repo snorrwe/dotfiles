@@ -1,9 +1,9 @@
 { config
 , pkgs
-, inputs
 , host
 , username
 , options
+, inputs
 , ...
 }:
 
@@ -11,9 +11,7 @@
   imports = [
     ./hardware.nix
     ./sound.nix
-    ./video.nix
-    ./udev.nix
-    ../../commit-message.nix
+    ./commit-message.nix
   ];
 
   nix.settings = {
@@ -56,8 +54,13 @@
     plymouth.enable = true;
   };
 
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 
-  networking.hostName = host;
+
+  networking.hostName = "danilife"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -72,37 +75,30 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.displayManager.sddm = {
-    enable = true;
-    theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
-  };
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    package = pkgs.bluez5-experimental;
+    settings.Policy.AutoEnable = "true";
+    settings.General.Enable = "Source,Sink,Media,Socket";
+  };
+  services.blueman.enable = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  programs.direnv =
-    {
-      package = pkgs.direnv;
-      silent = false;
-      loadInNixShell = true;
-      direnvrcExtra = "";
-      nix-direnv = {
-        enable = true;
-        package = pkgs.nix-direnv;
-      };
-    };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       pavucontrol
       xfce.thunar
       thunderbird
-      inputs.wezterm.packages.${pkgs.system}.default
+      wezterm
       wofi
       tmux
       stow
@@ -118,6 +114,7 @@
       ripgrep
       zoxide
       wl-clipboard
+      rustup
       go
       just
       watchexec
@@ -126,9 +123,11 @@
       lazygit
       ninja
       starship
+      flatpak
       pipx
       bat
       btop
+      waybar
       cmake
       gzip
       diffutils
@@ -142,26 +141,21 @@
       telegram-desktop
       discord
       spotify
-      zoom-us
+      bluez5-experimental
+      bluez-tools
+      bluez-alsa
       nodejs_22
+      visidata
       bitwarden
       lazydocker
-      rustup
       pkg-config
-      sccache
       distrobox
       visidata
       geeqie
-      flameshot
       glow
-      pamixer
-      pulseaudio
       units
-      cargo-update
+      cloudflared
       killall
-      shotcut
-      libreoffice
-      arc-theme
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -171,13 +165,11 @@
     rootless = {
       enable = true;
       setSocketVariable = true;
-      daemon.settings = {
-        insecure-registries = [
-          "192.168.0.87:5000"
-          "192.168.0.97:5000"
-          "docker.home"
-        ];
-      };
+    };
+    daemon.settings = {
+      insecure-registries = [
+        "192.168.0.87:5000"
+      ];
     };
   };
   virtualisation.podman = {
@@ -196,22 +188,13 @@
   };
 
   programs.firefox.enable = true;
+  programs.hyprland.enable = true;
+  programs.zsh.enable = true;
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     # Add any missing dynamic libraries for unpackaged programs
     # here, NOT in environment.systemPackages
   ];
-  programs.git = {
-    enable = true;
-    config = {
-      init = {
-        defaultBranch = "main";
-      };
-      pull = {
-        rebase = true;
-      };
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -224,6 +207,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
+    git
     stow
     parallel
     curl
@@ -235,30 +219,17 @@
     gnome-keyring
     xorg.xhost
     sshfs
-    xclip
-    linuxKernel.packages.linux_zen.perf
-    (
-      pkgs.catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "Monaspace Radon";
-        fontSize = "13";
-        # background = "${./wallpaper.png}";
-        # loginBackground = true;
-      }
-    )
+    wlogout
   ];
   xdg.portal = {
     enable = true;
-    config.common.default = [ "gtk" ];
-    extraPortals = with pkgs;
-      [
-        xdg-desktop-portal-gtk
-      ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
+    config.common.default = [ "hyprland" ];
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.shellInit = ''
-    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
-  '';
 
   #Flakes
   nix = {
@@ -266,27 +237,9 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
+  hardware.graphics = {
     enable = true;
-    ports = [ 39420 ];
   };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_video2gif_____________________________________";
+  system.nixos.label = "Configure_direnv_to_use_nix-direnv________________";
 }
