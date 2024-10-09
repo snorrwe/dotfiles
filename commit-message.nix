@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_git_config_to_home____________________________";
+  system.nixos.label = "Add_fragilisfs____________________________________";
 }
