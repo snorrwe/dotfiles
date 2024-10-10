@@ -162,6 +162,7 @@
       shotcut
       libreoffice
       arc-theme
+      okteta
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;

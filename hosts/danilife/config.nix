@@ -156,6 +156,7 @@
       units
       cloudflared
       killall
+      okteta
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
