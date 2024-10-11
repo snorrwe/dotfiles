@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+
+fd flake.lock | xargs -I{} dirname {} | xargs -I{} sh -c 'pushd {}; nix flake check;popd'

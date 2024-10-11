@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_okteta________________________________________";
+  system.nixos.label = "Add_pullflakes____________________________________";
 }
