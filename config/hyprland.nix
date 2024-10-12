@@ -45,7 +45,6 @@ with lib;
         "$mod, mouse:273, resizewindow"
       ];
       binds = {
-        workspace_back_and_forth = true;
         allow_workspace_cycles = true;
       };
       bind =
