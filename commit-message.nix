@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_pullflakes____________________________________";
+  system.nixos.label = "Enable_nix-ld_in_flake____________________________";
 }
