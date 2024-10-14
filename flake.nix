@@ -15,9 +15,11 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nix-ld, ... }@inputs:
     let
       system = "x86_64-linux";
       host = "danilife";
@@ -49,6 +51,10 @@
             {
               environment.variables.NIX_HOST = host;
             }
+
+            # enable nix-ld
+            nix-ld.nixosModules.nix-ld
+            { programs.nix-ld.dev.enable = true; }
           ];
         };
       };
