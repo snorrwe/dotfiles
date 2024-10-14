@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_insecure_registries___________________________";
+  system.nixos.label = "Enable_nix-ld_in_flake____________________________";
 }
