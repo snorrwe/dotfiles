@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_cargo_update__________________________________";
+  system.nixos.label = "Fix_insecure_registries___________________________";
 }
