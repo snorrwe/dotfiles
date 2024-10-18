@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_nix-ld_in_flake____________________________";
+  system.nixos.label = "Add_cargo_update__________________________________";
 }
