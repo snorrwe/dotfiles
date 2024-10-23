@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_portlocate_script_____________________________";
+  system.nixos.label = "Use_nixVersions.stable____________________________";
 }
