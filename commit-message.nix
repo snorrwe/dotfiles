@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nixVersions.stable____________________________";
+  system.nixos.label = "Add_compose_______________________________________";
 }
