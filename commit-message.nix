@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_compose_______________________________________";
+  system.nixos.label = "Add_wallpaper_____________________________________";
 }
