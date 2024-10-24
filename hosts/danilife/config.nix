@@ -157,6 +157,8 @@
       cloudflared
       killall
       okteta
+      podman-compose
+      docker-compose
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
