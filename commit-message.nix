@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_wallpaper_____________________________________";
+  system.nixos.label = "Format_nix-ld_input_______________________________";
 }
