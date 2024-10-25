@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Format_nix-ld_input_______________________________";
+  system.nixos.label = "wezterm_home-manager______________________________";
 }

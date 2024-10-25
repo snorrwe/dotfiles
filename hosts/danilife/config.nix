@@ -98,7 +98,6 @@
       pavucontrol
       xfce.thunar
       thunderbird
-      wezterm
       wofi
       tmux
       stow
