@@ -102,7 +102,6 @@
       pavucontrol
       xfce.thunar
       thunderbird
-      inputs.wezterm.packages.${pkgs.system}.default
       wofi
       tmux
       stow

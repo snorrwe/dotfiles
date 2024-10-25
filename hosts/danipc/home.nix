@@ -1,6 +1,7 @@
 { pkgs
 , username
 , host
+, inputs
 , ...
 }:
 {
@@ -42,5 +43,12 @@
     userName = "Daniel Kiss";
     userEmail = "littlesnorrboy@gmail.com";
     lfs.enable = true;
+  };
+  programs.wezterm = {
+    enable = true;
+    enableZshIntegration = true;
+    extraConfig = builtins.readFile ../../.wezterm.lua;
+    package =
+      inputs.wezterm.packages.${pkgs.system}.default;
   };
 }
