@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_autostart_discord__________________________";
+  system.nixos.label = "Add_devenv________________________________________";
 }
