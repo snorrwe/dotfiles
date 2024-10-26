@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Discord_settings__________________________________";
+  system.nixos.label = "Fix_sddm_login____________________________________";
 }

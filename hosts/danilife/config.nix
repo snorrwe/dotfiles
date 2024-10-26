@@ -75,8 +75,12 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
+  };
 
   hardware.bluetooth = {
     enable = true;
@@ -217,6 +221,15 @@
     xorg.xhost
     sshfs
     wlogout
+    (
+      pkgs.catppuccin-sddm.override {
+        flavor = "mocha";
+        font = "Monaspace Radon";
+        fontSize = "13";
+        background = "${../../wallpaper.jpg}";
+        loginBackground = true;
+      }
+    )
   ];
   xdg.portal = {
     enable = true;
