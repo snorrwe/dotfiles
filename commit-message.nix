@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-10-26__________________________";
+  system.nixos.label = "Discord_settings__________________________________";
 }
