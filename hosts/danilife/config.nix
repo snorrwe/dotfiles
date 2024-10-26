@@ -4,6 +4,7 @@
 , username
 , options
 , inputs
+, lib
 , ...
 }:
 
@@ -254,6 +255,10 @@
   hardware.graphics = {
     enable = true;
   };
+
+  # Keeps timing out during boot
+  systemd.units."dev-tpmrm0.device".enable = false;
+  systemd.units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
 
   # my lifebook has trouble waking up after going to sleep so don't do that automatically
   services.logind.lidSwitch = "ignore";

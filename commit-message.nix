@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_self_to_trusted_users_________________________";
+  system.nixos.label = "Disable_tpmrm0_device_____________________________";
 }
