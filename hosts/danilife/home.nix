@@ -42,4 +42,10 @@
       inputs.wezterm.packages.${pkgs.system}.default;
   };
 
+  programs.git = {
+    enable = true;
+    userName = "Daniel Kiss";
+    userEmail = "littlesnorrboy@gmail.com";
+    lfs.enable = true;
+  };
 }

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "wezterm_home-manager______________________________";
+  system.nixos.label = "Config_git________________________________________";
 }
