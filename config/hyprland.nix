@@ -27,7 +27,6 @@ with lib;
         "[workspace 3 silent] obsidian"
         "[workspace 3 silent] thunderbird"
         "[workspace 4 silent] slack"
-        "[workspace 4 silent] discord"
         "[workspace 4 silent] telegram-desktop"
       ];
       xwayland = {

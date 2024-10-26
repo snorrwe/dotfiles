@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_sddm_login____________________________________";
+  system.nixos.label = "Do_not_autostart_discord__________________________";
 }
