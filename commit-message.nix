@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-10-25__________________________";
+  system.nixos.label = "Add_login_background______________________________";
 }

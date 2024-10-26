@@ -239,8 +239,8 @@
         flavor = "mocha";
         font = "Monaspace Radon";
         fontSize = "13";
-        # background = "${./wallpaper.png}";
-        # loginBackground = true;
+        background = "${../../wallpaper.jpg}";
+        loginBackground = true;
       }
     )
   ];
