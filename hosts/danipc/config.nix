@@ -164,6 +164,7 @@
       okteta
       podman-compose
       docker-compose
+      devenv
     ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
