@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_flatpak_wezterm_______________________________";
+  system.nixos.label = "Update_delete_generations_________________________";
 }
