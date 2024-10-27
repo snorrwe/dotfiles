@@ -16,6 +16,7 @@
     ../../commit-message.nix
   ];
 
+
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
@@ -261,7 +262,10 @@
   #Flakes
   nix = {
     package = pkgs.nixVersions.stable;
-    extraOptions = "experimental-features = nix-command flakes";
+    extraOptions = ''
+      trusted-users = root ${username}
+      experimental-features = nix-command flakes
+    '';
   };
 
 
