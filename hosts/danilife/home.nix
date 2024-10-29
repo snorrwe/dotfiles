@@ -34,13 +34,13 @@
     };
 
   };
-  programs.wezterm = {
-    enable = true;
-    enableZshIntegration = true;
-    extraConfig = builtins.readFile ../../.wezterm.lua;
-    package =
-      inputs.wezterm.packages.${pkgs.system}.default;
-  };
+  # programs.wezterm = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  #   extraConfig = builtins.readFile ../../.wezterm.lua;
+  #   package =
+  #     inputs.wezterm.packages.${pkgs.system}.default;
+  # };
 
   programs.git = {
     enable = true;

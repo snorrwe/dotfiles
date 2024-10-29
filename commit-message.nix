@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-10-29__________________________";
+  system.nixos.label = "Use_flatpak_wezterm_______________________________";
 }

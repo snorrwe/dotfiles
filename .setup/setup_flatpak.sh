@@ -3,11 +3,10 @@
 set -euxo pipefail
 
 flatpak install --noninteractive \
-    org.cloudcompare.CloudCompare \
     org.videolan.VLC \
-    io.github.martinrotter.rssguard \
+    krita \
     com.google.Chrome \
-    blender \
-    meshlab \
-    krita 
-
+    io.github.ungoogled_software.ungoogled_chromium \
+    org.cloudcompare.CloudCompare \
+    org.wezfurlong.wezterm \
+    us.zoom.Zoom
