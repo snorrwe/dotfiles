@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_hyprlock______________________________________";
+  system.nixos.label = "Config_wlogout____________________________________";
 }

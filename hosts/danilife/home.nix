@@ -63,4 +63,20 @@
       };
     };
   };
+
+  programs.wlogout = {
+    enable = true;
+    layout = [
+      {
+        label = "shutdown";
+        text = "Shutdown";
+        action = "systemctl poweroff";
+      }
+      {
+        label = "lock";
+        text = "Lock";
+        action = "hyprlock";
+      }
+    ];
+  };
 }

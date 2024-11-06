@@ -222,7 +222,6 @@
     gnome-keyring
     xorg.xhost
     sshfs
-    wlogout
     (
       pkgs.catppuccin-sddm.override {
         flavor = "mocha";
