@@ -48,4 +48,19 @@
     userEmail = "littlesnorrboy@gmail.com";
     lfs.enable = true;
   };
+
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      background = {
+        path = "${../..}/wallpaper.jpg";
+      };
+      input-field = {
+        size = [ 200 30 ];
+        position = [ 0 "-20" ];
+        halign = "center";
+        valign = "center";
+      };
+    };
+  };
 }
