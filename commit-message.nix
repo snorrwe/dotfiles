@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_wlogout____________________________________";
+  system.nixos.label = "Add_lock_shortcut_________________________________";
 }

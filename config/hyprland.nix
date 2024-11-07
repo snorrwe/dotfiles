@@ -37,6 +37,7 @@ with lib;
         "XCURSOR_SIZE,32"
       ];
       "$terminal" = "wezterm";
+      "$lock" = "hyprlock";
       "$menu" = "wofi --show drun";
       bindm = [
         # Move/resize windows with mod + LMB/RMB and dragging
@@ -74,6 +75,7 @@ with lib;
           "$mod, mouse_up, workspace, e-1"
 
           ", Print, exec, grimblast copysave area"
+          "$mod SHIFT, L, exec, $lock"
         ]
         ++ (
           # workspaces
