@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Comments__________________________________________";
+  system.nixos.label = "Update_alacritty_config___________________________";
 }
