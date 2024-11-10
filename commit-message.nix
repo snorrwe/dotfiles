@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_delete_generations_________________________";
+  system.nixos.label = "Factor_out_common_packages________________________";
 }
