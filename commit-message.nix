@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_common_packages________________________";
+  system.nixos.label = "Add_obs___________________________________________";
 }

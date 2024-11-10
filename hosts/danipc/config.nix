@@ -106,6 +106,7 @@
         pamixer
         pulseaudio
         flameshot
+        obs-studio
       ] ++ (import ../../common-packages.nix pkgs)
     ;
     shell = pkgs.zsh;
