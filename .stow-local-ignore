@@ -30,4 +30,3 @@ flake\.nix
 \.githooks
 .*\.nix
 \.gitmodules
-\.wezterm.lua

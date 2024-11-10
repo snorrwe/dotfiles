@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_alacritty_config___________________________";
+  system.nixos.label = "Remove_wezterm_in_favor_of_Alacritty______________";
 }
