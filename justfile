@@ -3,6 +3,7 @@ default_host := "${NIX_HOST}"
 default:
     just --list
 
+# clean the system of unwanted caches
 clean: clean-generations gc
 
 clean-generations n="+2":
@@ -39,3 +40,8 @@ install hostname=default_host:
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{hostname}}/hardware.nix"
 
     just apply {{hostname}}
+
+# clears zsh-snap eval cache
+# use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
+clean-zsh-cache:
+    rm -rf ~/.cache/zsh-snap
