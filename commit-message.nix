@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_obs___________________________________________";
+  system.nixos.label = "Init_justfile_____________________________________";
 }
