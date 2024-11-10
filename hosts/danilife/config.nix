@@ -99,72 +99,20 @@
     isNormalUser = true;
     description = "Dani";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      pavucontrol
-      xfce.thunar
-      thunderbird
-      wofi
-      tmux
-      stow
-      parallel
-      unzip
-      zip
-      dust
-      atuin
-      llvm
-      clang
-      mold
-      fd
-      ripgrep
-      zoxide
-      wl-clipboard
-      rustup
-      go
-      just
-      watchexec
-      grimblast
-      sccache
-      lazygit
-      ninja
-      starship
-      flatpak
-      pipx
-      bat
-      btop
-      waybar
-      cmake
-      gzip
-      diffutils
-      github-cli
-      direnv
-      git-lfs
-      socat
-      jq
-      obsidian
-      slack
-      telegram-desktop
-      discord
-      spotify
-      bluez5-experimental
-      bluez-tools
-      bluez-alsa
-      nodejs_22
-      visidata
-      bitwarden
-      lazydocker
-      pkg-config
-      distrobox
-      visidata
-      geeqie
-      glow
-      units
-      cloudflared
-      killall
-      okteta
-      podman-compose
-      docker-compose
-      devenv
-    ];
+    packages = with pkgs;
+      [
+        pavucontrol
+        pamixer
+        pulseaudio
+        waybar
+        grimblast
+        wl-clipboard
+        bluez5-experimental
+        bluez-tools
+        bluez-alsa
+        cloudflared
+      ] ++ (import ../../common-packages.nix pkgs)
+    ;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 

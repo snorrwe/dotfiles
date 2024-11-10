@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Merge_nixos-danipc_refactors______________________";
+  system.nixos.label = "Use_common-packages_in_config_____________________";
 }
