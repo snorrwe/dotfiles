@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_lock_shortcut_________________________________";
+  system.nixos.label = "Merge_nixos-danipc_refactors______________________";
 }

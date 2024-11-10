@@ -99,74 +99,16 @@
     isNormalUser = true;
     description = "Dani";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-      pavucontrol
-      xfce.thunar
-      thunderbird
-      wofi
-      tmux
-      stow
-      parallel
-      unzip
-      zip
-      dust
-      atuin
-      llvm
-      clang
-      mold
-      fd
-      ripgrep
-      zoxide
-      wl-clipboard
-      go
-      just
-      watchexec
-      grimblast
-      sccache
-      lazygit
-      ninja
-      starship
-      pipx
-      bat
-      btop
-      cmake
-      gzip
-      diffutils
-      github-cli
-      direnv
-      git-lfs
-      socat
-      jq
-      obsidian
-      slack
-      telegram-desktop
-      discord
-      spotify
-      zoom-us
-      nodejs_22
-      bitwarden
-      lazydocker
-      rustup
-      pkg-config
-      sccache
-      distrobox
-      visidata
-      geeqie
-      flameshot
-      glow
-      pamixer
-      pulseaudio
-      units
-      cargo-update
-      killall
-      shotcut
-      libreoffice
-      arc-theme
-      okteta
-      podman-compose
-      docker-compose
-      devenv
-    ];
+    packages =
+      with pkgs;
+      [
+        pavucontrol
+        pamixer
+        pulseaudio
+        flameshot
+        obs-studio
+      ] ++ (import ../../common-packages.nix pkgs)
+    ;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
@@ -241,8 +183,8 @@
         flavor = "mocha";
         font = "Monaspace Radon";
         fontSize = "13";
-        # background = "${./wallpaper.png}";
-        # loginBackground = true;
+        background = "${../../wallpaper.jpg}";
+        loginBackground = true;
       }
     )
   ];

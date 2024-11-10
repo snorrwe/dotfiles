@@ -10,8 +10,7 @@ echo "start" > install.log
 (
     set -eu
     hostname=$1
-    cd ..
-    ./apply $hostname
+    nix run nixpkgs#just install $hostname
     echo "apply nix flake" >> install.log
 )
 
