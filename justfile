@@ -16,7 +16,7 @@ devenv-gc:
     nix-collect-garbage -d
 
 
-update +args:
+update *args:
     #!/usr/bin/env bash
     set -euo pipefail
 

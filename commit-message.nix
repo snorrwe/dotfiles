@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_cargo-update_via_cargo____________________";
+  system.nixos.label = "Update_accepts_zero_arguments_____________________";
 }
