@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-11-10__________________________";
+  system.nixos.label = "Refactor_justfile_________________________________";
 }

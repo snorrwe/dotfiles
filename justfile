@@ -1,3 +1,5 @@
+default_host := "${NIX_HOST}"
+
 default:
     just --list
 
@@ -25,14 +27,14 @@ update *args:
     git commit -m "System update $(printf '%(%Y-%m-%d)T\n' -1)"
     just apply {{args}}
 
-apply hostname=`echo $NIX_HOST`:
+apply hostname=default_host:
     #!/usr/bin/env bash
     set -euo pipefail
 
     sudo nixos-rebuild switch --flake ".#{{hostname}}"
     stow --adopt .
 
-install hostname=`echo $NIX_HOST`:
+install hostname=default_host:
     mkdir -p "./hosts/{{hostname}}"
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{hostname}}/hardware.nix"
 
