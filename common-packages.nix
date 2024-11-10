@@ -49,7 +49,6 @@ with pkgs; [
   flameshot
   glow
   units
-  cargo-update
   killall
   libreoffice
   okteta

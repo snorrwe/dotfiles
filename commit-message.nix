@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_scripts_into_just____________________________";
+  system.nixos.label = "Install_cargo-update_via_cargo____________________";
 }
