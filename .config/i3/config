@@ -30,7 +30,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -201,8 +201,8 @@ workspace $ws10 output HDMI-0
 assign [class="^Spotify$"] $ws10
 
 workspace $ws2 output HDMI-0
-assign [class="^Alacritty$"] $ws2
-exec alacritty
+assign [class="^org.wezfurlong.wezterm$"] $ws2
+exec wezterm
 
 workspace $ws5 output HDMI-0
 assign [class="^zoom$"] $ws5

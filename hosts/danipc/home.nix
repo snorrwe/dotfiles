@@ -44,10 +44,11 @@
     userEmail = "littlesnorrboy@gmail.com";
     lfs.enable = true;
   };
-  programs.alacritty = {
+  programs.wezterm = {
     enable = true;
-    package = pkgs.alacritty;
-    # settings managed via stow, because I use imports and apparently
-    # home-manager can only handle the 'main' config
+    enableZshIntegration = true;
+    extraConfig = builtins.readFile ../../.wezterm.lua;
+    package =
+      inputs.wezterm.packages.${pkgs.system}.default;
   };
 }
