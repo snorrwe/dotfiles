@@ -36,7 +36,7 @@ with lib;
         "GDK_SCALE,1.5"
         "XCURSOR_SIZE,32"
       ];
-      "$terminal" = "alacritty";
+      "$terminal" = "wezterm";
       "$lock" = "hyprlock";
       "$menu" = "wofi --show drun";
       bindm = [
