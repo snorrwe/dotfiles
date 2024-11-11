@@ -8,5 +8,4 @@ flatpak install --noninteractive \
     com.google.Chrome \
     io.github.ungoogled_software.ungoogled_chromium \
     org.cloudcompare.CloudCompare \
-    org.wezfurlong.wezterm \
     us.zoom.Zoom

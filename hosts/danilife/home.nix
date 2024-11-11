@@ -34,13 +34,6 @@
     };
 
   };
-  # programs.wezterm = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  #   extraConfig = builtins.readFile ../../.wezterm.lua;
-  #   package =
-  #     inputs.wezterm.packages.${pkgs.system}.default;
-  # };
 
   programs.git = {
     enable = true;
@@ -78,5 +71,11 @@
         action = "hyprlock";
       }
     ];
+  };
+  programs.alacritty = {
+    enable = true;
+    package = pkgs.alacritty;
+    # settings managed via stow, because I use imports and apparently
+    # home-manager can only handle the 'main' config
   };
 }

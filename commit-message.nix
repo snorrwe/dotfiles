@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Squashed_commit_of_the_following:_________________";
+  system.nixos.label = "Remove_wezterm_in_favor_of_alacritty______________";
 }
