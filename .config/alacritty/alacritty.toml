@@ -1,6 +1,6 @@
 general.import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 [font]
 normal = { family = "Monaspace Neon" }
-size = 13
+size = 11
 [env]
 TERM = "screen-256color"

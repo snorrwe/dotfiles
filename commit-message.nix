@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_wezterm_in_favor_of_alacritty______________";
+  system.nixos.label = "Use_smaller_fontsize_on_lifebook__________________";
 }
