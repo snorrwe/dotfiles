@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_common-packages_in_config_____________________";
+  system.nixos.label = "Squashed_commit_of_the_following:_________________";
 }

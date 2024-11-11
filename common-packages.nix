@@ -55,4 +55,5 @@ with pkgs; [
   podman-compose
   docker-compose
   devenv
+  clang
 ]
