@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_smaller_fontsize_on_lifebook__________________";
+  system.nixos.label = "Add_back_wofi_____________________________________";
 }

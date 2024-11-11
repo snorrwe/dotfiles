@@ -111,6 +111,7 @@
         bluez-tools
         bluez-alsa
         cloudflared
+        wofi
       ] ++ (import ../../common-packages.nix pkgs)
     ;
     shell = pkgs.zsh;
