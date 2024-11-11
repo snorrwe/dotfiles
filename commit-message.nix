@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Remove_wezterm_in_favor_of_alacritty_______";
+  system.nixos.label = "System_update_2024-11-11__________________________";
 }
