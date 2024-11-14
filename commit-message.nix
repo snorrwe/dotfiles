@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Remove_wezterm_in_favor_of_Alacritty_______";
+  system.nixos.label = "Fix_devenv_gc_____________________________________";
 }

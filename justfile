@@ -16,7 +16,7 @@ nix-gc:
     nix-collect-garbage -d
 
 devenv-gc:
-    nix-collect-garbage -d
+    devenv gc
 
 
 update *args:
