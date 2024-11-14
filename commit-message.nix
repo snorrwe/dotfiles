@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_tmux_catppuccin_config_____________________";
+  system.nixos.label = "Fix_devenv_gc_____________________________________";
 }
