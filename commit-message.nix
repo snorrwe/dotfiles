@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_devenv_gc_____________________________________";
+  system.nixos.label = "Move_tmux_config_into_.configtmux_________________";
 }
