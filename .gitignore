@@ -7,3 +7,5 @@ marlonrichert/zsh-autocomplete
 zpm-zsh/clipboard
 zsh-users
 .setup/install.log
+.config/tmux/plugins
+!.config/tmux/plugins/tpm

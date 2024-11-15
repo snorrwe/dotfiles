@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-11-11__________________________";
+  system.nixos.label = "Move_tmux_config_into_.configtmux_________________";
 }
