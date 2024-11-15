@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_run-shell________________________";
+  system.nixos.label = "Update_tmux_catppuccin_config_____________________";
 }
