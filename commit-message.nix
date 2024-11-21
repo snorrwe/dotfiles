@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_topgrade______________________________________";
+  system.nixos.label = "System_update_2024-11-21__________________________";
 }
