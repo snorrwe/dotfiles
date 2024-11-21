@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_wifi_disconnects______________________________";
+  system.nixos.label = "Remove_flameshot_from_common-packages_____________";
 }

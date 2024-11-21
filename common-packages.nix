@@ -46,7 +46,6 @@ with pkgs; [
   distrobox
   visidata
   geeqie
-  flameshot
   glow
   units
   killall
