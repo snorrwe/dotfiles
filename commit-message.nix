@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-11-21__________________________";
+  system.nixos.label = "Fix_wifi_disconnects______________________________";
 }
