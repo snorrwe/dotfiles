@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_mutagen_______________________________________";
+  system.nixos.label = "Restore_tmux_window_text__________________________";
 }
