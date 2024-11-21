@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_flameshot_from_common-packages_____________";
+  system.nixos.label = "Add_mutagen_______________________________________";
 }

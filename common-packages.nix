@@ -55,4 +55,5 @@ with pkgs; [
   docker-compose
   devenv
   clang
+  mutagen
 ]
