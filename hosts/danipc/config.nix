@@ -69,7 +69,7 @@
     enable = true;
     # fix for my wifi dongle disconnecting
     # https://github.com/lwfinger/rtw88/issues/61
-    wifi.powersave = true;
+    wifi.powersave = false;
   };
 
   # Set your time zone.
