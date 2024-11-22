@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_tmux_window_names_____________________________";
+  system.nixos.label = "Use_icons_for_flags_______________________________";
 }
