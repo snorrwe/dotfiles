@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_a_space_to_current_window_text_in_tmux________";
+  system.nixos.label = "Fix_tmux_window_names_____________________________";
 }
