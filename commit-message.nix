@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_icons_for_flags_______________________________";
+  system.nixos.label = "Slanted_window_separators_________________________";
 }
