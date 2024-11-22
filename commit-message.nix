@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fix_fix_wifi______________________________________";
+  system.nixos.label = "Fix_tmux_window_names_____________________________";
 }
