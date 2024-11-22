@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Slanted_window_separators_________________________";
+  system.nixos.label = "Fix_status________________________________________";
 }
