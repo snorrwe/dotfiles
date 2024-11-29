@@ -118,6 +118,16 @@
     ignoreShellProgramCheck = true;
 
   };
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors = {
+      hyprland = {
+        prettyName = "Hyprland";
+        binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+    };
+  };
+
   virtualisation.docker = {
     rootless = {
       enable = true;
@@ -146,7 +156,10 @@
   };
 
   programs.firefox.enable = true;
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

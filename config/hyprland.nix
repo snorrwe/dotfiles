@@ -15,6 +15,7 @@ with lib;
     plugins = [
       pkgs.hyprlandPlugins.hyprbars
     ];
+    systemd.enable = false;
     settings = {
       "$mod" = "SUPER";
       exec-once = [
