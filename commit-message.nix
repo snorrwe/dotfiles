@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-12-09__________________________";
+  system.nixos.label = "Add_pandoc________________________________________";
 }
