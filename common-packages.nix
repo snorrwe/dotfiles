@@ -56,4 +56,5 @@ with pkgs; [
   devenv
   clang
   mutagen
+  pandoc
 ]
