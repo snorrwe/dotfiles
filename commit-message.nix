@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_pandoc________________________________________";
+  system.nixos.label = "Do_not_symlink_the_justfile_______________________";
 }

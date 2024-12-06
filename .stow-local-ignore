@@ -31,3 +31,4 @@ flake\.nix
 .*\.nix
 \.gitmodules
 \.wezterm.lua
+justfile
