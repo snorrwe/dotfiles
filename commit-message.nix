@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-12-06__________________________";
+  system.nixos.label = "Do_not_symlink_the_justfile_______________________";
 }
