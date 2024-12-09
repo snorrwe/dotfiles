@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_UWSM_to_manage_hyprland_______________________";
+  system.nixos.label = "System_update_2024-12-09__________________________";
 }
