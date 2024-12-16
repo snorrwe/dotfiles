@@ -13,7 +13,13 @@
     extraPackages = with pkgs;[ vaapiVdpau nvidia-vaapi-driver intel-media-driver ];
   };
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.production;
+  hardware.nvidia =
+    {
+      package = config.boot.kernelPackages.nvidiaPackages.production;
+      open = false;
+      nvidiaSettings = true;
+    };
+
   # Configure keymap in X11
   services.xserver = {
     xkb.layout = "us";

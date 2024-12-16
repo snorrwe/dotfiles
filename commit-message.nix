@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-12-15__________________________";
+  system.nixos.label = "Configure_nvidia_drivers__________________________";
 }
