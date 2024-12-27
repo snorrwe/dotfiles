@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_ghostty_______________________________________";
+  system.nixos.label = "Remove_font-size_config___________________________";
 }
