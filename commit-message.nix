@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_zsh_integration_for_ghostty___________________";
+  system.nixos.label = "Revert_Add_ghostty________________________________";
 }
