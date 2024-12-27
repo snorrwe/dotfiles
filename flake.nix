@@ -7,18 +7,21 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-        hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-        hyprland-plugins = {
-            url = "github:hyprwm/hyprland-plugins";
-            inputs.hyprland.follows = "hyprland";
-        };
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     nix-ld = {
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nix-ld, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ghostty, nix-ld, ... }@inputs:
     let
       system = "x86_64-linux";
       host = "danilife";
@@ -54,6 +57,11 @@
             # enable nix-ld
             nix-ld.nixosModules.nix-ld
             { programs.nix-ld.dev.enable = true; }
+            {
+              environment.systemPackages = [
+                ghostty.packages.x86_64-linux.default
+              ];
+            }
           ];
         };
       };
