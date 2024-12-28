@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-12-28__________________________";
+  system.nixos.label = "Remove_unused_nixpkgs-stable______________________";
 }
