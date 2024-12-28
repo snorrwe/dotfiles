@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Add_ghostty________________________________";
+  system.nixos.label = "System_update_2024-12-28__________________________";
 }
