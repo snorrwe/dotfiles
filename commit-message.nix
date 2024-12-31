@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2024-12-29__________________________";
+  system.nixos.label = "System_update_2024-12-31__________________________";
 }
