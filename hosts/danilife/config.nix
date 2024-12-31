@@ -203,6 +203,7 @@
     config.common.default = [ "hyprland" ];
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
 
   #Flakes
   nix = {
