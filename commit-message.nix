@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_sccache_wrapper_env_var_______________________";
+  system.nixos.label = "Ignore_.devenv____________________________________";
 }
