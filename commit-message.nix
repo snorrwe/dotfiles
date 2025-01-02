@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-02__________________________";
+  system.nixos.label = "Ignore_.devenv____________________________________";
 }

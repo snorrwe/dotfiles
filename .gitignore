@@ -9,3 +9,4 @@ zsh-users
 .setup/install.log
 .config/tmux/plugins
 !.config/tmux/plugins/tpm
+.devenv
