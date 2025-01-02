@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_sccache_wrapper_env_var_______________________";
+  system.nixos.label = "System_update_2025-01-02__________________________";
 }
