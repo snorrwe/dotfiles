@@ -64,12 +64,15 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+
   # Enable networking
   networking.networkmanager = {
     enable = true;
     # fix for my wifi dongle disconnecting
     # https://github.com/lwfinger/rtw88/issues/61
     wifi.powersave = false;
+    # for my Intel 6 AX200
+    wifi.backend = "iwd";
   };
 
   # Set your time zone.
