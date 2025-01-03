@@ -1,9 +1,7 @@
 { config
 , pkgs
-, inputs
 , host
 , username
-, options
 , ...
 }:
 
