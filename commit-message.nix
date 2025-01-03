@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_.devenv____________________________________";
+  system.nixos.label = "Remove_unused_bindings____________________________";
 }
