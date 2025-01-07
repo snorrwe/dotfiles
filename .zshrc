@@ -1,4 +1,5 @@
 source $HOME/zsh-snap/znap.zsh
+zstyle ':znap:*' repos-dir $HOME/.zsh-plugins/
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
