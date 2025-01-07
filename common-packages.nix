@@ -36,7 +36,6 @@ with pkgs; [
   telegram-desktop
   discord
   spotify
-  zoom-us
   nodejs_22
   bitwarden
   lazydocker

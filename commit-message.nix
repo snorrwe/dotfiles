@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reorder_fzf-tab_and_calc_plugin___________________";
+  system.nixos.label = "Install_zoom_via_flathub__________________________";
 }

@@ -9,5 +9,6 @@ flatpak install --noninteractive \
     com.google.Chrome \
     blender \
     meshlab \
+    us.zoom.Zoom \
     krita 
 
