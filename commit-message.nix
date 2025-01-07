@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-07__________________________";
+  system.nixos.label = "Reorder_fzf-tab_and_calc_plugin___________________";
 }
