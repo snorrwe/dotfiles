@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_zoom_via_flathub__________________________";
+  system.nixos.label = "Ignore_the_config_dir_in_stow_____________________";
 }
