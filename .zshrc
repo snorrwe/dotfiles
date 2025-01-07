@@ -36,6 +36,7 @@ znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
 znap source arzzen/calc.plugin.zsh
+znap source Aloxaf/fzf-tab
 
 function aliases {
     alias lg=lazygit
