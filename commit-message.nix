@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_zsh_plugins_dir____________________________";
+  system.nixos.label = "Install_zoom_via_flathub__________________________";
 }
