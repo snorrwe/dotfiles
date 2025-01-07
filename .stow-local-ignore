@@ -32,3 +32,4 @@ flake\.nix
 \.gitmodules
 \.wezterm.lua
 justfile
+config
