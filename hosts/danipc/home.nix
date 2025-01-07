@@ -28,6 +28,7 @@
       commands =
         {
           "System flake" = "cd /home/${username}/.dotfiles && just update ${host}";
+          "Znap" = "cd /home/${username}; znap pull";
         };
     };
 
