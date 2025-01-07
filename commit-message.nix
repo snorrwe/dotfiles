@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_znap_packages_in_topgrade__________________";
+  system.nixos.label = "System_update_2025-01-07__________________________";
 }
