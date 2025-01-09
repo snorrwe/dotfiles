@@ -32,7 +32,8 @@ export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
 
-znap source marlonrichert/zsh-autocomplete
+# https://github.com/Aloxaf/fzf-tab/issues/482
+# znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
