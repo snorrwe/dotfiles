@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_the_config_dir_in_stow_____________________";
+  system.nixos.label = "Enable_bluetooth_on_danipc________________________";
 }
