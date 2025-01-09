@@ -4,7 +4,7 @@
 
 {
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.gnome.gnome-settings-daemon.enable = true;
   services.pipewire = {

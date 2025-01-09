@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_bluetooth_on_danipc________________________";
+  system.nixos.label = "Update_pulseaudio_________________________________";
 }
