@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-07__________________________";
+  system.nixos.label = "Fix_fzf-tab_crashing______________________________";
 }
