@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_fzf-tab_crashing______________________________";
+  system.nixos.label = "Move_common-packages_into_modules_________________";
 }

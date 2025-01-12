@@ -123,7 +123,7 @@
         pulseaudio
         flameshot
         obs-studio
-      ] ++ (import ../../common-packages.nix pkgs)
+      ] ++ (import ../../modules/common-packages.nix pkgs)
     ;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
