@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Manage_flatpaks_via_nix___________________________";
+  system.nixos.label = "System_update_2025-01-12__________________________";
 }
