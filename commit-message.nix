@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Manage_flatpaks_via_nix___________________________";
+  system.nixos.label = "Remove_znap_update________________________________";
 }
