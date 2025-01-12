@@ -18,6 +18,9 @@
       package = config.boot.kernelPackages.nvidiaPackages.production;
       open = false;
       nvidiaSettings = true;
+
+      # Modesetting is required.
+      modesetting.enable = true;
     };
 
   # Configure keymap in X11

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-12__________________________";
+  system.nixos.label = "Set_modesetting_to_enabled________________________";
 }
