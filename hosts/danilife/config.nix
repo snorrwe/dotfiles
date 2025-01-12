@@ -113,7 +113,7 @@
         bluez-alsa
         cloudflared
         wofi
-      ] ++ (import ../../common-packages.nix pkgs)
+      ] ++ (import ../../modules/common-packages.nix pkgs)
     ;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
