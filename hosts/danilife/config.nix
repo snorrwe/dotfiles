@@ -13,6 +13,7 @@
     ./hardware.nix
     ./sound.nix
     ../../commit-message.nix
+    ../../modules/flatpak.nix
   ];
 
   nix.settings = {

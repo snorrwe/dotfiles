@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_fzf-tab_crashing______________________________";
+  system.nixos.label = "Manage_flatpaks_via_nix___________________________";
 }

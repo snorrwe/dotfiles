@@ -12,6 +12,7 @@
     ./video.nix
     ./udev.nix
     ../../commit-message.nix
+    ../../modules/flatpak.nix
   ];
 
 
