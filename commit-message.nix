@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_modesetting_to_enabled________________________";
+  system.nixos.label = "Remove_znap_update________________________________";
 }
