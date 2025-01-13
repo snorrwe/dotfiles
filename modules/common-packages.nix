@@ -56,4 +56,5 @@ with pkgs; [
   clang
   mutagen
   pandoc
+  nixfmt-rfc-style
 ]

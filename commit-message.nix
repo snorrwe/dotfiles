@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_znap_update________________________________";
+  system.nixos.label = "Add_nixfmt________________________________________";
 }
