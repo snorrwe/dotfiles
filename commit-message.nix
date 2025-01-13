@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_common-packages_into_modules_________________";
+  system.nixos.label = "Use_nixpkgs_wezterm_______________________________";
 }

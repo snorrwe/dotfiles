@@ -57,4 +57,5 @@ with pkgs; [
   mutagen
   pandoc
   nixfmt-rfc-style
+  wezterm
 ]

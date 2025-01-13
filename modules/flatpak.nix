@@ -13,7 +13,6 @@ let
     "net.meshlab.MeshLab"
     "us.zoom.Zoom"
     "org.kde.krita"
-    "org.wezfurlong.wezterm"
   ];
 in
 {
