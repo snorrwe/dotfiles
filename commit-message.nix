@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nixpkgs_wezterm_______________________________";
+  system.nixos.label = "Add_clang-tools___________________________________";
 }

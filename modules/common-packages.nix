@@ -1,7 +1,9 @@
-{ pkgs
-, ...
+{
+  pkgs,
+  ...
 }:
-with pkgs; [
+with pkgs;
+[
   neovim
   xfce.thunar
   thunderbird
@@ -53,9 +55,11 @@ with pkgs; [
   podman-compose
   docker-compose
   devenv
-  clang
   mutagen
   pandoc
   nixfmt-rfc-style
   wezterm
+
+  clang-tools
+  clang
 ]
