@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_nixfmt________________________________________";
+  system.nixos.label = "Add_clang-tools___________________________________";
 }
