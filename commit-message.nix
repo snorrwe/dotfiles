@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_more_packages_to_flatpak_____________________";
+  system.nixos.label = "Configure_gtk_____________________________________";
 }
