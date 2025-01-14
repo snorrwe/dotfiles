@@ -1,12 +1,10 @@
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }:
 with pkgs;
 [
   neovim
   xfce.thunar
-  thunderbird
   tmux
   stow
   parallel
@@ -33,13 +31,7 @@ with pkgs;
   direnv
   git-lfs
   jq
-  obsidian
-  slack
-  telegram-desktop
-  discord
-  spotify
   nodejs_22
-  bitwarden
   lazydocker
   rustup
   pkg-config

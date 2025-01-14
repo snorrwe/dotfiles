@@ -25,10 +25,10 @@ with lib;
         "waybar"
         "[workspace 1 silent] firefox"
         "[workspace 2 silent] $terminal"
-        "[workspace 3 silent] obsidian"
-        "[workspace 3 silent] thunderbird"
-        "[workspace 4 silent] slack"
-        "[workspace 4 silent] telegram-desktop"
+        "[workspace 3 silent] md.obsidian.Obsidian"
+        "[workspace 3 silent] org.mozilla.Thunderbird"
+        "[workspace 4 silent] com.slack.Slack"
+        "[workspace 4 silent] org.telegram.desktop"
       ];
       xwayland = {
         force_zero_scaling = true;

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_clang-tools___________________________________";
+  system.nixos.label = "Move_more_packages_to_flatpak_____________________";
 }

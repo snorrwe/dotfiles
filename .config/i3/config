@@ -181,21 +181,23 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #
 workspace $ws1 output primary
 assign [class="^firefox$"] $ws1
+assign [class="^Navigator$"] $ws1
 exec firefox
 
 workspace $ws4 output primary
 assign [class="^Slack$"] $ws4
-exec slack
+exec com.slack.Slack
 assign [class="^TelegramDesktop$"] $ws4
-exec telegram-desktop
+exec org.telegram.desktop
 assign [class="^discord$"] $ws4
-exec discord
+exec com.discordapp.Discord
 
 workspace $ws3 output primary
 assign [class="^obsidian$"] $ws3
-exec obsidian
-assign [class="^thunderbird$"] $ws3
-exec thunderbird
+exec md.obsidian.Obsidian
+assign [class="^thunderbird"] $ws3
+assign [class="^Mail$"] $ws3
+exec org.mozilla.Thunderbird
 
 workspace $ws10 output HDMI-0
 assign [class="^Spotify$"] $ws10

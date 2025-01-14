@@ -13,6 +13,13 @@ let
     "net.meshlab.MeshLab"
     "us.zoom.Zoom"
     "org.kde.krita"
+    "com.discordapp.Discord"
+    "com.spotify.Client"
+    "org.telegram.desktop"
+    "com.bitwarden.desktop"
+    "org.mozilla.Thunderbird"
+    "com.slack.Slack"
+    "md.obsidian.Obsidian"
   ];
 in
 {
