@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_setup_flatpak_______________________";
+  system.nixos.label = "System_update_2025-01-15__________________________";
 }
