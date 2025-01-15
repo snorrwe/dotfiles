@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-14__________________________";
+  system.nixos.label = "Theme_qt_and_move_theming_to_its_own_module_______";
 }
