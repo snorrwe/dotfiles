@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-15__________________________";
+  system.nixos.label = "Rename_deprecated_pulseaudio_setting______________";
 }
