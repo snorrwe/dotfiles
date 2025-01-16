@@ -42,10 +42,7 @@ in
       done
 
       # 5. Install or re-install the Flatpaks you DO want
-      for app in ${toString desiredFlatpaks}; do
-        echo "Ensuring $app is installed."
-        ${pkgs.flatpak}/bin/flatpak install -y flathub $app
-      done
+      ${pkgs.flatpak}/bin/flatpak install -y flathub ${toString desiredFlatpaks}
     '';
   };
 }
