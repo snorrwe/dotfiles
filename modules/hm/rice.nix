@@ -14,11 +14,6 @@ in
     # needed by gtk
     dconf
   ];
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
 
   home.sessionVariables.GTK_THEME = theme;
   gtk = {
@@ -36,6 +31,10 @@ in
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
+
+    gtk2.extraConfig = ''
+      gtk-application-prefer-dark-theme=true
+    '';
 
     gtk3.extraConfig = {
       Settings = ''
