@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_dconf_________________________________________";
+  system.nixos.label = "Add_fastfetch_____________________________________";
 }

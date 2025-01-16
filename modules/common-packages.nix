@@ -1,5 +1,6 @@
-{ pkgs
-, ...
+{
+  pkgs,
+  ...
 }:
 with pkgs;
 [
@@ -53,4 +54,6 @@ with pkgs;
 
   clang-tools
   clang
+
+  fastfetch
 ]
