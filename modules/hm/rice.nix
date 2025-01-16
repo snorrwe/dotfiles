@@ -10,6 +10,10 @@ let
   theme_pkg = pkgs.palenight-theme;
 in
 {
+  home.packages = with pkgs; [
+    # needed by gtk
+    dconf
+  ];
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
