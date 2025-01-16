@@ -15,6 +15,13 @@ in
     dconf
   ];
 
+  home.pointerCursor = {
+    package = pkgs.numix-cursor-theme;
+    name = "Numix-Cursor";
+    x11.enable = true;
+    gtk.enable = true;
+  };
+
   home.sessionVariables.GTK_THEME = theme;
   gtk = {
     enable = true;
@@ -22,10 +29,6 @@ in
     theme = {
       name = theme;
       package = theme_pkg;
-    };
-    cursorTheme = {
-      name = "Numix-Cursor";
-      package = pkgs.numix-cursor-theme;
     };
     iconTheme = {
       name = "Papirus-Dark";
