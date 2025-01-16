@@ -20,6 +20,7 @@ let
     "org.mozilla.Thunderbird"
     "com.slack.Slack"
     "md.obsidian.Obsidian"
+    "com.jgraph.drawio.desktop"
   ];
 in
 {
