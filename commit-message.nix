@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_fastfetch_____________________________________";
+  system.nixos.label = "Add_gtk2_config___________________________________";
 }
