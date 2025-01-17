@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Add_gtk2_config____________________________";
+  system.nixos.label = "Set_gtk_font______________________________________";
 }
