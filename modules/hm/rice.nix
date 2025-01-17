@@ -30,6 +30,8 @@ in
   home.sessionVariables.GTK_THEME = theme;
   gtk = {
     enable = true;
+    font.name = "Monaspace Neon";
+    font.package = pkgs.monaspace;
 
     theme = {
       name = theme;
