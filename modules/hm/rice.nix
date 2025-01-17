@@ -14,6 +14,11 @@ in
     # needed by gtk
     dconf
   ];
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
 
   home.pointerCursor = {
     package = pkgs.numix-cursor-theme;
@@ -36,7 +41,7 @@ in
     };
 
     gtk2.extraConfig = ''
-      gtk-application-prefer-dark-theme=true
+      gtk-application-prefer-dark-theme=1
     '';
 
     gtk3.extraConfig = {
