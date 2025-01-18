@@ -6,8 +6,8 @@
   ...
 }:
 let
-  theme = "palenight";
-  theme_pkg = pkgs.palenight-theme;
+  theme = "amarena";
+  theme_pkg = pkgs.amarena-theme;
 in
 {
   home.packages = with pkgs; [
