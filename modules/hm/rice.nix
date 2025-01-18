@@ -1,13 +1,19 @@
-{
-  pkgs,
-  username,
-  host,
-  inputs,
-  ...
+{ pkgs
+, username
+, host
+, inputs
+, ...
 }:
 let
-  theme = "amarena";
-  theme_pkg = pkgs.amarena-theme;
+  theme = "Nightfox-Teal-Dark";
+  theme_pkg = pkgs.nightfox-gtk-theme.override {
+    colorVariants = [
+      "dark"
+    ];
+    themeVariants = [
+      "teal"
+    ];
+  };
 in
 {
   home.packages = with pkgs; [
