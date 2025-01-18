@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_more_gtk_themes_______________________________";
+  system.nixos.label = "Switch_to_amarena_theme___________________________";
 }
