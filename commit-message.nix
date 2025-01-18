@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_gtk_font______________________________________";
+  system.nixos.label = "Fix_more_gtk_themes_______________________________";
 }
