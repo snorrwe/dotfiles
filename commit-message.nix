@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Show_date_on_waybar_______________________________";
+  system.nixos.label = "Add_volantes_cursor_______________________________";
 }

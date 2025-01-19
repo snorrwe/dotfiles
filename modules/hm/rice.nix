@@ -27,8 +27,8 @@ in
   };
 
   home.pointerCursor = {
-    package = pkgs.numix-cursor-theme;
-    name = "Numix-Cursor";
+    package = pkgs.volantes-cursors;
+    name = "Volantes Cursor";
     x11.enable = true;
     gtk.enable = true;
   };
