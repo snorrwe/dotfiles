@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_volantes_cursor_______________________________";
+  system.nixos.label = "Use_rose-pine-moon_icons__________________________";
 }
