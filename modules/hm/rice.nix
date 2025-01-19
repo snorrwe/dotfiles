@@ -44,8 +44,8 @@ in
       package = theme_pkg;
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "rose-pine-moon";
+      package = pkgs.rose-pine-icon-theme;
     };
 
     gtk2.extraConfig = ''
