@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nightfox_gtk_theme____________________________";
+  system.nixos.label = "Show_date_on_waybar_______________________________";
 }

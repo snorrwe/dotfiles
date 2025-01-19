@@ -7,7 +7,6 @@
 
 let
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
-  clock24h = true;
 in
 with lib;
 {
@@ -29,8 +28,8 @@ with lib;
           "custom/notification"
           "disk"
           "battery"
-          "tray"
           "clock"
+          "tray"
           "custom/exit"
         ];
 
@@ -45,9 +44,9 @@ with lib;
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "clock" = {
-          format = if clock24h == true then '' {:L%H:%M}'' else '' {:L%I:%M %p}'';
+          format = "{:L%H:%M %d. %b %Y}";
           tooltip = true;
-          tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
+          tooltip-format = "<big>{:%A, %d. %B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };
         "hyprland/window" = {
           max-length = 22;
@@ -303,4 +302,3 @@ with lib;
     ];
   };
 }
-
