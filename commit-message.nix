@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Show_the_used_disk_size_on_waybar_________________";
+  system.nixos.label = "Show_the_used__of_disk____________________________";
 }

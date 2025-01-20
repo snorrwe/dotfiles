@@ -66,7 +66,7 @@ with lib;
           tooltip = true;
         };
         "disk" = {
-          format = " {used}/{total}";
+          format = " {percentage_used}%";
           tooltip = true;
         };
         "network" = {
