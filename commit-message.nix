@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_rose-pine-moon_icons__________________________";
+  system.nixos.label = "System_update_2025-01-20__________________________";
 }
