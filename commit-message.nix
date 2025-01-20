@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Show_the_used__of_disk____________________________";
+  system.nixos.label = "Move_stuff_to_the_right_workspaces_to_the_left____";
 }
