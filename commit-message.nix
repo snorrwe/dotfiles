@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-20__________________________";
+  system.nixos.label = "Show_the_used_disk_size_on_waybar_________________";
 }

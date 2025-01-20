@@ -66,7 +66,7 @@ with lib;
           tooltip = true;
         };
         "disk" = {
-          format = " {free}";
+          format = " {used}/{total}";
           tooltip = true;
         };
         "network" = {
