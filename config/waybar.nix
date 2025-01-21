@@ -18,13 +18,14 @@ with lib;
       {
         layer = "top";
         position = "top";
-        modules-center = [ ];
+        modules-center = [
+          "custom/notification"
+        ];
         modules-left = [
-          "pulseaudio"
           "hyprland/workspaces"
         ];
         modules-right = [
-          "custom/notification"
+          "pulseaudio"
           "cpu"
           "memory"
           "disk"

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_stuff_to_the_right_workspaces_to_the_left____";
+  system.nixos.label = "Move_sound_to_the_right___________________________";
 }
