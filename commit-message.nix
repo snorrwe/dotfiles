@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_rose-pine-moon_icons__________________________";
+  system.nixos.label = "Install_obs_as_a_flatpak__________________________";
 }
