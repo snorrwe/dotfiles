@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_sound_to_the_right___________________________";
+  system.nixos.label = "Install_obs_as_a_flatpak__________________________";
 }

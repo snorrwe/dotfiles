@@ -21,6 +21,7 @@ let
     "com.slack.Slack"
     "md.obsidian.Obsidian"
     "com.jgraph.drawio.desktop"
+    "com.obsproject.Studio"
   ];
 in
 {
