@@ -1,8 +1,9 @@
-{ config
-, pkgs
-, host
-, username
-, ...
+{
+  config,
+  pkgs,
+  host,
+  username,
+  ...
 }:
 
 {
@@ -15,9 +16,11 @@
     ../../modules/flatpak.nix
   ];
 
-
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
   nix.gc = {
@@ -56,13 +59,11 @@
     plymouth.enable = true;
   };
 
-
   networking.hostName = host;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
 
   # Enable networking
   networking.networkmanager = {
@@ -89,17 +90,16 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  programs.direnv =
-    {
-      package = pkgs.direnv;
-      silent = false;
-      loadInNixShell = true;
-      direnvrcExtra = "";
-      nix-direnv = {
-        enable = true;
-        package = pkgs.nix-direnv;
-      };
+  programs.direnv = {
+    package = pkgs.direnv;
+    silent = false;
+    loadInNixShell = true;
+    direnvrcExtra = "";
+    nix-direnv = {
+      enable = true;
+      package = pkgs.nix-direnv;
     };
+  };
 
   hardware.bluetooth = {
     enable = true;
@@ -110,12 +110,15 @@
   };
   services.blueman.enable = true;
 
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     packages =
       with pkgs;
       [
@@ -123,8 +126,9 @@
         pamixer
         pulseaudio
         flameshot
-      ] ++ (import ../../modules/common-packages.nix pkgs)
-    ;
+        dunst # notification daemon
+      ]
+      ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
@@ -176,7 +180,6 @@
     "olm-3.2.16"
   ];
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -194,24 +197,21 @@
     sshfs
     xclip
     linuxKernel.packages.linux_zen.perf
-    (
-      pkgs.catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "Monaspace Radon";
-        fontSize = "13";
-        background = "${../../wallpaper.jpg}";
-        loginBackground = true;
-      }
-    )
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Monaspace Radon";
+      fontSize = "13";
+      background = "${../../wallpaper.jpg}";
+      loginBackground = true;
+    })
   ];
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   xdg.portal = {
     enable = true;
     config.common.default = [ "gtk" ];
-    extraPortals = with pkgs;
-      [
-        xdg-desktop-portal-gtk
-      ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.shellInit = ''
@@ -258,4 +258,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-
