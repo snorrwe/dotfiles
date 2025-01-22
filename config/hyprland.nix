@@ -22,6 +22,7 @@ with lib;
         # FIX: apps opening slow
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "nm-applet --indicator"
+        "dunst"
         "waybar"
         "[workspace 1 silent] firefox"
         "[workspace 2 silent] $terminal"

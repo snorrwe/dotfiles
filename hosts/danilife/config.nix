@@ -17,7 +17,10 @@
   ];
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
   nix.gc = {
@@ -60,7 +63,6 @@
     DefaultTimeoutStopSec=10s
   '';
 
-
   networking.hostName = host;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -99,8 +101,12 @@
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages =
+      with pkgs;
       [
         pavucontrol
         pamixer
@@ -113,8 +119,9 @@
         bluez-alsa
         cloudflared
         wofi
-      ] ++ (import ../../modules/common-packages.nix pkgs)
-    ;
+        dunst # notification daemon
+      ]
+      ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
@@ -168,7 +175,6 @@
     "olm-3.2.16"
   ];
 
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -185,15 +191,13 @@
     gnome-keyring
     xorg.xhost
     sshfs
-    (
-      pkgs.catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "Monaspace Radon";
-        fontSize = "13";
-        background = "${../../wallpaper.jpg}";
-        loginBackground = true;
-      }
-    )
+    (pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font = "Monaspace Radon";
+      fontSize = "13";
+      background = "${../../wallpaper.jpg}";
+      loginBackground = true;
+    })
   ];
   xdg.portal = {
     enable = true;
@@ -238,4 +242,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

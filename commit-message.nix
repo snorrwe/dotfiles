@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_obs_as_a_flatpak__________________________";
+  system.nixos.label = "Add_dunst_________________________________________";
 }
