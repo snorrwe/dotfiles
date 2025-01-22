@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  host,
-  username,
-  ...
+{ config
+, pkgs
+, host
+, username
+, ...
 }:
 
 {
@@ -126,7 +125,6 @@
         pamixer
         pulseaudio
         flameshot
-        dunst # notification daemon
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
@@ -242,6 +240,8 @@
     enable = true;
     ports = [ 39420 ];
   };
+  # certain elements in my life might press the button while I'm working :)
+  services.logind.powerKey = "ignore";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
