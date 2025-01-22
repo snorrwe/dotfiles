@@ -14,6 +14,7 @@
     settings = {
       global = {
         font = "Monaspace Neon 8";
+        warn_about_missing_glyphs = false;
       };
     };
   };
