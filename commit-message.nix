@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_dunst_________________________________________";
+  system.nixos.label = "Add_hotspot_______________________________________";
 }

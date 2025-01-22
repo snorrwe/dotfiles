@@ -57,4 +57,6 @@ with pkgs;
   clang
 
   fastfetch
+
+  hotspot
 ]
