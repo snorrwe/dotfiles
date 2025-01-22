@@ -1,9 +1,8 @@
-{
-  config,
-  pkgs,
-  host,
-  username,
-  ...
+{ config
+, pkgs
+, host
+, username
+, ...
 }:
 
 {
@@ -119,7 +118,6 @@
         pamixer
         pulseaudio
         flameshot
-        dunst # notification daemon
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
@@ -220,7 +218,21 @@
     '';
   };
 
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
 
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  services.openssh = {
+    enable = true;
+    ports = [ 39420 ];
+  };
   # certain elements in my life might press the button while I'm working :)
   services.logind.powerKey = "ignore";
 

@@ -119,7 +119,6 @@
         bluez-alsa
         cloudflared
         wofi
-        dunst # notification daemon
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;

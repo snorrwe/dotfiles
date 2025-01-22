@@ -14,6 +14,7 @@
     ../../config/waybar.nix
     ../../config/hyprland.nix
     ../../modules/hm/rice.nix
+    ../../modules/hm/dunst.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
