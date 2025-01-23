@@ -19,7 +19,7 @@
       blur-background-fixed = true;
       corner-radius = 3;
       inactive-opacity-override = true;
-      inactive-opacity = 0.9;
+      inactive-opacity = 0.95;
       frame-opacity = 0.7;
       shadow = false;
       fading = true;

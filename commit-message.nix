@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_back_window_title_____________________________";
+  system.nixos.label = "Less_transparency_________________________________";
 }
