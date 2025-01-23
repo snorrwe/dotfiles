@@ -17,7 +17,7 @@
       };
       blur-background = true;
       blur-background-fixed = true;
-      corner-radius = 8;
+      corner-radius = 3;
       inactive-opacity-override = true;
       inactive-opacity = 0.9;
       frame-opacity = 0.7;

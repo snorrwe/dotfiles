@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_picom_________________________________________";
+  system.nixos.label = "Smaller_corner_radius_____________________________";
 }
