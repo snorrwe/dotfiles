@@ -14,6 +14,7 @@
   imports = [
     ../../modules/hm/rice.nix
     ../../modules/hm/dunst.nix
+    ../../modules/hm/picom.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
