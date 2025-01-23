@@ -253,9 +253,3 @@ bindsym Control+$mod+l exec "i3lock -c 000000"
 bindsym Print exec "flameshot gui"
 
 exec 'xrandr --output DVI-D-0 --auto --left-of HDMI-0'
-
-# hide title
-default_border pixel 1
-default_floating_border pixel 1
-# deprecated way, but above doesn't always work
-for_window [class="^.*"] border pixel 1

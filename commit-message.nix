@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Smaller_corner_radius_____________________________";
+  system.nixos.label = "Add_back_window_title_____________________________";
 }
