@@ -12,7 +12,6 @@ font pango:Monaspace Neon 14
 
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-scale $HOME/wallpaper.jpg
-exec --no-startup-id dunst
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
