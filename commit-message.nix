@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_missing_glyphs_warning____________________";
+  system.nixos.label = "Fix_missing_glyphs_warning________________________";
 }
