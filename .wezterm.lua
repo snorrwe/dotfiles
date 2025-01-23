@@ -13,5 +13,6 @@ config.font_size = 13
 
 config.enable_wayland = false
 config.front_end = "WebGpu"
+config.warn_about_missing_glyphs = false
 
 return config

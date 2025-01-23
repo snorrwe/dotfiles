@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_dunst_via_hm____________________________";
+  system.nixos.label = "Fix_missing_glyphs_warning________________________";
 }
