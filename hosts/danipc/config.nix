@@ -138,7 +138,7 @@
   };
   virtualisation.podman = {
     enable = true;
-    dockerCompat = true;
+    enableNvidia = true;
   };
 
   services.flatpak.enable = true;
