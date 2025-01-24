@@ -36,6 +36,7 @@ export EDITOR="$VISUAL"
 # znap source marlonrichert/zsh-autocomplete
 
 # load fzf-tab before other plugins
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions

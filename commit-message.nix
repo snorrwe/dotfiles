@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Load_fzf-tab_before_zsh-autosuggestionscompletaion";
+  system.nixos.label = "Add_eza___________________________________________";
 }

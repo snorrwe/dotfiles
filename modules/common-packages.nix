@@ -16,6 +16,7 @@ with pkgs;
   fd
   ripgrep
   zoxide
+  eza
   go
   just
   watchexec
