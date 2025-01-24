@@ -22,11 +22,7 @@
       inactive-opacity = 0.92;
       frame-opacity = 0.7;
       shadow = false;
-      fading = true;
-      fade-in-step = 0.03;
-      fade-out-step = 0.03;
-      fade-delta = 3;
-
+      fading = false;
       log-level = "warn";
     };
   };

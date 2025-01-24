@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "More_transparency_________________________________";
+  system.nixos.label = "Disable_fading____________________________________";
 }
