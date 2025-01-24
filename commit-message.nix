@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_colors_in_tmux-select-session______________";
+  system.nixos.label = "Remove_unused_docker.home_docker_registry_________";
 }
