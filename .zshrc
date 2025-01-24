@@ -105,7 +105,9 @@ fi
 if type zoxide > /dev/null ; then
     znap eval zoxide "zoxide init zsh"
 fi
-[ -f $HOME/.cargo/bin/sccache ] && export RUSTC_WRAPPER=$HOME/.cargo/bin/sccache
+if type sccache > /dev/null ; then
+    export RUSTC_WRAPPER=$(which sccache)
+fi
 
 if type fastfetch > /dev/null ; then
     fastfetch

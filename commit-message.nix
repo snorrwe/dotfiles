@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_fading____________________________________";
+  system.nixos.label = "Update_sccache_setup______________________________";
 }
