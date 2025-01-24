@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_missing_glyphs_warning________________________";
+  system.nixos.label = "Update_sccache_setup______________________________";
 }
