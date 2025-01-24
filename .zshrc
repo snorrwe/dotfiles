@@ -36,8 +36,13 @@ export EDITOR="$VISUAL"
 # znap source marlonrichert/zsh-autocomplete
 
 # load fzf-tab before other plugins
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
 znap source Aloxaf/fzf-tab
+
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
