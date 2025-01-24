@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_eza___________________________________________";
+  system.nixos.label = "Config_fzf-tab____________________________________";
 }
