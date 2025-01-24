@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_sccache_setup______________________________";
+  system.nixos.label = "Load_fzf-tab_before_zsh-autosuggestionscompletaion";
 }

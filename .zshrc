@@ -34,10 +34,12 @@ export EDITOR="$VISUAL"
 
 # https://github.com/Aloxaf/fzf-tab/issues/482
 # znap source marlonrichert/zsh-autocomplete
+
+# load fzf-tab before other plugins
+znap source Aloxaf/fzf-tab
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-completions
 znap source zpm-zsh/clipboard
-znap source Aloxaf/fzf-tab
 znap source arzzen/calc.plugin.zsh
 
 function aliases {
