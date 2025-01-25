@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_nvidia_container_toolkit___________________";
+  system.nixos.label = "System_update_2025-01-25__________________________";
 }
