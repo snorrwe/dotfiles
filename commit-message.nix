@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_earlyoom___________________________________";
+  system.nixos.label = "Enable_atuin_sync_________________________________";
 }
