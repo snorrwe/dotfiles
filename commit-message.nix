@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_atuin_sync_________________________________";
+  system.nixos.label = "Use_uk_dialect_for_dates_in_atuin_________________";
 }
