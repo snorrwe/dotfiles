@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-01-26__________________________";
+  system.nixos.label = "Fix_pulseaudio_borders____________________________";
 }

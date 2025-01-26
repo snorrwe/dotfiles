@@ -271,7 +271,7 @@ with lib;
         }
 
         #pulseaudio {
-          border-radius: 0 20px 20px 0;
+          border-radius: 20px 20px 20px 20px;
         }
 
         #pulseaudio.muted {
