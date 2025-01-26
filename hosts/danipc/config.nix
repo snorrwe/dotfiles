@@ -235,6 +235,10 @@
   # certain elements in my life might press the button while I'm working :)
   services.logind.powerKey = "ignore";
 
+  services.earlyoom = {
+    enable = true;
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
