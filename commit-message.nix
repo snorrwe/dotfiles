@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_uk_dialect_for_dates_in_atuin_________________";
+  system.nixos.label = "System_update_2025-01-26__________________________";
 }
