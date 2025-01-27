@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_atuin_sync_________________________________";
+  system.nixos.label = "Add_atuin_completions_____________________________";
 }
