@@ -77,6 +77,7 @@ function completions() {
     znap fpath _cargo   'rustup  completions zsh cargo'
     znap fpath _just   'just --completions zsh'
     znap fpath _watchexec 'watchexec --completions zsh'
+    znap fpath _atuin 'atuin gen-completions --shell zsh'
 }
 
 completions

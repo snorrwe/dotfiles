@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_pulseaudio_borders____________________________";
+  system.nixos.label = "Add_atuin_completions_____________________________";
 }
