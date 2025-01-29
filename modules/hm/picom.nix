@@ -9,6 +9,11 @@
   services.picom = {
     enable = true;
     backend = "glx";
+    inactiveOpacity = 0.8;
+    opacityRules = [
+      "100:class_g = 'firefox'"
+      "100:class_g = 'obsidian'"
+    ];
     settings = {
       blur = {
         method = "dual_kawase";
@@ -18,8 +23,6 @@
       blur-background = true;
       blur-background-fixed = true;
       corner-radius = 3;
-      inactive-opacity-override = true;
-      inactive-opacity = 0.92;
       frame-opacity = 0.7;
       shadow = false;
       fading = false;
