@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_atuin_completions_____________________________";
+  system.nixos.label = "Alias_eeza________________________________________";
 }
