@@ -121,3 +121,8 @@ fi
 if type fastfetch > /dev/null ; then
     fastfetch
 fi
+
+if type eza > /dev/null ; then
+    alias e=eza
+    alias ea='eza -al'
+fi

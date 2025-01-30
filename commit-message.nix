@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_add_opacity_to_firefox_and_obsidian________";
+  system.nixos.label = "Alias_eeza________________________________________";
 }
