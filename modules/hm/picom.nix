@@ -9,7 +9,7 @@
   services.picom = {
     enable = true;
     backend = "glx";
-    inactiveOpacity = 0.8;
+    inactiveOpacity = 0.9;
     opacityRules = [
       "100:class_g = 'firefox'"
       "100:class_g = 'obsidian'"

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Dim_inactive_windows______________________________";
+  system.nixos.label = "Less_inactive_opacity_____________________________";
 }
