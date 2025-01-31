@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_rofi_transparency_____________________________";
+  system.nixos.label = "Dim_inactive_windows______________________________";
 }

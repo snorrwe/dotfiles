@@ -28,6 +28,7 @@
       shadow = false;
       fading = false;
       log-level = "warn";
+      inactive-dim = 0.05;
     };
   };
 }
