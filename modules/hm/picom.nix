@@ -13,6 +13,7 @@
     opacityRules = [
       "100:class_g = 'firefox'"
       "100:class_g = 'obsidian'"
+      "100:class_g = 'Rofi'"
     ];
     settings = {
       blur = {

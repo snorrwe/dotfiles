@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Alias_eeza________________________________________";
+  system.nixos.label = "Fix_rofi_transparency_____________________________";
 }
