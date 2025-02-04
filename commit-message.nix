@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_the_default_tmux_terminal_to_the_current_termi";
+  system.nixos.label = "System_update_2025-02-04__________________________";
 }
