@@ -1,8 +1,9 @@
-{ config
-, pkgs
-, host
-, username
-, ...
+{
+  config,
+  pkgs,
+  host,
+  username,
+  ...
 }:
 
 {
@@ -73,6 +74,14 @@
     # for my Intel 6 AX200
     wifi.backend = "iwd";
   };
+  # fix for my pcie wifi disconnecting
+  boot.extraModprobeConfig = ''
+    options iwlwifi 11n_disable=1
+    options iwlwifi swcrypto=0
+    options iwlwifi power_save=0
+    options iwlwifi uapsd_disable=1
+    options iwlwifi power_scheme=1
+  '';
 
   # Set your time zone.
   time.timeZone = "Europe/Budapest";
