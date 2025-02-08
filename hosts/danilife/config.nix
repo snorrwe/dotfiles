@@ -1,11 +1,12 @@
-{ config
-, pkgs
-, host
-, username
-, options
-, inputs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  host,
+  username,
+  options,
+  inputs,
+  lib,
+  ...
 }:
 
 {
@@ -14,6 +15,7 @@
     ./sound.nix
     ../../commit-message.nix
     ../../modules/flatpak.nix
+    ../../modules/git.nix
   ];
 
   nix.settings = {
@@ -165,20 +167,6 @@
   programs.hyprland = {
     enable = true;
     withUWSM = true;
-  };
-  programs.git = {
-    enable = true;
-    config = {
-      init = {
-        defaultBranch = "main";
-      };
-      pull = {
-        rebase = true;
-      };
-      rebase = {
-        updateRefs = true;
-      };
-    };
   };
 
   # Allow unfree packages

@@ -14,6 +14,8 @@
   imports = [
     ../../modules/hm/rice.nix
     ../../modules/hm/dunst.nix
+    ../../modules/hm/picom.nix
+    ../../modules/hm/git.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -43,23 +45,11 @@
     theme = "Arc-Dark";
     font = "Monaspace Neon 12";
   };
-  programs.git = {
+  programs.wezterm = {
     enable = true;
-    userName = "Daniel Kiss";
-    userEmail = "littlesnorrboy@gmail.com";
-    lfs.enable = true;
-    difftastic = {
-      enable = true;
-      background = "dark";
-    };
+    enableZshIntegration = true;
+    extraConfig = builtins.readFile ../../.wezterm.lua;
+    package = inputs.wezterm.packages.${pkgs.system}.default;
   };
 
-  programs.lazygit = {
-    enable = true;
-    settings = {
-      gui = {
-        nerdFontsVersion = "3";
-      };
-    };
-  };
 }
