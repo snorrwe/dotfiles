@@ -61,4 +61,12 @@
     package = inputs.wezterm.packages.${pkgs.system}.default;
   };
 
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      gui = {
+        nerdFontsVersion = "3";
+      };
+    };
+  };
 }
