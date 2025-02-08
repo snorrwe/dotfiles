@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_iwlwifi_rules_________________________________";
+  system.nixos.label = "System_update_2025-02-08__________________________";
 }
