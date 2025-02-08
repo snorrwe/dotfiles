@@ -24,4 +24,18 @@
       };
     };
   };
+  programs.gh = {
+    enable = true;
+    settings = {
+      editor = "nvim";
+    };
+    extensions = [
+      pkgs.gh-dash
+    ];
+  };
+  programs.gh-dash = {
+    enable = true;
+    settings = {
+    };
+  };
 }
