@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_rebase.updateRefs_in_git______________________";
+  system.nixos.label = "Add_lazygit_config________________________________";
 }

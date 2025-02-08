@@ -1,8 +1,9 @@
-{ pkgs
-, username
-, host
-, inputs
-, ...
+{
+  pkgs,
+  username,
+  host,
+  inputs,
+  ...
 }:
 {
   # Home Manager Settings
@@ -26,13 +27,15 @@
       misc = {
         assume_yes = true;
         cleanup = true;
-        disable = [ "system" "git_repos" ];
+        disable = [
+          "system"
+          "git_repos"
+        ];
         pre_sudo = true;
       };
-      commands =
-        {
-          "System flake" = "cd /home/${username}/.dotfiles && just update ${host}";
-        };
+      commands = {
+        "System flake" = "cd /home/${username}/.dotfiles && just update ${host}";
+      };
     };
 
   };
@@ -47,6 +50,14 @@
       background = "dark";
     };
   };
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      gui = {
+        nerdFontsVersion = "3";
+      };
+    };
+  };
 
   programs.hyprlock = {
     enable = true;
@@ -55,8 +66,14 @@
         path = "${../..}/wallpaper.jpg";
       };
       input-field = {
-        size = [ 200 30 ];
-        position = [ 0 "-20" ];
+        size = [
+          200
+          30
+        ];
+        position = [
+          0
+          "-20"
+        ];
         halign = "center";
         valign = "center";
       };
