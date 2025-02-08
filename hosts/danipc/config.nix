@@ -14,6 +14,7 @@
     ./udev.nix
     ../../commit-message.nix
     ../../modules/flatpak.nix
+    ../../modules/git.nix
   ];
 
   nix.settings = {
@@ -168,20 +169,6 @@
   };
 
   programs.firefox.enable = true;
-  programs.git = {
-    enable = true;
-    config = {
-      init = {
-        defaultBranch = "main";
-      };
-      pull = {
-        rebase = true;
-      };
-      rebase = {
-        updateRefs = true;
-      };
-    };
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
