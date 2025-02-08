@@ -48,6 +48,10 @@
     userName = "Daniel Kiss";
     userEmail = "littlesnorrboy@gmail.com";
     lfs.enable = true;
+    difftastic = {
+      enable = true;
+      background = "dark";
+    };
   };
 
 }
