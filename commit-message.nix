@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_atuin___________________________________";
+  system.nixos.label = "System_update_2025-02-11__________________________";
 }
