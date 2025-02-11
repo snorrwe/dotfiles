@@ -15,7 +15,7 @@
 
   hardware.nvidia =
     {
-      package = config.boot.kernelPackages.nvidiaPackages.production;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       open = false;
       nvidiaSettings = true;
 
