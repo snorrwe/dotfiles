@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_npm________________________________________";
+  system.nixos.label = "Configure_atuin___________________________________";
 }
