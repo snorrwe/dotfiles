@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_latest_nvidia_drivers_________________________";
+  system.nixos.label = "Configure_atuin___________________________________";
 }
