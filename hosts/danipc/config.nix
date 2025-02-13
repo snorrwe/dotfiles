@@ -146,6 +146,7 @@
       enable = true;
       setSocketVariable = true;
       daemon.settings = {
+        features.cdi = true;
         insecure-registries = [
           "192.168.0.87:5000"
           "192.168.0.97:5000"

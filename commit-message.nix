@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_i3_config_for_the_new_monitor_setup________";
+  system.nixos.label = "Enable_cdi_feature_for_docker_____________________";
 }
