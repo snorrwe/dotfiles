@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-02-11__________________________";
+  system.nixos.label = "Update_hardware.nix_______________________________";
 }
