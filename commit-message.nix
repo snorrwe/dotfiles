@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_cdi_feature_for_docker_____________________";
+  system.nixos.label = "Use_open_drivers_for_nvidia_______________________";
 }

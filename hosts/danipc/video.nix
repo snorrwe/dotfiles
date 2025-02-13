@@ -16,7 +16,7 @@
   hardware.nvidia =
     {
       package = config.boot.kernelPackages.nvidiaPackages.latest;
-      open = false;
+      open = true;
       nvidiaSettings = true;
 
       # Modesetting is required.
