@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_open_drivers_for_nvidia_______________________";
+  system.nixos.label = "Configure_xrandr__________________________________";
 }
