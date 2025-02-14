@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_atuin___________________________________";
+  system.nixos.label = "Fix_tpm_source____________________________________";
 }
