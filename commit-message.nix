@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_awk_to_filter_lsof_output_____________________";
+  system.nixos.label = "Add_hyprpaper_____________________________________";
 }

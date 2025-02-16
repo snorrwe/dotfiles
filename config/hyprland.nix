@@ -1,8 +1,9 @@
-{ pkgs
-, lib
-, host
-, config
-, ...
+{
+  pkgs,
+  lib,
+  host,
+  config,
+  ...
 }:
 
 let
@@ -81,8 +82,8 @@ with lib;
         ++ (
           # workspaces
           # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (builtins.genList
-            (
+          builtins.concatLists (
+            builtins.genList (
               x:
               let
                 ws =
@@ -95,11 +96,10 @@ with lib;
                 "$mod, ${ws}, workspace, ${toString (x + 1)}"
                 "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
               ]
-            )
-            10)
+            ) 10
+          )
         );
       windowrulev2 = "suppressevent maximize, class:.*"; # You'll probably like this.
-
 
       decoration = {
         rounding = 4;
@@ -153,6 +153,13 @@ with lib;
       };
     };
   };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "on";
+      preload = [ "~/wallpaper.jpg" ];
+      wallpaper = [ ",~/wallpaper.jpg" ];
+    };
+  };
 }
-
-

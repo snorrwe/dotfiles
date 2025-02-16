@@ -121,6 +121,7 @@
         bluez-alsa
         cloudflared
         wofi
+        hyprpaper
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
