@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-02-16__________________________";
+  system.nixos.label = "Update_wallpaper__________________________________";
 }
