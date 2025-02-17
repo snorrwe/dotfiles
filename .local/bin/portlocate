@@ -9,7 +9,5 @@ set -euo pipefail
 port=$1
 output=$(lsof -PiTCP)
 
-
-
 echo "$output" | head -n 1
 echo "$output" | grep $port

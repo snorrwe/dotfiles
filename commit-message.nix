@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_files_via_upload______________________________";
+  system.nixos.label = "fmt_______________________________________________";
 }
