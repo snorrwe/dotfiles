@@ -1,13 +1,11 @@
 #!/usr/bin/env nix-shell
 #! nix-shell -i bash --pure
-#! nix-shell -p bash lsof
+#! nix-shell -p bash lsof gawk
 # find who is listening on port
 # USAGE: portlocate 8888
 
 set -euo pipefail
 
 port=$1
-output=$(lsof -PiTCP)
-
-echo "$output" | head -n 1
-echo "$output" | grep $port
+# print the header and rows matching the port
+lsof -PiTCP | awk "NR == 1 || /$port/"
