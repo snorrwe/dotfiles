@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_hyprpaper_____________________________________";
+  system.nixos.label = "System_update_2025-02-19__________________________";
 }
