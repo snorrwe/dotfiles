@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-02-20__________________________";
+  system.nixos.label = "Add_sleek_________________________________________";
 }
