@@ -60,4 +60,5 @@ with pkgs;
   fastfetch
 
   hotspot
+  sleek
 ]
