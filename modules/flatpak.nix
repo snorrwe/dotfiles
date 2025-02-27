@@ -22,6 +22,7 @@ let
     "md.obsidian.Obsidian"
     "com.jgraph.drawio.desktop"
     "com.obsproject.Studio"
+    "app.zen_browser.zen"
   ];
 in
 {

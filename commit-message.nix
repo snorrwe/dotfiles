@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-02-26__________________________";
+  system.nixos.label = "Migrate_to_zen_browser____________________________";
 }

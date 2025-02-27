@@ -12,6 +12,7 @@
     inactiveOpacity = 0.9;
     opacityRules = [
       "100:class_g = 'firefox'"
+      "100:class_g = 'zen'"
       "100:class_g = 'obsidian'"
       "100:class_g = 'Rofi'"
     ];
