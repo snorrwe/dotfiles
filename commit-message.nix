@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_sleek_________________________________________";
+  system.nixos.label = "Migrate_to_zen_browser____________________________";
 }

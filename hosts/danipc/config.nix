@@ -4,6 +4,9 @@
 , username
 , ...
 }:
+let
+  defaultBrowser = "app.zen_browser.zen";
+in
 
 {
   imports = [
@@ -152,8 +155,6 @@
     ];
   };
 
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
@@ -194,6 +195,18 @@
       xdg-desktop-portal-gtk
     ];
   };
+  # set default browser
+  xdg.mime = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = defaultBrowser;
+      "x-scheme-handler/http" = defaultBrowser;
+      "x-scheme-handler/https" = defaultBrowser;
+      "x-scheme-handler/about" = defaultBrowser;
+      "x-scheme-handler/unknown" = defaultBrowser;
+    };
+  };
+  environment.sessionVariables.DEFAULT_BROWSER = defaultBrowser;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.shellInit = ''
     [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true

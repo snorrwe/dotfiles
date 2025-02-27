@@ -24,7 +24,7 @@ with lib;
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "nm-applet --indicator"
         "waybar"
-        "[workspace 1 silent] firefox"
+        "[workspace 1 silent] app.zen_browser.zen"
         "[workspace 2 silent] $terminal"
         "[workspace 3 silent] md.obsidian.Obsidian"
         "[workspace 3 silent] org.mozilla.Thunderbird"
