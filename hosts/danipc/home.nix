@@ -16,6 +16,7 @@
     ../../modules/hm/dunst.nix
     ../../modules/hm/picom.nix
     ../../modules/hm/git.nix
+    ../../modules/hm/xdg.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -52,31 +53,4 @@
     package = inputs.wezterm.packages.${pkgs.system}.default;
   };
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "x-scheme-handler/mailto" = [ "userapp-Thunderbird-TWFWR2.desktop" ];
-      "message/rfc822" = [ "userapp-Thunderbird-TWFWR2.desktop" ];
-      "x-scheme-handler/mid" = [ "userapp-Thunderbird-TWFWR2.desktop" ];
-      "x-scheme-handler/webcal" = [ "userapp-Thunderbird-HLSVR2.desktop" ];
-      "text/calendar" = [ "userapp-Thunderbird-HLSVR2.desktop" ];
-      "application/x-extension-ics" = [ "userapp-Thunderbird-HLSVR2.desktop" ];
-      "x-scheme-handler/webcals" = [ "userapp-Thunderbird-HLSVR2.desktop" ];
-      "x-scheme-handler/http" = [ "app.zen_browser.zen.desktop" ];
-      "x-scheme-handler/https" = [ "app.zen_browser.zen.desktop" ];
-      "x-scheme-handler/chrome" = [ "app.zen_browser.zen.desktop" ];
-      "text/html" = [ "app.zen_browser.zen.desktop" ];
-      "application/x-extension-htm" = [ "app.zen_browser.zen.desktop" ];
-      "application/x-extension-html" = [ "app.zen_browser.zen.desktop" ];
-      "application/x-extension-shtml" = [ "app.zen_browser.zen.desktop" ];
-      "application/xhtml+xml" = [ "app.zen_browser.zen.desktop" ];
-      "application/x-extension-xhtml" = [ "app.zen_browser.zen.desktop" ];
-      "application/x-extension-xht" = [ "app.zen_browser.zen.desktop" ];
-      "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
-      "x-scheme-handler/tonsite" = [ "org.telegram.desktop.desktop" ];
-      "image/x-exr" = [ "org.kde.okteta.desktop" ];
-      "x-scheme-handler/about" = [ "app.zen_browser.zen.desktop" ];
-      "x-scheme-handler/unknown" = [ "app.zen_browser.zen.desktop" ];
-    };
-  };
 }

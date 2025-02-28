@@ -17,6 +17,7 @@
     ../../modules/hm/rice.nix
     ../../modules/hm/dunst.nix
     ../../modules/hm/git.nix
+    ../../modules/hm/xdg.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
