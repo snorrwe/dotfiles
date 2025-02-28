@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Migrate_to_zen_browser____________________________";
+  system.nixos.label = "Configure_mimeApps________________________________";
 }
