@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_xdg_settings___________________________";
+  system.nixos.label = "System_update_2025-03-01__________________________";
 }
