@@ -57,8 +57,6 @@ with pkgs;
   clang-tools
   clang
 
-  fastfetch
-
   hotspot
   sleek
 ]
