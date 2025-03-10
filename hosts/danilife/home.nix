@@ -35,6 +35,7 @@
           "git_repos"
         ];
         pre_sudo = true;
+        skip_notify = false;
       };
       commands = {
         "System flake" = "cd /home/${username}/.dotfiles && just update ${host}";
