@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_system_hyprland_packages______________________";
+  system.nixos.label = "System_update_2025-03-10__________________________";
 }
