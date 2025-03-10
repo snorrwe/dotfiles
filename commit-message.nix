@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_nix_in_topgrade___________________________";
+  system.nixos.label = "Start_discord_on_login____________________________";
 }

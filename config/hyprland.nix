@@ -32,6 +32,7 @@ with lib;
         "[workspace 3 silent] org.mozilla.Thunderbird"
         "[workspace 4 silent] com.slack.Slack"
         "[workspace 4 silent] org.telegram.desktop"
+        "[workspace 4 silent] com.discordapp.Discord"
       ];
       xwayland = {
         force_zero_scaling = true;
