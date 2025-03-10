@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Start_discord_on_login____________________________";
+  system.nixos.label = "Add_chromium_to_flatpaks__________________________";
 }
