@@ -33,6 +33,7 @@
         disable = [
           "system"
           "git_repos"
+          "nix"
         ];
         pre_sudo = true;
         skip_notify = false;
