@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-03-18__________________________";
+  system.nixos.label = "Add_chromium_to_flatpaks__________________________";
 }
