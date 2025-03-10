@@ -23,6 +23,7 @@ let
     "com.jgraph.drawio.desktop"
     "com.obsproject.Studio"
     "app.zen_browser.zen"
+    "org.chromium.Chromium"
   ];
 in
 {
