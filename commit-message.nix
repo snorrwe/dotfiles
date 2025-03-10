@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_topgrade___________________________________";
+  system.nixos.label = "fmt_______________________________________________";
 }
