@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Customize_fastfetch_______________________________";
+  system.nixos.label = "Update_topgrade___________________________________";
 }
