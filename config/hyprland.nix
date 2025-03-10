@@ -13,6 +13,8 @@ with lib;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = null;
+    portalPackage = null;
     plugins = [
       pkgs.hyprlandPlugins.hyprbars
     ];
