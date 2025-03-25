@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_chromium_to_flatpaks__________________________";
+  system.nixos.label = "Remove_firefox_assign_____________________________";
 }
