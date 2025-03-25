@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_firefox_assign_____________________________";
+  system.nixos.label = "System_update_2025-03-25__________________________";
 }
