@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_difftastic_display____________________________";
+  system.nixos.label = "Use_fuzzel_as_the_runner__________________________";
 }

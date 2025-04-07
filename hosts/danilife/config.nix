@@ -120,7 +120,6 @@
         bluez-tools
         bluez-alsa
         cloudflared
-        wofi
         hyprpaper
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
