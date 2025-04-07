@@ -134,6 +134,10 @@
         prettyName = "Hyprland";
         binPath = "/run/current-system/sw/bin/Hyprland";
       };
+      niri = {
+        prettyName = "Niri";
+        binPath = "${pkgs.niri}/bin/niri";
+      };
     };
   };
 

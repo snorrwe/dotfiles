@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_discord_config_____________________________";
+  system.nixos.label = "Add_niri__________________________________________";
 }
