@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-03-20__________________________";
+  system.nixos.label = "Set_difftastic_display____________________________";
 }

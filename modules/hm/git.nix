@@ -14,6 +14,7 @@
     difftastic = {
       enable = true;
       background = "dark";
+      display = "inline";
     };
   };
   programs.lazygit = {
