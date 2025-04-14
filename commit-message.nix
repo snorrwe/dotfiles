@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_command_line_tools_to_home-manager___________";
+  system.nixos.label = "Add_--git_to_eza_aliases__________________________";
 }
