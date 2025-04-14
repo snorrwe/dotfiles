@@ -12,11 +12,6 @@ with pkgs;
   unzip
   zip
   dust
-  atuin
-  fd
-  ripgrep
-  zoxide
-  eza
   go
   just
   watchexec
@@ -30,9 +25,7 @@ with pkgs;
   gzip
   diffutils
   github-cli
-  direnv
   git-lfs
-  jq
   nodejs_22
   lazydocker
   rustup
