@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_fuzzel_as_the_runner__________________________";
+  system.nixos.label = "Add_nushell_______________________________________";
 }
