@@ -18,6 +18,7 @@
     ../../modules/hm/git.nix
     ../../modules/hm/xdg.nix
     ../../modules/hm/fastfetch.nix
+    ../../modules/hm/nushell.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

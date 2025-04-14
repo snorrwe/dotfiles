@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-04-14__________________________";
+  system.nixos.label = "Add_nushell_______________________________________";
 }
