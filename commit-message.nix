@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_start_telegram_on_startup__________________";
+  system.nixos.label = "System_update_2025-04-24__________________________";
 }
