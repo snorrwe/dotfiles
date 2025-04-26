@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-04-24__________________________";
+  system.nixos.label = "update_home-2_ip__________________________________";
 }
