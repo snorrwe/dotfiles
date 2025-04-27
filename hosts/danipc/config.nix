@@ -151,8 +151,7 @@ in
       daemon.settings = {
         features.cdi = true;
         insecure-registries = [
-          "192.168.0.87:5000"
-          "192.168.0.105:5000"
+          "docker.local:5000"
         ];
       };
     };
