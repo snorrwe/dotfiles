@@ -134,8 +134,7 @@ in
       setSocketVariable = true;
       daemon.settings = {
         insecure-registries = [
-          "192.168.0.87:5000"
-          "192.168.0.97:5000"
+          "docker.local:5000"
         ];
       };
     };

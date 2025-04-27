@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-04-25__________________________";
+  system.nixos.label = "Use_docker.local_for_the_local_docker_registry____";
 }
