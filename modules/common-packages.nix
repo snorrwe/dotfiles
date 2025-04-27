@@ -51,4 +51,6 @@ with pkgs;
 
   hotspot
   sleek
+
+  tokei
 ]

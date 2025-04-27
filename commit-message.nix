@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_docker.local_for_the_local_docker_registry____";
+  system.nixos.label = "Add_tokei_to_common_packages______________________";
 }
