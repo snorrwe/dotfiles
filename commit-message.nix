@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_updating_to_readme____________________________";
+  system.nixos.label = "System_update_2025-04-28__________________________";
 }
