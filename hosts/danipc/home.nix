@@ -37,9 +37,6 @@
         ];
         pre_sudo = true;
       };
-      commands = {
-        "System flake" = "cd /home/${username}/.dotfiles && just update ${host}";
-      };
     };
 
   };

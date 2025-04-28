@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_auto-cpufreq__________________________________";
+  system.nixos.label = "Remove_system_flake_update_from_topgrade__________";
 }
