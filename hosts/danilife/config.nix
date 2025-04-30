@@ -225,6 +225,8 @@
     enable = true;
   };
 
+  services.auto-cpufreq.enable = true;
+
   # Keeps timing out during boot
   systemd.units."dev-tpmrm0.device".enable = false;
   systemd.units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
