@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-04-28__________________________";
+  system.nixos.label = "Disable_wezterm_check_for_updates_________________";
 }
