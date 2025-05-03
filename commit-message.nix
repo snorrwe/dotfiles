@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_wezterm_check_for_updates_________________";
+  system.nixos.label = "Remove_devenv_gc__________________________________";
 }
