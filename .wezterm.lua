@@ -15,4 +15,6 @@ config.enable_wayland = false
 config.front_end = "WebGpu"
 config.warn_about_missing_glyphs = false
 
+config.check_for_updates = false
+
 return config
