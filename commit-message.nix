@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_devenv_gc__________________________________";
+  system.nixos.label = "System_update_2025-05-04__________________________";
 }
