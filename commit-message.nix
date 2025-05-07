@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_comment_______________________________________";
+  system.nixos.label = "Update_git_submodule_configs______________________";
 }
