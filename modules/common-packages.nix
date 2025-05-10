@@ -53,4 +53,5 @@ with pkgs;
   sleek
 
   tokei
+  dysk # show disk usage, nicer default format than df
 ]
