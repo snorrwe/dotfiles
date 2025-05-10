@@ -52,4 +52,7 @@ with pkgs;
 
   hotspot
   sleek
+
+  tokei
+  dysk # show disk usage, nicer default format than df
 ]
