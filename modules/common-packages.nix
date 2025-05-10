@@ -11,15 +11,15 @@ with pkgs;
   parallel
   unzip
   zip
-  dust
+  dust # nicer du alternative
   go
   just
   watchexec
   lazygit
   ninja
-  starship
+  starship # for my shell prompt
   pipx
-  bat
+  bat # colorful, syntax highlighted cat alternative
   btop
   cmake
   gzip
@@ -34,7 +34,7 @@ with pkgs;
   distrobox
   visidata
   geeqie
-  glow
+  glow # tui markdown reader/renderer
   units
   killall
   libreoffice
@@ -50,9 +50,9 @@ with pkgs;
   clang-tools
   clang
 
-  hotspot
-  sleek
+  hotspot # perf GUI
+  sleek # SQL formatter
 
-  tokei
+  tokei # count LOC
   dysk # show disk usage, nicer default format than df
 ]
