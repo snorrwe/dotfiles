@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_git_submodule_configs______________________";
+  system.nixos.label = "System_update_2025-05-10__________________________";
 }
