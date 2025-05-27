@@ -50,6 +50,7 @@ with pkgs;
   clang
 
   hotspot # perf GUI
+  flamegraph
   sleek # SQL formatter
 
   tokei # count LOC
