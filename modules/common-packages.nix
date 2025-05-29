@@ -56,4 +56,6 @@ with pkgs;
 
   tokei # count LOC
   dysk # show disk usage, nicer default format than df
+
+  hyperfine # cli benchmarking tool
 ]
