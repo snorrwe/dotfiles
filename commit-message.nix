@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_flamegraph____________________________________";
+  system.nixos.label = "Add_hyperfine_____________________________________";
 }
