@@ -118,10 +118,6 @@ if type sccache > /dev/null ; then
     export RUSTC_WRAPPER=$(which sccache)
 fi
 
-if type fastfetch > /dev/null ; then
-    fastfetch
-fi
-
 if type eza > /dev/null ; then
     alias e='eza --git'
     alias ea='eza -al --git'

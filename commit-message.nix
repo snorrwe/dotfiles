@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_hyperfine_____________________________________";
+  system.nixos.label = "Remove_fastfetch_on_new_shell_____________________";
 }
