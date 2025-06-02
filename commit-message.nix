@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-06-01__________________________";
+  system.nixos.label = "Update_yazi_keymaps_______________________________";
 }
