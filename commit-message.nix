@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_fastfetch_on_new_shell_____________________";
+  system.nixos.label = "Update_yazi_keymaps_______________________________";
 }
