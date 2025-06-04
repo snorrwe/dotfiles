@@ -36,6 +36,7 @@ in
       "image/x-exr" = [ "org.kde.okteta.desktop" ];
       "x-scheme-handler/about" = [ browser ];
       "x-scheme-handler/unknown" = [ browser ];
+      "application/pdf" = [ browser ];
     };
   };
 }
