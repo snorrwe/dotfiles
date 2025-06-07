@@ -23,6 +23,11 @@
       gui = {
         nerdFontsVersion = "3";
       };
+      git = {
+        paging = {
+          externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+        };
+      };
     };
   };
   programs.gh = {
