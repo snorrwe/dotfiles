@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_the_browser_to_open_pdfs_by_default___________";
+  system.nixos.label = "Use_difftastic_as_lazygit_pager___________________";
 }
