@@ -127,6 +127,7 @@
     ignoreShellProgramCheck = true;
 
   };
+  programs.niri.enable = true;
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
@@ -136,7 +137,7 @@
       };
       niri = {
         prettyName = "Niri";
-        binPath = "${pkgs.niri}/bin/niri";
+        binPath = "/run/current-system/sw/bin/niri";
       };
     };
   };

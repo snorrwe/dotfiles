@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_difftastic_as_lazygit_pager___________________";
+  system.nixos.label = "Enable_niri_______________________________________";
 }
