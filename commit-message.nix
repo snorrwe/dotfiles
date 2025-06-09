@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_niri_______________________________________";
+  system.nixos.label = "Remove_niri_______________________________________";
 }

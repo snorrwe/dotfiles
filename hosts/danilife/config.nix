@@ -127,17 +127,12 @@
     ignoreShellProgramCheck = true;
 
   };
-  programs.niri.enable = true;
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
       hyprland = {
         prettyName = "Hyprland";
         binPath = "/run/current-system/sw/bin/Hyprland";
-      };
-      niri = {
-        prettyName = "Niri";
-        binPath = "/run/current-system/sw/bin/niri";
       };
     };
   };
