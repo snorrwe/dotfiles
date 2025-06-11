@@ -3,7 +3,7 @@
 ```sh
 git clone https://github.com/snorrwe/dotfiles $HOME/.dotfiles
 cd $HOME/.dotfiles
-nix-shell -p just --run 'just install danilife'
+./install.sh
 ```
 
 ## Updating
