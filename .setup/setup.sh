@@ -12,7 +12,7 @@ echo "start" > install.log
     hostname=$1
     nix run nixpkgs#just install $hostname
     echo "apply nix flake" >> install.log
-)
+) || exit 1
 
 ( bash ./setup_nvim.sh  && echo nvim >> install.log )
 ( bash ./setup_rust.sh  && echo rust >> install.log )
