@@ -1,9 +1,9 @@
 # Setup
 
 ```sh
-git clone https://github.com/snorrwe/dotfiles $HOME/.dotfiles
+git clone https://github.com/snorrwe/dotfiles $HOME/.dotfiles --branch nixos-lifebook
 cd $HOME/.dotfiles
-./install.sh
+./install.sh danilife
 ```
 
 ## Updating
