@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Update_README.md___________________________";
+  system.nixos.label = "Use_nix-shell_instaed_of_the_experimental_nix_run_";
 }
