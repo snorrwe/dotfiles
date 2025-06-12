@@ -236,6 +236,9 @@ in
   };
 
   services.auto-cpufreq.enable = true;
+  services.earlyoom = {
+    enable = true;
+  };
 
   # Keeps timing out during boot
   systemd.units."dev-tpmrm0.device".enable = false;

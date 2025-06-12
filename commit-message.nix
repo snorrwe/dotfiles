@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_default_browser_______________________________";
+  system.nixos.label = "Add_earlyoom______________________________________";
 }
