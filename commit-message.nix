@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_wezterm_flake_________________________________";
+  system.nixos.label = "Add_sway__________________________________________";
 }

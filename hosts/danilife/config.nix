@@ -127,12 +127,17 @@
     ignoreShellProgramCheck = true;
 
   };
+  programs.sway.enable = true;
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
       hyprland = {
         prettyName = "Hyprland";
         binPath = "/run/current-system/sw/bin/Hyprland";
+      };
+      sway = {
+        prettyName = "Sway";
+        binPath = "/run/current-system/sw/bin/sway";
       };
     };
   };
