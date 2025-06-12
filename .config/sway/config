@@ -177,7 +177,6 @@ workspace $ws4 output primary
 assign [class="^Slack$"] $ws4
 exec com.slack.Slack
 assign [class="^TelegramDesktop$"] $ws4
-exec org.telegram.desktop
 assign [class="^discord$"] $ws4
 exec com.discordapp.Discord
 
