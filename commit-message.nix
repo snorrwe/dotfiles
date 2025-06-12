@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_sway__________________________________________";
+  system.nixos.label = "Migrate_to_sway___________________________________";
 }

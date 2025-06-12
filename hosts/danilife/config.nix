@@ -127,14 +127,13 @@
     ignoreShellProgramCheck = true;
 
   };
-  programs.sway.enable = true;
+  programs.sway = {
+    enable = true;
+    xwayland.enable = true;
+  };
   programs.uwsm = {
     enable = true;
     waylandCompositors = {
-      hyprland = {
-        prettyName = "Hyprland";
-        binPath = "/run/current-system/sw/bin/Hyprland";
-      };
       sway = {
         prettyName = "Sway";
         binPath = "/run/current-system/sw/bin/sway";
@@ -165,11 +164,6 @@
       monaspace
       cascadia-code
     ];
-  };
-
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
   };
 
   # Allow unfree packages
@@ -205,10 +199,9 @@
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
-    config.common.default = [ "hyprland" ];
+    config.common.default = [ ];
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";

@@ -1,21 +1,14 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
 font pango:Monaspace Neon 14
 
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale $HOME/wallpaper.jpg
 exec --no-startup-id dunst
+output * bg "$HOME/wallpaper.jpg" fill
 
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
+gaps inner 4px
+gaps outer 2px
+default_border pixel 1px
+default_floating_border pixel 1px
+
 set $up k
 set $down j
 set $left h
@@ -26,12 +19,8 @@ set $mod Mod4
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
-
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -141,8 +130,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# exit
+bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit sway?" -B "Yes, EXIT!" "swaymsg exit" --font="Monaspace Neon 12"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -199,14 +188,14 @@ assign [class="^thunderbird"] $ws3
 assign [class="^Mail$"] $ws3
 exec org.mozilla.Thunderbird
 
-workspace $ws10 output HDMI-0
+workspace $ws10 output primary
 assign [class="^Spotify$"] $ws10
 
-workspace $ws2 output HDMI-0
-assign [class="^Alacritty$"] $ws2
-exec alacritty
+workspace $ws2 output primary
+assign [class="^org.wezfurlong.wezterm$"] $ws2
+exec wezterm
 
-workspace $ws5 output HDMI-0
+workspace $ws5 output primary
 assign [class="^zoom$"] $ws5
 
 # colors

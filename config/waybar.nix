@@ -1,8 +1,9 @@
-{ pkgs
-, lib
-, host
-, config
-, ...
+{
+  pkgs,
+  lib,
+  host,
+  config,
+  ...
 }:
 
 let
@@ -23,6 +24,7 @@ with lib;
         ];
         modules-left = [
           "hyprland/workspaces"
+          "sway/workspaces"
         ];
         modules-right = [
           "pulseaudio"
@@ -44,6 +46,10 @@ with lib;
           };
           on-scroll-up = "hyprctl dispatch workspace e+1";
           on-scroll-down = "hyprctl dispatch workspace e-1";
+        };
+        "sway/workspaces" = {
+          "all-outputs" = true;
+          "tooltip" = true;
         };
         "clock" = {
           format = "{:L%H:%M %d. %b %Y}";
