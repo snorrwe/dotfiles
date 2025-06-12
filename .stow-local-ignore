@@ -33,3 +33,4 @@ flake\.nix
 \.wezterm.lua
 justfile
 config
+modules

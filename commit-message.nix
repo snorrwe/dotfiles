@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_waybar_focused________________________________";
+  system.nixos.label = "Add_modules_to_stow_ignore________________________";
 }
