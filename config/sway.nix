@@ -31,12 +31,4 @@ with lib;
       };
     };
   };
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "on";
-      preload = [ "~/wallpaper.jpg" ];
-      wallpaper = [ ",~/wallpaper.jpg" ];
-    };
-  };
 }

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_modules_to_stow_ignore________________________";
+  system.nixos.label = "Remove_hyprpaper__________________________________";
 }

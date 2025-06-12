@@ -123,7 +123,6 @@ in
         bluez-tools
         bluez-alsa
         cloudflared
-        hyprpaper
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
