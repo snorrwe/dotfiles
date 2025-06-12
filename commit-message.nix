@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_earlyoom______________________________________";
+  system.nixos.label = "Fix_waybar_focused________________________________";
 }

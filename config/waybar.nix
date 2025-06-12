@@ -48,7 +48,6 @@ with lib;
           on-scroll-down = "hyprctl dispatch workspace e-1";
         };
         "sway/workspaces" = {
-          "all-outputs" = true;
           "tooltip" = true;
         };
         "clock" = {
@@ -203,7 +202,7 @@ with lib;
           transition: ${betterTransition};
         }
 
-        #workspaces button.active {
+        #workspaces button.active, #workspaces button.focused {
           background-color: #89b4fa;
           color: #1e1e2e;
           font-weight: bold;
