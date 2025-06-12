@@ -15,9 +15,19 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wezterm = {
+      url = "github:wez/wezterm/main?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nix-ld, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nix-ld,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       host = "danilife";
@@ -58,5 +68,3 @@
       };
     };
 }
-
-

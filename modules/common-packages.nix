@@ -45,7 +45,6 @@ with pkgs;
   mutagen
   pandoc
   nixfmt-rfc-style
-  wezterm
 
   clang-tools
   clang
