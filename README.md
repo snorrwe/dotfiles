@@ -3,6 +3,7 @@
 ```sh
 git clone https://github.com/snorrwe/dotfiles $HOME/.dotfiles --branch nixos-lifebook
 cd $HOME/.dotfiles
+git submodule update --init --recursive
 ./install.sh danilife
 ```
 

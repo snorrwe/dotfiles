@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nix-shell_instaed_of_the_experimental_nix_run_";
+  system.nixos.label = "Add_git_submodule_init_to_readme__________________";
 }
