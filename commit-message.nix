@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Migrate_to_sway___________________________________";
+  system.nixos.label = "Set_default_browser_______________________________";
 }
