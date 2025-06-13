@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_unstable_nixpkgs_for_wezterm__________________";
+  system.nixos.label = "Enable_difftastic_as_git_difftool_________________";
 }

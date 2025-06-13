@@ -15,6 +15,7 @@
       enable = true;
       background = "dark";
       display = "inline";
+      enableAsDifftool = true;
     };
   };
   programs.lazygit = {
