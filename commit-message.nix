@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_autostart_telegram_________________________";
+  system.nixos.label = "Remove_grimblast__________________________________";
 }

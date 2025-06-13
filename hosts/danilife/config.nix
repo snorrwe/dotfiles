@@ -117,7 +117,6 @@ in
         pamixer
         pulseaudio
         waybar
-        grimblast
         wl-clipboard
         bluez5-experimental
         bluez-tools
