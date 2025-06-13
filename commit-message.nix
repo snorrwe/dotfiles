@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_xdg_common.default_to_gtk_____________________";
+  system.nixos.label = "Enable_difftastic_as_git_difftool_________________";
 }
