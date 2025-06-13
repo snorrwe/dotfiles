@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_grimblast__________________________________";
+  system.nixos.label = "Add_flameshot_____________________________________";
 }

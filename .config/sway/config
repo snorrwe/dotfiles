@@ -234,5 +234,5 @@ client.background        $base
 # TODO:
 # lock
 
-# TODO:
 # screenshot
+bindsym Print exec "flameshot gui"

@@ -122,6 +122,7 @@ in
         bluez-tools
         bluez-alsa
         cloudflared
+        (flameshot.override { enableWlrSupport = true; })
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
