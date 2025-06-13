@@ -203,7 +203,7 @@ in
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
     ];
-    config.common.default = [ ];
+    config.common.default = [ "gtk" ];
   };
   # set default browser
   xdg.mime = {
