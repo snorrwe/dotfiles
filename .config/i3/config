@@ -22,6 +22,11 @@ set $right l
 
 set $mod Mod4
 
+gaps inner 4px
+gaps outer 2px
+default_border pixel 2px
+default_floating_border pixel 2px
+
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
