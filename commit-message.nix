@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Manage_flatpaks_via_HM_activation_script__________";
+  system.nixos.label = "Remove_sqlx-cli___________________________________";
 }
