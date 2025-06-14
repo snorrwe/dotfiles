@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_cargo-update_via_nixpkgs______________________";
+  system.nixos.label = "Add_cargo-cache___________________________________";
 }
