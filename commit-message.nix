@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Back_to_hyprland__________________________________";
+  system.nixos.label = "System_update_2025-06-14__________________________";
 }
