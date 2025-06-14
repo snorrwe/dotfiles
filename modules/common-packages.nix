@@ -28,8 +28,12 @@ with pkgs;
   git-lfs
   nodejs_22
   lazydocker
+
   rustup
+  # topgrade deps to manage cargo-installed packages
   cargo-update
+  cargo-cache
+
   pkg-config
   sccache
   distrobox
