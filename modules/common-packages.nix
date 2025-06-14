@@ -34,7 +34,6 @@ with pkgs;
   cargo-nextest
   cargo-watch
   cargo-clean-recursive
-  sqlx-cli
   # topgrade deps to manage cargo-installed packages
   cargo-update
   cargo-cache
