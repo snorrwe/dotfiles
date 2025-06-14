@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_commit-message.nix_merge_to_union_____________";
+  system.nixos.label = "Back_to_hyprland__________________________________";
 }

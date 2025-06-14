@@ -13,7 +13,7 @@
 
   imports = [
     ../../config/waybar.nix
-    ../../config/sway.nix
+    ../../config/hyprland.nix
     ../../modules/hm/rice.nix
     ../../modules/hm/dunst.nix
     ../../modules/hm/git.nix
