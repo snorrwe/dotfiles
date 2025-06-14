@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Implement_final_piece_of_rust_setup_via_nix_______";
+  system.nixos.label = "Set_createHome_on_snorrwe_________________________";
 }
