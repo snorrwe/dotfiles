@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-06-14__________________________";
+  system.nixos.label = "Add_RestFox_______________________________________";
 }

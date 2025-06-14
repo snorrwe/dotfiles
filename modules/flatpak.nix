@@ -24,6 +24,7 @@ let
     "com.obsproject.Studio"
     "app.zen_browser.zen"
     "org.chromium.Chromium"
+    "dev.restfox.Restfox"
   ];
 in
 {
