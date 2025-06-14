@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_rust.nix___________________________________";
+  system.nixos.label = "Manage_flatpaks_via_HM_activation_script__________";
 }
