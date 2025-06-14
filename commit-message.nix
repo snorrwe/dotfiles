@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_createHome_on_snorrwe_________________________";
+  system.nixos.label = "Remove_rust.nix___________________________________";
 }
