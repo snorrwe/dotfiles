@@ -15,7 +15,6 @@ in
     ./video.nix
     ./udev.nix
     ../../commit-message.nix
-    ../../modules/flatpak.nix
     ../../modules/git.nix
   ];
 

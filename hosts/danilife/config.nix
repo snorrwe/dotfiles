@@ -17,7 +17,6 @@ in
     ./hardware.nix
     ./sound.nix
     ../../commit-message.nix
-    ../../modules/flatpak.nix
     ../../modules/git.nix
   ];
 
