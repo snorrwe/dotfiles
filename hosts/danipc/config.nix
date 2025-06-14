@@ -116,6 +116,7 @@ in
       "wheel"
       "docker"
     ];
+    createHome = true;
     packages =
       with pkgs;
       [
