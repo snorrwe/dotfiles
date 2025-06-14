@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_RestFox_______________________________________";
+  system.nixos.label = "Remove_cargo-update_______________________________";
 }
