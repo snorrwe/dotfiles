@@ -15,6 +15,5 @@ echo "start" > install.log
 ) || exit 1
 
 ( bash ./setup_nvim.sh  && echo nvim >> install.log )
-( bash ./setup_rust.sh  && echo rust >> install.log )
 ( bash ./setup_zsh.sh  && echo zsh >> install.log )
 echo done >> install.log

@@ -17,6 +17,7 @@ in
     ./udev.nix
     ../../commit-message.nix
     ../../modules/flatpak.nix
+    ../../modules/rust.nix
     ../../modules/git.nix
   ];
 
