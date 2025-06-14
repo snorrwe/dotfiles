@@ -29,6 +29,7 @@ with pkgs;
   nodejs_22
   lazydocker
   rustup
+  cargo-update
   pkg-config
   sccache
   distrobox
