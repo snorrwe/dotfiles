@@ -20,7 +20,6 @@
     ../../modules/hm/fastfetch.nix
     ../../modules/hm/nushell.nix
     ../../modules/hm/cli.nix
-    ../../modules/hm/flatpak.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
