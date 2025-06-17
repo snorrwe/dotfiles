@@ -16,10 +16,16 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nix-ld, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      nix-ld,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
-      host = "danipc";
+      host = "danilife";
       username = "snorrwe";
     in
     {
@@ -57,5 +63,3 @@
       };
     };
 }
-
-

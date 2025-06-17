@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_audio_icon_to_polybar_________________________";
+  system.nixos.label = "Setup_lifebook_host_______________________________";
 }
