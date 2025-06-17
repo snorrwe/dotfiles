@@ -124,6 +124,7 @@ in
         pamixer
         pulseaudio
         flameshot
+        acpi # battery status
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;

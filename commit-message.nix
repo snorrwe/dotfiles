@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_lifebook_host_______________________________";
+  system.nixos.label = "Show_battery______________________________________";
 }
