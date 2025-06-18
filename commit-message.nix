@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_neovim_via_HM_____________________________";
+  system.nixos.label = "Add_nvim_config_as_submodule______________________";
 }
