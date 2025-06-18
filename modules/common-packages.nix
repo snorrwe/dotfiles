@@ -65,4 +65,8 @@ with pkgs;
   dysk # show disk usage, nicer default format than df
 
   hyperfine # cli benchmarking tool
+  sshfs
+  fzf
+  python3
+  yazi
 ]

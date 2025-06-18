@@ -182,17 +182,10 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
-    stow
-    parallel
     curl
-    fzf
-    yazi
-    python3
-    xdg-desktop-portal
     networkmanagerapplet
     gnome-keyring
     xorg.xhost
-    sshfs
     xclip
     linuxKernel.packages.linux_zen.perf
     (pkgs.catppuccin-sddm.override {

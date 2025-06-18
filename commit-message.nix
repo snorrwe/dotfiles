@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_nvim_config_as_submodule______________________";
+  system.nixos.label = "Remove_some_bloat_from_systemPackages_____________";
 }
