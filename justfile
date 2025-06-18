@@ -29,7 +29,7 @@ apply hostname=default_host:
     set -euo pipefail
 
     sudo nixos-rebuild switch --flake ".#{{ hostname }}"
-    stow --adopt .
+    stow --adopt --dotfiles .
 
 install hostname=default_host:
     mkdir -p "./hosts/{{ hostname }}"

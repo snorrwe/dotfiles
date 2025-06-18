@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Lets_try_ours_as_merge_strategy___________________";
+  system.nixos.label = "Make_use_of_the_--dotfiles_stow_flag______________";
 }
