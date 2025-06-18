@@ -51,7 +51,7 @@
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
-    extraConfig = builtins.readFile ../../.wezterm.lua;
+    extraConfig = builtins.readFile ../../dot-wezterm.lua;
     package = inputs.wezterm.packages.${pkgs.system}.default;
   };
 
