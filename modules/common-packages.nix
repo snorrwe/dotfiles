@@ -4,7 +4,6 @@
 }:
 with pkgs;
 [
-  neovim
   xfce.thunar
   tmux
   stow
