@@ -1,2 +1,2 @@
 * text=auto
-commit-message.nix merge=union
+commit-message.nix merge=ours

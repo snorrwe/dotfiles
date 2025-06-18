@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_some_bloat_from_systemPackages_____________";
+  system.nixos.label = "Lets_try_ours_as_merge_strategy___________________";
 }
