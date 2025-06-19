@@ -10,3 +10,4 @@ zsh-users
 .config/tmux/plugins
 !.config/tmux/plugins/tpm
 .devenv
+dot-config/tmux/plugins

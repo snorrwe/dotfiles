@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Make_use_of_the_--dotfiles_stow_flag______________";
+  system.nixos.label = "Ignore_tmux_plugins_dir___________________________";
 }
