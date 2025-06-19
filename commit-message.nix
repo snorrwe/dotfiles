@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_tmux_plugins_dir___________________________";
+  system.nixos.label = "Enalbe_nvidia_in_podman___________________________";
 }

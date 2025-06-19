@@ -159,6 +159,7 @@ in
   };
   virtualisation.podman = {
     enable = true;
+    enableNvidia = true;
   };
   hardware.nvidia-container-toolkit.enable = true;
 
