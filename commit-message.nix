@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fixup_Make_use_of_the_--dotfiles_stow_flag________";
+  system.nixos.label = "Shorter_time_format_for_battery___________________";
 }

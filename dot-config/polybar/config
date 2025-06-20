@@ -136,7 +136,7 @@ adapter = ADP0
 ; see "man date" for details on how to format the time string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
 ; Default: %H:%M:%S
-time-format = %Hhr:%Mmin
+time-format = %R
 
 ; Available tags:
 ;   <label-charging> (default)
