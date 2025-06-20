@@ -43,6 +43,10 @@
   programs.gh-dash = {
     enable = true;
     settings = {
+      pager = {
+        diff = "${pkgs.difftastic}/bin/difft";
+      };
+      smartFilteringAtLaunch = false;
     };
   };
 }

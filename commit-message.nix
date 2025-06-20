@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_back_xdg-desktop-portal_______________________";
+  system.nixos.label = "Configure_gh_dash_________________________________";
 }
