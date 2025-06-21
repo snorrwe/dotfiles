@@ -16,6 +16,15 @@ VOLUME=$(pamixer --get-volume-human)
 SINK=$(getDefaultSink)
 # SOURCE=$(getDefaultSource)
 
+case $VOLUME in 
+    "muted")
+        ICON="󰝟"
+        VOLUME=""
+        ;;
+    *)
+        ICON=" "
+esac
+
 case $1 in
     "--up")
         pamixer --increase 5
@@ -27,5 +36,5 @@ case $1 in
         pamixer --toggle-mute
         ;;
     *)
-        echo "${VOLUME} ${SINK}"
+        echo "${ICON}${VOLUME} ${SINK}"
 esac

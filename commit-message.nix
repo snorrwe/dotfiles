@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_query_default_source_in_pipewire.sh________";
+  system.nixos.label = "Add_audio_icon_to_polybar_________________________";
 }
