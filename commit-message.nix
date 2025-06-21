@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_the_obsolete_setup_nvim.sh_________________";
+  system.nixos.label = "Do_not_query_default_source_in_pipewire.sh________";
 }

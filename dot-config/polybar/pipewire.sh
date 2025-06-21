@@ -14,7 +14,7 @@ getDefaultSource() {
 
 VOLUME=$(pamixer --get-volume-human)
 SINK=$(getDefaultSink)
-SOURCE=$(getDefaultSource)
+# SOURCE=$(getDefaultSource)
 
 case $1 in
     "--up")
