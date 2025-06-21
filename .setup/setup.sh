@@ -14,6 +14,5 @@ echo "start" > install.log
     echo "apply nix flake" >> install.log
 ) || exit 1
 
-( bash ./setup_nvim.sh  && echo nvim >> install.log )
 ( bash ./setup_zsh.sh  && echo zsh >> install.log )
 echo done >> install.log
