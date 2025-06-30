@@ -44,6 +44,9 @@
     enable = true;
     settings = {
       smartFilteringAtLaunch = false;
+      pager = {
+        diff = "${pkgs.delta}/bin/delta";
+      };
     };
   };
 }
