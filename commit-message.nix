@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_side-by-side_diff_in_gh_via_delta_____________";
+  system.nixos.label = "Always_use_pager_in_gh_diff_______________________";
 }
