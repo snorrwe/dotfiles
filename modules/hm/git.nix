@@ -45,7 +45,7 @@
     settings = {
       smartFilteringAtLaunch = false;
       pager = {
-        diff = "${pkgs.delta}/bin/delta";
+        diff = "${pkgs.delta}/bin/delta -s --paging always";
       };
     };
   };
