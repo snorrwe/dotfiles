@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Merge_branch_nixos-danipc_into_nixos-lifebook-i3__";
+  system.nixos.label = "System_update_2025-07-07__________________________";
 }
