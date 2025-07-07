@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Always_use_pager_in_gh_diff_______________________";
+  system.nixos.label = "System_update_2025-07-07__________________________";
 }
