@@ -122,4 +122,5 @@ if type eza > /dev/null ; then
     alias e='eza --git'
     alias ea='eza -al --git'
     alias la=ea
+    alias tree='eza --tree'
 fi
