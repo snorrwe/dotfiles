@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_______________________________________";
+  system.nixos.label = "Alias_tree________________________________________";
 }
