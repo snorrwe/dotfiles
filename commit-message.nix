@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_battery-management____________________________";
+  system.nixos.label = "Update_nvim_______________________________________";
 }
