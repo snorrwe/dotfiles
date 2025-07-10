@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nh_in_scripts_________________________________";
+  system.nixos.label = "Add_battery-management____________________________";
 }

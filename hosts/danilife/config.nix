@@ -19,6 +19,7 @@ in
     ../../modules/flatpak.nix
     ../../modules/git.nix
     ../../modules/nh.nix
+    ../../modules/battery-management.nix
   ];
 
   nix.settings = {
