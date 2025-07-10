@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_nh__________________________________________";
+  system.nixos.label = "Use_nh_in_scripts_________________________________";
 }
