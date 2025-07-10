@@ -15,7 +15,7 @@ in
     ./sound.nix
     ./video.nix
     ./udev.nix
-    ../../commit-message.nix
+    ../../modules/commit-message.nix
     ../../modules/flatpak.nix
     ../../modules/git.nix
     ../../modules/nh.nix
