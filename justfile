@@ -3,16 +3,8 @@ default_host := "${NIX_HOST}"
 default:
     just --list
 
-# clean the system of unwanted caches
-clean: clean-generations gc
-
-clean-generations:
+clean:
     nh clean all
-
-gc: nix-gc
-
-nix-gc:
-    nix-collect-garbage -d
 
 update *args:
     #!/usr/bin/env bash

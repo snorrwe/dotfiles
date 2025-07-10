@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_commit-message.nix_into_modules______________";
+  system.nixos.label = "Remove_obsolete_clean_____________________________";
 }
