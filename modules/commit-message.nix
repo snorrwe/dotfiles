@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_nix.gc_____________________________________";
+  system.nixos.label = "Remove_obsolete_clean_____________________________";
 }
