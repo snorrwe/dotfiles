@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-commit_msg_file="$(git rev-parse --show-toplevel)/commit-message.nix"
+commit_msg_file="$(git rev-parse --show-toplevel)/modules/commit-message.nix"
 
 
 process_commit_msg() {
