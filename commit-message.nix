@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_nix.gc____________________________________";
+  system.nixos.label = "Use_nh_in_scripts_________________________________";
 }

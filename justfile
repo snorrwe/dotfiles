@@ -6,9 +6,8 @@ default:
 # clean the system of unwanted caches
 clean: clean-generations gc
 
-clean-generations n="+2":
-    sudo nix-env --delete-generations --profile /nix/var/nix/profiles/system {{ n }}
-    sudo /run/current-system/bin/switch-to-configuration boot
+clean-generations:
+    nh clean all
 
 gc: nix-gc
 
@@ -28,7 +27,7 @@ apply hostname=default_host:
     #!/usr/bin/env bash
     set -euo pipefail
 
-    sudo nixos-rebuild switch --flake ".#{{ hostname }}"
+    nh os switch "."
     stow --adopt --dotfiles .
 
 install hostname=default_host:
