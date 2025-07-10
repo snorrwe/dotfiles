@@ -7,6 +7,13 @@ git submodule update --init --recursive
 ./install.sh danipc
 ```
 
+Make sure you have flakes enabled.
+In `configuration.nix`
+
+```nix
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+```
+
 ## Updating
 
 My usual workflow is

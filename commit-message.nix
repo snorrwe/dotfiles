@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_hostname_in_apply_____________________________";
+  system.nixos.label = "Add_note_about_enabling_flakes_when_installing____";
 }
