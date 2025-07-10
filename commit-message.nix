@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_nh__________________________________________";
+  system.nixos.label = "Disable_nix.gc____________________________________";
 }

@@ -28,10 +28,6 @@ in
     ];
     auto-optimise-store = true;
   };
-  nix.gc = {
-    automatic = true;
-    randomizedDelaySec = "10m";
-  };
 
   # Bootloader.
   boot = {
