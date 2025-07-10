@@ -27,7 +27,7 @@ apply hostname=default_host:
     #!/usr/bin/env bash
     set -euo pipefail
 
-    nh os switch "."
+    nh os switch "." --hostname={{ hostname }}
     stow --adopt --dotfiles .
 
 install hostname=default_host:
