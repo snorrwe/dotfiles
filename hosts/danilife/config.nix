@@ -135,14 +135,18 @@ in
       setSocketVariable = true;
       daemon.settings = {
         features.cdi = true;
-        insecure-registries = [
-          "docker.local:5000"
-        ];
       };
     };
   };
   virtualisation.podman = {
     enable = true;
+  };
+  virtualisation.containers = {
+    registries = {
+      insecure = [
+        "docker.local:5000"
+      ];
+    };
   };
 
   services.flatpak.enable = true;
