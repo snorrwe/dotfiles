@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_obsolete_clean_____________________________";
+  system.nixos.label = "Set_local_docker_registry_________________________";
 }
