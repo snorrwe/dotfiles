@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_local_docker_registry_________________________";
+  system.nixos.label = "Shorter_xwindow_titles____________________________";
 }
