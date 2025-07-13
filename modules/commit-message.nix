@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Shorter_xwindow_titles____________________________";
+  system.nixos.label = "Use_betterlockscreen______________________________";
 }

@@ -21,6 +21,7 @@
     ../../modules/hm/nushell.nix
     ../../modules/hm/cli.nix
     ../../modules/hm/nvim.nix
+    ../../modules/hm/setup-lockscreen.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
