@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_nvim_config_clone_into_nvim.nix______________";
+  system.nixos.label = "Set_neovim_hm_package_____________________________";
 }
