@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Delete_existing_file_when_cloning_________________";
+  system.nixos.label = "Fix_wallpaper_path________________________________";
 }
