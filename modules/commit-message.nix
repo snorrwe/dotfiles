@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-07-13__________________________";
+  system.nixos.label = "Remove_redundant_insecure_package_permission______";
 }
