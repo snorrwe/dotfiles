@@ -162,7 +162,6 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "olm-3.2.16"
   ];
 
   # List packages installed in system profile. To search, run:
