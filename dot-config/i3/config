@@ -249,7 +249,7 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # lock
-bindsym Control+$mod+l exec "i3lock -c 000000"
+bindsym Control+$mod+l exec "betterlockscreen -l"
 
 # screenshot
 bindsym Print exec "flameshot gui"

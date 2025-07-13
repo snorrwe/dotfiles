@@ -69,4 +69,6 @@ with pkgs;
   fzf
   python3
   yazi
+
+  betterlockscreen
 ]
