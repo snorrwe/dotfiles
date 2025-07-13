@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   username,
   host,
   inputs,
@@ -13,4 +14,9 @@
     withPython3 = true;
     withNodeJs = true;
   };
+  home.activation.setupNvimConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [[ ! -d ~/.config/nvim ]]; then
+        ${pkgs.git}/bin/git clone https://github.com/snorrwe/nvim-config ~/.config/nvim
+    fi
+  '';
 }

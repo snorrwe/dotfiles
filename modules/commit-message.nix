@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_use_submodules_for_configs_________________";
+  system.nixos.label = "Move_nvim_config_clone_into_nvim.nix______________";
 }
