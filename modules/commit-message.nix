@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_insecure_package_permission______";
+  system.nixos.label = "Fix_wallpaper_path________________________________";
 }
