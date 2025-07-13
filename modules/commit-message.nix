@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Merge_branch_nixos-danipc_into_nixos-lifebook-i3__";
+  system.nixos.label = "Remove_redundant_insecure_package_________________";
 }
