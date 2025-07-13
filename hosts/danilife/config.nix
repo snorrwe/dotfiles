@@ -1,16 +1,7 @@
-{
-  config,
-  pkgs,
-  host,
-  username,
-  lib,
-  ...
-}:
-let
-  defaultBrowser = "app.zen_browser.zen";
-in
+{ config, pkgs, host, username, lib, ... }:
+let defaultBrowser = "app.zen_browser.zen";
 
-{
+in {
   imports = [
     ./hardware.nix
     ./sound.nix
@@ -23,10 +14,7 @@ in
   ];
 
   nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
   };
 
@@ -38,9 +26,7 @@ in
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     # Needed For Some Steam Games
-    kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
-    };
+    kernel.sysctl = { "vm.max_map_count" = 2147483642; };
     # Bootloader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -55,8 +41,8 @@ in
       interpreter = "${pkgs.appimage-run}/bin/appimage-run";
       recognitionType = "magic";
       offset = 0;
-      mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-      magicOrExtension = ''\x7fELF....AI\x02'';
+      mask = "\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff";
+      magicOrExtension = "\\x7fELF....AI\\x02";
     };
     plymouth.enable = true;
   };
@@ -77,10 +63,12 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.displayManager.sddm = {
+    wayland.enable = true;
     enable = true;
     theme = "catppuccin-mocha";
     package = pkgs.kdePackages.sddm;
   };
+  programs.niri.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -109,22 +97,16 @@ in
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     createHome = true;
-    packages =
-      with pkgs;
+    packages = with pkgs;
       [
         pavucontrol
         pamixer
         pulseaudio
         flameshot
         acpi # battery status
-      ]
-      ++ (import ../../modules/common-packages.nix pkgs);
+      ] ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
@@ -133,30 +115,19 @@ in
     rootless = {
       enable = true;
       setSocketVariable = true;
-      daemon.settings = {
-        features.cdi = true;
-      };
+      daemon.settings = { features.cdi = true; };
     };
   };
-  virtualisation.podman = {
-    enable = true;
-  };
+  virtualisation.podman = { enable = true; };
   virtualisation.containers = {
-    registries = {
-      insecure = [
-        "docker.local:5000"
-      ];
-    };
+    registries = { insecure = [ "docker.local:5000" ]; };
   };
 
   services.flatpak.enable = true;
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [
-      monaspace
-      cascadia-code
-    ];
+    packages = with pkgs; [ monaspace cascadia-code ];
   };
 
   # Allow unfree packages
@@ -194,9 +165,7 @@ in
   xdg.portal = {
     enable = true;
     config.common.default = [ "gtk" ];
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
   # set default browser
   xdg.mime = {
@@ -224,14 +193,10 @@ in
     '';
   };
 
-  hardware.graphics = {
-    enable = true;
-  };
+  hardware.graphics = { enable = true; };
 
   services.auto-cpufreq.enable = true;
-  services.earlyoom = {
-    enable = true;
-  };
+  services.earlyoom = { enable = true; };
 
   # Keeps timing out during boot
   systemd.units."dev-tpmrm0.device".enable = false;
