@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Delete_existing_file_when_cloning_________________";
+  system.nixos.label = "Move_nvim_config_clone_into_nvim.nix______________";
 }
