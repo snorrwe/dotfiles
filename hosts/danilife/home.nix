@@ -1,11 +1,4 @@
-{
-  pkgs,
-  username,
-  host,
-  inputs,
-  ...
-}:
-{
+{ pkgs, username, host, inputs, ... }: {
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
@@ -20,7 +13,7 @@
     ../../modules/hm/fastfetch.nix
     ../../modules/hm/nushell.nix
     ../../modules/hm/cli.nix
-    ../../modules/hm/setup-lockscreen.nix
+    ../../modules/hm/lockscreen.nix
     ../../modules/hm/setup-git-repos.nix
     ../../modules/hm/nvim.nix
   ];
@@ -34,11 +27,7 @@
       misc = {
         assume_yes = true;
         cleanup = true;
-        disable = [
-          "system"
-          "git_repos"
-          "nix"
-        ];
+        disable = [ "system" "git_repos" "nix" ];
         skip_notify = false;
         pre_sudo = true;
       };

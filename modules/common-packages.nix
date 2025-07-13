@@ -1,9 +1,5 @@
-{
-  pkgs,
-  ...
-}:
-with pkgs;
-[
+{ pkgs, ... }:
+with pkgs; [
   xfce.thunar
   tmux
   stow
@@ -71,4 +67,7 @@ with pkgs;
   yazi
 
   betterlockscreen
+
+  # niri
+  fuzzel
 ]
