@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_use_submodules_for_configs_________________";
+  system.nixos.label = "Set_neovim_hm_package_____________________________";
 }
