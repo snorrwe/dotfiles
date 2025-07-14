@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_t_alias_______________________________________";
+  system.nixos.label = "Fix_t_alias_______________________________________";
 }
