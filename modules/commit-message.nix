@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_betterlockscreen_service______________________";
+  system.nixos.label = "Add_t_alias_______________________________________";
 }
