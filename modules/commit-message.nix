@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_wallpaper_path________________________________";
+  system.nixos.label = "Add_t_alias_______________________________________";
 }
