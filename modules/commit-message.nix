@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Show_battery__firsst______________________________";
+  system.nixos.label = "Comment___________________________________________";
 }
