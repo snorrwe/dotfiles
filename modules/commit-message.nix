@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_t_alias_______________________________________";
+  system.nixos.label = "Show_battery__firsst______________________________";
 }
