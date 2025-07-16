@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_System_update_2025-07-13___________________";
+  system.nixos.label = "Add_betterlockscreen_service______________________";
 }

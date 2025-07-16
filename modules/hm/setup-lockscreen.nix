@@ -4,6 +4,11 @@
   ...
 }:
 {
+  services.betterlockscreen = {
+    enable = true;
+    package = pkgs.betterlockscreen;
+    inactiveInterval = 10;
+  };
   home.activation.setupLockscreen = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     ${pkgs.betterlockscreen}/bin/betterlockscreen -u ${../../wallpaper.jpg} --blur 0.8
   '';
