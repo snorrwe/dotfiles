@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Comment___________________________________________";
+  system.nixos.label = "Disable_submodule_recurse_________________________";
 }
