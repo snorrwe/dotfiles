@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Comment___________________________________________";
+  system.nixos.label = "Add_betterlockscreen_service______________________";
 }
