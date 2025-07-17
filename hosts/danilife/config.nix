@@ -106,6 +106,8 @@ in {
         pulseaudio
         flameshot
         acpi # battery status
+
+        alacritty
       ] ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -132,8 +134,7 @@ in {
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
