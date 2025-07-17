@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_x11________________________________________";
+  system.nixos.label = "Add_xwayland-sattelite____________________________";
 }
