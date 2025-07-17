@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fix_scaling_______________________________________";
+  system.nixos.label = "Setup_workspaces__________________________________";
 }
