@@ -72,4 +72,6 @@ with pkgs; [
   fuzzel
   wl-clipboard
   xwayland-satellite
+  swaylock
+  swaybg
 ]
