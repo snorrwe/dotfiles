@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fixup_Add_swaybg__________________________________";
+  system.nixos.label = "Smaller_ring______________________________________";
 }
