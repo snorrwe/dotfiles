@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_blurred_lock_screen_background________________";
+  system.nixos.label = "Add_blur_to_the_lockscreen_service________________";
 }
