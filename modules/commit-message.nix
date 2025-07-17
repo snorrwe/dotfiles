@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_swaybg________________________________________";
+  system.nixos.label = "fixup_Add_swaybg__________________________________";
 }
