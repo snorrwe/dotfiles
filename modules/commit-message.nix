@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Start_programs____________________________________";
+  system.nixos.label = "fix_scaling_______________________________________";
 }
