@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_betterlockscreen_service______________________";
+  system.nixos.label = "Set_arguments_for_lockscreen______________________";
 }
