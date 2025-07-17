@@ -11,6 +11,8 @@
     arguments = [
       "-u"
       (builtins.toString ../../wallpaper.jpg)
+      "-l"
+      "blur"
       "--blur"
       "0.8"
     ];
