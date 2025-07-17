@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Smaller_ring______________________________________";
+  system.nixos.label = "Add_gnome_desktop_portal__________________________";
 }

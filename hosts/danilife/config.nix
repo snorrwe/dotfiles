@@ -1,7 +1,16 @@
-{ config, pkgs, host, username, lib, ... }:
-let defaultBrowser = "app.zen_browser.zen";
+{
+  config,
+  pkgs,
+  host,
+  username,
+  lib,
+  ...
+}:
+let
+  defaultBrowser = "app.zen_browser.zen";
 
-in {
+in
+{
   imports = [
     ./hardware.nix
     ./sound.nix
@@ -14,7 +23,10 @@ in {
   ];
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     auto-optimise-store = true;
   };
 
@@ -26,7 +38,9 @@ in {
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     # Needed For Some Steam Games
-    kernel.sysctl = { "vm.max_map_count" = 2147483642; };
+    kernel.sysctl = {
+      "vm.max_map_count" = 2147483642;
+    };
     # Bootloader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -97,15 +111,21 @@ in {
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     createHome = true;
-    packages = with pkgs;
+    packages =
+      with pkgs;
       [
         pavucontrol
         pamixer
         pulseaudio
         acpi # battery status
-      ] ++ (import ../../modules/common-packages.nix pkgs);
+      ]
+      ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
@@ -114,19 +134,28 @@ in {
     rootless = {
       enable = true;
       setSocketVariable = true;
-      daemon.settings = { features.cdi = true; };
+      daemon.settings = {
+        features.cdi = true;
+      };
     };
   };
-  virtualisation.podman = { enable = true; };
+  virtualisation.podman = {
+    enable = true;
+  };
   virtualisation.containers = {
-    registries = { insecure = [ "docker.local:5000" ]; };
+    registries = {
+      insecure = [ "docker.local:5000" ];
+    };
   };
 
   services.flatpak.enable = true;
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [ monaspace cascadia-code ];
+    packages = with pkgs; [
+      monaspace
+      cascadia-code
+    ];
   };
 
   # Allow unfree packages
@@ -160,8 +189,11 @@ in {
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   xdg.portal = {
     enable = true;
-    config.common.default = [ "gtk" ];
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    config.common.default = [ "gnome" ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
   };
   # set default browser
   xdg.mime = {
@@ -189,10 +221,14 @@ in {
     '';
   };
 
-  hardware.graphics = { enable = true; };
+  hardware.graphics = {
+    enable = true;
+  };
 
   services.auto-cpufreq.enable = true;
-  services.earlyoom = { enable = true; };
+  services.earlyoom = {
+    enable = true;
+  };
 
   # Keeps timing out during boot
   systemd.units."dev-tpmrm0.device".enable = false;
