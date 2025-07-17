@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "ModShiftQ_to_close_window_________________________";
+  system.nixos.label = "Setup_niri_workspaces_on_waybar___________________";
 }
