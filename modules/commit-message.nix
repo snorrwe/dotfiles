@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_arguments_for_lockscreen______________________";
+  system.nixos.label = "configure_lockscreen______________________________";
 }
