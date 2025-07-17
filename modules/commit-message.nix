@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "enable_niri_______________________________________";
+  system.nixos.label = "f_add_alacritty___________________________________";
 }
