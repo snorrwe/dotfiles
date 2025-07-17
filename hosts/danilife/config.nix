@@ -149,9 +149,7 @@ in {
     xdg-desktop-portal
     networkmanagerapplet
     gnome-keyring
-    xorg.xhost
     sshfs
-    xclip
     linuxKernel.packages.linux_zen.perf
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";

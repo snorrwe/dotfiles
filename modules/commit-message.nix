@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "f_add_alacritty___________________________________";
+  system.nixos.label = "Remove_x11________________________________________";
 }
