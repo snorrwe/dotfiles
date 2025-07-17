@@ -70,4 +70,5 @@ with pkgs; [
 
   # niri
   fuzzel
+  wl-clipboard
 ]
