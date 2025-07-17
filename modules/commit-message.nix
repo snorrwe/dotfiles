@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "configure_lockscreen______________________________";
+  system.nixos.label = "Rename_setup-lockscreen_-_lockscreen______________";
 }
