@@ -21,7 +21,7 @@
     ../../modules/hm/nushell.nix
     ../../modules/hm/cli.nix
     ../../modules/hm/nvim.nix
-    ../../modules/hm/setup-lockscreen.nix
+    ../../modules/hm/lockscreen.nix
     ../../modules/hm/setup-git-repos.nix
   ];
   # Let Home Manager install and manage itself.
