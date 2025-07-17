@@ -63,6 +63,11 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+workspace "browser" 
+workspace "terminal" 
+workspace "notes" 
+workspace "chat" 
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -305,6 +310,24 @@ window-rule {
     // You can get away with just app-id="wezterm" if you want.
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+    open-on-workspace "terminal"
+}
+
+window-rule {
+    match app-id=r#"^zen$"#
+    open-on-workspace "browser"
+}
+
+window-rule {
+    match app-id=r#"^obsidian$"#
+    match app-id=r#"^thunderbird-esr$"#
+    open-on-workspace "notes"
+}
+
+window-rule {
+    match app-id=r#"^discord$"#
+    match app-id=r#"^Slack$"#
+    open-on-workspace "chat"
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
