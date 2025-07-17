@@ -1,11 +1,4 @@
-{
-  pkgs,
-  username,
-  host,
-  inputs,
-  ...
-}:
-{
+{ pkgs, username, host, inputs, ... }: {
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
@@ -14,7 +7,6 @@
   imports = [
     ../../modules/hm/rice.nix
     ../../modules/hm/dunst.nix
-    ../../modules/hm/picom.nix
     ../../modules/hm/git.nix
     ../../modules/hm/xdg.nix
     ../../modules/hm/fastfetch.nix
@@ -34,22 +26,12 @@
       misc = {
         assume_yes = true;
         cleanup = true;
-        disable = [
-          "system"
-          "git_repos"
-          "nix"
-        ];
+        disable = [ "system" "git_repos" "nix" ];
         skip_notify = false;
         pre_sudo = true;
       };
     };
 
-  };
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi;
-    theme = "Arc-Dark";
-    font = "Monaspace Neon 12";
   };
   programs.wezterm = {
     enable = true;
