@@ -16,6 +16,7 @@
     ../../modules/hm/lockscreen.nix
     ../../modules/hm/setup-git-repos.nix
     ../../modules/hm/nvim.nix
+    ../../modules/hm/waybar.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

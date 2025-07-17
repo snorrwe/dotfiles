@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_xwayland-sattelite____________________________";
+  system.nixos.label = "Add_waybar________________________________________";
 }
