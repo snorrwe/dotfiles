@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_xwayland-satellite_to_common-packages________";
+  system.nixos.label = "Remove_flameshot__________________________________";
 }

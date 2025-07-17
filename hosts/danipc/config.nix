@@ -1,15 +1,7 @@
-{
-  config,
-  pkgs,
-  host,
-  username,
-  ...
-}:
-let
-  defaultBrowser = "app.zen_browser.zen";
-in
+{ config, pkgs, host, username, ... }:
+let defaultBrowser = "app.zen_browser.zen";
 
-{
+in {
   imports = [
     ./hardware.nix
     ./sound.nix
@@ -22,10 +14,7 @@ in
   ];
 
   nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
   };
 
@@ -37,9 +26,7 @@ in
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     # Needed For Some Steam Games
-    kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
-    };
+    kernel.sysctl = { "vm.max_map_count" = 2147483642; };
     # Bootloader.
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
@@ -54,8 +41,8 @@ in
       interpreter = "${pkgs.appimage-run}/bin/appimage-run";
       recognitionType = "magic";
       offset = 0;
-      mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-      magicOrExtension = ''\x7fELF....AI\x02'';
+      mask = "\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff";
+      magicOrExtension = "\\x7fELF....AI\\x02";
     };
     plymouth.enable = true;
   };
@@ -123,20 +110,10 @@ in
   users.users.snorrwe = {
     isNormalUser = true;
     description = "Dani";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     createHome = true;
-    packages =
-      with pkgs;
-      [
-        pavucontrol
-        pamixer
-        pulseaudio
-        flameshot
-      ]
+    packages = with pkgs;
+      [ pavucontrol pamixer pulseaudio ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -146,20 +123,12 @@ in
     rootless = {
       enable = true;
       setSocketVariable = true;
-      daemon.settings = {
-        features.cdi = true;
-      };
+      daemon.settings = { features.cdi = true; };
     };
   };
-  virtualisation.podman = {
-    enable = true;
-  };
+  virtualisation.podman = { enable = true; };
   virtualisation.containers = {
-    registries = {
-      insecure = [
-        "docker.local:5000"
-      ];
-    };
+    registries = { insecure = [ "docker.local:5000" ]; };
   };
   hardware.nvidia-container-toolkit.enable = true;
 
@@ -167,16 +136,12 @@ in
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [
-      monaspace
-      cascadia-code
-    ];
+    packages = with pkgs; [ monaspace cascadia-code ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -200,10 +165,7 @@ in
   xdg.portal = {
     enable = true;
     config.common.default = [ "gtk" ];
-    extraPortals = with pkgs; [
-      xdg-desktop-portal
-      xdg-desktop-portal-gtk
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal xdg-desktop-portal-gtk ];
   };
   # set default browser
   xdg.mime = {
@@ -249,9 +211,7 @@ in
   # certain elements in my life might press the button while I'm working :)
   services.logind.powerKey = "ignore";
 
-  services.earlyoom = {
-    enable = true;
-  };
+  services.earlyoom = { enable = true; };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
