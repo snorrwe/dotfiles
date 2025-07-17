@@ -210,7 +210,6 @@ assign [class="^org.wezfurlong.wezterm$"] $ws2
 exec wezterm
 
 workspace $ws5 output DP-1
-assign [class="^zoom$"] $ws5
 
 exec_always picom -b
 

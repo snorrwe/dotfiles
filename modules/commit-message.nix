@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_blur_to_the_lockscreen_service________________";
+  system.nixos.label = "Do_not_assign_zoom________________________________";
 }
