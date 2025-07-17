@@ -106,9 +106,6 @@ in {
         pulseaudio
         flameshot
         acpi # battery status
-
-        alacritty
-        xwayland-satellite
       ] ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
