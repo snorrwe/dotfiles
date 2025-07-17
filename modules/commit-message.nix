@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rename_setup-lockscreen_-_lockscreen______________";
+  system.nixos.label = "Use_blurred_lock_screen_background________________";
 }
