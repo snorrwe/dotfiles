@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_niri_workspaces_on_waybar___________________";
+  system.nixos.label = "Remove_rofi_and_picom_____________________________";
 }

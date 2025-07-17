@@ -7,7 +7,6 @@
   imports = [
     ../../modules/hm/rice.nix
     ../../modules/hm/dunst.nix
-    ../../modules/hm/picom.nix
     ../../modules/hm/git.nix
     ../../modules/hm/xdg.nix
     ../../modules/hm/fastfetch.nix
@@ -34,12 +33,6 @@
       };
     };
 
-  };
-  programs.rofi = {
-    enable = true;
-    package = pkgs.rofi;
-    theme = "Arc-Dark";
-    font = "Monaspace Neon 12";
   };
   programs.wezterm = {
     enable = true;
