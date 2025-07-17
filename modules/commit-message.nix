@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_rofi_and_picom_____________________________";
+  system.nixos.label = "Add_clipboard_____________________________________";
 }
