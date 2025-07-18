@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_obsolete_setup-lockscreen__________________";
+  system.nixos.label = "Update_idlelockscreen_using_hyprlock______________";
 }
