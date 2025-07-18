@@ -24,6 +24,7 @@
     ../../modules/hm/nvim.nix
     ../../modules/hm/waybar.nix
     ../../modules/hm/wlogout.nix
+    ../../modules/hm/fuzzel.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
