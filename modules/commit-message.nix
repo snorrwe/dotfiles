@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_modenter_to_open_terminal_____________________";
+  system.nixos.label = "Remove_13_width___________________________________";
 }
