@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_13_width___________________________________";
+  system.nixos.label = "Move_workspaces_to_left_stats_to_right____________";
 }
