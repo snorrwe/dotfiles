@@ -1,23 +1,30 @@
-{ pkgs, username, host, inputs, ... }: {
+{
+  pkgs,
+  username,
+  host,
+  inputs,
+  ...
+}:
+{
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "24.05";
 
   imports = [
-    ../../modules/hm/rice.nix
-    ../../modules/hm/dunst.nix
-    ../../modules/hm/git.nix
-    ../../modules/hm/xdg.nix
-    ../../modules/hm/fastfetch.nix
-    ../../modules/hm/nushell.nix
-    ../../modules/hm/cli.nix
-    ../../modules/hm/nvim.nix
-    ../../modules/hm/lockscreen.nix
-    ../../modules/hm/setup-git-repos.nix
-    ../../modules/hm/waybar.nix
-    ../../modules/hm/fuzzel.nix
-    ../../modules/hm/wlogout.nix
+    ./rice.nix
+    ./dunst.nix
+    ./git.nix
+    ./xdg.nix
+    ./fastfetch.nix
+    ./nushell.nix
+    ./cli.nix
+    ./lockscreen.nix
+    ./setup-git-repos.nix
+    ./nvim.nix
+    ./waybar.nix
+    ./wlogout.nix
+    ./fuzzel.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -29,7 +36,11 @@
       misc = {
         assume_yes = true;
         cleanup = true;
-        disable = [ "system" "git_repos" "nix" ];
+        disable = [
+          "system"
+          "git_repos"
+          "nix"
+        ];
         skip_notify = false;
         pre_sudo = true;
       };

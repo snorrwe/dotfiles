@@ -53,7 +53,7 @@
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
                     home-manager.backupFileExtension = "backup";
-                    home-manager.users.${username} = import ./hosts/${host}/home.nix;
+                    home-manager.users.${username} = import ./modules/hm/home.nix;
                   }
                   {
                     environment.variables.NIX_HOST = host;
