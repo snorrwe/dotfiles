@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_idlelockscreen_using_hyprlock______________";
+  system.nixos.label = "Add_all_hosts_to_flake____________________________";
 }

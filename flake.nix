@@ -25,41 +25,51 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      host = "danipc";
       username = "snorrwe";
     in
     {
-      nixosConfigurations = {
-        "${host}" = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit system;
-            inherit inputs;
-            inherit username;
-            inherit host;
-          };
-          modules = [
-            ./hosts/${host}/config.nix
-            home-manager.nixosModules.home-manager
+      nixosConfigurations = builtins.listToAttrs (
+        map
+          (
+            { host }:
             {
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-                inherit username;
-                inherit host;
-              };
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = import ./hosts/${host}/home.nix;
-            }
-            {
-              environment.variables.NIX_HOST = host;
-            }
+              name = host;
+              value = nixpkgs.lib.nixosSystem {
+                specialArgs = {
+                  inherit system;
+                  inherit inputs;
+                  inherit username;
+                  inherit host;
+                };
+                modules = [
+                  ./hosts/${host}/config.nix
+                  home-manager.nixosModules.home-manager
+                  {
+                    home-manager.extraSpecialArgs = {
+                      inherit inputs;
+                      inherit username;
+                      inherit host;
+                    };
+                    home-manager.useGlobalPkgs = true;
+                    home-manager.useUserPackages = true;
+                    home-manager.backupFileExtension = "backup";
+                    home-manager.users.${username} = import ./hosts/${host}/home.nix;
+                  }
+                  {
+                    environment.variables.NIX_HOST = host;
+                  }
 
-            # enable nix-ld
-            nix-ld.nixosModules.nix-ld
-            { programs.nix-ld.dev.enable = true; }
-          ];
-        };
-      };
+                  # enable nix-ld
+                  nix-ld.nixosModules.nix-ld
+                  { programs.nix-ld.dev.enable = true; }
+                ];
+              };
+            }
+          )
+          [
+            { host = "danipc"; }
+            { host = "danilife"; }
+          ]
+      );
     };
 }
