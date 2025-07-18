@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_fuzzel_____________________________________";
+  system.nixos.label = "Use_modenter_to_open_terminal_____________________";
 }
