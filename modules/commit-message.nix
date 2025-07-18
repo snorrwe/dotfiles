@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Merge_branch_nixos-danipc-niri_into_nixos-lifebook";
+  system.nixos.label = "Use_waypaper_for_wallpaper________________________";
 }
