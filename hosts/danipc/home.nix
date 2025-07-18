@@ -20,7 +20,7 @@
     ../../modules/hm/nushell.nix
     ../../modules/hm/cli.nix
     ../../modules/hm/nvim.nix
-    ../../modules/hm/setup-lockscreen.nix
+    ../../modules/hm/lockscreen.nix
     ../../modules/hm/setup-git-repos.nix
     ../../modules/hm/waybar.nix
     ../../modules/hm/fuzzel.nix

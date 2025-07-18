@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_gtk_to_default_portals________________________";
+  system.nixos.label = "Remove_obsolete_setup-lockscreen__________________";
 }
