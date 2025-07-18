@@ -105,6 +105,7 @@ if type direnv > /dev/null; then
     znap eval direnv "direnv hook zsh"
     alias tmux='direnv exec / tmux'
 fi
+alias t='if [[ -n $(pgrep tmux) ]]; then tmux a; else tmux; fi'
 if type starship > /dev/null ; then
     znap eval starship "starship init zsh"
 fi

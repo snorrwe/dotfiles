@@ -210,7 +210,6 @@ assign [class="^org.wezfurlong.wezterm$"] $ws2
 exec wezterm
 
 workspace $ws5 output DP-1
-assign [class="^zoom$"] $ws5
 
 exec_always picom -b
 
@@ -249,7 +248,7 @@ client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 # lock
-bindsym Control+$mod+l exec "betterlockscreen -l"
+bindsym Control+$mod+l exec "betterlockscreen -l blur"
 
 # screenshot
 bindsym Print exec "flameshot gui"

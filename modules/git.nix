@@ -12,7 +12,7 @@
       init.defaultBranch = "main";
       pull.rebase = true;
       rebase.updateRefs = true;
-      submodule.recurse = true;
+      submodule.recurse = false;
       push.recurseSubmodules = "on-demand";
     };
   };
