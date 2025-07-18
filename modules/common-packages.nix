@@ -1,5 +1,6 @@
 { pkgs, ... }:
-with pkgs; [
+with pkgs;
+[
   xfce.thunar
   tmux
   stow
@@ -69,9 +70,9 @@ with pkgs; [
   betterlockscreen
 
   # niri
-  fuzzel
   wl-clipboard
   xwayland-satellite
   swaylock
   swaybg
+  nautilus # the gnome portal uses this for filepickers
 ]

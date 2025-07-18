@@ -33,15 +33,6 @@
     xkb.variant = "";
     enable = true;
     videoDrivers = [ "nvidia" ];
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        rofi
-        polybar
-        feh
-      ];
-    };
     xrandrHeads = [
       {
         output = "HDMI-0";

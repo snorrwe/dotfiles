@@ -1,7 +1,15 @@
-{ config, pkgs, host, username, ... }:
-let defaultBrowser = "app.zen_browser.zen";
+{
+  config,
+  pkgs,
+  host,
+  username,
+  ...
+}:
+let
+  defaultBrowser = "app.zen_browser.zen";
 
-in {
+in
+{
   imports = [
     ./hardware.nix
     ./sound.nix
@@ -78,10 +86,12 @@ in {
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.displayManager.sddm = {
+    wayland.enable = true;
     enable = true;
     theme = "catppuccin-mocha";
     package = pkgs.kdePackages.sddm;
   };
+  programs.niri.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -112,8 +122,13 @@ in {
     description = "Dani";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     createHome = true;
-    packages = with pkgs;
-      [ pavucontrol pamixer pulseaudio ]
+    packages =
+      with pkgs;
+      [
+        pavucontrol
+        pamixer
+        pulseaudio
+      ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
@@ -128,7 +143,9 @@ in {
   };
   virtualisation.podman = { enable = true; };
   virtualisation.containers = {
-    registries = { insecure = [ "docker.local:5000" ]; };
+    registries = {
+      insecure = [ "docker.local:5000" ];
+    };
   };
   hardware.nvidia-container-toolkit.enable = true;
 
@@ -149,8 +166,6 @@ in {
     curl
     networkmanagerapplet
     gnome-keyring
-    xorg.xhost
-    xclip
     linuxKernel.packages.linux_zen.perf
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
@@ -164,8 +179,19 @@ in {
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   xdg.portal = {
     enable = true;
-    config.common.default = [ "gtk" ];
-    extraPortals = with pkgs; [ xdg-desktop-portal xdg-desktop-portal-gtk ];
+    config = {
+      common = {
+        default = [
+          "gnome"
+          "gtk"
+        ];
+      };
+    };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
   };
   # set default browser
   xdg.mime = {

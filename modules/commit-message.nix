@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_workspaces__________________________________";
+  system.nixos.label = "Merge_branch_nixos-danipc-niri_into_nixos-lifebook";
 }
