@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_wlogout____________________________________";
+  system.nixos.label = "Rename_spotify_workspace_to_music_________________";
 }
