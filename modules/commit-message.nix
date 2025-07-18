@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_tray_to_the_end______________________________";
+  system.nixos.label = "Add_nautilus______________________________________";
 }

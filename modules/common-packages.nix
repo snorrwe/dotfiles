@@ -74,4 +74,5 @@ with pkgs;
   xwayland-satellite
   swaylock
   swaybg
+  nautilus # the gnome portal uses this for filepickers
 ]
