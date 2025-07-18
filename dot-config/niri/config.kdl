@@ -1,3 +1,19 @@
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+
+spawn-at-startup "waybar"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "waypaper --restore"
+
+spawn-at-startup "app.zen_browser.zen"
+spawn-at-startup "wezterm"
+spawn-at-startup "md.obsidian.Obsidian"
+spawn-at-startup "org.mozilla.Thunderbird"
+spawn-at-startup "com.slack.Slack"
+spawn-at-startup "com.discordapp.Discord"
+
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
@@ -310,22 +326,6 @@ layout {
     }
 }
 
-// Add lines like this to spawn processes at startup.
-// Note that running niri as a session supports xdg-desktop-autostart,
-// which may be more convenient to use.
-// See the binds section below for more spawn examples.
-
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waypaper --restore"
-
-spawn-at-startup "app.zen_browser.zen"
-spawn-at-startup "wezterm"
-spawn-at-startup "md.obsidian.Obsidian"
-spawn-at-startup "org.mozilla.Thunderbird"
-spawn-at-startup "com.slack.Slack"
-spawn-at-startup "com.discordapp.Discord"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
