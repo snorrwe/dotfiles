@@ -8,7 +8,6 @@
 
 let
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
-  clock24h = true;
 in
 with lib;
 {
@@ -60,11 +59,16 @@ with lib;
           };
         };
         "clock" = {
-          format = if clock24h == true then " {:L%H:%M}" else " {:L%I:%M %p}";
+          format = " {:%a %Y-%m-%d %H:%M}";
           tooltip = true;
           tooltip-format = ''
             <big>{:%A, %d.%B %Y }</big>
             <tt><small>{calendar}</small></tt>'';
+          actions = {
+            "on-click-right" = "mode";
+            "on-scroll-up" = "shift_up";
+            "on-scroll-down" = "shift_down";
+          };
         };
         "hyprland/window" = {
           max-length = 22;

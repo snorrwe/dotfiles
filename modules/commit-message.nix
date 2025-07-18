@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_window________________________________________";
+  system.nixos.label = "Format_clock_widget_______________________________";
 }
