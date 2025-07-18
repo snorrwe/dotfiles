@@ -182,8 +182,6 @@ in
     curl
     networkmanagerapplet
     gnome-keyring
-    xorg.xhost
-    xclip
     linuxKernel.packages.linux_zen.perf
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
@@ -197,10 +195,11 @@ in
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   xdg.portal = {
     enable = true;
-    config.common.default = [ "gtk" ];
+    config.common.default = [ "gnome" ];
     extraPortals = with pkgs; [
       xdg-desktop-portal
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
   };
   # set default browser

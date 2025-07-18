@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Focus_primary_workspaces_on_1-4___________________";
+  system.nixos.label = "Remove_xorg_remnants______________________________";
 }
