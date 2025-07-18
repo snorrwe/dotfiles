@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_spotify_workspace_____________________________";
+  system.nixos.label = "Config_fuzzel_____________________________________";
 }
