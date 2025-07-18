@@ -195,7 +195,14 @@ in
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   xdg.portal = {
     enable = true;
-    config.common.default = [ "gnome" ];
+    config = {
+      common = {
+        default = [
+          "gnome"
+          "gtk"
+        ];
+      };
+    };
     extraPortals = with pkgs; [
       xdg-desktop-portal
       xdg-desktop-portal-gtk

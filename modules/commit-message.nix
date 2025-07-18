@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_nautilus______________________________________";
+  system.nixos.label = "Add_gtk_to_default_portals________________________";
 }
