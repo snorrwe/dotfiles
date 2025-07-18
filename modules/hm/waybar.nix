@@ -22,6 +22,7 @@ with lib;
         position = "top";
         modules-left = [ "niri/workspaces" ];
         modules-center = [
+          "niri/window"
           "custom/notification"
         ];
         modules-right = [

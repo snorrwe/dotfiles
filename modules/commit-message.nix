@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_workspaces_to_left_stats_to_right____________";
+  system.nixos.label = "Add_window________________________________________";
 }
