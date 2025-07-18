@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Deduplicate_home.nix______________________________";
+  system.nixos.label = "Rounded_corners___________________________________";
 }
