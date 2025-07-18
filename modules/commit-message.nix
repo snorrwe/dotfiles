@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Adopt_niri_in_danipc______________________________";
+  system.nixos.label = "Focus_primary_workspaces_on_1-4___________________";
 }
