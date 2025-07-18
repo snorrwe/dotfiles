@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_workspaces__________________________________";
+  system.nixos.label = "Adopt_niri_in_danipc______________________________";
 }

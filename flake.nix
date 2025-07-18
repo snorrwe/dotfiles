@@ -25,7 +25,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      host = "danilife";
+      host = "danipc";
       username = "snorrwe";
     in
     {
