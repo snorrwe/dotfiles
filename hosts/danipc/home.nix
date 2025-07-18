@@ -17,6 +17,7 @@
     ../../modules/hm/setup-git-repos.nix
     ../../modules/hm/waybar.nix
     ../../modules/hm/fuzzel.nix
+    ../../modules/hm/wlogout.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

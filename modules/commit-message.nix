@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_startup_apps_to_config_top___________________";
+  system.nixos.label = "Config_wlogout____________________________________";
 }
