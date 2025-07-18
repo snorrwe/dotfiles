@@ -69,6 +69,9 @@ workspace "terminal" {
 }
 workspace "notes" 
 workspace "chat" 
+workspace "spotify" {
+    open-on-output "DP-3"
+}
 
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
@@ -573,6 +576,7 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace "spotify"; }
     Mod+Shift+1 { move-column-to-workspace "browser"; }
     Mod+Shift+2 { move-column-to-workspace "terminal"; }
     Mod+Shift+3 { move-column-to-workspace "notes"; }
@@ -582,6 +586,7 @@ binds {
     Mod+Shift+7 { move-column-to-workspace 7; }
     Mod+Shift+8 { move-column-to-workspace 8; }
     Mod+Shift+9 { move-column-to-workspace 9; }
+    Mod+Shift+0 { move-column-to-workspace "spotify"; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }

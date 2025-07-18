@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Focus_follows_mouse_______________________________";
+  system.nixos.label = "Add_spotify_workspace_____________________________";
 }
