@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Format_clock_widget_______________________________";
+  system.nixos.label = "Move_tray_to_the_end______________________________";
 }

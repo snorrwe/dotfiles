@@ -30,8 +30,8 @@ with lib;
           "memory"
           "disk"
           "battery"
-          "tray"
           "clock"
+          "tray"
           "custom/exit"
         ];
 
