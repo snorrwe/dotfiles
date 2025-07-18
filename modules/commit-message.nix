@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Try_turning_off_wayland_in_wezterm________________";
+  system.nixos.label = "Focus_follows_mouse_______________________________";
 }
