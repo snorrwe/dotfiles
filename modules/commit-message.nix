@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_xorg_remnants______________________________";
+  system.nixos.label = "Try_turning_off_wayland_in_wezterm________________";
 }
