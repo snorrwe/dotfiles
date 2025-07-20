@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Block_Bitwarden_from_screen-capture_______________";
+  system.nixos.label = "Disable_wayland_in_wezterm________________________";
 }
