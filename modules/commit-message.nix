@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-07-20__________________________";
+  system.nixos.label = "Block_Bitwarden_from_screen-capture_______________";
 }
