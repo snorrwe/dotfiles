@@ -166,17 +166,8 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
-    stow
-    parallel
     curl
-    fzf
-    yazi
-    python3
-    xdg-desktop-portal
     networkmanagerapplet
-    gnome-keyring
-    sshfs
-    linuxKernel.packages.linux_zen.perf
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
       font = "Monaspace Radon";
@@ -189,12 +180,18 @@ in
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   xdg.portal = {
     enable = true;
-    config.common.default = [
-      "gnome"
-      "gtk"
-    ];
+    config = {
+      common = {
+        default = [
+          "gnome"
+          "gtk"
+        ];
+      };
+    };
     extraPortals = with pkgs; [
+      xdg-desktop-portal
       xdg-desktop-portal-gtk
+      gnome-keyring
       xdg-desktop-portal-gnome
     ];
   };
