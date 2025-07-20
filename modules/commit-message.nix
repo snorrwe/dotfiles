@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Only_pin_the_browser_to_the_browser_workspace_at_s";
+  system.nixos.label = "Customize_workspace_icons_________________________";
 }

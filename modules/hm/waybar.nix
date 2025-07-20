@@ -48,11 +48,11 @@ with lib;
         "niri/workspaces" = {
           "format" = "{value} {icon}";
           "format-icons" = {
-            # Named workspaces
-            # (you need to configure them in niri)
-            "browser" = "";
-            "discord" = "";
-            "chat" = "<b></b>";
+            "browser" = "🌐";
+            "terminal" = "💻";
+            "notes" = "🗊";
+            "chat" = "";
+            "music" = "🎵";
             # Icons by state
             "active" = "";
             "default" = "";
