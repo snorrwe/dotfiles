@@ -23,7 +23,6 @@ with pkgs;
   github-cli
   git-lfs
   nodejs_22
-  lazydocker
 
   rustup
   cargo-binstall

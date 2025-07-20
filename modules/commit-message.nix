@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_wayland_in_wezterm________________________";
+  system.nixos.label = "Remove_lazydocker_________________________________";
 }
