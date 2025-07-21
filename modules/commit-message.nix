@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_configs_____________________________";
+  system.nixos.label = "Factor_out_desktop_portals________________________";
 }

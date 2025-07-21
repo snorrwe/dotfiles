@@ -21,6 +21,7 @@ in
     ../../modules/nh.nix
     ../../modules/battery-management.nix
     ../../modules/swaybg.nix
+    ../../modules/portals.nix
   ];
 
   nix.settings = {
@@ -179,23 +180,6 @@ in
   ];
   programs.npm.enable = true;
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
-  xdg.portal = {
-    enable = true;
-    config = {
-      common = {
-        default = [
-          "gnome"
-          "gtk"
-        ];
-      };
-    };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal
-      xdg-desktop-portal-gtk
-      gnome-keyring
-      xdg-desktop-portal-gnome
-    ];
-  };
   # set default browser
   xdg.mime = {
     enable = true;
