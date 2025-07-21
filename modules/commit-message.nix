@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Init_termfilechooser_config_______________________";
+  system.nixos.label = "Add_da_alias______________________________________";
 }
