@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Customize_workspace_icons_________________________";
+  system.nixos.label = "Add_swaybg_service________________________________";
 }

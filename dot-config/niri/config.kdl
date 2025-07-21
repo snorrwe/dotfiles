@@ -5,7 +5,6 @@
 
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "waypaper --restore"
 
 spawn-at-startup "app.zen_browser.zen"
 spawn-at-startup "wezterm"

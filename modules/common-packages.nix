@@ -72,7 +72,5 @@ with pkgs;
   wl-clipboard
   xwayland-satellite
   swaylock
-  waypaper
-  swaybg
   nautilus # the gnome portal uses this for filepickers
 ]

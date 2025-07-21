@@ -20,6 +20,7 @@ in
     ../../modules/git.nix
     ../../modules/nh.nix
     ../../modules/battery-management.nix
+    ../../modules/swaybg.nix
   ];
 
   nix.settings = {
