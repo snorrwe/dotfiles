@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_dnd_widgets_being_tiled_______________________";
+  system.nixos.label = "Use_yazi_as_filechooser___________________________";
 }

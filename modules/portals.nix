@@ -12,7 +12,10 @@
     ];
     config = {
       common = {
-        default = "gtk";
+        default = [
+          "termfilechooser"
+          "gtk"
+        ];
         "org.freedesktop.impl.portal.ScreenCast" = "wlr"; # NOTE: This is required for screensharing to work properly
         "org.freedesktop.impl.portal.Screenshot" = "wlr";
       };
