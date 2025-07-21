@@ -172,7 +172,7 @@ in
     networkmanagerapplet
     (pkgs.catppuccin-sddm.override {
       flavor = "mocha";
-      font = "Monaspace Radon";
+      font = "Monaspace Neon";
       fontSize = "13";
       background = "${../../wallpaper.jpg}";
       loginBackground = true;

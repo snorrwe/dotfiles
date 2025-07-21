@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_wallpaper__________________________________";
+  system.nixos.label = "Use_monaspace_neon_on_sddm________________________";
 }
