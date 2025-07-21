@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_opacity_on_unfocused_windows__________________";
+  system.nixos.label = "Update_wallpaper__________________________________";
 }
