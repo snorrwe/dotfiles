@@ -358,7 +358,6 @@ animations {
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
-    open-focused false
 }
 
 window-rule {
