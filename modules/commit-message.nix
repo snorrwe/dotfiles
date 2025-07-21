@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_yazi_as_filechooser_________________________";
+  system.nixos.label = "Set_opacity_on_unfocused_windows__________________";
 }

@@ -358,6 +358,12 @@ animations {
 window-rule {
     geometry-corner-radius 8
     clip-to-geometry true
+    open-focused false
+}
+
+window-rule {
+    match is-focused=false
+    opacity 0.9
 }
 
 // Work around WezTerm's initial configure bug
@@ -373,6 +379,7 @@ window-rule {
 window-rule {
     match at-startup=true app-id=r#"^zen$"#
     open-on-workspace "browser"
+    opacity 1.0
 }
 
 window-rule {
@@ -380,6 +387,7 @@ window-rule {
     match app-id=r#"^thunderbird-esr$"#
     match app-id=r#"^org.mozilla.Thunderbird$"#
     open-on-workspace "notes"
+    opacity 1.0
 }
 
 window-rule {
