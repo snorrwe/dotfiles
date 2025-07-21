@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_gtk_and_wlr_portals_instead_of_gnome__________";
+  system.nixos.label = "Init_termfilechooser_config_______________________";
 }

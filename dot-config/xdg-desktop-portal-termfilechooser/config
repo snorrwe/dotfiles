@@ -1,0 +1,7 @@
+[filechooser]
+cmd=yazi
+default_dir=$HOME
+env=TERMCMD=foot
+EDITOR=nvim
+open_mode=suggested
+save_mode=last
