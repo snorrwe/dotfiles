@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_desktop_portals________________________";
+  system.nixos.label = "Use_gtk_and_wlr_portals_instead_of_gnome__________";
 }
