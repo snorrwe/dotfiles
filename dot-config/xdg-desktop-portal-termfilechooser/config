@@ -1,5 +1,5 @@
 [filechooser]
-cmd=yazi
+cmd=yazi_xdg_wrapper
 default_dir=$HOME
 env=TERMCMD=foot
 EDITOR=nvim

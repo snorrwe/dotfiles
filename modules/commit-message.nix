@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Open_filechoosers_in_floating_____________________";
+  system.nixos.label = "Setup_yazi_as_filechooser_________________________";
 }

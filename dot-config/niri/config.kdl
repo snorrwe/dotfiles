@@ -399,12 +399,9 @@ window-rule {
 
 window-rule {
     match app-id=r#"xdg-desktop-portal-gtk$"# title=r#"Open Files"#
-    open-floating true
-}
-
 // fix for drag'n'drop widgets in e.g. obsidian and spotify
-window-rule {
     match app-id=null title="^$"
+    match app-id=r#"^wezterm.termfilechooser$"#
     open-floating true
 }
 
