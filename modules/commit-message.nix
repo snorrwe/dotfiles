@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_swaybg_service________________________________";
+  system.nixos.label = "Remove_unused_configs_____________________________";
 }
