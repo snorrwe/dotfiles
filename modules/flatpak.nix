@@ -25,6 +25,7 @@ let
     "app.zen_browser.zen"
     "org.chromium.Chromium"
     "dev.restfox.Restfox"
+    "ca.hamaluik.Timecop"
   ];
 in
 {

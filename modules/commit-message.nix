@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_monaspace_neon_on_sddm________________________";
+  system.nixos.label = "Add_timecop_______________________________________";
 }
