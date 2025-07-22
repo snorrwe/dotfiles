@@ -46,7 +46,7 @@ in
       done
 
       # 5. Install or re-install the Flatpaks you DO want
-      ${pkgs.flatpak}/bin/flatpak install -y flathub ${toString desiredFlatpaks}
+      ${pkgs.flatpak}/bin/flatpak install -y  --noninteractive flathub ${toString desiredFlatpaks}
     '';
   };
 }
