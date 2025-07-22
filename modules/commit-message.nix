@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_back_open-focused_____________________________";
+  system.nixos.label = "Remove_timecop____________________________________";
 }
