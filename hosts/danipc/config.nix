@@ -21,6 +21,7 @@ in
     ../../modules/nh.nix
     ../../modules/swaybg.nix
     ../../modules/portals.nix
+    ../../modules/containers.nix
   ];
 
   nix.settings = {
@@ -144,23 +145,6 @@ in
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
 
-  };
-  virtualisation.docker = {
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-      daemon.settings = {
-        features.cdi = true;
-      };
-    };
-  };
-  virtualisation.podman = {
-    enable = true;
-  };
-  virtualisation.containers = {
-    registries = {
-      insecure = [ "docker.local:5000" ];
-    };
   };
   hardware.nvidia-container-toolkit.enable = true;
 

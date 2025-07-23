@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_lockscreen_________________________________";
+  system.nixos.label = "Factor_out_container_config_______________________";
 }

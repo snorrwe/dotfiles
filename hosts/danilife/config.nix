@@ -22,6 +22,7 @@ in
     ../../modules/battery-management.nix
     ../../modules/swaybg.nix
     ../../modules/portals.nix
+    ../../modules/containers.nix
   ];
 
   nix.settings = {
@@ -132,24 +133,6 @@ in
     ignoreShellProgramCheck = true;
 
   };
-  virtualisation.docker = {
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-      daemon.settings = {
-        features.cdi = true;
-      };
-    };
-  };
-  virtualisation.podman = {
-    enable = true;
-  };
-  virtualisation.containers = {
-    registries = {
-      insecure = [ "docker.local:5000" ];
-    };
-  };
-
   services.flatpak.enable = true;
 
   fonts = {
