@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_--noninteractive_to_flatpak_install___________";
+  system.nixos.label = "Config_lockscreen_________________________________";
 }
