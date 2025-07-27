@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_mason_in_topgrade__________________________";
+  system.nixos.label = "Fix_mason_update__________________________________";
 }
