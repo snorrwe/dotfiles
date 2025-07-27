@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Work_in_tmpdir____________________________________";
+  system.nixos.label = "Update_mason_in_topgrade__________________________";
 }
