@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "network-stats_service_____________________________";
+  system.nixos.label = "Remove_unused_property____________________________";
 }

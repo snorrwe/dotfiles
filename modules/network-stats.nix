@@ -1,7 +1,6 @@
 {
   pkgs,
   host,
-  username,
   ...
 }:
 let
