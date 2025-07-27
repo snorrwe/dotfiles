@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-07-26__________________________";
+  system.nixos.label = "Configure_yazi._Add_some_plugins__________________";
 }

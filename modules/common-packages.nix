@@ -64,7 +64,6 @@ with pkgs;
   sshfs
   fzf
   python3
-  yazi
 
   betterlockscreen
 
