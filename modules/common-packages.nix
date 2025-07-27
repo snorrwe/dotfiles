@@ -71,4 +71,7 @@ with pkgs;
   wl-clipboard
   xwayland-satellite
   swaylock
+
+  # yazi deps
+  ueberzugpp
 ]
