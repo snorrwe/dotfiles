@@ -43,6 +43,7 @@
                 };
                 modules = [
                   ./hosts/${host}/config.nix
+                  ./modules/network-stats.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {
