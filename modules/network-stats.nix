@@ -12,8 +12,8 @@ let
     if [ ! -f $OUTFILE ]; then
       echo '[]' > $OUTFILE
     fi
-    ${pkgs.speedtest-cli}/bin/speedtest --json | ${pkgs.jq}/bin/jq -r '. + {"host": "${host}"}' > ${outdir}/currentNetwork.json
-    ${pkgs.jq}/bin/jq -r '. + [inputs]' $OUTFILE ${outdir}/currentNetwork.json > /tmp/network-stats.json
+    ${pkgs.speedtest-cli}/bin/speedtest --json | ${pkgs.jq}/bin/jq -r '. + {"host": "${host}"}' > /tmp/currentNetwork.json
+    ${pkgs.jq}/bin/jq -r '. + [inputs]' $OUTFILE /tmp/currentNetwork.json > /tmp/network-stats.json
     mv /tmp/network-stats.json $OUTFILE
   '';
   weatherPollScript = pkgs.writeScriptBin "wttr" ''
@@ -23,8 +23,8 @@ let
     if [ ! -f $OUTFILE ]; then
       echo '[]' > $OUTFILE
     fi
-    ${pkgs.curl}/bin/curl 'wttr.in?format=j2' > ${outdir}/currentWeather.json
-    ${pkgs.jq}/bin/jq -r '. + [inputs]' $OUTFILE ${outdir}/currentWeather.json > /tmp/weather-stats.json
+    ${pkgs.curl}/bin/curl 'wttr.in?format=j2' > /tmp/currentWeather.json
+    ${pkgs.jq}/bin/jq -r '. + [inputs]' $OUTFILE /tmp/currentWeather.json > /tmp/weather-stats.json
     mv /tmp/weather-stats.json $OUTFILE
   '';
 in

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_weather_stats_to_network_poll_________________";
+  system.nixos.label = "Work_in_tmpdir____________________________________";
 }
