@@ -45,9 +45,6 @@
         skip_notify = false;
         pre_sudo = true;
       };
-      commands = {
-        "Update mason" = "nvim --headless +MasonUpdate +q";
-      };
     };
 
   };
