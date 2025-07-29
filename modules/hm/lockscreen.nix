@@ -15,15 +15,6 @@ in
         timeout = timeout;
         command = "${pkgs.hyprlock}/bin/hyprlock";
       }
-      {
-        timeout = timeout + 60;
-        command = "${pkgs.niri}/bin/niri msg action power-off-monitors";
-        resumeCommand = "${pkgs.niri}/bin/niri msg action power-on-monitors";
-      }
-      {
-        timeout = timeout + 90;
-        command = "systemctl suspend";
-      }
     ];
   };
   programs.hyprlock = {

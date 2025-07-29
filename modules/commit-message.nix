@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_mason_update__________________________________";
+  system.nixos.label = "Remove_power_off_and_suspend______________________";
 }
