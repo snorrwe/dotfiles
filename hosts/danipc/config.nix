@@ -22,6 +22,7 @@ in
     ../../modules/swaybg.nix
     ../../modules/portals.nix
     ../../modules/containers.nix
+    ../../modules/vms.nix
   ];
 
   nix.settings = {
@@ -132,6 +133,7 @@ in
       "networkmanager"
       "wheel"
       "docker"
+      "libvirtd"
     ];
     createHome = true;
     packages =

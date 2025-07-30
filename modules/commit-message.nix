@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Update_mason_in_topgrade___________________";
+  system.nixos.label = "Add_virt-manager__________________________________";
 }
