@@ -74,4 +74,7 @@ with pkgs;
 
   # yazi deps
   ueberzugpp
+
+  # quickly fire up VMs
+  quickemu
 ]
