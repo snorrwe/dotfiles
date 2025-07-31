@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_USB_redirect_for_VMs_______________________";
+  system.nixos.label = "Revert_Add_virt-manager___________________________";
 }
