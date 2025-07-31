@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Add_virt-manager___________________________";
+  system.nixos.label = "Move_common_imports_into_the_flake________________";
 }

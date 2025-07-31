@@ -15,14 +15,7 @@ in
     ./hardware.nix
     ./sound.nix
     ./video.nix
-    ../../modules/commit-message.nix
-    ../../modules/flatpak.nix
-    ../../modules/git.nix
-    ../../modules/nh.nix
     ../../modules/battery-management.nix
-    ../../modules/swaybg.nix
-    ../../modules/portals.nix
-    ../../modules/containers.nix
   ];
 
   nix.settings = {

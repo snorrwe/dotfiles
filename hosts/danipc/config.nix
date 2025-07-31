@@ -15,13 +15,6 @@ in
     ./sound.nix
     ./video.nix
     ./udev.nix
-    ../../modules/commit-message.nix
-    ../../modules/flatpak.nix
-    ../../modules/git.nix
-    ../../modules/nh.nix
-    ../../modules/swaybg.nix
-    ../../modules/portals.nix
-    ../../modules/containers.nix
   ];
 
   nix.settings = {

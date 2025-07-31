@@ -44,6 +44,13 @@
                 modules = [
                   ./hosts/${host}/config.nix
                   ./modules/network-stats.nix
+                  ./modules/commit-message.nix
+                  ./modules/flatpak.nix
+                  ./modules/git.nix
+                  ./modules/nh.nix
+                  ./modules/swaybg.nix
+                  ./modules/portals.nix
+                  ./modules/containers.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {
