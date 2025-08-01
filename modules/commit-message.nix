@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_quickemu_package._____________________________";
+  system.nixos.label = "Configure_bat_____________________________________";
 }

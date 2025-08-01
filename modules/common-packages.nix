@@ -15,7 +15,6 @@ with pkgs;
   ninja
   starship # for my shell prompt
   pipx
-  bat # colorful, syntax highlighted cat alternative
   btop
   cmake
   gzip
