@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Style_hyprlock____________________________________";
+  system.nixos.label = "Update_wallpaper__________________________________";
 }
