@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_bat_____________________________________";
+  system.nixos.label = "Style_hyprlock____________________________________";
 }
