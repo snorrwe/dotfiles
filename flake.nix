@@ -51,6 +51,7 @@
                   ./modules/swaybg.nix
                   ./modules/portals.nix
                   ./modules/containers.nix
+                  ./modules/nixpkgs.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

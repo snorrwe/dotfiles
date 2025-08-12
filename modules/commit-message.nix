@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-08-12__________________________";
+  system.nixos.label = "Factor_out_nixpkgs_settings_______________________";
 }
