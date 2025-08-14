@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_nixpkgs_settings_______________________";
+  system.nixos.label = "Factor_out_niri___________________________________";
 }

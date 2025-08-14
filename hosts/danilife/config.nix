@@ -78,7 +78,6 @@ in
     theme = "catppuccin-mocha";
     package = pkgs.kdePackages.sddm;
   };
-  programs.niri.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
