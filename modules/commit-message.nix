@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_niri___________________________________";
+  system.nixos.label = "Add_gradia_for_screenshotting_____________________";
 }
