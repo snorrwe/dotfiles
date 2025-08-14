@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_gradia_for_screenshotting_____________________";
+  system.nixos.label = "System_update_2025-08-14__________________________";
 }
