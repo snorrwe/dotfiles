@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-08-14__________________________";
+  system.nixos.label = "Disable_natural-scroll____________________________";
 }
