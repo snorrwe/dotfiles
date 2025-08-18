@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_snorrwe.org_atuin_server______________________";
+  system.nixos.label = "Revert_Disable_natural-scroll_____________________";
 }
