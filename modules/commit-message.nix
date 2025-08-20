@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_cli__very_common_packages_into_home.nix______";
+  system.nixos.label = "Do_not_prepend_shebangs_to_scripts________________";
 }
