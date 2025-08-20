@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_some_git_aliases______________________________";
+  system.nixos.label = "Manage_scripts_via_nix____________________________";
 }

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -e
+
+magick compare -compose src "$1" "$2" "$(basename "$1")_$(basename "$2")_diff.png"
+

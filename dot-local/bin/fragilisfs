@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -euo pipefail
-
-sudo mkdir -p /mnt/fragilis
-sudo chown snorrwe /mnt/fragilis
-sshfs fragilis:/ /mnt/fragilis

@@ -1,6 +1,4 @@
-#!/usr/bin/env nix-shell
-#! nix-shell -i bash --pure
-#! nix-shell -p bash lsof gawk
+#!/usr/bin/env bash
 # find who is listening on port
 # USAGE: portlocate 8888
 
