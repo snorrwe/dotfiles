@@ -1,13 +1,3 @@
-.config/discord/*
-!.config/discord/settings.json
-.local/bin
-.tmux
-arzzen/calc.plugin.zsh
-marlonrichert/zsh-autocomplete
-zpm-zsh/clipboard
-zsh-users
 .setup/install.log
-.config/tmux/plugins
-!.config/tmux/plugins/tpm
 .devenv
 dot-config/tmux/plugins
