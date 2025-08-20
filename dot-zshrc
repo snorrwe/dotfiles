@@ -126,3 +126,10 @@ if type eza > /dev/null ; then
     alias la=ea
     alias tree='eza --tree'
 fi
+
+if type git > /dev/null ; then
+    alias gp='git pull'
+    alias gs='git status'
+    alias gl='git log'
+    alias gd='git diff'
+fi

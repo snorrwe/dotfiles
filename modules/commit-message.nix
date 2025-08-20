@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-08-18__________________________";
+  system.nixos.label = "Set_some_git_aliases______________________________";
 }
