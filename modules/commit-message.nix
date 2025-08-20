@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Manage_scripts_via_nix____________________________";
+  system.nixos.label = "Move_cli__very_common_packages_into_home.nix______";
 }
