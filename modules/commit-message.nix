@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_obsolete_gitignore_entries_________________";
+  system.nixos.label = "Factor_out_flatpak.enable_________________________";
 }
