@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Allow_higher_cpu_frequency_on_battery_____________";
+  system.nixos.label = "Enable_battery_tooltip_in_waybar__________________";
 }

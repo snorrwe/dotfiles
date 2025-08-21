@@ -175,7 +175,7 @@ with lib;
             "󰁹"
           ];
           on-click = "";
-          tooltip = false;
+          tooltip = true;
         };
       }
     ];
