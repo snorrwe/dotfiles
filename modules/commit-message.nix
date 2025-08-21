@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_powertop_to_danilife__________________________";
+  system.nixos.label = "Allow_higher_cpu_frequency_on_battery_____________";
 }
