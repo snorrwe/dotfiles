@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_distrobox_back_to_common-packages____________";
+  system.nixos.label = "Manage_flatpaks_via_declarative-flatpak___________";
 }
