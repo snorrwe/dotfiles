@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_dunst_waylandDisplay__________________________";
+  system.nixos.label = "Update_tlp_settings_______________________________";
 }
