@@ -180,7 +180,6 @@ in
     enable = true;
   };
 
-  services.auto-cpufreq.enable = true;
   services.earlyoom = {
     enable = true;
   };

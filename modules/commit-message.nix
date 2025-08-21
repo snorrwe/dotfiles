@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_tlp_settings_______________________________";
+  system.nixos.label = "Configure_auto-cpufreq____________________________";
 }
