@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Manage_flatpaks_via_declarative-flatpak___________";
+  system.nixos.label = "Stricter_regex_in_portlocate______________________";
 }

@@ -6,4 +6,4 @@ set -euo pipefail
 
 port=$1
 # print the header and rows matching the port
-lsof -PiTCP | awk "NR == 1 || /$port/"
+lsof -PiTCP | awk "NR == 1 || /:$port(->| \(LISTEN\))/"
