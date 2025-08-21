@@ -43,7 +43,6 @@
 
     pkg-config
     sccache
-    distrobox
     visidata
     glow # tui markdown reader/renderer
     units

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_flatpak.enable_________________________";
+  system.nixos.label = "Move_distrobox_back_to_common-packages____________";
 }
