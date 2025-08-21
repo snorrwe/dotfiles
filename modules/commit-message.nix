@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_backdrop-color________________________________";
+  system.nixos.label = "Set_dunst_waylandDisplay__________________________";
 }
