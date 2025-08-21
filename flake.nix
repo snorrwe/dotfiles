@@ -16,7 +16,6 @@
     };
     flatpaks = {
       url = "github:in-a-dil-emma/declarative-flatpak/stable-v3";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

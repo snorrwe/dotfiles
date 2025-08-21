@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Stricter_regex_in_portlocate______________________";
+  system.nixos.label = "Remove_unused_input_in_flatpaks___________________";
 }
