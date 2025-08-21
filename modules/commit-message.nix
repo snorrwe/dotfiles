@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Larger_font_size_in_notifications_________________";
+  system.nixos.label = "Set_backdrop-color________________________________";
 }

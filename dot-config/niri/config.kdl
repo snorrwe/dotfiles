@@ -112,6 +112,8 @@ output "eDP-1" {
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
     transform "normal"
+
+    backdrop-color "#24273a"
 }
 
 // danipc
@@ -144,6 +146,7 @@ output "DP-3" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     // position x=1280 y=0
+    backdrop-color "#24273a"
 }
 output "HDMI-A-4" {
     // Uncomment this line to disable this output.
@@ -174,6 +177,7 @@ output "HDMI-A-4" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     // position x=1920 y=0
+    backdrop-color "#24273a"
 }
 
 // Settings that influence how windows are positioned and sized.
