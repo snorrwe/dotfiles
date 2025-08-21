@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_auto-cpufreq____________________________";
+  system.nixos.label = "Add_powertop_to_danilife__________________________";
 }

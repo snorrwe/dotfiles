@@ -119,6 +119,7 @@ in
         pamixer
         pulseaudio
         acpi # battery status
+        powertop
       ]
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
