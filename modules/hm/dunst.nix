@@ -15,7 +15,7 @@
     };
     settings = {
       global = {
-        font = "Monaspace Neon 8";
+        font = "Monaspace Neon 10";
       };
     };
   };

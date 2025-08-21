@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_input_in_flatpaks___________________";
+  system.nixos.label = "Larger_font_size_in_notifications_________________";
 }
