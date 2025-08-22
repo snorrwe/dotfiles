@@ -6,13 +6,13 @@
       {
         label = "lock";
         action = "${pkgs.hyprlock}/bin/hyprlock";
-        text = "lock";
+        text = "Lock";
         keybind = "l";
       }
       {
         label = "reboot";
         action = "systemctl reboot || loginctl reboot";
-        text = "restart_alt";
+        text = "Reboot";
         keybind = "r";
       }
       {

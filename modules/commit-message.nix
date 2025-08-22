@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Add_gradia_for_screenshotting______________";
+  system.nixos.label = "Fix_spelling_in_wlogout___________________________";
 }
