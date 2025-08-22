@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_battery_tooltip_in_waybar__________________";
+  system.nixos.label = "Set_monitor1______________________________________";
 }

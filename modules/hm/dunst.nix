@@ -17,6 +17,7 @@
     settings = {
       global = {
         font = "Monaspace Neon 10";
+        monitor = 1;
       };
     };
   };
