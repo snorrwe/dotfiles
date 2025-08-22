@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_spelling_in_wlogout___________________________";
+  system.nixos.label = "Use_GoogleDot_Black_cursor________________________";
 }

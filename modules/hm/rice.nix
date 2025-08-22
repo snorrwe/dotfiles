@@ -1,8 +1,9 @@
-{ pkgs
-, username
-, host
-, inputs
-, ...
+{
+  pkgs,
+  username,
+  host,
+  inputs,
+  ...
 }:
 let
   theme = "Nightfox-Teal-Dark";
@@ -14,6 +15,8 @@ let
       "teal"
     ];
   };
+  cursor_package = pkgs.google-cursor;
+  cursor_name = "GoogleDot-Black";
 in
 {
   home.packages = with pkgs; [
@@ -27,8 +30,9 @@ in
   };
 
   home.pointerCursor = {
-    package = pkgs.volantes-cursors;
-    name = "Volantes Cursor";
+    enable = true;
+    name = cursor_name;
+    package = cursor_package;
     x11.enable = true;
     gtk.enable = true;
   };
@@ -46,6 +50,10 @@ in
     iconTheme = {
       name = "rose-pine-moon";
       package = pkgs.rose-pine-icon-theme;
+    };
+    cursorTheme = {
+      name = cursor_name;
+      package = cursor_package;
     };
 
     gtk2.extraConfig = ''
