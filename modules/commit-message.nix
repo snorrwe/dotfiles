@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-08-23__________________________";
+  system.nixos.label = "Use_afterglow_cursor______________________________";
 }

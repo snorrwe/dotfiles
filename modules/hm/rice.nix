@@ -15,8 +15,8 @@ let
       "teal"
     ];
   };
-  cursor_package = pkgs.google-cursor;
-  cursor_name = "GoogleDot-Black";
+  cursor_package = pkgs.afterglow-cursors-recolored;
+  cursor_name = "Afterglow-Recolored-Catppuccin-Macchiato";
 in
 {
   home.packages = with pkgs; [
