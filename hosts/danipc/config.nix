@@ -117,9 +117,8 @@ in
   services.blueman.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.snorrwe = {
+  users.users.${username} = {
     isNormalUser = true;
-    description = "Dani";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -136,7 +135,6 @@ in
       ++ (import ../../modules/common-packages.nix pkgs);
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
-
   };
   hardware.nvidia-container-toolkit.enable = true;
 
