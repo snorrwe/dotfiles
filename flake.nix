@@ -26,6 +26,9 @@
     let
       system = "x86_64-linux";
       username = "snorrwe";
+      pkgs = import nixpkgs {
+        inherit system;
+      };
     in
     {
       nixosConfigurations = builtins.listToAttrs (
@@ -79,6 +82,33 @@
           [
             { host = "danipc"; }
             { host = "danilife"; }
+          ]
+      );
+      homeConfigurations = builtins.listToAttrs (
+        map
+          (
+            { host, username }:
+            {
+              name = host;
+              value = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                extraSpecialArgs = {
+                  inherit inputs;
+                  inherit username;
+                  inherit host;
+                };
+                modules = [
+                  ./modules/nixpkgs.nix
+                  ./modules/hm/home.nix
+                ];
+              };
+            }
+          )
+          [
+            {
+              host = "dkiss";
+              username = "dkiss";
+            }
           ]
       );
     };
