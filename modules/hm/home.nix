@@ -116,5 +116,4 @@
     extraConfig = builtins.readFile ../../dot-wezterm.lua;
     package = inputs.wezterm.packages.${pkgs.system}.default;
   };
-
 }
