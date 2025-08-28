@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fmt_______________________________________________";
+  system.nixos.label = "Add_snorrwe_username_to_hm________________________";
 }

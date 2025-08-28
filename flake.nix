@@ -86,29 +86,23 @@
       );
       homeConfigurations = builtins.listToAttrs (
         map
-          (
-            { host, username }:
-            {
-              name = host;
-              value = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-                extraSpecialArgs = {
-                  inherit inputs;
-                  inherit username;
-                  inherit host;
-                };
-                modules = [
-                  ./modules/nixpkgs.nix
-                  ./modules/hm/home.nix
-                ];
+          (username: {
+            name = username;
+            value = home-manager.lib.homeManagerConfiguration {
+              inherit pkgs;
+              extraSpecialArgs = {
+                inherit inputs;
+                inherit username;
               };
-            }
-          )
+              modules = [
+                ./modules/nixpkgs.nix
+                ./modules/hm/home.nix
+              ];
+            };
+          })
           [
-            {
-              host = "dkiss";
-              username = "dkiss";
-            }
+            "dkiss"
+            "snorrwe"
           ]
       );
     };
