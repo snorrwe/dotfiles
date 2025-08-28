@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Setup_zsh-snap_via_nix_activation_script__________";
+  system.nixos.label = "Add_nvim_config_repo_to_topgrade__________________";
 }
