@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_nvim_config_repo_to_topgrade__________________";
+  system.nixos.label = "Disable_HM_in_topgrade____________________________";
 }

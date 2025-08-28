@@ -101,6 +101,7 @@
         disable = [
           "system"
           "nix"
+          "home_manager"
         ];
         skip_notify = false;
         pre_sudo = true;
