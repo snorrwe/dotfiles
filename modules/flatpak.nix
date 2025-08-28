@@ -26,7 +26,6 @@ let
     "org.chromium.Chromium"
     "dev.restfox.Restfox"
     "be.alexandervanhee.gradia"
-    "org.qutebrowser.qutebrowser"
   ];
 in
 {

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Manage_flatpaks_via_declarative-flatpak____";
+  system.nixos.label = "Remove_qutebrowser________________________________";
 }
