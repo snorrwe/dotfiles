@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Re-enable_git_repos_in_topgrade___________________";
+  system.nixos.label = "Setup_zsh-snap_via_nix_activation_script__________";
 }

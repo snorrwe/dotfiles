@@ -14,5 +14,4 @@ echo "start" > install.log
     echo "apply nix flake" >> install.log
 ) || exit 1
 
-( bash ./setup_zsh.sh  && echo zsh >> install.log )
 echo "done" >> install.log

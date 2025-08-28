@@ -1,7 +1,6 @@
 {
   pkgs,
   username,
-  host,
   inputs,
   ...
 }:
@@ -105,6 +104,11 @@
         ];
         skip_notify = false;
         pre_sudo = true;
+      };
+      git = {
+        repos = [
+          "/home/${username}/.local/share/zsh-snap"
+        ];
       };
     };
 
