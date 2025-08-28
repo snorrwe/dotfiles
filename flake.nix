@@ -14,9 +14,6 @@
       url = "github:Mic92/nix-ld";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flatpaks = {
-      url = "github:in-a-dil-emma/declarative-flatpak/stable-v3";
-    };
   };
 
   outputs =
@@ -48,7 +45,6 @@
                   ./hosts/${host}/config.nix
                   ./modules/network-stats.nix
                   ./modules/commit-message.nix
-                  inputs.flatpaks.nixosModule
                   ./modules/flatpak.nix
                   ./modules/git.nix
                   ./modules/nh.nix
@@ -76,7 +72,6 @@
                   # enable nix-ld
                   nix-ld.nixosModules.nix-ld
                   { programs.nix-ld.dev.enable = true; }
-
                 ];
               };
             }
