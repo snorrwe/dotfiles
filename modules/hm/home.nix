@@ -101,7 +101,6 @@
         cleanup = true;
         disable = [
           "system"
-          "git_repos"
           "nix"
         ];
         skip_notify = false;

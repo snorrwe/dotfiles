@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_snorrwe_username_to_hm________________________";
+  system.nixos.label = "Re-enable_git_repos_in_topgrade___________________";
 }
