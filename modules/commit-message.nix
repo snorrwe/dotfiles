@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_neovim.nix_symlink____________________________";
+  system.nixos.label = "Add_qutebrowser___________________________________";
 }

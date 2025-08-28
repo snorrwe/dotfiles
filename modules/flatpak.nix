@@ -27,6 +27,7 @@
       "flathub:app/org.chromium.Chromium//stable"
       "flathub:app/dev.restfox.Restfox//stable"
       "flathub:app/be.alexandervanhee.gradia//stable"
+      "flathub:app/org.qutebrowser.qutebrowser//stable"
     ];
   };
 }
