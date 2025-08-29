@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_readme_____________________________________";
+  system.nixos.label = "Move_nh.nix_into_hm_______________________________";
 }
