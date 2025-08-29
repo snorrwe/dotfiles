@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_nh.nix_into_hm_______________________________";
+  system.nixos.label = "System_update_2025-08-29__________________________";
 }
