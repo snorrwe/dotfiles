@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_HM_in_topgrade____________________________";
+  system.nixos.label = "Remove_clang_from_the_default_packages____________";
 }
