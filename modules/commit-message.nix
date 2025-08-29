@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-08-29__________________________";
+  system.nixos.label = "Revert_Remove_clang_from_the_default_packages_____";
 }
