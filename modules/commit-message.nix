@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_write_remove_commands_to_history___________";
+  system.nixos.label = "Consider_the_subcommands_of_more_commands_in_atuin";
 }
