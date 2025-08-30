@@ -2,4 +2,4 @@
 
 nix-shell -p just -p nh --run "just install $@"
 rm -rf .git/hooks
-ln -s $(pwd)/.githooks ./.git/hooks
+ln -s "$PWD/.githooks" ./.git/hooks

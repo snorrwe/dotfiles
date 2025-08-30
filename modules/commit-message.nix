@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_the_redundant_.setup_directory_____________";
+  system.nixos.label = "Use_PWD_env_______________________________________";
 }
