@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-(
-cd .setup
-bash setup.sh $@
-)
+nix-shell -p just -p nh --run "just install $@"
 rm -rf .git/hooks
 ln -s $(pwd)/.githooks ./.git/hooks

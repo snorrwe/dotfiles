@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Remove_clang_from_the_default_packages_____";
+  system.nixos.label = "Remove_the_redundant_.setup_directory_____________";
 }
