@@ -110,6 +110,7 @@
       git = {
         repos = [
           "/home/${username}/.local/share/zsh-snap"
+          "/home/${username}/.config/tmux/plugins/tpm"
         ];
       };
     };
