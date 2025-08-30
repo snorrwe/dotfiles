@@ -15,12 +15,15 @@ update *args:
     git commit -m "System update $(printf '%(%Y-%m-%d)T\n' -1)"
     just apply {{ args }}
 
-apply hostname=default_host:
-    #!/usr/bin/env bash
-    set -euo pipefail
-
+apply hostname=default_host: && apply-stow
     nh os switch "." --hostname={{ hostname }}
+
+apply-stow:
     stow --adopt --dotfiles .
+
+# apply home-manager config
+apply-hm: && apply-stow
+    nh home switch .
 
 install hostname=default_host:
     mkdir -p "./hosts/{{ hostname }}"
