@@ -25,7 +25,7 @@ apply-stow:
 apply-hm: && apply-stow
     nh home switch .
 
-install hostname=default_host:
+install hostname=default_host: && setup-git-hooks
     mkdir -p "./hosts/{{ hostname }}"
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{ hostname }}/hardware.nix"
 
@@ -36,3 +36,7 @@ install hostname=default_host:
 # use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
 clean-zsh-cache:
     rm -rf ~/.cache/zsh-snap
+
+setup-git-hooks:
+    rm -rf .git/hooks
+    ln -s "$PWD/.githooks" ./.git/hooks
