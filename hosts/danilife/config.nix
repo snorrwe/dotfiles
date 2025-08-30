@@ -188,10 +188,10 @@ in
   systemd.units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
 
   # my lifebook has trouble waking up after going to sleep so don't do that automatically
-  services.logind.lidSwitch = "ignore";
-  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
+  services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
   # certain elements in my life might press the button while I'm working :)
-  services.logind.powerKey = "ignore";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

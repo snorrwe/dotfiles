@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tpm_to_topgrade_______________________________";
+  system.nixos.label = "Update_powerkey_settings__________________________";
 }

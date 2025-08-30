@@ -204,7 +204,7 @@ in
     ports = [ 39420 ];
   };
   # certain elements in my life might press the button while I'm working :)
-  services.logind.powerKey = "ignore";
+  services.logind.settings.Login.HandlePowerKey = "ignore";
 
   services.earlyoom = {
     enable = true;
