@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_git-hooks_setup_into_just____________________";
+  system.nixos.label = "Remove_nvim_config_from_topgrade__________________";
 }
