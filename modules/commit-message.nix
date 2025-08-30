@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Consider_the_subcommands_of_more_commands_in_atuin";
+  system.nixos.label = "Set_default_terminal_to_screen-256color_in_tmux___";
 }
