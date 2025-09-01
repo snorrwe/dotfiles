@@ -9,7 +9,7 @@ spawn-at-startup "xwayland-satellite"
 spawn-at-startup "app.zen_browser.zen"
 spawn-at-startup "wezterm"
 spawn-at-startup "md.obsidian.Obsidian"
-spawn-at-startup "eu.betterbird.Betterbird"
+spawn-at-startup "org.mozilla.Thunderbird"
 spawn-at-startup "com.slack.Slack"
 spawn-at-startup "com.discordapp.Discord"
 
@@ -389,7 +389,6 @@ window-rule {
     match app-id=r#"^obsidian$"#
     match app-id=r#"^thunderbird-esr$"#
     match app-id=r#"^org.mozilla.Thunderbird$"#
-    match app-id=r#"^eu.betterbird.Betterbird$"#
     open-on-workspace "notes"
     opacity 1.0
 }

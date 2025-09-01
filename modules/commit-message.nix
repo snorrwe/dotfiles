@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Migrate_to_betterbird_____________________________";
+  system.nixos.label = "Revert_Migrate_to_betterbird______________________";
 }
