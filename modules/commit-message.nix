@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_icons_to_eza_aliases__________________________";
+  system.nixos.label = "System_update_2025-09-01__________________________";
 }
