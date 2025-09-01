@@ -17,7 +17,6 @@ let
     "com.spotify.Client"
     "org.telegram.desktop"
     "com.bitwarden.desktop"
-    "org.mozilla.Thunderbird"
     "com.slack.Slack"
     "md.obsidian.Obsidian"
     "com.jgraph.drawio.desktop"
@@ -26,6 +25,7 @@ let
     "org.chromium.Chromium"
     "dev.restfox.Restfox"
     "be.alexandervanhee.gradia"
+    "eu.betterbird.Betterbird"
   ];
 in
 {

@@ -1,12 +1,8 @@
 {
-  pkgs,
-  username,
-  host,
-  inputs,
   ...
 }:
 let
-  thunderbird = "org.mozilla.Thunderbird.desktop";
+  email_client = "eu.betterbird.Betterbird";
   browser = "app.zen_browser.zen.desktop";
 in
 {
@@ -14,13 +10,13 @@ in
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "x-scheme-handler/mailto" = [ thunderbird ];
-      "message/rfc822" = [ thunderbird ];
-      "x-scheme-handler/mid" = [ thunderbird ];
-      "x-scheme-handler/webcal" = [ thunderbird ];
-      "text/calendar" = [ thunderbird ];
-      "application/x-extension-ics" = [ thunderbird ];
-      "x-scheme-handler/webcals" = [ thunderbird ];
+      "x-scheme-handler/mailto" = [ email_client ];
+      "message/rfc822" = [ email_client ];
+      "x-scheme-handler/mid" = [ email_client ];
+      "x-scheme-handler/webcal" = [ email_client ];
+      "text/calendar" = [ email_client ];
+      "application/x-extension-ics" = [ email_client ];
+      "x-scheme-handler/webcals" = [ email_client ];
       "x-scheme-handler/http" = [ browser ];
       "x-scheme-handler/https" = [ browser ];
       "x-scheme-handler/chrome" = [ browser ];
