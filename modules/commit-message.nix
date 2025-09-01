@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_default_terminal_to_screen-256color_in_tmux___";
+  system.nixos.label = "Add_icons_to_eza_aliases__________________________";
 }

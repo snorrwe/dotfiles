@@ -121,8 +121,8 @@ if type sccache > /dev/null ; then
 fi
 
 if type eza > /dev/null ; then
-    alias e='eza --git'
-    alias ea='eza -al --git'
+    alias e='eza --git --group-directories-first --icons'
+    alias ea='e -al'
     alias la=ea
     alias tree='eza --tree'
 fi
