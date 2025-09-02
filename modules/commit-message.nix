@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Migrate_to_betterbird______________________";
+  system.nixos.label = "Add_a_notification_before_locking_the_screen______";
 }
