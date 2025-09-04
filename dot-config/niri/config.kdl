@@ -327,6 +327,8 @@ layout {
         // top 64
         // bottom 64
     }
+
+    background-color "#24273aaf"
 }
 
 
@@ -689,4 +691,10 @@ binds {
 
 environment {
     DISPLAY ":0"
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }

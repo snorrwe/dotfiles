@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_a_notification_before_locking_the_screen______";
+  system.nixos.label = "Put_the_wallpaper_in_the_backdrop_________________";
 }
