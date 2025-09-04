@@ -1,9 +1,6 @@
 {
   config,
   pkgs,
-  host,
-  username,
-  options,
   ...
 }:
 
@@ -19,7 +16,7 @@
   };
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
     open = true;
     nvidiaSettings = true;
 

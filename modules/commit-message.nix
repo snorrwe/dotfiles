@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Put_the_wallpaper_in_the_backdrop_________________";
+  system.nixos.label = "Go_back_to_stable_nvidia_drivers__________________";
 }
