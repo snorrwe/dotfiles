@@ -328,7 +328,7 @@ layout {
         // bottom 64
     }
 
-    background-color "#24273aaf"
+    background-color "transparent"
 }
 
 

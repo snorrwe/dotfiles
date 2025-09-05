@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Go_back_to_stable_nvidia_drivers__________________";
+  system.nixos.label = "Use_transparent_backgrounds_______________________";
 }
