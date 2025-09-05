@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_transparent_backgrounds_______________________";
+  system.nixos.label = "Reapply_Add_gradia_for_screenshotting_____________";
 }
