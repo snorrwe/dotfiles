@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reapply_Add_gradia_for_screenshotting_____________";
+  system.nixos.label = "Remove_picom.nix__________________________________";
 }
