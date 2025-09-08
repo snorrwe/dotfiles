@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_CORRECT_in_zsh________________________________";
+  system.nixos.label = "Remove_redundant_string___________________________";
 }

@@ -156,7 +156,7 @@ in
       flavor = "mocha";
       font = "Monaspace Neon";
       fontSize = "13";
-      background = "${../../wallpaper.jpg}";
+      background = ../../wallpaper.jpg;
       loginBackground = true;
     })
   ];
