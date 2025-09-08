@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_picom.nix__________________________________";
+  system.nixos.label = "Set_CORRECT_in_zsh________________________________";
 }
