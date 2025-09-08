@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_string___________________________";
+  system.nixos.label = "Add_cloudflared___________________________________";
 }

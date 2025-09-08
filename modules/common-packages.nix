@@ -19,4 +19,6 @@ with pkgs;
   # quickly fire up VMs
   quickemu
   distrobox
+
+  cloudflared
 ]
