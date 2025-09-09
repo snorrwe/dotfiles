@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_cloudflared___________________________________";
+  system.nixos.label = "Rename_wezterm.lua________________________________";
 }
