@@ -11,7 +11,6 @@ let
     "org.videolan.VLC"
     "org.blender.Blender"
     "net.meshlab.MeshLab"
-    "us.zoom.Zoom"
     "org.kde.krita"
     "com.discordapp.Discord"
     "com.spotify.Client"
