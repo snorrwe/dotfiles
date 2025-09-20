@@ -4,15 +4,15 @@ zstyle ':znap:*' repos-dir $HOME/.zsh-plugins/
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# enable color support of ls
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-fi
+# offer to correct mispelled commands
+setopt CORRECT
+
+# enable vi keybindings
+bindkey -v
 
 function register_path {
     case ":${PATH}:" in
@@ -31,10 +31,7 @@ register_path "$HOME/.local/bin"
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
-
 # https://github.com/Aloxaf/fzf-tab/issues/482
-# znap source marlonrichert/zsh-autocomplete
-
 # load fzf-tab before other plugins
 # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
@@ -83,8 +80,6 @@ function completions() {
 completions
 unset completions
 
-# enable vi keybindings
-bindkey -v
 if type yazi > /dev/null ; then
     function yy() {
         local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -124,6 +119,7 @@ if type eza > /dev/null ; then
     alias e='eza --git --group-directories-first --icons'
     alias ea='e -al'
     alias la=ea
+    alias ll='e -alF'
     alias tree='eza --tree'
 fi
 
@@ -133,5 +129,3 @@ if type git > /dev/null ; then
     alias gl='git log'
     alias gd='git diff'
 fi
-
-setopt CORRECT

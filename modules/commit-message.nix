@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_zoom_flatpak_______________________________";
+  system.nixos.label = "Refactor_.zshrc___________________________________";
 }
