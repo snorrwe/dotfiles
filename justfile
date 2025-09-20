@@ -4,7 +4,7 @@ default:
     just --list
 
 clean:
-    nh clean all
+    nh clean all --keep-since 4d --keep 3 --nogcroots
 
 update *args:
     #!/usr/bin/env bash
