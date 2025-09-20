@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_collect_gcroots_in_nh_clean________________";
+  system.nixos.label = "Reapply_Manage_flatpaks_via_declarative-flatpak___";
 }
