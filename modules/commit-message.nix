@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reapply_Manage_flatpaks_via_declarative-flatpak___";
+  system.nixos.label = "Add_curl_to_hm____________________________________";
 }

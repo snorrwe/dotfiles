@@ -30,6 +30,7 @@
     github-cli
     git-lfs
     nodejs_22
+    curl
 
     rustup
     cargo-binstall
