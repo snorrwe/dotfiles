@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_clang_from_hm______________________________";
+  system.nixos.label = "Remove_lazygit_package____________________________";
 }

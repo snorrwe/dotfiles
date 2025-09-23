@@ -19,7 +19,6 @@
     go
     just
     watchexec
-    lazygit
     ninja
     starship # for my shell prompt
     pipx
