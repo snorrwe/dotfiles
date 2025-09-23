@@ -55,7 +55,6 @@
     nixfmt-rfc-style
 
     clang-tools
-    clang
 
     flamegraph
     sleek # SQL formatter

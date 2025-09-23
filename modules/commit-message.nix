@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_curl_to_hm____________________________________";
+  system.nixos.label = "Remove_clang_from_hm______________________________";
 }
