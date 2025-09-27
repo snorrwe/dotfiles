@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Switch_to_latest_declarative_flatpak______________";
+  system.nixos.label = "Configure_btop____________________________________";
 }

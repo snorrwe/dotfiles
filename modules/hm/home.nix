@@ -22,7 +22,6 @@
     ninja
     starship # for my shell prompt
     pipx
-    btop
     cmake
     gzip
     diffutils
@@ -87,6 +86,7 @@
     ./yazi.nix
     ./scripts.nix
     ./nh.nix
+    ./btop.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
