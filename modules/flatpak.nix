@@ -1,5 +1,5 @@
 # from https://www.reddit.com/r/NixOS/comments/1hzgxns/fully_declarative_flatpak_management_on_nixos/
-{ pkgs, ... }:
+{ ... }:
 {
   services.flatpak = {
     enable = true;
@@ -25,6 +25,7 @@
       "flathub:app/org.chromium.Chromium//stable"
       "flathub:app/dev.restfox.Restfox//stable"
       "flathub:app/be.alexandervanhee.gradia//stable"
+      "flathub:app/org.libreoffice.LibreOffice//stable"
     ];
   };
 }

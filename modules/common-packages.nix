@@ -4,7 +4,6 @@ with pkgs;
   xfce.thunar
 
   geeqie
-  libreoffice
   okteta
 
   hotspot # perf GUI

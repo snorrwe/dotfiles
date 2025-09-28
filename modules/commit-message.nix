@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_btop____________________________________";
+  system.nixos.label = "Use_a_libreoffice_flatpak_________________________";
 }
