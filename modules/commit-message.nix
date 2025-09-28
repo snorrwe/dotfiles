@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_a_libreoffice_flatpak_________________________";
+  system.nixos.label = "Do_not_hide_commands_in_just_update_______________";
 }
