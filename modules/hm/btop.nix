@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.btop = {
     enable = true;
@@ -21,6 +21,7 @@
       proc_sorting = "cpu direct";
       proc_reversed = false;
       proc_tree = true;
+      proc_aggregate = true;
     };
   };
 }
