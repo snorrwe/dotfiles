@@ -10,5 +10,6 @@
     createHome = true;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
+    password = "";
   };
 }
