@@ -103,27 +103,16 @@ in
   services.blueman.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username} = {
-    isNormalUser = true;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-    createHome = true;
-    packages =
-      with pkgs;
-      [
-        pavucontrol
-        pamixer
-        pulseaudio
-        acpi # battery status
-        powertop
-      ]
-      ++ (import ../../modules/common-packages.nix pkgs);
-    shell = pkgs.zsh;
-    ignoreShellProgramCheck = true;
-  };
+  users.users.${username}.packages =
+    with pkgs;
+    [
+      pavucontrol
+      pamixer
+      pulseaudio
+      acpi # battery status
+      powertop
+    ]
+    ++ (import ../../modules/common-packages.nix pkgs);
 
   fonts = {
     fontDir.enable = true;

@@ -59,6 +59,7 @@
                   ./modules/containers.nix
                   ./modules/nixpkgs.nix
                   ./modules/niri.nix
+                  ./modules/users.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

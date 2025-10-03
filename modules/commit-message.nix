@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-10-03__________________________";
+  system.nixos.label = "Factor_out_common_user_setup______________________";
 }
