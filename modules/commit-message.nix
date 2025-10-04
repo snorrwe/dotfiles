@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_default_password_to_empty_____________________";
+  system.nixos.label = "System_update_2025-10-04__________________________";
 }
