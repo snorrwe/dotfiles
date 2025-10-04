@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-10-04__________________________";
+  system.nixos.label = "Factor_out_sddm_config__fix_sddm_theme____________";
 }

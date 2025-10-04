@@ -72,13 +72,6 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.displayManager.sddm = {
-    wayland.enable = true;
-    enable = true;
-    theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
-  };
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -128,13 +121,6 @@ in
     neovim
     curl
     networkmanagerapplet
-    (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Monaspace Neon";
-      fontSize = "13";
-      background = "${../../wallpaper.jpg}";
-      loginBackground = true;
-    })
   ];
   programs.npm.enable = true;
   environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";

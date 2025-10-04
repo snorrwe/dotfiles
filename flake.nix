@@ -60,6 +60,7 @@
                   ./modules/nixpkgs.nix
                   ./modules/niri.nix
                   ./modules/users.nix
+                  ./modules/sddm.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {
