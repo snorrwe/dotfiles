@@ -63,6 +63,7 @@
                   ./modules/sddm.nix
                   ./modules/tailscale.nix
                   home-manager.nixosModules.home-manager
+                  ./modules/hm/syncthing.nix
                   {
                     home-manager.extraSpecialArgs = {
                       inherit inputs;

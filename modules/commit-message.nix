@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tailscale_____________________________________";
+  system.nixos.label = "Add_syncthing_____________________________________";
 }
