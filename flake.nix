@@ -61,6 +61,7 @@
                   ./modules/niri.nix
                   ./modules/users.nix
                   ./modules/sddm.nix
+                  ./modules/tailscale.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

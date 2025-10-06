@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_sddm_config__fix_sddm_theme____________";
+  system.nixos.label = "Add_tailscale_____________________________________";
 }
