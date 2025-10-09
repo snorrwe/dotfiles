@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_result_in_stow_____________________________";
+  system.nixos.label = "Ignore_gitattributes_in_stow______________________";
 }

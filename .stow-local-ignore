@@ -34,3 +34,4 @@ flake\.nix
 \.wezterm.lua
 justfile
 result
+\.gitattributes
