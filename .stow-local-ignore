@@ -33,3 +33,4 @@ flake\.nix
 \.gitmodules
 \.wezterm.lua
 justfile
+result

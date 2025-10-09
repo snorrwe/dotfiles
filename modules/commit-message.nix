@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_modules_in_stow____________________________";
+  system.nixos.label = "Ignore_result_in_stow_____________________________";
 }
