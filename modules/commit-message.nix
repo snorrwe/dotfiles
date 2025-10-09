@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_the_formats_plugin_to_nushell_________________";
+  system.nixos.label = "Ignore_modules_in_stow____________________________";
 }

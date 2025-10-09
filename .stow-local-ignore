@@ -24,6 +24,7 @@ _darcs
 \.setup
 nix-stuff
 hosts
+modules
 flake\.lock
 flake\.nix
 .*\.sh
@@ -32,4 +33,3 @@ flake\.nix
 \.gitmodules
 \.wezterm.lua
 justfile
-config
