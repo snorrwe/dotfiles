@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_gitattributes_in_stow______________________";
+  system.nixos.label = "Revert_Reapply_Manage_flatpaks_via_declarative-fla";
 }
