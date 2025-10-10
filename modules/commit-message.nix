@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Keep_stow_from_linking_the_entire_.config_director";
+  system.nixos.label = "Add_home-1_to_syncthing_devices___________________";
 }
