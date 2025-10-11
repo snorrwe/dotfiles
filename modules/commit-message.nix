@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_home-1_to_syncthing_devices___________________";
+  system.nixos.label = "Add_clang_to_the_installed_packages_______________";
 }

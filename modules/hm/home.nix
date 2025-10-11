@@ -52,6 +52,7 @@
     pandoc
     nixfmt-rfc-style
 
+    clang
     clang-tools
 
     flamegraph
