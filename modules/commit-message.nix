@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-10-11__________________________";
+  system.nixos.label = "Difftastic_options_have_been_renamed______________";
 }

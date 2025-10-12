@@ -13,8 +13,10 @@
     lfs.enable = true;
     difftastic = {
       enable = true;
-      background = "dark";
-      display = "inline";
+      options = {
+        background = "dark";
+        display = "inline";
+      };
       enableAsDifftool = true;
     };
   };
