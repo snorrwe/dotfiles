@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "GUI_and_Syncthing_feature_flags___________________";
+  system.nixos.label = "Use_modshiftspace_for_switching_between_floating_a";
 }
