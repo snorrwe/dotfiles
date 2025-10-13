@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Difftastic_options_have_been_renamed______________";
+  system.nixos.label = "Disable_overrides_in_syncthing____________________";
 }

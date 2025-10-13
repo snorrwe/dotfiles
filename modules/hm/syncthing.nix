@@ -4,6 +4,8 @@
     enable = true;
     user = username;
     configDir = "/home/${username}/.config/syncthing";
+    overrideDevices = false;
+    overrideFolders = false;
     settings = {
       folders.notes = {
         enable = true;
