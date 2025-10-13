@@ -1,9 +1,7 @@
-{ username, ... }:
+{ username, features, ... }:
 {
   services.syncthing = {
-    enable = true;
-    user = username;
-    configDir = "/home/${username}/.config/syncthing";
+    enable = features.enableSyncthing;
     overrideDevices = false;
     overrideFolders = false;
     settings = {

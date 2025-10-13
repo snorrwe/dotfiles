@@ -2,6 +2,7 @@
   pkgs,
   username,
   inputs,
+  features,
   ...
 }:
 {
@@ -88,6 +89,7 @@
     ./scripts.nix
     ./nh.nix
     ./btop.nix
+    ./syncthing.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -117,7 +119,7 @@
 
   };
   programs.wezterm = {
-    enable = true;
+    enable = features.enableGui;
     enableZshIntegration = true;
     extraConfig = builtins.readFile ../../.wezterm.lua;
     package = inputs.wezterm.packages.${pkgs.system}.default;

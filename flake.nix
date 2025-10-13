@@ -59,12 +59,16 @@
                   ./modules/sddm.nix
                   ./modules/tailscale.nix
                   home-manager.nixosModules.home-manager
-                  ./modules/hm/syncthing.nix
                   {
                     home-manager.extraSpecialArgs = {
                       inherit inputs;
                       inherit username;
                       inherit host;
+
+                      features = {
+                        enableGui = true;
+                        enableSyncthing = true;
+                      };
                     };
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
@@ -96,6 +100,10 @@
               extraSpecialArgs = {
                 inherit inputs;
                 inherit username;
+                features = {
+                  enableGui = false;
+                  enableSyncthing = false;
+                };
               };
               modules = [
                 ./modules/nixpkgs.nix
