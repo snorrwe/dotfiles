@@ -45,4 +45,8 @@
       theme = "Coldark-Dark";
     };
   };
+
+  programs.lazydocker = {
+    enable = true;
+  };
 }

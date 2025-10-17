@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-10-17__________________________";
+  system.nixos.label = "Add_lazydocker____________________________________";
 }
