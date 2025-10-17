@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Call_lsof_with_sudo_I_found_I_usually_want_this_to";
+  system.nixos.label = "System_update_2025-10-17__________________________";
 }
