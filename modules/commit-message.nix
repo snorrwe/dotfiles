@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Ignore_all_sorts_of_keys__________________________";
+  system.nixos.label = "Reapply_Reapply_Manage_flatpaks_via_declarative-fl";
 }
