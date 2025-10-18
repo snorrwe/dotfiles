@@ -179,8 +179,15 @@ in
     enable = true;
     ports = [ 39420 ];
   };
-  # certain elements in my life might press the button while I'm working :)
-  services.logind.settings.Login.HandlePowerKey = "ignore";
+  services.logind.settings.Login = {
+    # certain elements in my life might press the button while I'm working :)
+    HandlePowerKey = "ignore";
+    HandlePowerKeyLongPress = "ignore";
+    HandleRebootKey = "ignore";
+    HandleRebootKeyLongPress = "ignore";
+    HandleSuspendKey = "ignore";
+    HandleSuspendKeyLongPress = "ignore";
+  };
 
   services.earlyoom = {
     enable = true;
