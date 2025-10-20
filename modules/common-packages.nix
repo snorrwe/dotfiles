@@ -6,6 +6,7 @@ with pkgs;
   geeqie
   okteta
 
+  perf
   hotspot # perf GUI
 
   betterlockscreen

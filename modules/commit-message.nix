@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_gaming_feature________________________________";
+  system.nixos.label = "Add_perf__________________________________________";
 }
