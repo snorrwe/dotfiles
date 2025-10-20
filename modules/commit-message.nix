@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_heroic_games_launcher_________________________";
+  system.nixos.label = "Add_gaming_feature________________________________";
 }

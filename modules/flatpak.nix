@@ -1,5 +1,8 @@
 # from https://www.reddit.com/r/NixOS/comments/1hzgxns/fully_declarative_flatpak_management_on_nixos/
-{ ... }:
+{ features, pkgs, ... }:
+let
+  inherit (pkgs.lib.lists) optionals;
+in
 {
   services.flatpak = {
     enable = true;
@@ -26,6 +29,8 @@
       "flathub:app/dev.restfox.Restfox//stable"
       "flathub:app/be.alexandervanhee.gradia//stable"
       "flathub:app/org.libreoffice.LibreOffice//stable"
+    ]
+    ++ optionals features.enableGaming [
       "flathub:app/com.heroicgameslauncher.hgl//stable"
     ];
   };

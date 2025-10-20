@@ -37,7 +37,15 @@
       nixosConfigurations = builtins.listToAttrs (
         map
           (
-            { host }:
+            { host, ... }@args:
+            let
+              features = {
+                enableGui = true;
+                enableSyncthing = true;
+                enableGaming = false;
+              }
+              // args.features;
+            in
             {
               name = host;
               value = nixpkgs.lib.nixosSystem {
@@ -46,6 +54,7 @@
                   inherit inputs;
                   inherit username;
                   inherit host;
+                  inherit features;
                 };
                 modules = [
                   ./hosts/${host}/config.nix
@@ -68,11 +77,7 @@
                       inherit inputs;
                       inherit username;
                       inherit host;
-
-                      features = {
-                        enableGui = true;
-                        enableSyncthing = true;
-                      };
+                      inherit features;
                     };
                     home-manager.useGlobalPkgs = true;
                     home-manager.useUserPackages = true;
@@ -92,8 +97,16 @@
             }
           )
           [
-            { host = "danipc"; }
-            { host = "danilife"; }
+            {
+              host = "danipc";
+              features = {
+                enableGaming = true;
+              };
+            }
+            {
+              host = "danilife";
+              features = { };
+            }
           ]
       );
       homeConfigurations = builtins.listToAttrs (
@@ -108,6 +121,7 @@
                 features = {
                   enableGui = false;
                   enableSyncthing = false;
+                  enableGaming = false;
                 };
               };
               modules = [

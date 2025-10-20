@@ -3,6 +3,7 @@
   pkgs,
   host,
   username,
+  features,
   ...
 }:
 let
@@ -101,7 +102,7 @@ in
   };
 
   programs.steam = {
-    enable = true;
+    enable = features.enableGaming;
   };
 
   hardware.bluetooth = {
