@@ -26,6 +26,7 @@
       "flathub:app/dev.restfox.Restfox//stable"
       "flathub:app/be.alexandervanhee.gradia//stable"
       "flathub:app/org.libreoffice.LibreOffice//stable"
+      "flathub:app/com.heroicgameslauncher.hgl//stable"
     ];
   };
 }
