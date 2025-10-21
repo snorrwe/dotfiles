@@ -22,15 +22,14 @@ apply-stow:
 apply-hm: && apply-stow
     nh home switch .
 
-install hostname=default_host: && setup-git-hooks
+generate-hardware-config hostname=default_host:
     mkdir -p "./hosts/{{ hostname }}"
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{ hostname }}/hardware.nix"
 
+install hostname=default_host: generate-hardware-config && setup-git-hooks
     just apply {{ hostname }}
 
-# clears zsh-snap eval cache
-
-# use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
+# clears zsh-snap eval cache use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
 clean-zsh-cache:
     rm -rf ~/.cache/zsh-snap
 

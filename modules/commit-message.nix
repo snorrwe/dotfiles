@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_perf__________________________________________";
+  system.nixos.label = "Factor_out_generate-hardware-config_______________";
 }
