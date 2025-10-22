@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_bottles_______________________________________";
+  system.nixos.label = "Remove_warning_popup______________________________";
 }
