@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_generate-hardware-config_______________";
+  system.nixos.label = "Add_bottles_______________________________________";
 }

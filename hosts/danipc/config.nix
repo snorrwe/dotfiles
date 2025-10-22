@@ -3,7 +3,6 @@
   pkgs,
   host,
   username,
-  features,
   ...
 }:
 let
@@ -99,10 +98,6 @@ in
       enable = true;
       package = pkgs.nix-direnv;
     };
-  };
-
-  programs.steam = {
-    enable = features.enableGaming;
   };
 
   hardware.bluetooth = {

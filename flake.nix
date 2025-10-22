@@ -92,7 +92,10 @@
                   nix-ld.nixosModules.nix-ld
                   { programs.nix-ld.dev.enable = true; }
 
-                ];
+                ]
+                ++ (pkgs.lib.lists.optionals features.enableGaming [
+                  ./modules/gaming.nix
+                ]);
               };
             }
           )
