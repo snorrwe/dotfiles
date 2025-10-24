@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_home_and_sda_partitions_to_disk_display_______";
+  system.nixos.label = "Rename_music_workspace_to_media___________________";
 }
