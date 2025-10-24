@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_slack_as_slack_handler________________________";
+  system.nixos.label = "Show_paths_for_disks______________________________";
 }

@@ -90,16 +90,16 @@ with lib;
           tooltip = true;
         };
         "disk" = {
-          format = " {free}";
+          format = " {path} {free}";
           tooltip = true;
         };
         "disk#home" = {
-          format = " {free}";
+          format = " {path} {free}";
           tooltip = true;
           path = "/home";
         };
         "disk#sda" = {
-          format = " {free}";
+          format = " {path} {free}";
           tooltip = true;
           path = "/mnt/sda/";
         };
