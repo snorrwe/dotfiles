@@ -46,6 +46,7 @@ in
     extraPortals = with pkgs; [
       gnome-keyring
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
       xdg-desktop-portal
       xdg-desktop-portal-wlr
       xdg-desktop-portal-termfilechooser # Portal for using TUIs as file pickers
