@@ -29,6 +29,8 @@ with lib;
           "cpu"
           "memory"
           "disk"
+          "disk#home"
+          "disk#sda"
           "battery"
           "clock"
           "tray"
@@ -90,6 +92,16 @@ with lib;
         "disk" = {
           format = " {free}";
           tooltip = true;
+        };
+        "disk#home" = {
+          format = " {free}";
+          tooltip = true;
+          path = "/home";
+        };
+        "disk#sda" = {
+          format = " {free}";
+          tooltip = true;
+          path = "/mnt/sda/";
         };
         "network" = {
           format-icons = [
