@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_warning_popup______________________________";
+  system.nixos.label = "Manage_symlinks_via_nix___________________________";
 }

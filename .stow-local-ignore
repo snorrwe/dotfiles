@@ -35,3 +35,4 @@ flake\.nix
 justfile
 result
 \.gitattributes
+dot-config
