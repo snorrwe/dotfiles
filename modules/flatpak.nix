@@ -29,6 +29,7 @@ in
       "flathub:app/dev.restfox.Restfox//stable"
       "flathub:app/be.alexandervanhee.gradia//stable"
       "flathub:app/org.libreoffice.LibreOffice//stable"
+      "flathub:app/org.telegram.desktop//stable"
     ]
     ++ optionals features.enableGaming [
       "flathub:app/com.heroicgameslauncher.hgl//stable"

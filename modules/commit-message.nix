@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_stow_as_a_dependency_______________________";
+  system.nixos.label = "Add_telegram______________________________________";
 }
