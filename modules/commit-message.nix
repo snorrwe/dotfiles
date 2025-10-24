@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_sda_to_danipc_________________________________";
+  system.nixos.label = "Add_missing_termfilechooser_config________________";
 }

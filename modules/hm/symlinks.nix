@@ -28,6 +28,7 @@ in
       source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-zshrc";
       target = "../.zshrc";
     };
+    "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
     ".visidatarc" = {
       source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-visidatarc";
       target = "../.visidatarc";
