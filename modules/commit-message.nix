@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Manage_symlinks_via_nix___________________________";
+  system.nixos.label = "Remove_stow_as_a_dependency_______________________";
 }

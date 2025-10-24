@@ -12,7 +12,6 @@
   home.stateVersion = "24.05";
   home.packages = with pkgs; [
     tmux
-    stow
     parallel
     unzip
     zip

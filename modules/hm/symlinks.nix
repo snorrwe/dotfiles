@@ -3,7 +3,8 @@ let
 
   paths = {
     # FIXME: the .dotfiles path probably needs configuring
-    config = "${config.home.homeDirectory}/.dotfiles/dot-config/";
+    dotfiles = "${config.home.homeDirectory}/.dotfiles/";
+    config = "${paths.dotfiles}/dot-config/";
   };
 
   inherit (config.lib.file) mkOutOfStoreSymlink;
@@ -19,9 +20,17 @@ let
 in
 {
   xdg.configFile = {
-    "starship" = mklinkFile "starship.toml";
+    "starship.toml" = mklinkFile "starship.toml";
     "tmux" = mklinkDir "tmux";
     "niri" = mklinkDir "niri";
     "atuin" = mklinkDir "atuin";
+    ".zshrc" = {
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-zshrc";
+      target = "../.zshrc";
+    };
+    ".visidatarc" = {
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-visidatarc";
+      target = "../.visidatarc";
+    };
   };
 }

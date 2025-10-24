@@ -12,14 +12,11 @@ update *args:
     git commit -m "System update $(printf '%(%Y-%m-%d)T\n' -1)"
     just apply {{ args }}
 
-apply hostname=default_host: && apply-stow
+apply hostname=default_host:
     nh os switch "." --hostname={{ hostname }}
 
-apply-stow:
-    stow --adopt --dotfiles .
-
 # apply home-manager config
-apply-hm: && apply-stow
+apply-hm:
     nh home switch .
 
 generate-hardware-config hostname=default_host:
