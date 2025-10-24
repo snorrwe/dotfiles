@@ -10,7 +10,6 @@ let
   browser = "app.zen_browser.zen.desktop";
 in
 {
-
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
@@ -37,6 +36,7 @@ in
       "x-scheme-handler/about" = [ browser ];
       "x-scheme-handler/unknown" = [ browser ];
       "application/pdf" = [ browser ];
+      "x-scheme-handler/slack" = [ "com.slack.Slack.desktop" ];
     };
   };
 }

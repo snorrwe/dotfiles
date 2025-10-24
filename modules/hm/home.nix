@@ -74,7 +74,7 @@
     ./rice.nix
     ./dunst.nix
     ./git.nix
-    ./xdg.nix
+    ./mime.nix
     ./fastfetch.nix
     ./nushell.nix
     ./cli.nix
