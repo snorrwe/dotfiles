@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_danipc_hardware____________________________";
+  system.nixos.label = "Fix_install_generate-hardware-config_hostname_____";
 }

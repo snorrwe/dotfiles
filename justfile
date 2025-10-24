@@ -23,7 +23,7 @@ generate-hardware-config hostname=default_host:
     mkdir -p "./hosts/{{ hostname }}"
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{ hostname }}/hardware.nix"
 
-install hostname=default_host: generate-hardware-config && setup-git-hooks
+install hostname=default_host: (generate-hardware-config hostname) && setup-git-hooks
     just apply {{ hostname }}
 
 # clears zsh-snap eval cache use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
