@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_install_generate-hardware-config_hostname_____";
+  system.nixos.label = "Add_sda_to_danipc_________________________________";
 }
