@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_telegram______________________________________";
+  system.nixos.label = "Update_danipc_hardware____________________________";
 }
