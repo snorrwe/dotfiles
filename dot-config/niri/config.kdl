@@ -4,7 +4,6 @@
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "waybar"
-spawn-at-startup "xwayland-satellite"
 
 spawn-at-startup "app.zen_browser.zen"
 spawn-at-startup "wezterm"
@@ -12,6 +11,10 @@ spawn-at-startup "md.obsidian.Obsidian"
 spawn-at-startup "org.mozilla.Thunderbird"
 spawn-at-startup "com.slack.Slack"
 spawn-at-startup "com.discordapp.Discord"
+
+xwayland-satellite {
+    path "xwayland-satellite"
+}
 
 // This config is in the KDL format: https://kdl.dev
 // "/-" comments out the following node.

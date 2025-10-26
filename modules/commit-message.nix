@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rename_sda_-_data-0_______________________________";
+  system.nixos.label = "Configure_xwayland-satellite______________________";
 }
