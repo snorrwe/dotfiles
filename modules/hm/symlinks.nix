@@ -25,12 +25,12 @@ in
     "niri" = mklinkDir "niri";
     "atuin" = mklinkDir "atuin";
     ".zshrc" = {
-      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-zshrc";
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/.zshrc";
       target = "../.zshrc";
     };
     "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
     ".visidatarc" = {
-      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-visidatarc";
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/.visidatarc";
       target = "../.visidatarc";
     };
   };
