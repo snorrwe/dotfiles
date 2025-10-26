@@ -92,7 +92,7 @@ with lib;
             format-critical = "<span color='#ff0046'><b>${format}</b></span>";
             format-high = "<span color='#e03c52'>${format}</span>";
             format-medium = "<span color='#85c600'>${format}</span>";
-            format-low = "<span color='grey'>${format}</span>";
+            format-low = format;
             tooltip = true;
             format-icons = [
               "▁"

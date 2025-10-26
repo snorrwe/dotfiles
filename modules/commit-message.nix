@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_git_and_difftastic_options_________________";
+  system.nixos.label = "Use_default_format_for_low_cpu____________________";
 }
