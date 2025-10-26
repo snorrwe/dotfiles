@@ -33,6 +33,7 @@ in
     ]
     ++ optionals features.enableGaming [
       "flathub:app/com.heroicgameslauncher.hgl//stable"
+      "flathub:app/com.usebottles.bottles//stable"
     ];
   };
 }
