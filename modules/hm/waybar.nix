@@ -83,11 +83,34 @@ with lib;
           format = " {}%";
           tooltip = true;
         };
-        "cpu" = {
-          interval = 5;
-          format = " {usage:2}%";
-          tooltip = true;
-        };
+        "cpu" =
+          let
+            format = " {usage:2}%{icon}";
+          in
+          {
+            interval = 5;
+            format-critical = "<span color='#ff0046'><b>${format}</b></span>";
+            format-high = "<span color='#e03c52'>${format}</span>";
+            format-medium = "<span color='#85c600'>${format}</span>";
+            format-low = "<span color='grey'>${format}</span>";
+            tooltip = true;
+            format-icons = [
+              "▁"
+              "▂"
+              "▃"
+              "▄"
+              "▅"
+              "▆"
+              "▇"
+              "█"
+            ];
+            states = {
+              critical = 90;
+              high = 60;
+              medium = 15;
+              low = 0;
+            };
+          };
         "disk" = {
           format = " {path} {free}";
           tooltip = true;
@@ -290,7 +313,6 @@ with lib;
         #battery.critical {
           color: #ff0046;
         }
-
 
         #clock {
           border-radius: 20px;

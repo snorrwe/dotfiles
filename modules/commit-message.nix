@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-10-25__________________________";
+  system.nixos.label = "Style_waybar_cpu__________________________________";
 }
