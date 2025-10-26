@@ -8,17 +8,21 @@
 {
   programs.git = {
     enable = true;
-    userName = "Daniel Kiss";
-    userEmail = "littlesnorrboy@gmail.com";
-    lfs.enable = true;
-    difftastic = {
-      enable = true;
-      options = {
-        background = "dark";
-        display = "inline";
+    settings = {
+      user = {
+        name = "Daniel Kiss";
+        email = "littlesnorrboy@gmail.com";
       };
-      enableAsDifftool = true;
     };
+    lfs.enable = true;
+  };
+  programs.difftastic = {
+    enable = true;
+    options = {
+      background = "dark";
+      display = "inline";
+    };
+    git.enable = true;
   };
   programs.lazygit = {
     enable = true;

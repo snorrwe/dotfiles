@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Style_waybar_cpu__________________________________";
+  system.nixos.label = "Update_git_and_difftastic_options_________________";
 }
