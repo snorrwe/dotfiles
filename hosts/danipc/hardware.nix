@@ -44,7 +44,7 @@
       "dmask=0077"
     ];
   };
-  fileSystems."/mnt/sda" = {
+  fileSystems."/mnt/data-0" = {
     device = "/dev/disk/by-uuid/5197eff7-861f-4f58-81c0-45c869fcae55";
     fsType = "btrfs";
   };

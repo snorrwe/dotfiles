@@ -29,7 +29,7 @@ with lib;
           "memory"
           "disk"
           "disk#home"
-          "disk#sda"
+          "disk#data-0"
           "battery"
           "clock"
           "tray"
@@ -110,10 +110,10 @@ with lib;
           tooltip = true;
           path = "/home";
         };
-        "disk#sda" = {
+        "disk#data-0" = {
           format = " {path} {free}";
           tooltip = true;
-          path = "/mnt/sda/";
+          path = "/mnt/data-0";
         };
         "network" = {
           format-icons = [

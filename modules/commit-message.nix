@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_bottles_as_flatpak________________________";
+  system.nixos.label = "Rename_sda_-_data-0_______________________________";
 }
