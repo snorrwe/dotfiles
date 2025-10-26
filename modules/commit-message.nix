@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_xwayland-satellite______________________";
+  system.nixos.label = "Disable_hotkey_overlay____________________________";
 }

@@ -691,6 +691,11 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
 environment {
     DISPLAY ":0"
 }
