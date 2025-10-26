@@ -85,7 +85,7 @@ with lib;
         };
         "cpu" =
           let
-            format = " {usage:2}%{icon}";
+            format = " {usage:2}%";
           in
           {
             interval = 5;
@@ -94,16 +94,6 @@ with lib;
             format-medium = "<span color='#85c600'>${format}</span>";
             format-low = format;
             tooltip = true;
-            format-icons = [
-              "▁"
-              "▂"
-              "▃"
-              "▄"
-              "▅"
-              "▆"
-              "▇"
-              "█"
-            ];
             states = {
               critical = 90;
               high = 60;

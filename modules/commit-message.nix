@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_default_format_for_low_cpu____________________";
+  system.nixos.label = "Remove_cpu_icon___________________________________";
 }
