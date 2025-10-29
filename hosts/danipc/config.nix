@@ -70,6 +70,9 @@ in
     wifi.powersave = false;
     # for my Intel 6 AX200
     wifi.backend = "iwd";
+    plugins = with pkgs; [
+      networkmanager-openvpn
+    ];
   };
   # fix for my pcie wifi disconnecting
   boot.extraModprobeConfig = ''
