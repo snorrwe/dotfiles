@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_openvpn_______________________________________";
+  system.nixos.label = "Open_scrollback_in_nvim___________________________";
 }
