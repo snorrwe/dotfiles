@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_video_packages_____________________________";
+  system.nixos.label = "Remove_bottles____________________________________";
 }
