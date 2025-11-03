@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_bottles____________________________________";
+  system.nixos.label = "use_ctrlshifte____________________________________";
 }

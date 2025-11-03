@@ -56,7 +56,7 @@ config.keys = {
 	{ key = "O", mods = "SHIFT|CTRL", action = wezterm.action.ShowTabNavigator },
 	{
 		key = "E",
-		mods = "CTRL",
+		mods = "SHIFT|CTRL",
 		action = act.EmitEvent("trigger-vim-with-scrollback"),
 	},
 }
