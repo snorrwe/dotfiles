@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
+      url = "github:wezterm/wezterm/main?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-ld = {

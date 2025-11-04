@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "use_ctrlshifte____________________________________";
+  system.nixos.label = "Update_wezterm_url________________________________";
 }
