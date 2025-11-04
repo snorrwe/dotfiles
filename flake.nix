@@ -71,6 +71,7 @@
                   ./modules/users.nix
                   ./modules/sddm.nix
                   ./modules/tailscale.nix
+                  ./modules/caches.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

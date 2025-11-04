@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_wezterm_url________________________________";
+  system.nixos.label = "Add_wezterm_cache_________________________________";
 }
