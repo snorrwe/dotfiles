@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_wezterm_cache_________________________________";
+  system.nixos.label = "System_update_2025-11-06__________________________";
 }
