@@ -31,11 +31,9 @@
         nerdFontsVersion = "3";
       };
       git = {
-        pagers = [
-          {
-            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
-          }
-        ];
+        paging = {
+          externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+        };
       };
     };
   };

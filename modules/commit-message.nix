@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_focus_productivity_apps_on_startup_________";
+  system.nixos.label = "Revert_System_update_2025-11-06___________________";
 }

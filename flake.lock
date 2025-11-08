@@ -75,11 +75,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762463325,
-        "narHash": "sha256-33YUsWpPyeBZEWrKQ2a1gkRZ7i0XCC/2MYpU6BVeQSU=",
+        "lastModified": 1761344779,
+        "narHash": "sha256-6LNSptFYhiAd0M/maJoixJw7V0Kp5BSoMRtIahcfu3M=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "0562fef070a1027325dd4ea10813d64d2c967b39",
+        "rev": "c644cb018f9fdec55f5ac2afb4713a8c7beb757c",
         "type": "github"
       },
       "original": {
@@ -113,11 +113,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1762158525,
-        "narHash": "sha256-hIaHeP7I4vGYDOmPO2xlzs3XnrgP6e6gbdOdmXQAw2w=",
+        "lastModified": 1760948931,
+        "narHash": "sha256-guAocn26kDPdkl6tPXJt5pPaIIsrGI4taw+1U3+FM7E=",
         "owner": "Mic92",
         "repo": "nix-ld",
-        "rev": "15c9dee03626498873a8f07d47f01ae402b63ea0",
+        "rev": "a48b2dc9a256bcef9182f0f92c481de975302b1e",
         "type": "github"
       },
       "original": {
@@ -128,32 +128,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1762111121,
-        "narHash": "sha256-4vhDuZ7OZaZmKKrnDpxLZZpGIJvAeMtK6FKLJYUtAdw=",
+        "lastModified": 1761114652,
+        "narHash": "sha256-f/QCJM/YhrV/lavyCVz8iU3rlZun6d+dAiC3H+CDle4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b3d51a0365f6695e7dd5cdf3e180604530ed33b4",
+        "rev": "01f116e4df6a15f4ccdffb1bcd41096869fb385c",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1748026580,
-        "narHash": "sha256-rWtXrcIzU5wm/C8F9LWvUfBGu5U5E7cFzPYT1pHIJaQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "11cb3517b3af6af300dd6c055aeda73c9bf52c48",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "25.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -164,7 +148,6 @@
         "home-manager": "home-manager",
         "nix-ld": "nix-ld",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-stable": "nixpkgs-stable",
         "wezterm": "wezterm"
       }
     },
@@ -211,7 +194,7 @@
         "harfbuzz": "harfbuzz",
         "libpng": "libpng",
         "nixpkgs": [
-          "nixpkgs-stable"
+          "nixpkgs"
         ],
         "rust-overlay": "rust-overlay",
         "zlib": "zlib"
