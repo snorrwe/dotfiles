@@ -388,6 +388,7 @@ window-rule {
     match at-startup=true app-id=r#"^zen$"#
     open-on-workspace "browser"
     opacity 1.0
+    open-focused false
 }
 
 window-rule {
@@ -396,12 +397,14 @@ window-rule {
     match app-id=r#"^org.mozilla.Thunderbird$"#
     open-on-workspace "notes"
     opacity 1.0
+    open-focused false
 }
 
 window-rule {
     match app-id=r#"^discord$"#
     match app-id=r#"^Slack$"#
     open-on-workspace "chat"
+    open-focused false
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -411,6 +414,7 @@ window-rule {
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"zen$"# title="^Picture-in-Picture$"
     open-floating true
+    open-focused true
 }
 
 window-rule {
