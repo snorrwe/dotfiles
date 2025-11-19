@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_hgraphics_settings_______________";
+  system.nixos.label = "Update_installed_drivers__________________________";
 }

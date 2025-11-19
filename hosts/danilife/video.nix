@@ -11,8 +11,9 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      libva-vdpau-driver
+      vpl-gpu-rt
       intel-media-driver
+      intel-compute-runtime
     ];
   };
 }
