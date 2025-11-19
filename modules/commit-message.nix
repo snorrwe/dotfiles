@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_mpv___________________________________________";
+  system.nixos.label = "Add_flatseal______________________________________";
 }

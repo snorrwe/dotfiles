@@ -30,6 +30,7 @@ in
       "flathub:app/be.alexandervanhee.gradia//stable"
       "flathub:app/org.libreoffice.LibreOffice//stable"
       "flathub:app/org.telegram.desktop//stable"
+      "flathub:app/com.github.tchx84.Flatseal//stable"
     ]
     ++ optionals features.enableGaming [
       "flathub:app/com.heroicgameslauncher.hgl//stable"
