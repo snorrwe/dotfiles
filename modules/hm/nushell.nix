@@ -10,6 +10,7 @@
     enable = true;
     plugins = with pkgs; [
       nushellPlugins.formats
+      nushellPlugins.polars
     ];
   };
 }
