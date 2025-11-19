@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_flatseal______________________________________";
+  system.nixos.label = "Remove_redundant_hgraphics_settings_______________";
 }

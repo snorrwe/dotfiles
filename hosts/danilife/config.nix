@@ -155,10 +155,6 @@ in
     '';
   };
 
-  hardware.graphics = {
-    enable = true;
-  };
-
   services.earlyoom = {
     enable = true;
   };
