@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_polars_to_nushell_____________________________";
+  system.nixos.label = "Add_mpv___________________________________________";
 }
