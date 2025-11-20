@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_vector_len_to_visidata________________________";
+  system.nixos.label = "Remove_default_name_from_atuin____________________";
 }
