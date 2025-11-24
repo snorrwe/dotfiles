@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_gui_apps_in_HM_if_enalbeGui_is_set_to_fals";
+  system.nixos.label = "Always_show_hostname_in_starship_prompt___________";
 }
