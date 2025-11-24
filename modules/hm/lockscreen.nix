@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  features,
   ...
 }:
 let
@@ -9,7 +10,7 @@ let
 in
 {
   services.swayidle = {
-    enable = true;
+    enable = features.enableGui;
     timeouts = [
       {
         timeout = timeout - 30;
@@ -26,7 +27,7 @@ in
       textColor = "rgb(cdd6f4)";
     in
     {
-      enable = true;
+      enable = features.enableGui;
       settings = {
         background = [
           {

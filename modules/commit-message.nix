@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-11-24__________________________";
+  system.nixos.label = "Disable_gui_apps_in_HM_if_enalbeGui_is_set_to_fals";
 }

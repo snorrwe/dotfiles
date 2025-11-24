@@ -3,6 +3,7 @@
   username,
   host,
   inputs,
+  features,
   ...
 }:
 let
@@ -30,7 +31,7 @@ in
   };
 
   home.pointerCursor = {
-    enable = true;
+    enable = features.enableGui;
     name = cursor_name;
     package = cursor_package;
     x11.enable = true;
@@ -39,7 +40,7 @@ in
 
   home.sessionVariables.GTK_THEME = theme;
   gtk = {
-    enable = true;
+    enable = features.enableGui;
     font.name = "Monaspace Neon";
     font.package = pkgs.monaspace;
 
@@ -71,7 +72,7 @@ in
   };
 
   qt = {
-    enable = true;
+    enable = features.enableGui;
     platformTheme.name = theme;
     style.name = theme;
   };

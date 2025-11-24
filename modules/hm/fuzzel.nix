@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, features, ... }:
 {
   programs.fuzzel = {
-    enable = true;
+    enable = features.enableGui;
     settings = {
       main = {
         font = "Monaspace Neon:size=13";

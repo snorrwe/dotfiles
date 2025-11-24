@@ -3,6 +3,7 @@
   username,
   host,
   inputs,
+  features,
   ...
 }:
 let
@@ -11,7 +12,7 @@ let
 in
 {
   xdg.mimeApps = {
-    enable = true;
+    enable = features.enableGui;
     defaultApplications = {
       "x-scheme-handler/mailto" = [ thunderbird ];
       "message/rfc822" = [ thunderbird ];

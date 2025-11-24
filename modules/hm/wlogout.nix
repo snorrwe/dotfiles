@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, features, ... }:
 {
   programs.wlogout = {
-    enable = true;
+    enable = features.enableGui;
     layout = [
       {
         label = "lock";

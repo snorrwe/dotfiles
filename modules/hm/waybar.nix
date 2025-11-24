@@ -3,6 +3,7 @@
   lib,
   host,
   config,
+  features,
   ...
 }:
 
@@ -12,7 +13,7 @@ in
 with lib;
 {
   programs.waybar = {
-    enable = true;
+    enable = features.enableGui;
     package = pkgs.waybar;
     settings = [
       {
