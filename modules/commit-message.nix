@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_default_name_from_atuin____________________";
+  system.nixos.label = "System_update_2025-11-24__________________________";
 }
