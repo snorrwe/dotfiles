@@ -8,6 +8,7 @@
     };
     wezterm = {
       url = "github:wezterm/wezterm/main?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-ld = {
       url = "github:Mic92/nix-ld";
