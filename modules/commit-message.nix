@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Force_flatpak_to_run_on_activation________________";
+  system.nixos.label = "Use_nixosModules.default_for_flatpaks_____________";
 }
