@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_home_filesystem_to_the_global_flatpak_context_";
+  system.nixos.label = "Force_flatpak_to_run_on_activation________________";
 }

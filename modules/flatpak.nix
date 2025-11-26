@@ -42,5 +42,6 @@ in
         ];
       };
     };
+    forceRunOnActivation = true;
   };
 }
