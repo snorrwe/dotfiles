@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Always_show_hostname_in_starship_prompt___________";
+  system.nixos.label = "Use_latest_declarative_flatpak____________________";
 }
