@@ -35,5 +35,12 @@ in
     ++ optionals features.enableGaming [
       "flathub:app/com.heroicgameslauncher.hgl//stable"
     ];
+    overrides = {
+      "global".Context = {
+        filesystems = [
+          "home"
+        ];
+      };
+    };
   };
 }
