@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-11-27__________________________";
+  system.nixos.label = "Remove_redundant_def______________________________";
 }

@@ -18,7 +18,6 @@ config.check_for_updates = false
 
 config.enable_tab_bar = false
 
-local wezterm = require("wezterm")
 local io = require("io")
 local os = require("os")
 local act = wezterm.action
