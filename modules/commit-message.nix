@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_def______________________________";
+  system.nixos.label = "Use_hypridle_instead_of_swayidle__________________";
 }

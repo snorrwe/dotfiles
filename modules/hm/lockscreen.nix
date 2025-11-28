@@ -9,18 +9,20 @@ let
   font = "Monaspace Neon";
 in
 {
-  services.swayidle = {
+  services.hypridle = {
     enable = features.enableGui;
-    timeouts = [
-      {
-        timeout = timeout - 30;
-        command = ''${pkgs.libnotify}/bin/notify-send -u critical -t 30000 "Locking screen in 30 seconds"'';
-      }
-      {
-        timeout = timeout;
-        command = "${pkgs.hyprlock}/bin/hyprlock";
-      }
-    ];
+    settings = {
+      listener = [
+        {
+          timeout = timeout - 30;
+          on-timeout = ''${pkgs.libnotify}/bin/notify-send -u critical -t 30000 "Locking screen in 30 seconds"'';
+        }
+        {
+          timeout = timeout;
+          on-timeout = "${pkgs.hyprlock}/bin/hyprlock";
+        }
+      ];
+    };
   };
   programs.hyprlock =
     let
