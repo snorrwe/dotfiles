@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_window_select_script__________________________";
+  system.nixos.label = "Add_prompt________________________________________";
 }
