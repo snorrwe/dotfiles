@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 niri msg -j windows | \
-    jq -rc '.[] | [.id, "\(.app_id) - \(.title)"] | @tsv' | \
+    jq -rc 'sort_by(.is_focused | not)[] | [.id, "\(.app_id) - \(.title)"] | @tsv' | \
     fuzzel --prompt "Focus window: " -w 80 -d --with-nth=2 --accept-nth=1 | \
     xargs niri msg action focus-window --id
