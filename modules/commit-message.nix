@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Sort_windows_by_focus_____________________________";
+  system.nixos.label = "Set_fuzzel_width_to_80____________________________";
 }

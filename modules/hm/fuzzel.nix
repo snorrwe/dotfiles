@@ -5,6 +5,7 @@
     settings = {
       main = {
         font = "Monaspace Neon:size=13";
+        width = 80;
       };
       colors = {
         background = "1e1e2edd";
