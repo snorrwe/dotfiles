@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2025-12-02__________________________";
+  system.nixos.label = "Revert_Remove_bottles_____________________________";
 }
