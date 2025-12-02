@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_systemctl_reboot_in_wlogout_reboot____________";
+  system.nixos.label = "Fix_evaluation_warning:_system_has_been_renamed_to";
 }
