@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Remove_bottles_____________________________";
+  system.nixos.label = "Add_tmux-reset-shells_script______________________";
 }
