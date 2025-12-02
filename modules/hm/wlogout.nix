@@ -11,7 +11,7 @@
       }
       {
         label = "reboot";
-        action = "systemctl reboot || loginctl reboot";
+        action = "systemctl reboot";
         text = "Reboot";
         keybind = "r";
       }

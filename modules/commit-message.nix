@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tmux-reset-shells_script______________________";
+  system.nixos.label = "Use_systemctl_reboot_in_wlogout_reboot____________";
 }
