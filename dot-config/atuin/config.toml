@@ -136,6 +136,7 @@ common_subcommands = [
     "uv",
     "sudo",
     "doas",
+    "docker",
 ]
 # 
 # Set commands that should be totally stripped and ignored from stats
