@@ -164,8 +164,6 @@ in
   systemd.units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
 
   services.logind.settings.Login = {
-    # my lifebook has trouble waking up after going to sleep so don't do that automatically
-    HandleLidSwitch = "ignore";
     HandleLidSwitchExternalPower = "ignore";
     # certain elements in my life might press the button while I'm working :)
     HandlePowerKey = "ignore";

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_daniframe_____________________________________";
+  system.nixos.label = "Allow_lidswitch___________________________________";
 }
