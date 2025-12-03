@@ -110,6 +110,10 @@
               host = "danilife";
               features = { };
             }
+            {
+              host = "daniframe";
+              features = { };
+            }
           ]
       );
       homeConfigurations = builtins.listToAttrs (
