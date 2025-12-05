@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_zen_window_rule_______________________________";
+  system.nixos.label = "Add_nixos_hardware_fixes_to_daniframe_____________";
 }
