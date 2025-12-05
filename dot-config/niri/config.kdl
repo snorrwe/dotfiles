@@ -385,7 +385,7 @@ window-rule {
 }
 
 window-rule {
-    match at-startup=true app-id=r#"^zen$"#
+    match at-startup=true app-id=r#"zen$"#
     open-on-workspace "browser"
     opacity 1.0
     open-focused false

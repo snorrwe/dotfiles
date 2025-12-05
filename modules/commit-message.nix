@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Lock_the_screen_on_lid_close______________________";
+  system.nixos.label = "Fix_zen_window_rule_______________________________";
 }
