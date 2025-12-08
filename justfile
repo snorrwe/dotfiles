@@ -4,7 +4,7 @@ default:
     just --list
 
 clean:
-    nh clean all --keep-since 4d --keep 3 --nogcroots
+    nh clean all --keep-since 4d --nogcroots
 
 update *args:
     nix flake update
