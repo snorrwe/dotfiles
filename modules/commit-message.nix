@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Clean_all_stale_generations_______________________";
+  system.nixos.label = "Revert_System_update_2025-12-08___________________";
 }
