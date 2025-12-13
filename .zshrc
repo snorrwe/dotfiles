@@ -101,7 +101,7 @@ if type direnv > /dev/null; then
     alias tmux='direnv exec / tmux'
     alias da='direnv allow'
 fi
-alias t='if [[ -n $(pgrep tmux) ]]; then tmux a; else tmux; fi'
+alias t='if [[ -n $(pgrep tmux) ]]; then tmux a; else systemd-run --user --scope tmux new-session; fi'
 if type starship > /dev/null ; then
     znap eval starship "starship init zsh"
 fi

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_System_update_2025-12-08___________________";
+  system.nixos.label = "Run_tmux_in_a_transient_systemd_scope_____________";
 }
