@@ -9,6 +9,7 @@
 let
   thunderbird = "org.mozilla.Thunderbird.desktop";
   browser = "app.zen_browser.zen.desktop";
+  geeqie = "org.geeqie.Geeqie.desktop";
 in
 {
   xdg.mimeApps = {
@@ -34,6 +35,10 @@ in
       "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
       "x-scheme-handler/tonsite" = [ "org.telegram.desktop.desktop" ];
       "image/x-exr" = [ "org.kde.okteta.desktop" ];
+      "image/jpeg" = [ geeqie ];
+      "image/png" = [ geeqie ];
+      "image/svg" = [ geeqie ];
+      "image/qoi" = [ geeqie ];
       "x-scheme-handler/about" = [ browser ];
       "x-scheme-handler/unknown" = [ browser ];
       "application/pdf" = [ browser ];

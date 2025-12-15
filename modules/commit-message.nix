@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_git_arguments_to_topgrade_____________________";
+  system.nixos.label = "Set_geeqie_as_image_default_app___________________";
 }
