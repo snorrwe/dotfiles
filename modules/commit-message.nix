@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_geeqie_as_image_default_app___________________";
+  system.nixos.label = "Add_autostash_to_gp_______________________________";
 }

@@ -124,7 +124,7 @@ if type eza > /dev/null ; then
 fi
 
 if type git > /dev/null ; then
-    alias gp='git pull'
+    alias gp='git pull --autostash'
     alias gs='git status'
     alias gl='git log'
     alias gd='git diff'
