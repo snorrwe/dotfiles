@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_fonts__________________________________";
+  system.nixos.label = "System_update_2025-12-17__________________________";
 }
