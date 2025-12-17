@@ -1,11 +1,4 @@
-{
-  pkgs,
-  username,
-  host,
-  inputs,
-  ...
-}:
-{
+{ pkgs, username, host, inputs, ... }: {
   # notifications service
   services.dunst = {
     enable = true;
@@ -16,7 +9,7 @@
     waylandDisplay = "wayland-1";
     settings = {
       global = {
-        font = "Monaspace Neon 10";
+        font = "MonaspiceNe Nerd Font 10";
         monitor = 1;
       };
     };

@@ -2,6 +2,6 @@
   fonts = {
     fontDir.enable = true;
     fontconfig.enable = true;
-    packages = with pkgs; [ monaspace ];
+    packages = with pkgs; [ nerd-fonts.monaspace ];
   };
 }
