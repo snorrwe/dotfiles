@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nerd-fonts_monaspace__________________________";
+  system.nixos.label = "Fix_waybar_icons__________________________________";
 }

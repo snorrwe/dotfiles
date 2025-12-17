@@ -38,9 +38,9 @@ in with lib; {
         "format-icons" = {
           "browser" = "🌐";
           "terminal" = "💻";
-          "notes" = "🗊";
+          "notes" = "󰠮";
           "chat" = "";
-          "music" = "🎵";
+          "media" = "🎵";
           # Icons by state
           "active" = "";
           "default" = "";
