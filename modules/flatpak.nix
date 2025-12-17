@@ -32,7 +32,16 @@ in {
       "flathub:app/com.heroicgameslauncher.hgl//stable"
       "flathub:app/com.usebottles.bottles//stable"
     ];
-    overrides = { "global".Context = { filesystems = [ "home" ]; }; };
+    overrides = {
+      "global".Context = {
+        filesystems = [
+          "home"
+          # allow access to fonts for flatpaks
+          "/nix/store:ro"
+          "/run/current-system/sw/share/X11/fonts:ro"
+        ];
+      };
+    };
     forceRunOnActivation = true;
   };
 }
