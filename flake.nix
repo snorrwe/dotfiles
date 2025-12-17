@@ -69,6 +69,7 @@
                   ./modules/sddm.nix
                   ./modules/tailscale.nix
                   ./modules/caches.nix
+                  ./modules/font.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

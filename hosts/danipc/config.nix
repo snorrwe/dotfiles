@@ -124,14 +124,6 @@ in
 
   hardware.nvidia-container-toolkit.enable = true;
 
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      monaspace
-      cascadia-code
-    ];
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

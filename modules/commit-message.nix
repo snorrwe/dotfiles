@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Customize_starship_format_remove_most_programming_";
+  system.nixos.label = "Factor_out_fonts__________________________________";
 }

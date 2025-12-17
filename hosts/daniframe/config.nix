@@ -112,14 +112,6 @@ in
     ]
     ++ (import ../../modules/common-packages.nix pkgs);
 
-  fonts = {
-    fontDir.enable = true;
-    packages = with pkgs; [
-      monaspace
-      cascadia-code
-    ];
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
