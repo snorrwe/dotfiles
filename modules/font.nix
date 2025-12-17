@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [
-      monaspace
-    ];
+    fontconfig.enable = true;
+    packages = with pkgs; [ monaspace ];
   };
 }
