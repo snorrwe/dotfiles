@@ -1,9 +1,6 @@
-# from https://www.reddit.com/r/NixOS/comments/1hzgxns/fully_declarative_flatpak_management_on_nixos/
 { features, pkgs, ... }:
-let
-  inherit (pkgs.lib.lists) optionals;
-in
-{
+let inherit (pkgs.lib.lists) optionals;
+in {
   services.flatpak = {
     enable = true;
     remotes = {
@@ -31,18 +28,11 @@ in
       "flathub:app/org.libreoffice.LibreOffice//stable"
       "flathub:app/org.telegram.desktop//stable"
       "flathub:app/com.github.tchx84.Flatseal//stable"
-    ]
-    ++ optionals features.enableGaming [
+    ] ++ optionals features.enableGaming [
       "flathub:app/com.heroicgameslauncher.hgl//stable"
       "flathub:app/com.usebottles.bottles//stable"
     ];
-    overrides = {
-      "global".Context = {
-        filesystems = [
-          "home"
-        ];
-      };
-    };
+    overrides = { "global".Context = { filesystems = [ "home" ]; }; };
     forceRunOnActivation = true;
   };
 }

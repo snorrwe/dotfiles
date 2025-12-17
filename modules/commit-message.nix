@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_fontcofig__________________________________";
+  system.nixos.label = "Remove_untrue_comment_____________________________";
 }
