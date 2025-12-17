@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_autostash_to_gp_______________________________";
+  system.nixos.label = "Customize_starship_format_remove_most_programming_";
 }
