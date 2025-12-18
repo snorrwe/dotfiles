@@ -56,7 +56,7 @@ with lib;
             "chat" = "";
             "media" = "🎵";
             # Icons by state
-            "default" = "";
+            "default" = "";
           };
         };
         "clock" = {
