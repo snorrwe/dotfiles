@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_waybar_icons__________________________________";
+  system.nixos.label = "Remove_active_waybar_icon_________________________";
 }
