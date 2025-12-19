@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_default_icon_______________________________";
+  system.nixos.label = "Update_notes_icon_________________________________";
 }

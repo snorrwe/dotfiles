@@ -52,7 +52,7 @@ with lib;
           "format-icons" = {
             "browser" = "🌐";
             "terminal" = "💻";
-            "notes" = "󰠮";
+            "notes" = "󱗖";
             "chat" = "";
             "media" = "🎵";
             # Icons by state
