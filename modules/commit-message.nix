@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_help_______________________________________";
+  system.nixos.label = "Revert_Run_tmux_in_a_transient_systemd_scope______";
 }
