@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_wezterm_open_tailscale_ssh_script_____________";
+  system.nixos.label = "Update_help_______________________________________";
 }

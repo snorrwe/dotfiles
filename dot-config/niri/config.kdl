@@ -455,7 +455,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Switch to window: fuzzel" { spawn "niri-fuzzel-select-window"; }
-    Mod+S hotkey-overlay-title="Start a new ssh session in window: fuzzel" { spawn "wezterm-open-tailscale-ssh"; }
+    Mod+S hotkey-overlay-title="Start a new ssh session in new terminal window" { spawn "wezterm-open-tailscale-ssh"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
