@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_System_update_2025-12-23___________________";
+  system.nixos.label = "Enable_wezterm_wayland____________________________";
 }
