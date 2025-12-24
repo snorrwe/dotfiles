@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_wezterm_wayland____________________________";
+  system.nixos.label = "Revert_Enable_wezterm_wayland_____________________";
 }
