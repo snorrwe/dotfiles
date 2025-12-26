@@ -1,11 +1,4 @@
-{
-  config,
-  pkgs,
-  host,
-  username,
-  options,
-  ...
-}:
+{ config, pkgs, host, username, options, ... }:
 
 {
   hardware.graphics = {
@@ -14,6 +7,7 @@
       vpl-gpu-rt
       intel-media-driver
       intel-compute-runtime
+      mesa
     ];
   };
 }
