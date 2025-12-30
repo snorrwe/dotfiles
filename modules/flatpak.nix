@@ -10,7 +10,6 @@ in {
       "flathub:app/org.cloudcompare.CloudCompare//stable"
       "flathub:app/org.videolan.VLC//stable"
       "flathub:app/org.blender.Blender//stable"
-      "flathub:app/net.meshlab.MeshLab//stable"
       "flathub:app/org.kde.krita//stable"
       "flathub:app/com.discordapp.Discord//stable"
       "flathub:app/com.spotify.Client//stable"
@@ -19,7 +18,6 @@ in {
       "flathub:app/org.mozilla.Thunderbird//stable"
       "flathub:app/com.slack.Slack//stable"
       "flathub:app/md.obsidian.Obsidian//stable"
-      "flathub:app/com.jgraph.drawio.desktop//stable"
       "flathub:app/com.obsproject.Studio//stable"
       "flathub:app/app.zen_browser.zen//stable"
       "flathub:app/org.chromium.Chromium//stable"
@@ -42,6 +40,5 @@ in {
         ];
       };
     };
-    forceRunOnActivation = true;
   };
 }

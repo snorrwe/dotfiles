@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_mesa_package__________________________________";
+  system.nixos.label = "Remove_unused_flatpaks____________________________";
 }
