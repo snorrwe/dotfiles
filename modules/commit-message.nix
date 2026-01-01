@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_open_scrollback_in_vim_from_wezterm_";
+  system.nixos.label = "Open_explorer.exe_as_non-floating_________________";
 }
