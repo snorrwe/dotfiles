@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_heroic_games_launcher______________________";
+  system.nixos.label = "Remove_comment____________________________________";
 }
