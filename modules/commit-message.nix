@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_comment____________________________________";
+  system.nixos.label = "Reformat_nix_files________________________________";
 }

@@ -1,6 +1,8 @@
 { features, pkgs, ... }:
-let inherit (pkgs.lib.lists) optionals;
-in {
+let
+  inherit (pkgs.lib.lists) optionals;
+in
+{
   services.flatpak = {
     enable = true;
     remotes = {
@@ -26,8 +28,8 @@ in {
       "flathub:app/org.libreoffice.LibreOffice//stable"
       "flathub:app/org.telegram.desktop//stable"
       "flathub:app/com.github.tchx84.Flatseal//stable"
-    ] ++ optionals features.enableGaming
-      [ "flathub:app/com.usebottles.bottles//stable" ];
+    ]
+    ++ optionals features.enableGaming [ "flathub:app/com.usebottles.bottles//stable" ];
     overrides = {
       "global".Context = {
         filesystems = [

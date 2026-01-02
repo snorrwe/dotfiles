@@ -1,4 +1,11 @@
-{ config, pkgs, host, username, options, ... }:
+{
+  config,
+  pkgs,
+  host,
+  username,
+  options,
+  ...
+}:
 
 {
   hardware.graphics = {

@@ -1,4 +1,5 @@
-{ pkgs, features, ... }: {
+{ pkgs, features, ... }:
+{
   programs.fuzzel = {
     enable = features.enableGui;
     settings = {

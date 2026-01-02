@@ -1,4 +1,11 @@
-{ pkgs, username, host, inputs, ... }: {
+{
+  pkgs,
+  username,
+  host,
+  inputs,
+  ...
+}:
+{
   # notifications service
   services.dunst = {
     enable = true;

@@ -1,4 +1,11 @@
-{ pkgs, username, inputs, features, ... }: {
+{
+  pkgs,
+  username,
+  inputs,
+  features,
+  ...
+}:
+{
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
@@ -94,7 +101,11 @@
       misc = {
         assume_yes = true;
         cleanup = true;
-        disable = [ "system" "nix" "home_manager" ];
+        disable = [
+          "system"
+          "nix"
+          "home_manager"
+        ];
         skip_notify = false;
         pre_sudo = true;
       };
@@ -112,10 +123,11 @@
     enable = features.enableGui;
     enableZshIntegration = true;
     extraConfig = builtins.readFile ../../.wezterm.lua;
-    package =
-      inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 
   # media player, used by yazi by default
-  programs.mpv = { enable = features.enableGui; };
+  programs.mpv = {
+    enable = features.enableGui;
+  };
 }
