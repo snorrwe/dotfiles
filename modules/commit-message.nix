@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reformat_nix_files________________________________";
+  system.nixos.label = "Use_13_proportion_as_preset_______________________";
 }
