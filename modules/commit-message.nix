@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_13_proportion_as_preset_______________________";
+  system.nixos.label = "Slimmer_focus_ring________________________________";
 }
