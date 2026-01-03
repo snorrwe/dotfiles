@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Slimmer_focus_ring________________________________";
+  system.nixos.label = "Slimmer_border____________________________________";
 }
