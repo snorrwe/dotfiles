@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-01-04__________________________";
+  system.nixos.label = "Import_thunar_directly____________________________";
 }

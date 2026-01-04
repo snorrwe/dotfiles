@@ -1,7 +1,7 @@
 { pkgs, ... }:
 with pkgs;
 [
-  xfce.thunar
+  thunar
 
   geeqie
   okteta
