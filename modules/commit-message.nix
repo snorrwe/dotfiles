@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Slimmer_border____________________________________";
+  system.nixos.label = "System_update_2026-01-04__________________________";
 }
