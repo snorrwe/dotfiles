@@ -40,7 +40,7 @@
                 enableGui = true;
                 enableSyncthing = true;
                 enableGaming = false;
-                enableAgents = true;
+                enableAgents = false;
               }
               // args.features;
             in
