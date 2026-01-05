@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_agents_feature________________________________";
+  system.nixos.label = "Revert_System_update_2025-12-31___________________";
 }
