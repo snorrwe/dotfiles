@@ -31,6 +31,9 @@
         nerdFontsVersion = "3";
       };
       git = {
+        log = {
+          showWholeGraph = true;
+        };
         pagers = [
           {
             externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
