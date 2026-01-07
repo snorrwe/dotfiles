@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Show_whole_graph_in_lazygit_______________________";
+  system.nixos.label = "Add_tmux-pull-all_script__________________________";
 }

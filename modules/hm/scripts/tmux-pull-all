@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+tmux list-panes -a -F "#{session_name}:#{window_index}.#{pane_index} #{pane_pid}" |
+while read -r pane pid; do
+    child_pid=$(pgrep -P $pid)
+    # if the pane has no child command running
+    if [[ -z $child_pid ]]; then
+        tmux send-keys -t $pane "git pull --autostash" "C-m"
+    fi
+done
+
+git pull --autostash
