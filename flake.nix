@@ -71,6 +71,7 @@
                   ./modules/tailscale.nix
                   ./modules/caches.nix
                   ./modules/font.nix
+                  ./modules/printing.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

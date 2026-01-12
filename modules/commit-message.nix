@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_agents_feature_____________________________";
+  system.nixos.label = "Enable_printing___________________________________";
 }
