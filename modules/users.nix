@@ -34,6 +34,7 @@
     password = "";
     packages = with pkgs; [
       distrobox
+      devenv
     ];
   };
   users.extraGroups = {
