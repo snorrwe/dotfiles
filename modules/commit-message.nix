@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tmux-pull-all_script__________________________";
+  system.nixos.label = "Enable_agents_feature_____________________________";
 }
