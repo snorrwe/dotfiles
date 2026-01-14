@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_devenv_to_agent_______________________________";
+  system.nixos.label = "Add_kdenlive______________________________________";
 }

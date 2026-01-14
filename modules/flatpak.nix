@@ -28,6 +28,7 @@ in
       "flathub:app/org.libreoffice.LibreOffice//stable"
       "flathub:app/org.telegram.desktop//stable"
       "flathub:app/com.github.tchx84.Flatseal//stable"
+      "flathub:app/org.kde.kdenlive//stable"
     ]
     ++ optionals features.enableGaming [ "flathub:app/com.usebottles.bottles//stable" ];
     overrides = {
