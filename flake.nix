@@ -95,6 +95,7 @@
 
                 ]
                 ++ (pkgs.lib.lists.optionals features.enableGaming [ ./modules/gaming.nix ])
+                ++ (pkgs.lib.lists.optionals features.enableAgents [ ./modules/agents.nix ])
                 ++ extraModules;
               };
             }
