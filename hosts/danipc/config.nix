@@ -3,6 +3,8 @@
   pkgs,
   host,
   username,
+  lib,
+  features,
   ...
 }:
 let
@@ -120,7 +122,7 @@ in
       pamixer
       pulseaudio
     ]
-    ++ (import ../../modules/common-packages.nix pkgs);
+    ++ (import ../../modules/common-packages.nix { inherit pkgs features lib; });
 
   hardware.nvidia-container-toolkit.enable = true;
 

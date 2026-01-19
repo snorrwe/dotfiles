@@ -4,6 +4,7 @@
   host,
   username,
   lib,
+  features,
   ...
 }:
 let
@@ -110,7 +111,7 @@ in
       acpi # battery status
       powertop
     ]
-    ++ (import ../../modules/common-packages.nix pkgs);
+    ++ (import ../../modules/common-packages.nix { inherit pkgs features lib; });
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

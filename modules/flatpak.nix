@@ -11,7 +11,6 @@ in
     packages = [
       "flathub:app/org.cloudcompare.CloudCompare//stable"
       "flathub:app/org.videolan.VLC//stable"
-      "flathub:app/org.blender.Blender//stable"
       "flathub:app/org.kde.krita//stable"
       "flathub:app/com.discordapp.Discord//stable"
       "flathub:app/com.spotify.Client//stable"
@@ -30,7 +29,10 @@ in
       "flathub:app/com.github.tchx84.Flatseal//stable"
       "flathub:app/org.kde.kdenlive//stable"
     ]
-    ++ optionals features.enableGaming [ "flathub:app/com.usebottles.bottles//stable" ];
+    ++ optionals features.enableGaming [ "flathub:app/com.usebottles.bottles//stable" ]
+    ++ optionals features.enableGamedev [
+      "flathub:app/org.blender.Blender//stable"
+    ];
     overrides = {
       "global".Context = {
         filesystems = [

@@ -1,4 +1,12 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  features,
+  lib,
+  ...
+}:
+let
+  inherit (pkgs.lib.lists) optionals;
+in
 with pkgs;
 [
   xfce.thunar
@@ -22,3 +30,9 @@ with pkgs;
 
   cloudflared
 ]
+++ optionals features.enableGamedev (
+  with pkgs;
+  [
+    aseprite
+  ]
+)

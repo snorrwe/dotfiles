@@ -41,6 +41,7 @@
                 enableSyncthing = true;
                 enableGaming = false;
                 enableAgents = true;
+                enableGamedev = true;
               }
               // args.features;
             in
@@ -128,6 +129,7 @@
                   enableGui = false;
                   enableSyncthing = false;
                   enableGaming = false;
+                  enableGamedev = false;
                 };
               };
               modules = [
