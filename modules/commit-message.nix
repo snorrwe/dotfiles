@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_gamedev_feature_with_blender_and_aseprite_____";
+  system.nixos.label = "Specify_that_termfilechooser_is_to_be_used_as_File";
 }
