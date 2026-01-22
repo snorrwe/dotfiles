@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_common_packages_to_agents_____________________";
+  system.nixos.label = "Clean_up_common-packages__________________________";
 }

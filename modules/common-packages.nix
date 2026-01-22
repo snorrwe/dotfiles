@@ -9,27 +9,26 @@ let
 in
 with pkgs;
 [
-  xfce.thunar
-
-  geeqie
-  okteta
-
   perf
-  hotspot # perf GUI
-
-  betterlockscreen
-
-  # niri
-  wl-clipboard
-  xwayland-satellite
-  swaylock
-
   # quickly fire up VMs
   quickemu
   distrobox
-
-  cloudflared
 ]
+++ optionals features.enableGui (
+  with pkgs;
+  [
+    hotspot # perf GUI
+    betterlockscreen
+    xfce.thunar
+    geeqie
+    okteta
+    # niri
+    wl-clipboard
+    xwayland-satellite
+    swaylock
+    cloudflared
+  ]
+)
 ++ optionals features.enableGamedev (
   with pkgs;
   [
