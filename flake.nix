@@ -40,7 +40,6 @@
                 enableGui = true;
                 enableSyncthing = true;
                 enableGaming = false;
-                enableAgents = true;
                 enableGamedev = true;
               }
               // args.features;
@@ -96,7 +95,6 @@
 
                 ]
                 ++ (pkgs.lib.lists.optionals features.enableGaming [ ./modules/gaming.nix ])
-                ++ (pkgs.lib.lists.optionals features.enableAgents [ ./modules/agents.nix ])
                 ++ extraModules;
               };
             }

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_agent_dirs_to_git_safe_dirs___________________";
+  system.nixos.label = "Remove_agent_stuff________________________________";
 }
