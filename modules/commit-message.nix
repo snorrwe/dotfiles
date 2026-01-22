@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_window-rule_for_steam_notifications___________";
+  system.nixos.label = "Add_common_packages_to_agents_____________________";
 }
