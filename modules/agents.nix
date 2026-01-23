@@ -1,12 +1,11 @@
 {
   pkgs,
   lib,
-  username,
   ...
 }:
 {
   systemd.tmpfiles.rules = [
-    "d /var/agent/ 0755 ${username} agent-shared"
+    "d /var/agent/ 2775 agent:agent-shared"
   ];
 
   users.users.agent.packages = (
