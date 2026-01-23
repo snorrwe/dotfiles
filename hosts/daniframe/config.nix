@@ -143,7 +143,7 @@ in
   nix = {
     package = pkgs.nixVersions.stable;
     extraOptions = ''
-      trusted-users = root ${username}
+      trusted-users = root ${username} agent
       experimental-features = nix-command flakes
     '';
   };
