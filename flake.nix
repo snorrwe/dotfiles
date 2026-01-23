@@ -41,6 +41,7 @@
                 enableSyncthing = true;
                 enableGaming = false;
                 enableGamedev = true;
+                enableBluetooth = true;
               }
               // args.features;
             in
@@ -95,6 +96,7 @@
 
                 ]
                 ++ (pkgs.lib.lists.optionals features.enableGaming [ ./modules/gaming.nix ])
+                ++ (pkgs.lib.lists.optionals features.enableBluetooth [ ./modules/bluetooth.nix ])
                 ++ extraModules;
               };
             }

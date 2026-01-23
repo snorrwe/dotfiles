@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_agent_stuff________________________________";
+  system.nixos.label = "Factor_out_bluetooth_setup________________________";
 }
