@@ -3,6 +3,8 @@
   username,
   host,
   inputs,
+  features,
+  lib,
   ...
 }:
 {
@@ -13,6 +15,9 @@
         name = "Daniel Kiss";
         email = "littlesnorrboy@gmail.com";
       };
+      safe.directory = lib.lists.optionals features.enableAgents [
+        "/var/agent/*"
+      ];
     };
     lfs.enable = true;
   };

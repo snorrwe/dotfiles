@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_agent_to_trusted_users________________________";
+  system.nixos.label = "Add_agent_dirs_to_git_safe_dirs___________________";
 }
