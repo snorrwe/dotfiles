@@ -33,5 +33,6 @@ with pkgs;
   with pkgs;
   [
     aseprite
+    renderdoc
   ]
 )
