@@ -15,6 +15,7 @@
     };
     flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs =
@@ -23,6 +24,7 @@
       home-manager,
       nix-ld,
       nixos-hardware,
+      niri,
       ...
     }@inputs:
     let
@@ -93,7 +95,7 @@
                   # enable nix-ld
                   nix-ld.nixosModules.nix-ld
                   { programs.nix-ld.dev.enable = true; }
-
+                  niri.nixosModules.niri
                 ]
                 ++ (pkgs.lib.lists.optionals features.enableGaming [ ./modules/gaming.nix ])
                 ++ (pkgs.lib.lists.optionals features.enableBluetooth [ ./modules/bluetooth.nix ])

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_warnings______________________________________";
+  system.nixos.label = "Add_niri_flake____________________________________";
 }

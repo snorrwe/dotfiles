@@ -2,8 +2,6 @@
 {
   programs.niri = {
     enable = true;
-    package = pkgs.niri.override {
-      withDbus = false;
-    };
+    package = pkgs.niri-stable;
   };
 }
