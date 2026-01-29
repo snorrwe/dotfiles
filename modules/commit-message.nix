@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-01-29__________________________";
+  system.nixos.label = "Disable_dbus_in_niri_package______________________";
 }
