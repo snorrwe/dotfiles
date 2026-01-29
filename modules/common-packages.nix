@@ -19,7 +19,7 @@ with pkgs;
   [
     hotspot # perf GUI
     betterlockscreen
-    xfce.thunar
+    thunar
     geeqie
     okteta
     # niri

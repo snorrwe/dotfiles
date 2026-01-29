@@ -50,7 +50,7 @@
     devenv
     mutagen
     pandoc
-    nixfmt-rfc-style
+    nixfmt
 
     clang
     clang-tools
