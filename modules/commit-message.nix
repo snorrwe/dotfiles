@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_gnome_to_default_portals______________________";
+  system.nixos.label = "System_update_2026-01-29__________________________";
 }
