@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_niri_flake____________________________________";
+  system.nixos.label = "System_update_2026-01-30__________________________";
 }
