@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-02-09__________________________";
+  system.nixos.label = "Revert_Add_fluffychat_____________________________";
 }
