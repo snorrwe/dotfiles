@@ -105,6 +105,7 @@
           "system"
           "nix"
           "home_manager"
+          "rustup"
         ];
         skip_notify = false;
         pre_sudo = true;
