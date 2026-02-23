@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_rustup_in_topgrade________________________";
+  system.nixos.label = "System_update_2026-02-23__________________________";
 }
