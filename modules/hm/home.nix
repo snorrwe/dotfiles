@@ -9,7 +9,7 @@
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
-  home.stateVersion = "24.05";
+  home.stateVersion = "26.05";
   home.packages = with pkgs; [
     tmux
     parallel
