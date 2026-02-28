@@ -21,7 +21,6 @@
     watchexec
     ninja
     starship # for my shell prompt
-    pipx
     cmake
     gzip
     diffutils

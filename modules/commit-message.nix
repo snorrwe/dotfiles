@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_home_stateversion_to_silence_yazi_warning__";
+  system.nixos.label = "Remove_pipx_______________________________________";
 }
