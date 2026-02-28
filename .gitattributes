@@ -1,2 +1,2 @@
 * text=auto
-commit-message.nix merge=ours
+modules/commit-message.nix merge=ours
