@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Turn_on_renumber_windows__________________________";
+  system.nixos.label = "Set_resurrect_dir_________________________________";
 }

@@ -28,6 +28,7 @@
       {
         plugin = resurrect;
         extraConfig = ''
+          set -g @resurrect-dir '$HOME/.local/share/tmux/resurrect/'
           set -g @resurrect-strategy-nvim 'session'
         '';
       }
