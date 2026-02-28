@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_ours_merge_driver__________________________";
+  system.nixos.label = "Use_union_driver_for_commit-message.nix___________";
 }

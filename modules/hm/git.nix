@@ -11,6 +11,7 @@
         email = "littlesnorrboy@gmail.com";
       };
       merge.ours.driver = true;
+      merge.union.driver = true;
     };
     lfs.enable = true;
   };
