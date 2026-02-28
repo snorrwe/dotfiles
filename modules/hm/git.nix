@@ -10,6 +10,7 @@
         name = "Daniel Kiss";
         email = "littlesnorrboy@gmail.com";
       };
+      merge.ours.driver = true;
     };
     lfs.enable = true;
   };
