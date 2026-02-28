@@ -70,6 +70,8 @@
 
       unbind s
       bind-key s display-popup -E tmux-select-session
+
+      set-option -g renumber-windows on
     '';
   };
 }

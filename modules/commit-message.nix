@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_tmux_using_nix__________________________";
+  system.nixos.label = "Turn_on_renumber_windows__________________________";
 }
