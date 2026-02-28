@@ -27,6 +27,7 @@ with pkgs;
     xwayland-satellite
     swaylock
     cloudflared
+    brightnessctl
   ]
 )
 ++ optionals features.enableGamedev (
