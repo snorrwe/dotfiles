@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_niri_Feb_28_2026___________________________";
+  system.nixos.label = "Configure_tmux_using_nix__________________________";
 }

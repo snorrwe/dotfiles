@@ -89,6 +89,7 @@
     ./btop.nix
     ./syncthing.nix
     ./symlinks.nix
+    ./tmux.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

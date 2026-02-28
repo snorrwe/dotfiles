@@ -21,7 +21,6 @@ in
 {
   xdg.configFile = {
     "starship.toml" = mklinkFile "starship.toml";
-    "tmux" = mklinkDir "tmux";
     "niri" = mklinkDir "niri";
     "atuin" = mklinkDir "atuin";
     ".zshrc" = {
