@@ -61,7 +61,6 @@
                 };
                 modules = [
                   ./hosts/${host}/config.nix
-                  ./modules/network-stats.nix
                   ./modules/commit-message.nix
                   inputs.flatpaks.nixosModules.default
                   ./modules/flatpak.nix

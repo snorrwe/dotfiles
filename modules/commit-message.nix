@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_default_distrobox_containers____________";
+  system.nixos.label = "Remove_network-stats_service______________________";
 }
