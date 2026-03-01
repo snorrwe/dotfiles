@@ -73,6 +73,13 @@
       bind-key s display-popup -E tmux-select-session
 
       set-option -g renumber-windows on
+
+
+      # resize the pane
+      bind-key -r J resize-pane -D 3
+      bind-key -r K resize-pane -U 3
+      bind-key -r H resize-pane -L 3
+      bind-key -r L resize-pane -R 3
     '';
   };
 }

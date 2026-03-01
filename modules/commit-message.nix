@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_network-stats_service______________________";
+  system.nixos.label = "Fix_tmux_pane_resize_keys_________________________";
 }
