@@ -32,7 +32,7 @@ in
         {
           agents = {
             image = "ubuntu:24.04";
-            home = "/var/agent/distrobox-home/";
+            home = "~/.local/share/agents-home/";
             nvidia = true;
           };
         }
