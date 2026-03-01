@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_tmux_pane_resize_keys_________________________";
+  system.nixos.label = "Remove_unused_dir_________________________________";
 }
