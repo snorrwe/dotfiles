@@ -1,5 +1,10 @@
 {
   pkgs,
+  username,
+  host,
+  inputs,
+  features,
+  lib,
   ...
 }:
 {
@@ -12,6 +17,9 @@
       };
       merge.ours.driver = true;
       merge.union.driver = true;
+      safe.directory = lib.lists.optionals features.enableAgents [
+        "/var/agent/*"
+      ];
     };
     lfs.enable = true;
   };
