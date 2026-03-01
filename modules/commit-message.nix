@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_agents_directory______________________________";
+  system.nixos.label = "Configure_default_distrobox_containers____________";
 }

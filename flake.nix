@@ -45,6 +45,7 @@
                 enableAgents = true;
                 enableGamedev = true;
                 enableBluetooth = true;
+                enableDistrobox = true;
               }
               // args.features;
             in
@@ -134,6 +135,7 @@
                   enableSyncthing = false;
                   enableGaming = false;
                   enableGamedev = false;
+                  enableDistrobox = false;
                 };
               };
               modules = [

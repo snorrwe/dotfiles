@@ -90,6 +90,7 @@
     ./syncthing.nix
     ./symlinks.nix
     ./tmux.nix
+    ./distrobox.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

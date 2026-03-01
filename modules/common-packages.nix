@@ -12,7 +12,6 @@ with pkgs;
   perf
   # quickly fire up VMs
   quickemu
-  distrobox
 ]
 ++ optionals features.enableGui (
   with pkgs;
