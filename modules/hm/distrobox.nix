@@ -31,7 +31,7 @@ in
       ++ optionals features.enableAgents [
         {
           agents = {
-            image = "ubuntu:24.04";
+            image = "registry.fedoraproject.org/fedora-toolbox:latest";
             home = "~/.local/share/agents-home/";
             nvidia = true;
           };
