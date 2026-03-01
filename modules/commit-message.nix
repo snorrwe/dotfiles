@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_fedora_for_the_agents_distrobox_______________";
+  system.nixos.label = "Set_home_dirs_for_all_distroboxes_________________";
 }

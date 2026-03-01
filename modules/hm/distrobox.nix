@@ -18,12 +18,14 @@ in
         {
           ubuntu24 = {
             image = "ubuntu:24.04";
+            home = "~/.local/share/distrobox/ubuntu24";
             nvidia = true;
           };
         }
         {
           arch = {
             image = "archlinux:latest";
+            home = "~/.local/share/distrobox/arch";
             nvidia = true;
           };
         }
@@ -32,7 +34,7 @@ in
         {
           agents = {
             image = "registry.fedoraproject.org/fedora-toolbox:latest";
-            home = "~/.local/share/agents-home/";
+            home = "~/.local/share/distrobox/agents";
             nvidia = true;
           };
         }
