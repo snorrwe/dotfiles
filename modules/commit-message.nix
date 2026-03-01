@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_resurrect_dir_________________________________";
+  system.nixos.label = "Remove_unused_tpm_________________________________";
 }
