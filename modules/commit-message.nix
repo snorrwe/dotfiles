@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_home_dirs_for_all_distroboxes_________________";
+  system.nixos.label = "Disable_agents_for_HM_users_______________________";
 }

@@ -135,6 +135,7 @@
                   enableGaming = false;
                   enableGamedev = false;
                   enableDistrobox = false;
+                  enableAgents = false;
                 };
               };
               modules = [
