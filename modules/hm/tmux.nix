@@ -44,6 +44,8 @@
     extraConfig = ''
       # screen mode
       set -g default-terminal "screen-256color"
+      # ensure colors render correctly
+      set-option -sa terminal-overrides ",xterm*:Tc"
       # Set new panes to open in current directory
       bind c new-window -c "#{pane_current_path}"
       bind % split-window -c "#{pane_current_path}"
