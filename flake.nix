@@ -76,6 +76,7 @@
                   ./modules/caches.nix
                   ./modules/font.nix
                   ./modules/printing.nix
+                  ./modules/sudo.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.extraSpecialArgs = {

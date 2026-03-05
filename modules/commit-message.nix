@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_colors_in_tmux________________________________";
+  system.nixos.label = "Use_sudo-rs_______________________________________";
 }
