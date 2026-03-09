@@ -4,4 +4,4 @@ set -euo pipefail
 
 tailscale status --json | jq -r '.Peer.[].HostName | select(. != "localhost")' | \
     fuzzel --prompt "Open new ssh window: " -d | \
-    xargs wezterm ssh
+    xargs -I{} wezterm ssh --class {} {}
