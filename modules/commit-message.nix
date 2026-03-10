@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_cosmic_greeter________________________________";
+  system.nixos.label = "System_update_2026-03-10__________________________";
 }
