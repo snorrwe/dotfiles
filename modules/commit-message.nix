@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-03-10__________________________";
+  system.nixos.label = "Rename_sddm.nix_-_displayManager.nix______________";
 }

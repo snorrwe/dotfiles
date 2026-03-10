@@ -71,7 +71,7 @@
                   ./modules/nixpkgs.nix
                   ./modules/niri.nix
                   ./modules/users.nix
-                  ./modules/sddm.nix
+                  ./modules/displayManager.nix
                   ./modules/tailscale.nix
                   ./modules/caches.nix
                   ./modules/font.nix
