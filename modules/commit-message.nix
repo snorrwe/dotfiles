@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_to_latest_nvidia_driver____________________";
+  system.nixos.label = "Use_cosmic_greeter________________________________";
 }
