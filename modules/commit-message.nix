@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Override_the_wezterm_class_when_opening_ssh_connec";
+  system.nixos.label = "Update_to_latest_nvidia_driver____________________";
 }
