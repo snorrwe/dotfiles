@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-03-13__________________________";
+  system.nixos.label = "Set_git_push.AutoSetupRemote______________________";
 }

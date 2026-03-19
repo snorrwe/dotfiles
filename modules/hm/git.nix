@@ -15,11 +15,14 @@
         name = "Daniel Kiss";
         email = "littlesnorrboy@gmail.com";
       };
-      merge.ours.driver = true;
-      merge.union.driver = true;
+      merge = {
+        ours.driver = true;
+        union.driver = true;
+      };
       safe.directory = lib.lists.optionals features.enableAgents [
         "/var/agent/*"
       ];
+      push.autoSetupRemote = true;
     };
     lfs.enable = true;
   };
