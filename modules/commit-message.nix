@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_git_push.AutoSetupRemote______________________";
+  system.nixos.label = "Disable_show_whole_graph_in_lazygit_______________";
 }

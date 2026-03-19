@@ -42,7 +42,7 @@
       };
       git = {
         log = {
-          showWholeGraph = true;
+          showWholeGraph = false;
         };
         pagers = [
           {
