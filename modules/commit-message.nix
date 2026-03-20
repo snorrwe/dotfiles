@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_show_whole_graph_in_lazygit_______________";
+  system.nixos.label = "System_update_2026-03-20__________________________";
 }
