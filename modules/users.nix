@@ -12,6 +12,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "dialout"
     ]
     ++ lib.optionals features.enableAgents [
       "agent-shared"

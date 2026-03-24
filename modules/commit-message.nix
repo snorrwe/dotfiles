@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-03-20__________________________";
+  system.nixos.label = "Add_openmv_udev_rules_for_daniframe_______________";
 }

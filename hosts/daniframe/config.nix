@@ -17,6 +17,7 @@ in
     ./sound.nix
     ./video.nix
     ../../modules/battery-management.nix
+    ./udev.nix
   ];
 
   nix.settings = {
