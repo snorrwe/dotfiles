@@ -23,6 +23,7 @@ in
     "starship.toml" = mklinkFile "starship.toml";
     "niri" = mklinkDir "niri";
     "atuin" = mklinkDir "atuin";
+    "nvim" = mklinkDir "nvim";
     ".zshrc" = {
       source = mkOutOfStoreSymlink "${paths.dotfiles}/.zshrc";
       target = "../.zshrc";
