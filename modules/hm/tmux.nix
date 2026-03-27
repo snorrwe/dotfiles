@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+  programs.sesh = {
+    enable = true;
+    enableTmuxIntegration = true;
+    enableAlias = true;
+  };
+  programs.fzf.tmux.enableShellIntegration = true;
   programs.tmux = {
     enable = true;
     mouse = true;
@@ -74,7 +80,6 @@
       bind-key b neww -c "#{pane_current_path}" btop
 
       unbind s
-      bind-key s display-popup -E tmux-select-session
 
       set-option -g renumber-windows on
 

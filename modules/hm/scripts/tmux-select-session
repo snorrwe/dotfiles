@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-set -eo pipefail
-
-tmux list-sessions | fzf --reverse --color=fg:7,fg+:4 | sed 's/:.*//' | xargs tmux switch-client -t

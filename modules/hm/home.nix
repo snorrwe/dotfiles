@@ -62,7 +62,6 @@
 
     hyperfine # cli benchmarking tool
     sshfs
-    fzf
     python3
 
     # yazi deps

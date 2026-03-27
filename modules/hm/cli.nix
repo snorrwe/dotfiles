@@ -10,6 +10,10 @@
     enableZshIntegration = true;
     enableNushellIntegration = true;
   };
+  programs.fzf = {
+    enable = true;
+    tmux.enableShellIntegration = true;
+  };
 
   programs.eza = {
     enable = true;

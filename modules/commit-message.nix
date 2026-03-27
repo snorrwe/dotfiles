@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_openmv_udev_rules_for_daniframe_______________";
+  system.nixos.label = "Migrate_to_sesh_for_tmux_session_management_______";
 }
