@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-03-28__________________________";
+  system.nixos.label = "Update_commit_msg_merge_strategy__________________";
 }
