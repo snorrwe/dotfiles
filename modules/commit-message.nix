@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_commit_msg_merge_strategy__________________";
+  system.nixos.label = "Add_user_to_podman_group__________________________";
 }

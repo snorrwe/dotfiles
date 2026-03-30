@@ -12,6 +12,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "podman"
       "dialout"
     ]
     ++ lib.optionals features.enableAgents [
