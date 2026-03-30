@@ -70,6 +70,10 @@ in
   qt = {
     enable = features.enableGui;
     platformTheme.name = theme;
-    style.name = theme;
+    style = {
+      name = "catppuccin-mocha-mauve";
+      package = pkgs.catppuccin-qt5ct;
+    };
+
   };
 }
