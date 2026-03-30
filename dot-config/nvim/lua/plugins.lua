@@ -67,6 +67,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		branch = "master",
 		lazy = false,
 		config = require("setup_treesitter"),
 		dependencies = {
