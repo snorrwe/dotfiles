@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_nvim-treesitter_lazy_loading_stuff_________";
+  system.nixos.label = "fmt_______________________________________________";
 }
