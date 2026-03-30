@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_catppuccin_theme_for_qt_applications__________";
+  system.nixos.label = "Fix_nvim-treesitter_config________________________";
 }
