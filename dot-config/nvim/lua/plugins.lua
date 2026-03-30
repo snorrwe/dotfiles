@@ -67,17 +67,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = { "BufRead", "BufEnter", "VimEnter" },
-		cmd = {
-			"TSInstall",
-			"TSInstallInfo",
-			"TSInstallSync",
-			"TSUninstall",
-			"TSUpdate",
-			"TSUpdateSync",
-			"TSDisableAll",
-			"TSEnableAll",
-		},
+		lazy = false,
 		config = require("setup_treesitter"),
 		dependencies = {
 			{
