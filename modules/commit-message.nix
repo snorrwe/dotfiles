@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Pin_nvim-treesitter_to_the_master_branch__________";
+  system.nixos.label = "Fix_treesitter_plugins_branches___________________";
 }

@@ -67,16 +67,21 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		-- FIXME: main branch after updating to nvim 0.12
 		branch = "master",
 		lazy = false,
 		config = require("setup_treesitter"),
 		dependencies = {
 			{
 				"nvim-treesitter/nvim-treesitter-textobjects",
+				-- FIXME: main branch after updating to nvim 0.12
+				branch = "master",
 			},
 			{
 				-- show context
 				"nvim-treesitter/nvim-treesitter-context",
+				-- FIXME: main branch after updating to nvim 0.12
+				branch = "master",
 				config = function()
 					require("treesitter-context").setup({
 						enable = true,
