@@ -27,3 +27,24 @@ def rms(vector):
         vector = [float(x) for x in vector.split(" ")]
 
     return np.sqrt(np.mean(np.array(vector, dtype=np.float32) ** 2))
+
+
+def base64decode(payload):
+    import base64
+
+    return base64.b64decode(payload)
+
+
+def base64encode(payload):
+    import base64
+
+    return base64.b64encode(payload)
+
+
+def base64jsond(payload):
+    """
+    decode base64 encoded json string
+    """
+    import json
+
+    return json.loads(base64decode(payload))
