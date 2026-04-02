@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_lsp_lines_____________________________________";
+  system.nixos.label = "Remove_lsp_lines_dependency_______________________";
 }

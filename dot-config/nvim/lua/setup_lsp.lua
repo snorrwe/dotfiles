@@ -79,4 +79,15 @@ return function()
 	vim.lsp.config("*", {
 		capabilities = lsp_capabilities,
 	})
+
+	local v = true
+	vim.diagnostic.config({
+		virtual_text = v,
+	})
+	vim.keymap.set({ "n" }, "<leader>l", function()
+		v = not v
+		vim.diagnostic.config({
+			virtual_text = v,
+		})
+	end, { desc = "Toggle lsp_lines" })
 end
