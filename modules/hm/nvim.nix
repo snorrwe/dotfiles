@@ -1,9 +1,6 @@
 {
   pkgs,
   lib,
-  username,
-  host,
-  inputs,
   ...
 
 }:

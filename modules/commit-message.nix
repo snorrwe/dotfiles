@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tar_and_curl_to_nvim__________________________";
+  system.nixos.label = "Remove_unused_variables___________________________";
 }
