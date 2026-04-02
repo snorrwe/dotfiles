@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-04-02__________________________";
+  system.nixos.label = "Add_viu_and_chafa_to_nvim_deps____________________";
 }
