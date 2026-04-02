@@ -1,7 +1,25 @@
+local function any(table)
+	for _ in pairs(table) do
+		return true
+	end
+	return false
+end
+
 return function()
 	local ts = require("nvim-treesitter")
+
+	local defaults = { "lua", "rust", "c", "cpp", "javascript", "typescript", "html", "css" }
+
+	ts.install(defaults)
+
+	local supported_filetypes = ts.get_installed()
+
+	if not any(supported_filetypes) then
+		supported_filetypes = defaults
+	end
+
 	vim.api.nvim_create_autocmd("FileType", {
-		pattern = ts.get_installed(),
+		pattern = supported_filetypes,
 		callback = function()
 			-- syntax highlighting, provided by Neovim
 			vim.treesitter.start()
@@ -11,7 +29,7 @@ return function()
 			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 		end,
 	})
-    ts.install({ "lua", "rust", "c", "cpp", "javascript", "typescript", "html", "css" })
+
 	vim.keymap.set({ "n" }, "=", "van", { remap = true })
 	vim.keymap.set({ "v" }, "=", "an", { remap = true })
 	vim.keymap.set({ "v" }, "-", "in", { remap = true })
