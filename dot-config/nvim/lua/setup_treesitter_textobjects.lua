@@ -5,6 +5,9 @@ return function()
 		select = {
 			lookahead = true,
 		},
+		move = {
+			set_jumps = true,
+		},
 	})
 
 	local tso_move = require("nvim-treesitter-textobjects.move")
