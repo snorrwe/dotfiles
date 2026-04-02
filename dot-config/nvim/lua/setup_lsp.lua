@@ -7,7 +7,7 @@ return function()
 
 	local function setup_clangd()
 		vim.lsp.config.clangd = {
-			filetypes = { "cpp", "c", "h", "hpp", "cuda", "cu", "cuh", "cc" },
+			filetypes = { "cpp", "c", "cuda" },
 			cmd = { "clangd", "--background-index", "--log=verbose", "--clang-tidy" },
 		}
 	end

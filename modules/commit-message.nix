@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_viu_and_chafa_to_nvim_deps____________________";
+  system.nixos.label = "Fix_filetypes_____________________________________";
 }
