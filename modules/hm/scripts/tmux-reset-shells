@@ -8,3 +8,5 @@ while read -r pane pid; do
         tmux send-keys -t $pane "exec $SHELL" "C-m"
     fi
 done
+
+exec $SHELL

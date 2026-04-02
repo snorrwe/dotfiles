@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_python_ruby_and_wget_as_neovim_dependencies___";
+  system.nixos.label = "Also_reset_current_shell_in_tmux-reset-shells_____";
 }
