@@ -18,6 +18,10 @@
       tree-sitter
       gnutar
       curl
+      wget
+      python3
+      python3Packages.pynvim
+      ruby
     ];
   };
   # clone the nvim config repo

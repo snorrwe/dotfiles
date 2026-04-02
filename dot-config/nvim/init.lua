@@ -1,8 +1,5 @@
-local HOME = vim.env.HOME .. "/.config/nvim"
-
 vim.o.termguicolors = true
 vim.g.mapleader = ","
-vim.g.python3_host_prog = HOME .. "/python3/bin/python"
 
 -- bootstrap lazy
 --
