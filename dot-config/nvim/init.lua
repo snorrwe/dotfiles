@@ -47,8 +47,8 @@ vim.keymap.set("v", "//", 'y/<C-R>"<cr>')
 vim.cmd([[noremap n nzz]])
 vim.cmd([[noremap N Nzz]])
 vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>")
-vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.jump({count= -1})<cr>")
+vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.jump({count= 1})<cr>")
 
 vim.cmd([[autocmd User LspProgressUpdate redrawstatus]])
 

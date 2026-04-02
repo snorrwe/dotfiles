@@ -15,6 +15,11 @@
     vimAlias = true;
     withPython3 = true;
     withNodeJs = true;
+    extraPackages = with pkgs; [
+      viu
+      chafa
+      tree-sitter
+    ];
   };
   # clone the nvim config repo
   # no, it's not reproducible, but I don't need it to be

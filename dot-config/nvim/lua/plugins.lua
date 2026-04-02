@@ -67,20 +67,23 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		-- FIXME: main branch after updating to nvim 0.12
-		branch = "master",
+		branch = "main",
 		lazy = false,
 		config = require("setup_treesitter"),
 		dependencies = {
 			{
 				"nvim-treesitter/nvim-treesitter-textobjects",
-				-- FIXME: main branch after updating to nvim 0.12
-				branch = "master",
+				branch = "main",
+				init = function()
+					-- Disable entire built-in ftplugin mappings to avoid conflicts.
+					-- See https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
+					vim.g.no_plugin_maps = true
+				end,
+				config = require("setup_treesitter_textobjects"),
 			},
 			{
 				-- show context
 				"nvim-treesitter/nvim-treesitter-context",
-				-- FIXME: main branch after updating to nvim 0.12
 				branch = "master",
 				config = function()
 					require("treesitter-context").setup({
