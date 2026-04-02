@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_treesitter_autocmd_if_no_parsers_are_installed";
+  system.nixos.label = "Automatically_install_treesitter_parsers_for_newly";
 }
