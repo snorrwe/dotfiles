@@ -19,6 +19,8 @@
       viu
       chafa
       tree-sitter
+      gnutar
+      curl
     ];
   };
   # clone the nvim config repo

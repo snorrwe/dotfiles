@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_jumps_on_textobjects__________________________";
+  system.nixos.label = "Add_tar_and_curl_to_nvim__________________________";
 }
