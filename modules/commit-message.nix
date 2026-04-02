@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_fold_expressions_on_enter__________________";
+  system.nixos.label = "Add_default_treesitter_languages__________________";
 }

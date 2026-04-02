@@ -11,6 +11,7 @@ return function()
 			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 		end,
 	})
+    ts.install({ "lua", "rust", "c", "cpp", "javascript", "typescript", "html", "css" })
 	vim.keymap.set({ "n" }, "=", "van", { remap = true })
 	vim.keymap.set({ "v" }, "=", "an", { remap = true })
 	vim.keymap.set({ "v" }, "-", "in", { remap = true })
