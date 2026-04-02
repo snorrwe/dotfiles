@@ -17,9 +17,7 @@ return function()
 		ensure_installed = {},
 		handlers = {
 			-- manually setup these servers
-			clangd = function()
-				setup_clangd()
-			end,
+			clangd = setup_clangd,
 			basedpyright = function()
 				vim.lsp.config.basedpyright = {
 					settings = {

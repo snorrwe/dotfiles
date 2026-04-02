@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_filetypes_____________________________________";
+  system.nixos.label = "Refactor__________________________________________";
 }
