@@ -43,7 +43,7 @@ return function()
 		callback = function(args)
 			local ty = args.match
 			if contains(available, ty) then
-				ts.install({ args.match }):wait()
+				ts.install({ args.match })
 				vim.api.nvim_create_autocmd("FileType", {
 					pattern = { ty },
 					callback = callback,

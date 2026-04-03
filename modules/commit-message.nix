@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Also_reset_current_shell_in_tmux-reset-shells_____";
+  system.nixos.label = "Async_install_new_TS_parsers______________________";
 }
