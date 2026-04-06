@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_mdformat_for_markdown_files___________________";
+  system.nixos.label = "System_update_2026-04-06__________________________";
 }
