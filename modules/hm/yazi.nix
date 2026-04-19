@@ -6,6 +6,7 @@
     enableZshIntegration = true;
     plugins = with pkgs.yaziPlugins; {
       starship = starship;
+      mount = mount;
     };
     initLua = ''
       require("starship"):setup()
@@ -14,6 +15,8 @@
       mgr = {
         show_hidden = true;
         sort_dir_first = true;
+        sort_by = "mtime";
+        sort_reverse = true;
       };
     };
     keymap = {
@@ -32,6 +35,10 @@
             ''
             "yank"
           ];
+        }
+        {
+          on = [ "M" ];
+          run = [ "plugin mount" ];
         }
       ];
     };

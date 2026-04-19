@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-04-16__________________________";
+  system.nixos.label = "Add_yazi_mount_plugin._Configure_default_sort_____";
 }
