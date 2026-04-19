@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_yazi_mount_plugin._Configure_default_sort_____";
+  system.nixos.label = "Fix_slack_window-rule_____________________________";
 }
