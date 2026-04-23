@@ -16,25 +16,28 @@ let
   cursor_name = "Afterglow-Recolored-Catppuccin-Macchiato";
 in
 {
-  home.packages = with pkgs; [
-    # needed by gtk
-    dconf
-  ];
+  home = {
+    packages = with pkgs; [
+      # needed by gtk
+      dconf
+    ];
+
+    pointerCursor = {
+      enable = features.enableGui;
+      name = cursor_name;
+      package = cursor_package;
+      x11.enable = true;
+      gtk.enable = true;
+    };
+
+    sessionVariables.GTK_THEME = theme;
+  };
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
   };
 
-  home.pointerCursor = {
-    enable = features.enableGui;
-    name = cursor_name;
-    package = cursor_package;
-    x11.enable = true;
-    gtk.enable = true;
-  };
-
-  home.sessionVariables.GTK_THEME = theme;
   gtk = {
     enable = features.enableGui;
     font.name = "MonaspiceNe Nerd Font";

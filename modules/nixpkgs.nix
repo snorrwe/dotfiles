@@ -1,8 +1,10 @@
 { inputs, ... }:
 {
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-  ];
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  nixpkgs = {
+    # Allow unfree packages
+    config.allowUnfree = true;
+    config.permittedInsecurePackages = [
+    ];
+    overlays = [ inputs.niri.overlays.niri ];
+  };
 }

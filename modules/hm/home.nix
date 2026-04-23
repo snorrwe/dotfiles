@@ -6,67 +6,69 @@
   ...
 }:
 {
-  # Home Manager Settings
-  home.username = "${username}";
-  home.homeDirectory = "/home/${username}";
-  home.stateVersion = "26.05";
-  home.packages = with pkgs; [
-    tmux
-    parallel
-    unzip
-    zip
-    dust # nicer du alternative
-    go
-    just
-    watchexec
-    ninja
-    starship # for my shell prompt
-    cmake
-    gzip
-    diffutils
-    github-cli
-    git-lfs
-    nodejs_22
-    curl
+  home = {
+    # Home Manager Settings
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+    stateVersion = "26.05";
+    packages = with pkgs; [
+      tmux
+      parallel
+      unzip
+      zip
+      dust # nicer du alternative
+      go
+      just
+      watchexec
+      ninja
+      starship # for my shell prompt
+      cmake
+      gzip
+      diffutils
+      github-cli
+      git-lfs
+      nodejs_22
+      curl
 
-    rustup
-    cargo-binstall
-    cargo-nextest
-    cargo-watch
-    cargo-clean-recursive
-    # topgrade deps to manage cargo-installed packages
-    cargo-update
-    cargo-cache
+      rustup
+      cargo-binstall
+      cargo-nextest
+      cargo-watch
+      cargo-clean-recursive
+      # topgrade deps to manage cargo-installed packages
+      cargo-update
+      cargo-cache
 
-    pkg-config
-    sccache
-    visidata
-    glow # tui markdown reader/renderer
-    units
-    killall
-    podman-compose
-    docker-compose
-    devenv
-    mutagen
-    pandoc
-    nixfmt
+      pkg-config
+      sccache
+      visidata
+      glow # tui markdown reader/renderer
+      units
+      killall
+      podman-compose
+      docker-compose
+      devenv
+      mutagen
+      pandoc
+      nixfmt
 
-    clang
-    clang-tools
+      clang
+      clang-tools
 
-    flamegraph
-    sleek # SQL formatter
+      flamegraph
+      sleek # SQL formatter
 
-    tokei # count LOC
-    dysk # show disk usage, nicer default format than df
+      tokei # count LOC
+      dysk # show disk usage, nicer default format than df
 
-    hyperfine # cli benchmarking tool
-    sshfs
-    python3
+      hyperfine # cli benchmarking tool
+      sshfs
+      python3
 
-    # yazi deps
-    ueberzugpp
-  ];
+      # yazi deps
+      ueberzugpp
+    ];
+  };
 
   imports = [
     ./rice.nix
@@ -91,43 +93,45 @@
     ./tmux.nix
     ./distrobox.nix
   ];
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
 
-  programs.topgrade = {
-    enable = true;
-    package = pkgs.topgrade;
-    settings = {
-      misc = {
-        assume_yes = true;
-        cleanup = true;
-        disable = [
-          "system"
-          "nix"
-          "home_manager"
-          "rustup"
-        ];
-        skip_notify = false;
-        pre_sudo = true;
+    topgrade = {
+      enable = true;
+      package = pkgs.topgrade;
+      settings = {
+        misc = {
+          assume_yes = true;
+          cleanup = true;
+          disable = [
+            "system"
+            "nix"
+            "home_manager"
+            "rustup"
+          ];
+          skip_notify = false;
+          pre_sudo = true;
+        };
+        git = {
+          repos = [
+            "/home/${username}/.local/share/zsh-snap"
+          ];
+          arguments = "--rebase --autostash";
+        };
       };
-      git = {
-        repos = [
-          "/home/${username}/.local/share/zsh-snap"
-        ];
-        arguments = "--rebase --autostash";
-      };
+
+    };
+    wezterm = {
+      enable = features.enableGui;
+      enableZshIntegration = true;
+      extraConfig = builtins.readFile ../../.wezterm.lua;
+      package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 
-  };
-  programs.wezterm = {
-    enable = features.enableGui;
-    enableZshIntegration = true;
-    extraConfig = builtins.readFile ../../.wezterm.lua;
-    package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  };
-
-  # media player, used by yazi by default
-  programs.mpv = {
-    enable = features.enableGui;
+    # media player, used by yazi by default
+    mpv = {
+      enable = features.enableGui;
+    };
   };
 }

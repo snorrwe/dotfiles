@@ -11,18 +11,16 @@
 
   users.users.agent = {
     enable = features.enableAgents;
-    packages = (
-      import ./common-packages.nix {
-        inherit pkgs lib;
-        features = {
-          enableGui = false;
-          enableSyncthing = false;
-          enableGaming = false;
-          enableAgents = true;
-          enableGamedev = false;
-        };
-      }
-    );
+    packages = import ./common-packages.nix {
+      inherit pkgs lib;
+      features = {
+        enableGui = false;
+        enableSyncthing = false;
+        enableGaming = false;
+        enableAgents = true;
+        enableGamedev = false;
+      };
+    };
     isNormalUser = true;
     extraGroups = [
       "networkmanager"

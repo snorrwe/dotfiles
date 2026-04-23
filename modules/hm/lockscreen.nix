@@ -18,7 +18,7 @@ in
           on-timeout = ''${pkgs.libnotify}/bin/notify-send -u critical -t 30000 "Locking screen in 30 seconds"'';
         }
         {
-          timeout = timeout;
+          inherit timeout;
           on-timeout = "${pkgs.hyprlock}/bin/hyprlock";
         }
       ];

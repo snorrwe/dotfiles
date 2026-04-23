@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_nushell_lsp_enable____________________________";
+  system.nixos.label = "Fix_statix_warnings_______________________________";
 }

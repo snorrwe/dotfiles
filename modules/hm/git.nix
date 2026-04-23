@@ -8,65 +8,67 @@
   ...
 }:
 {
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        name = "Daniel Kiss";
-        email = "littlesnorrboy@gmail.com";
-      };
-      merge = {
-        ours.driver = true;
-        union.driver = true;
-      };
-      safe.directory = lib.lists.optionals features.enableAgents [
-        "/var/agent/*"
-      ];
-      push.autoSetupRemote = true;
-    };
-    lfs.enable = true;
-  };
-  programs.difftastic = {
-    enable = true;
-    options = {
-      background = "dark";
-      display = "inline";
-    };
-    git.enable = true;
-  };
-  programs.lazygit = {
-    enable = true;
-    settings = {
-      gui = {
-        nerdFontsVersion = "3";
-      };
-      git = {
-        log = {
-          showWholeGraph = false;
+  programs = {
+    git = {
+      enable = true;
+      settings = {
+        user = {
+          name = "Daniel Kiss";
+          email = "littlesnorrboy@gmail.com";
         };
-        pagers = [
-          {
-            externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
-          }
+        merge = {
+          ours.driver = true;
+          union.driver = true;
+        };
+        safe.directory = lib.lists.optionals features.enableAgents [
+          "/var/agent/*"
         ];
+        push.autoSetupRemote = true;
+      };
+      lfs.enable = true;
+    };
+    difftastic = {
+      enable = true;
+      options = {
+        background = "dark";
+        display = "inline";
+      };
+      git.enable = true;
+    };
+    lazygit = {
+      enable = true;
+      settings = {
+        gui = {
+          nerdFontsVersion = "3";
+        };
+        git = {
+          log = {
+            showWholeGraph = false;
+          };
+          pagers = [
+            {
+              externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+            }
+          ];
+        };
       };
     };
-  };
-  programs.gh = {
-    enable = true;
-    settings = {
-      editor = "nvim";
+    gh = {
+      enable = true;
+      settings = {
+        editor = "nvim";
+      };
+      extensions = [
+        pkgs.gh-dash
+      ];
     };
-    extensions = [
-      pkgs.gh-dash
-    ];
-  };
-  programs.gh-dash = {
-    enable = true;
-    settings = {
-      smartFilteringAtLaunch = false;
-      pager = {
-        diff = "${pkgs.delta}/bin/delta -s --paging always";
+    gh-dash = {
+      enable = true;
+      settings = {
+        smartFilteringAtLaunch = false;
+        pager = {
+          diff = "${pkgs.delta}/bin/delta -s --paging always";
+        };
       };
     };
   };

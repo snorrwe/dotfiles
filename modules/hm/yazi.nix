@@ -5,8 +5,7 @@
     package = pkgs.yazi;
     enableZshIntegration = true;
     plugins = with pkgs.yaziPlugins; {
-      starship = starship;
-      mount = mount;
+      inherit mount starship;
     };
     initLua = ''
       require("starship"):setup()

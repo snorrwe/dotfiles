@@ -90,9 +90,39 @@ in
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  services = {
+    # Enable CUPS to print documents.
+    printing.enable = true;
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+    # Some programs need SUID wrappers, can be configured further or are
+    # started in user sessions.
+    # programs.mtr.enable = true;
+    # programs.gnupg.agent = {
+    #   enable = true;
+    #   enableSSHSupport = true;
+    # };
+
+    # List services that you want to enable:
+
+    # Enable the OpenSSH daemon.
+    openssh = {
+      enable = true;
+      ports = [ 39420 ];
+    };
+    logind.settings.Login = {
+      # certain elements in my life might press the button while I'm working :)
+      HandlePowerKey = "ignore";
+      HandlePowerKeyLongPress = "ignore";
+      HandleRebootKey = "ignore";
+      HandleRebootKeyLongPress = "ignore";
+      HandleSuspendKey = "ignore";
+      HandleSuspendKeyLongPress = "ignore";
+    };
+
+    earlyoom = {
+      enable = true;
+    };
+  };
 
   programs.direnv = {
     package = pkgs.direnv;
@@ -116,16 +146,23 @@ in
     ++ (import ../../modules/common-packages.nix { inherit pkgs features lib; });
 
   hardware.nvidia-container-toolkit.enable = true;
+  environment = {
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    curl
-    networkmanagerapplet
-  ];
+    # List packages installed in system profile. To search, run:
+    # $ nix search wget
+    systemPackages = with pkgs; [
+      neovim
+      curl
+      networkmanagerapplet
+    ];
+    variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
+    sessionVariables.DEFAULT_BROWSER = defaultBrowser;
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    shellInit = ''
+      [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
+    '';
+  };
   programs.npm.enable = true;
-  environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   # set default browser
   xdg.mime = {
     enable = true;
@@ -137,11 +174,6 @@ in
       "x-scheme-handler/unknown" = defaultBrowser;
     };
   };
-  environment.sessionVariables.DEFAULT_BROWSER = defaultBrowser;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.shellInit = ''
-    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
-  '';
 
   #Flakes
   nix = {
@@ -150,35 +182,6 @@ in
       trusted-users = root ${username}
       experimental-features = nix-command flakes
     '';
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    ports = [ 39420 ];
-  };
-  services.logind.settings.Login = {
-    # certain elements in my life might press the button while I'm working :)
-    HandlePowerKey = "ignore";
-    HandlePowerKeyLongPress = "ignore";
-    HandleRebootKey = "ignore";
-    HandleRebootKeyLongPress = "ignore";
-    HandleSuspendKey = "ignore";
-    HandleSuspendKeyLongPress = "ignore";
-  };
-
-  services.earlyoom = {
-    enable = true;
   };
 
   # Open ports in the firewall.

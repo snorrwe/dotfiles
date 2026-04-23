@@ -5,52 +5,54 @@
   ...
 }:
 {
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-    enableNushellIntegration = true;
-  };
-  programs.fzf = {
-    enable = true;
-    tmux.enableShellIntegration = true;
-  };
-
-  programs.eza = {
-    enable = true;
-    git = true;
-  };
-
-  programs.fd = {
-    enable = true;
-  };
-
-  programs.ripgrep = {
-    enable = true;
-  };
-
-  programs.jq = {
-    enable = true;
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.atuin = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  # colorful, syntax highlighted cat alternative
-  programs.bat = {
-    enable = true;
-    config = {
-      theme = "Coldark-Dark";
+  programs = {
+    zoxide = {
+      enable = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
-  };
+    fzf = {
+      enable = true;
+      tmux.enableShellIntegration = true;
+    };
 
-  programs.lazydocker = {
-    enable = true;
+    eza = {
+      enable = true;
+      git = true;
+    };
+
+    fd = {
+      enable = true;
+    };
+
+    ripgrep = {
+      enable = true;
+    };
+
+    jq = {
+      enable = true;
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    atuin = {
+      enable = true;
+      enableZshIntegration = true;
+    };
+
+    # colorful, syntax highlighted cat alternative
+    bat = {
+      enable = true;
+      config = {
+        theme = "Coldark-Dark";
+      };
+    };
+
+    lazydocker = {
+      enable = true;
+    };
   };
 }

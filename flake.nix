@@ -79,16 +79,18 @@
                   ./modules/sudo.nix
                   home-manager.nixosModules.home-manager
                   {
-                    home-manager.extraSpecialArgs = {
-                      inherit inputs;
-                      inherit username;
-                      inherit host;
-                      inherit features;
+                    home-manager = {
+                      extraSpecialArgs = {
+                        inherit inputs;
+                        inherit username;
+                        inherit host;
+                        inherit features;
+                      };
+                      useGlobalPkgs = true;
+                      useUserPackages = true;
+                      backupFileExtension = "backup";
+                      users.${username} = import ./modules/hm/home.nix;
                     };
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                    home-manager.backupFileExtension = "backup";
-                    home-manager.users.${username} = import ./modules/hm/home.nix;
                   }
                   {
                     environment.variables.NIX_HOST = host;

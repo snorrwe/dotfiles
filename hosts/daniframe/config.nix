@@ -79,9 +79,6 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   programs.direnv = {
     package = pkgs.direnv;
     silent = false;
@@ -107,13 +104,20 @@ in
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    neovim
-    curl
-    networkmanagerapplet
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      neovim
+      curl
+      networkmanagerapplet
+    ];
+    variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
+    sessionVariables.DEFAULT_BROWSER = defaultBrowser;
+    sessionVariables.NIXOS_OZONE_WL = "1";
+    shellInit = ''
+      [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
+    '';
+  };
   programs.npm.enable = true;
-  environment.variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
   # set default browser
   xdg.mime = {
     enable = true;
@@ -125,11 +129,6 @@ in
       "x-scheme-handler/unknown" = defaultBrowser;
     };
   };
-  environment.sessionVariables.DEFAULT_BROWSER = defaultBrowser;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.shellInit = ''
-    [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
-  '';
 
   #Flakes
   nix = {
@@ -139,24 +138,30 @@ in
       experimental-features = nix-command flakes
     '';
   };
+  services = {
 
-  services.earlyoom = {
-    enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    earlyoom = {
+      enable = true;
+    };
+
+    logind.settings.Login = {
+      HandleLidSwitchExternalPower = "ignore";
+      # certain elements in my life might press the button while I'm working :)
+      HandlePowerKey = "ignore";
+      HandlePowerKeyLongPress = "ignore";
+      HandleRebootKey = "ignore";
+      HandleRebootKeyLongPress = "ignore";
+      HandleSuspendKey = "ignore";
+      HandleSuspendKeyLongPress = "ignore";
+    };
   };
-
-  # Keeps timing out during boot
-  systemd.units."dev-tpmrm0.device".enable = false;
-  systemd.units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
-
-  services.logind.settings.Login = {
-    HandleLidSwitchExternalPower = "ignore";
-    # certain elements in my life might press the button while I'm working :)
-    HandlePowerKey = "ignore";
-    HandlePowerKeyLongPress = "ignore";
-    HandleRebootKey = "ignore";
-    HandleRebootKeyLongPress = "ignore";
-    HandleSuspendKey = "ignore";
-    HandleSuspendKeyLongPress = "ignore";
+  systemd = {
+    # Keeps timing out during boot
+    units."dev-tpmrm0.device".enable = false;
+    units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
   };
 
   # This value determines the NixOS release from which the default
