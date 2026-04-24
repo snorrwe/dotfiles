@@ -33,3 +33,6 @@ clean-zsh-cache:
 setup-git-hooks:
     rm -rf .git/hooks
     ln -s "$PWD/.githooks" ./.git/hooks
+
+lint:
+    statix check

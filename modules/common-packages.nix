@@ -12,6 +12,8 @@ with pkgs;
   perf
   # quickly fire up VMs
   quickemu
+  # nix linter
+  statix
 ]
 ++ optionals features.enableGui (
   with pkgs;

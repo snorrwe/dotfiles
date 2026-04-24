@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-04-24__________________________";
+  system.nixos.label = "Add_statix_for_linting____________________________";
 }
