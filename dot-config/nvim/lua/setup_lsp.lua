@@ -79,4 +79,16 @@ return function()
 	vim.lsp.config("*", {
 		capabilities = lsp_capabilities,
 	})
+
+	-- nushell
+	local nushell_group = vim.api.nvim_create_augroup("nushell", { clear = true })
+	vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "VimEnter" }, {
+		pattern = { "*.nu" },
+		group = nushell_group,
+		callback = function(_)
+			if vim.fn.executable("nu") == 1 then
+				vim.cmd([[lsp enable nushell]])
+			end
+		end,
+	})
 end

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_statix_for_linting____________________________";
+  system.nixos.label = "Move_nushell_lsp_setup_to_setup_lsp.lua___________";
 }
