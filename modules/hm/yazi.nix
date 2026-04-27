@@ -14,8 +14,10 @@
       mgr = {
         show_hidden = true;
         sort_dir_first = true;
-        sort_by = "mtime";
+        sort_by = "natural";
         sort_reverse = true;
+        show_symlink = true;
+        linemode = "mtime";
       };
     };
     keymap = {
@@ -24,7 +26,6 @@
           on = [ "<C-s>" ];
           run = ''shell "$SHELL" --block --confirm'';
           desc = "Open shell here";
-
         }
         {
           on = [ "y" ];
