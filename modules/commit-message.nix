@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_nushell_lsp_setup_to_setup_lsp.lua___________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
