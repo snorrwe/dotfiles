@@ -90,6 +90,9 @@
         bind-key -r K resize-pane -U 3
         bind-key -r H resize-pane -L 3
         bind-key -r L resize-pane -R 3
+
+        # open a new scratch session
+        bind-key -r k new-session -A -s scratch -c $HOME
       '';
     };
   };
