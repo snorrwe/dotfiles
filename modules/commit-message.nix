@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-05-01__________________________";
+  system.nixos.label = "Move_to_unstable_niri_____________________________";
 }
