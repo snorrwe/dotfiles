@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_yazi____________________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
