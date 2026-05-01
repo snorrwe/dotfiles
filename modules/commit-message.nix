@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_to_unstable_niri_____________________________";
+  system.nixos.label = "Remove_legacy_clone_______________________________";
 }
