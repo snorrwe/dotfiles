@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Stash_unstaged_changes_in_the_post-commit_hook____";
+  system.nixos.label = "Mount_nix_directories_in_distrobox_by_default_____";
 }

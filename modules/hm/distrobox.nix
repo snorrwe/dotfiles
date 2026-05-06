@@ -10,8 +10,10 @@ in
 {
   programs.distrobox = {
     enable = features.enableDistrobox;
+    enableSystemdUnit = true;
     settings = {
       container_user_custom_home = "$HOME/.local/share/container-home";
+      container_additional_volumes = "/nix/store:/nix/store:ro /etc/profiles/per-user:/etc/profiles/per-user:ro /etc/static/profiles/per-user:/etc/static/profiles/per-user:ro";
     };
     containers = lib.attrsets.mergeAttrsList (
       [
