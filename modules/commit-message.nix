@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_expand_the_SHELL_variable_before_sending_th";
+  system.nixos.label = "Stash_unstaged_changes_in_the_post-commit_hook____";
 }
