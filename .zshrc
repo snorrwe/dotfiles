@@ -48,6 +48,7 @@ znap source arzzen/calc.plugin.zsh
 function aliases {
     alias lg=lazygit
     alias jt='just test'
+    alias jb='just build'
     alias ll='ls -alF'
     alias la='ls -Al'
     alias l='ls -CF'
