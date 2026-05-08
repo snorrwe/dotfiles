@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-05-08__________________________";
+  system.nixos.label = "Add_just_boot_____________________________________";
 }

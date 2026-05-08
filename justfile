@@ -12,12 +12,12 @@ update *args:
     git commit -m "System update $(printf '%(%Y-%m-%d)T\n' -1)"
     just apply {{ args }}
 
-apply hostname=default_host:
-    nh os switch "." --hostname={{ hostname }}
+apply hostname=default_host *args:
+    nh os switch "." --hostname={{ hostname }} {{ args }}
 
 # apply home-manager config
-apply-hm:
-    nh home switch .
+apply-hm *args:
+    nh home switch . {{ args }}
 
 generate-hardware-config hostname=default_host:
     mkdir -p "./hosts/{{ hostname }}"
@@ -36,3 +36,7 @@ setup-git-hooks:
 
 lint:
     statix check
+
+# builds the config and sets it as the boot default - but does not switch
+boot hostname=default_host *args:
+    nh os boot '.' --hostname={{ hostname }} {{ args }}
