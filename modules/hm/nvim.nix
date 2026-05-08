@@ -12,6 +12,7 @@
     vimAlias = true;
     withPython3 = true;
     withNodeJs = true;
+    sideloadInitLua = true;
     extraPackages = with pkgs; [
       viu
       chafa
