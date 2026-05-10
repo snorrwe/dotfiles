@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_just_boot_____________________________________";
+  system.nixos.label = "Disable_nssmdns4__________________________________";
 }
