@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_nssmdns4__________________________________";
+  system.nixos.label = "Update_lazy_plugins_______________________________";
 }
