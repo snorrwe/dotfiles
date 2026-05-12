@@ -274,6 +274,7 @@ return {
 	},
 	{
 		"L3MON4D3/LuaSnip",
+		event = "VeryLazy",
 		version = "v2.*",
 		config = require("setup_snippets"),
 	},
@@ -301,12 +302,14 @@ return {
 	},
 	{
 		"FabijanZulj/blame.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("blame").setup()
 		end,
 	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
+		event = "VeryLazy",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		opts = {
 			sign = { enabled = false },

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_lazy_plugins_______________________________";
+  system.nixos.label = "Sprinkle_in_some_VeryLazy_________________________";
 }
