@@ -3,8 +3,6 @@
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-spawn-at-startup "waybar"
-
 spawn-at-startup "app.zen_browser.zen"
 spawn-at-startup "wezterm"
 spawn-at-startup "md.obsidian.Obsidian"

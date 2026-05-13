@@ -15,6 +15,12 @@ with lib;
   programs.waybar = {
     enable = features.enableGui;
     package = pkgs.waybar;
+    systemd = {
+      enable = true;
+      targets = [
+        "graphical-session.target"
+      ];
+    };
     settings = [
       {
         layer = "top";

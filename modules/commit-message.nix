@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Sprinkle_in_some_VeryLazy_________________________";
+  system.nixos.label = "Do_not_spawn_waybar_at_startup_rely_on_the_systemd";
 }
