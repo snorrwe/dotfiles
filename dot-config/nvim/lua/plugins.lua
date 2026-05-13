@@ -103,6 +103,9 @@ return {
 	{
 		"airblade/vim-gitgutter",
 		event = "VeryLazy",
+		config = function()
+			vim.keymap.set("n", "<leader>gq", "<cmd>GitGutterQuickFix<CR>")
+		end,
 	},
 	{
 		"folke/which-key.nvim",
