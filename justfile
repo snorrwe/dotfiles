@@ -9,7 +9,7 @@ clean:
 update *args:
     nix flake update
     git add flake.lock
-    git commit -m "System update $(printf '%(%Y-%m-%d)T\n' -1)"
+    git commit -m "System update $(date +%F)"
     just apply {{ args }}
 
 apply hostname=default_host *args:

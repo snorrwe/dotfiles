@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_keymap_for_GitGutterQuickFix__________________";
+  system.nixos.label = "Simplify_update_commit_message____________________";
 }
