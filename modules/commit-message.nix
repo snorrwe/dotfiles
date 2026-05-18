@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-05-15__________________________";
+  system.nixos.label = "Add_devenv_hook_to_zshrc__________________________";
 }
