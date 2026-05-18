@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_devenv_hook_to_zshrc__________________________";
+  system.nixos.label = "Update_nvim_deps__________________________________";
 }
