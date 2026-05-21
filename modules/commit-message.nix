@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_deps__________________________________";
+  system.nixos.label = "Reduce_bootloader_timeout_from_5s_to_2s___________";
 }
