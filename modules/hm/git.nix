@@ -1,10 +1,5 @@
 {
   pkgs,
-  username,
-  host,
-  inputs,
-  features,
-  lib,
   ...
 }:
 {
@@ -20,9 +15,6 @@
           ours.driver = true;
           union.driver = true;
         };
-        safe.directory = lib.lists.optionals features.enableAgents [
-          "/var/agent/*"
-        ];
         push.autoSetupRemote = true;
       };
       lfs.enable = true;

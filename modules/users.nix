@@ -1,8 +1,6 @@
 {
   username,
   pkgs,
-  features,
-  lib,
   ...
 }:
 {
@@ -14,9 +12,6 @@
       "docker"
       "podman"
       "dialout"
-    ]
-    ++ lib.optionals features.enableAgents [
-      "agent-shared"
     ];
     createHome = true;
     shell = pkgs.zsh;

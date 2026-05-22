@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reduce_bootloader_timeout_from_5s_to_2s___________";
+  system.nixos.label = "Remove_the_agents_feature_________________________";
 }
