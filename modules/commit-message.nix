@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "More_aggressive_clean_____________________________";
+  system.nixos.label = "Use_tmux_respawn-pane_to_reset_panes______________";
 }

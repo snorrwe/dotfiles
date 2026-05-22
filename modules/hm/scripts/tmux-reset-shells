@@ -5,8 +5,8 @@ while read -r pane pid; do
     child_pid=$(pgrep -P $pid)
     # if the pane has no child command running
     if [[ -z $child_pid ]]; then
-        tmux send-keys -t $pane 'exec $SHELL' "C-m"
+        tmux respawn-pane -t $pane -k
     fi
 done
 
-exec $SHELL
+tmux respawn-pane -k
