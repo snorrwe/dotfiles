@@ -1,10 +1,4 @@
-{
-  pkgs,
-  username,
-  host,
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 {
   programs.nh = {
     enable = true;

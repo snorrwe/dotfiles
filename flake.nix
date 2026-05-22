@@ -78,6 +78,7 @@
                   ./modules/printing.nix
                   ./modules/sudo.nix
                   ./modules/boot.nix
+                  ./modules/angrr.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager = {

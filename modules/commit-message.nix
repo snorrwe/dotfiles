@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_tmux_respawn-pane_to_reset_panes______________";
+  system.nixos.label = "Add_angrr_________________________________________";
 }
