@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_the_agents_feature_________________________";
+  system.nixos.label = "More_aggressive_clean_____________________________";
 }
