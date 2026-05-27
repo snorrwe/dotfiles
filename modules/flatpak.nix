@@ -16,7 +16,7 @@ in
       "flathub:app/com.spotify.Client//stable"
       "flathub:app/org.telegram.desktop//stable"
       "flathub:app/com.bitwarden.desktop//stable"
-      "flathub:app/org.mozilla.Thunderbird//stable"
+      "flathub:app/org.mozilla.thunderbird_esr//stable"
       "flathub:app/com.slack.Slack//stable"
       "flathub:app/md.obsidian.Obsidian//stable"
       "flathub:app/com.obsproject.Studio//stable"

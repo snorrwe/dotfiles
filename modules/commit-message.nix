@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_angrr_________________________________________";
+  system.nixos.label = "Update_thunderbird_flatpak_id_____________________";
 }
