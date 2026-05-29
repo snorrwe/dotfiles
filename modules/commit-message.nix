@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_thunderbird_flatpak_id_____________________";
+  system.nixos.label = "System_update_2026-05-29__________________________";
 }
