@@ -1,4 +1,4 @@
-{ pkgs, features, ... }:
+{ features, ... }:
 {
   programs.fuzzel = {
     enable = features.enableGui;
@@ -6,6 +6,7 @@
       main = {
         font = "MonaspiceNe Nerd Font:size=13";
         width = 80;
+        dpi-aware = "off";
       };
       colors = {
         background = "1e1e2edd";

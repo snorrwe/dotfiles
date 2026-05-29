@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-05-29__________________________";
+  system.nixos.label = "Enable_dpi-aware_scaling_in_fuzzel________________";
 }
