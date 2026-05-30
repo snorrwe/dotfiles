@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_dpi-aware_scaling_in_fuzzel________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
