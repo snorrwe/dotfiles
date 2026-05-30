@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 
 }:
@@ -23,6 +22,7 @@
       python3
       python3Packages.pynvim
       ruby
+      gcc
     ];
   };
 }

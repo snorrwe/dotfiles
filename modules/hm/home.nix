@@ -12,7 +12,6 @@
     homeDirectory = "/home/${username}";
     stateVersion = "26.05";
     packages = with pkgs; [
-      tmux
       parallel
       unzip
       zip
@@ -42,14 +41,11 @@
       pkg-config
       sccache
       visidata
-      glow # tui markdown reader/renderer
       units
       killall
       podman-compose
       docker-compose
       devenv
-      mutagen
-      pandoc
       nixfmt
 
       clang
@@ -64,9 +60,6 @@
       hyperfine # cli benchmarking tool
       sshfs
       python3
-
-      # yazi deps
-      ueberzugpp
     ];
   };
 
