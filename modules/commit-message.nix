@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_ly_display_manager____________________________";
+  system.nixos.label = "Rename_apply-hm_to_hm-apply_______________________";
 }

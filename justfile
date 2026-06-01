@@ -16,7 +16,7 @@ apply hostname=default_host *args:
     nh os switch "." --hostname={{ hostname }} {{ args }}
 
 # apply home-manager config
-apply-hm *args:
+hm-apply *args:
     nh home switch . {{ args }}
 
 generate-hardware-config hostname=default_host:
