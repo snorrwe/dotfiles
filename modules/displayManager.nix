@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  services.displayManager.cosmic-greeter = {
+_: {
+  services.displayManager.ly = {
     enable = true;
   };
 }

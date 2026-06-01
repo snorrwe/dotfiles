@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Tidy_up_packages__________________________________";
+  system.nixos.label = "Use_ly_display_manager____________________________";
 }
