@@ -6,7 +6,7 @@
 spawn-at-startup "app.zen_browser.zen"
 spawn-at-startup "wezterm"
 spawn-at-startup "md.obsidian.Obsidian"
-spawn-at-startup "org.mozilla.Thunderbird"
+spawn-at-startup "org.mozilla.thunderbird_esr"
 spawn-at-startup "com.slack.Slack"
 spawn-at-startup "com.discordapp.Discord"
 
@@ -391,8 +391,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^obsidian$"#
-    match app-id=r#"^thunderbird-esr$"#
-    match app-id=r#"^org.mozilla.Thunderbird$"#
+    match app-id=r#"^org.mozilla.thunderbird_esr$"#
     open-on-workspace "notes"
     opacity 1.0
     open-focused false

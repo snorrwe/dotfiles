@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rename_apply-hm_to_hm-apply_______________________";
+  system.nixos.label = "fixup_Update_thunderbird_flatpak_id_______________";
 }
