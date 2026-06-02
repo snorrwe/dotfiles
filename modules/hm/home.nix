@@ -1,5 +1,7 @@
 {
   pkgs,
+  lib,
+  config,
   username,
   inputs,
   features,
@@ -9,7 +11,7 @@
   home = {
     # Home Manager Settings
     username = "${username}";
-    homeDirectory = "/home/${username}";
+    homeDirectory = if pkgs.stdenv.isDarwin then "/Users/${username}" else "/home/${username}";
     stateVersion = "26.05";
     packages = with pkgs; [
       parallel
@@ -64,19 +66,12 @@
   };
 
   imports = [
-    ./rice.nix
-    ./dunst.nix
     ./git.nix
-    ./mime.nix
     ./fastfetch.nix
     ./nushell.nix
     ./cli.nix
-    ./lockscreen.nix
     ./setup-git-repos.nix
     ./nvim.nix
-    ./waybar.nix
-    ./wlogout.nix
-    ./fuzzel.nix
     ./yazi.nix
     ./scripts.nix
     ./nh.nix
@@ -84,6 +79,14 @@
     ./syncthing.nix
     ./symlinks.nix
     ./tmux.nix
+  ] ++ lib.optionals pkgs.stdenv.isLinux [
+    ./rice.nix
+    ./dunst.nix
+    ./mime.nix
+    ./lockscreen.nix
+    ./waybar.nix
+    ./wlogout.nix
+    ./fuzzel.nix
     ./distrobox.nix
   ];
   programs = {
@@ -108,7 +111,7 @@
         };
         git = {
           repos = [
-            "/home/${username}/.local/share/zsh-snap"
+            "${config.home.homeDirectory}/.local/share/zsh-snap"
           ];
           arguments = "--rebase --autostash";
         };
@@ -119,7 +122,7 @@
       enable = features.enableGui;
       enableZshIntegration = true;
       extraConfig = builtins.readFile ../../.wezterm.lua;
-      package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default or pkgs.wezterm;
     };
 
     # media player, used by yazi by default

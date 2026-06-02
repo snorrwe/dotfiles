@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, lib, ... }:
 let
 
   paths = {
@@ -21,17 +21,18 @@ in
 {
   xdg.configFile = {
     "starship.toml" = mklinkFile "starship.toml";
-    "niri" = mklinkDir "niri";
     "atuin" = mklinkDir "atuin";
     "nvim" = mklinkDir "nvim";
     ".zshrc" = {
       source = mkOutOfStoreSymlink "${paths.dotfiles}/.zshrc";
       target = "../.zshrc";
     };
-    "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
     ".visidatarc" = {
       source = mkOutOfStoreSymlink "${paths.dotfiles}/.visidatarc";
       target = "../.visidatarc";
     };
+  } // lib.optionalAttrs pkgs.stdenv.isLinux {
+    "niri" = mklinkDir "niri";
+    "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
   };
 }

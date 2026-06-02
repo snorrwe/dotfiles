@@ -124,33 +124,46 @@
             }
           ]
       );
-      homeConfigurations = builtins.listToAttrs (
-        map
-          (username: {
-            name = username;
-            value = home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              extraSpecialArgs = {
-                inherit inputs;
-                inherit username;
-                features = {
-                  enableGui = false;
-                  enableSyncthing = false;
-                  enableGaming = false;
-                  enableGamedev = false;
-                  enableDistrobox = false;
-                };
-              };
-              modules = [
-                ./modules/nixpkgs.nix
-                ./modules/hm/home.nix
-              ];
-            };
-          })
-          [
+      homeConfigurations =
+        let
+          homeUsers = [
             "dkiss"
             "snorrwe"
-          ]
-      );
+          ];
+          homeSystems = [
+            "x86_64-linux"
+            "aarch64-darwin"
+            "x86_64-darwin"
+          ];
+        in
+        builtins.listToAttrs (
+          builtins.concatMap (
+            username:
+            map (sys: {
+              name = "${username}@${sys}";
+              value = home-manager.lib.homeManagerConfiguration {
+                pkgs = import nixpkgs {
+                  system = sys;
+                  config.allowUnfree = true;
+                };
+                extraSpecialArgs = {
+                  inherit inputs username;
+                  host = "";
+                  features = {
+                    enableGui = false;
+                    enableSyncthing = false;
+                    enableGaming = false;
+                    enableGamedev = false;
+                    enableDistrobox = false;
+                  };
+                };
+                modules = [
+                  ./modules/nixpkgs.nix
+                  ./modules/hm/home.nix
+                ];
+              };
+            }) homeSystems
+          ) homeUsers
+        );
     };
 }

@@ -1,4 +1,4 @@
-{ username, features, ... }:
+{ features, config, ... }:
 {
   services.syncthing = {
     enable = features.enableSyncthing;
@@ -7,7 +7,7 @@
     settings = {
       folders.notes = {
         enable = true;
-        path = "/home/${username}/notes";
+        path = "${config.home.homeDirectory}/notes";
         devices = [
           "home-1"
         ];

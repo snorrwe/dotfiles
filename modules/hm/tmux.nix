@@ -63,8 +63,18 @@
 
         # copy to system clipboard
         set -g set-clipboard on
-        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-        bind -T copy-mode y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+        ${
+          if pkgs.stdenv.isDarwin then
+            ''
+              bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'pbcopy'
+              bind -T copy-mode y send-keys -X copy-pipe-and-cancel 'pbcopy'
+            ''
+          else
+            ''
+              bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+              bind -T copy-mode y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+            ''
+        }
 
         # some key-binding changes
         bind x kill-pane
