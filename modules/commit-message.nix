@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fixup_Update_thunderbird_flatpak_id_______________";
+  system.nixos.label = "Fix_install-hm____________________________________";
 }
