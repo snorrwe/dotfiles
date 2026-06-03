@@ -2,6 +2,6 @@
 
 set -euo pipefail
 
-tailscale status --json | jq -r '.Peer.[].HostName | select(. != "localhost")' | \
+tailscale status --json | jq -r '.Peer.[] | select(.HostName != "localhost" and .Online) | .DNSName' | \
     fuzzel --prompt "Open new ssh window: " -d | \
     xargs -I{} wezterm ssh --class {} {}
