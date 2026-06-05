@@ -1,4 +1,4 @@
-default_host := "${NIX_HOST}"
+hostname := env("NIX_HOST")
 
 default:
     just --list
@@ -12,18 +12,18 @@ update *args:
     git commit -m "System update $(date +%F)"
     just apply {{ args }}
 
-apply hostname=default_host *args:
+apply *args:
     nh os switch "." --hostname={{ hostname }} {{ args }}
 
 # apply home-manager config
 hm-apply *args:
     nh home switch . {{ args }}
 
-generate-hardware-config hostname=default_host:
+generate-hardware-config:
     mkdir -p "./hosts/{{ hostname }}"
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{ hostname }}/hardware.nix"
 
-install hostname=default_host: (generate-hardware-config hostname) && setup-git-hooks
+install: generate-hardware-config && setup-git-hooks
     just apply {{ hostname }}
 
 # clears zsh-snap eval cache use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
@@ -38,5 +38,5 @@ lint:
     statix check
 
 # builds the config and sets it as the boot default - but does not switch
-boot hostname=default_host *args:
+boot *args:
     nh os boot '.' --hostname={{ hostname }} {{ args }}

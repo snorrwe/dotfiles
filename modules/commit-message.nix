@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-06-05__________________________";
+  system.nixos.label = "Refactor_hostname_in_justfile_____________________";
 }
