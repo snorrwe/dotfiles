@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Show_DNSName_instead_of_Hostname_in_tailscale_ssh_";
+  system.nixos.label = "System_update_2026-06-05__________________________";
 }
