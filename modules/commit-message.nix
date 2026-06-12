@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Refactor_hostname_in_justfile_____________________";
+  system.nixos.label = "Add_localsend_flatpak_____________________________";
 }
