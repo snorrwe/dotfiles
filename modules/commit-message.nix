@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_localsend_flatpak_____________________________";
+  system.nixos.label = "System_update_2026-06-13__________________________";
 }
