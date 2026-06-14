@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_localsend_flatpak_into_localsend.nix_________";
+  system.nixos.label = "Remove_syncthing__________________________________";
 }

@@ -81,7 +81,6 @@
     ./scripts.nix
     ./nh.nix
     ./btop.nix
-    ./syncthing.nix
     ./symlinks.nix
     ./tmux.nix
     ./distrobox.nix

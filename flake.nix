@@ -41,7 +41,6 @@
             let
               features = {
                 enableGui = true;
-                enableSyncthing = true;
                 enableGaming = false;
                 enableGamedev = true;
                 enableBluetooth = true;
@@ -136,7 +135,6 @@
                 inherit username;
                 features = {
                   enableGui = false;
-                  enableSyncthing = false;
                   enableGaming = false;
                   enableGamedev = false;
                   enableDistrobox = false;
