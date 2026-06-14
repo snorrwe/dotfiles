@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-06-13__________________________";
+  system.nixos.label = "Open_localsend_ports______________________________";
 }

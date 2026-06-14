@@ -79,6 +79,7 @@
                   ./modules/sudo.nix
                   ./modules/boot.nix
                   ./modules/angrr.nix
+                  ./modules/localsend.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager = {
