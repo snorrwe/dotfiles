@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Open_localsend_ports______________________________";
+  system.nixos.label = "Move_localsend_flatpak_into_localsend.nix_________";
 }
