@@ -1,4 +1,4 @@
-hostname := env("NIX_HOST")
+hostname := env("NIX_HOST", "NOHOSTSET")
 
 default:
     just --list
