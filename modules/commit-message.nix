@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_a_default_hostname____________________________";
+  system.nixos.label = "Fix_tmux-pull-all_________________________________";
 }
