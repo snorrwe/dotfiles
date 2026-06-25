@@ -12,27 +12,7 @@ return function()
 		cmd = { "clangd", "--background-index", "--log=verbose", "--clang-tidy" },
 	}
 
-	for _, server in ipairs({
-		"bashls",
-		"buf_ls",
-		"clangd",
-		"gopls",
-		"just",
-		"lua_ls",
-		"neocmake",
-		"nil_ls",
-		"ruff",
-		"rust_analyzer",
-		"svelte",
-		"tailwindcss",
-		"taplo",
-		"templ",
-		"tinymist",
-		"ty",
-		"ts_ls",
-		"wgsl_analyzer",
-		"yamlls",
-	}) do
+	for _, server in ipairs(vim.g.lsp_servers or {}) do
 		vim.lsp.enable(server)
 	end
 

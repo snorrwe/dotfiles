@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "nvim:_migrate_LSP_servers_and_formatters_from_Maso";
+  system.nixos.label = "drive_LSP_server_list_from_Nix_via_vim.g.lsp_serve";
 }
