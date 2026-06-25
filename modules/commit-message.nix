@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-06-25__________________________";
+  system.nixos.label = "nvim:_migrate_LSP_servers_and_formatters_from_Maso";
 }

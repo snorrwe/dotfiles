@@ -1,44 +1,39 @@
 return function()
-	local lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
-	local mason = require("mason")
-	local mason_lsp = require("mason-lspconfig")
-	local mason_reg = require("mason-registry")
 	local clangd_extensions = require("clangd_extensions")
 
-	local function setup_clangd()
-		vim.lsp.config.clangd = {
-			filetypes = { "cpp", "c", "cuda" },
-			cmd = { "clangd", "--background-index", "--log=verbose", "--clang-tidy" },
-		}
-	end
-
-	mason.setup({})
-	mason_lsp.setup({
-		ensure_installed = {},
-		handlers = {
-			-- manually setup these servers
-			clangd = setup_clangd,
-			basedpyright = function()
-				vim.lsp.config.basedpyright = {
-					settings = {
-						basedpyright = {
-							analysis = {
-								autoSearchPaths = true,
-								diagnosticMode = "openFilesOnly",
-								useLibraryCodeForTypes = true,
-								typeCheckingMode = "standard",
-							},
-						},
-					},
-				}
-			end,
-		},
+	-- Set capabilities before vim.lsp.enable() calls
+	vim.lsp.config("*", {
+		capabilities = require("blink.cmp").get_lsp_capabilities(),
 	})
 
-	if not mason_reg.is_installed("clangd") and vim.fn.executable("clangd") == 1 then
-		-- on nixos mason provided clangd does not work as expected with system headers, use the system clangd instead
-		setup_clangd()
-		vim.lsp.enable("clangd")
+	-- clangd: system install via clang-tools in home.packages
+	vim.lsp.config.clangd = {
+		filetypes = { "cpp", "c", "cuda" },
+		cmd = { "clangd", "--background-index", "--log=verbose", "--clang-tidy" },
+	}
+
+	for _, server in ipairs({
+		"bashls",
+		"buf_ls",
+		"clangd",
+		"gopls",
+		"just",
+		"lua_ls",
+		"neocmake",
+		"nil_ls",
+		"ruff",
+		"rust_analyzer",
+		"svelte",
+		"tailwindcss",
+		"taplo",
+		"templ",
+		"tinymist",
+		"ty",
+		"ts_ls",
+		"wgsl_analyzer",
+		"yamlls",
+	}) do
+		vim.lsp.enable(server)
 	end
 
 	local has_native_hints = vim.fn.has("nvim-0.10") == 1
@@ -76,11 +71,7 @@ return function()
 		end,
 	})
 
-	vim.lsp.config("*", {
-		capabilities = lsp_capabilities,
-	})
-
-	-- nushell
+	-- nushell: enable only if nu is in PATH
 	local nushell_group = vim.api.nvim_create_augroup("nushell", { clear = true })
 	vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "VimEnter" }, {
 		pattern = { "*.nu" },

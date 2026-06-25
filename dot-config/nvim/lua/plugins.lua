@@ -131,10 +131,7 @@ return {
 		"neovim/nvim-lspconfig",
 		config = require("setup_lsp"),
 		dependencies = {
-			-- LSP Support
 			"saghen/blink.cmp",
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 			"p00f/clangd_extensions.nvim",
 			{
 				"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
