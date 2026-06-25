@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_sleek_into_nvim.nix__________________________";
+  system.nixos.label = "Factor_out_formatters_____________________________";
 }

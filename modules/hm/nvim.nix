@@ -83,6 +83,16 @@ let
     "rust_analyzer"
   ];
 
+  formatters = with pkgs; [
+    mdformat
+    prettierd
+    stylua
+    typstyle
+    dockerfmt
+    sleek
+    nixfmt
+  ];
+
 in
 {
   programs.neovim = {
@@ -112,16 +122,8 @@ in
         python3Packages.pynvim
         ruby
         gcc
-
-        # Formatters
-        mdformat
-        prettierd
-        stylua
-        typstyle
-        dockerfmt
-        sleek
-        nixfmt
       ]
+      ++ formatters
       ++ (builtins.map (lsp: lsp.pkg) lspServers);
   };
 }

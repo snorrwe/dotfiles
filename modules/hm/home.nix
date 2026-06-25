@@ -46,7 +46,6 @@
       podman-compose
       docker-compose
       devenv
-      nixfmt
 
       clang
       clang-tools
