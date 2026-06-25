@@ -52,7 +52,6 @@
       clang-tools
 
       flamegraph
-      sleek # SQL formatter
 
       tokei # count LOC
       dysk # show disk usage, nicer default format than df

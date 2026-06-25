@@ -119,6 +119,8 @@ in
         stylua
         typstyle
         dockerfmt
+        sleek
+        nixfmt
       ]
       ++ (builtins.map (lsp: lsp.pkg) lspServers);
   };
