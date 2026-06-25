@@ -4,10 +4,10 @@ local s = ls.snippet
 local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("nix", {
-	s(
-		"flake",
-		fmt(
-			[[
+    s(
+        "flake",
+        fmt(
+            [[
 {{
   description = "devshell";
 
@@ -34,7 +34,7 @@ ls.add_snippets("nix", {
     );
 }}
 ]],
-			{}
-		)
-	),
+            {}
+        )
+    ),
 })

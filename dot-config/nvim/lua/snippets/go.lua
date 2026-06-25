@@ -7,17 +7,17 @@ local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
 ls.add_snippets("go", {
-	s(
-		"iferr",
-		fmt(
-			[[if {} != nil {{
+    s(
+        "iferr",
+        fmt(
+            [[if {} != nil {{
     return {}
 }}
 ]],
-			{
-				i(1),
-				util.same_as(1),
-			}
-		)
-	),
+            {
+                i(1),
+                util.same_as(1),
+            }
+        )
+    ),
 })
