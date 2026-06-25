@@ -22,6 +22,7 @@ return function()
             nix = { "nixfmt" },
             sql = { "sqlfmt", "sleek" },
             just = { "just" },
+            dockerfile = { "dockerfmt" },
         },
         formatters = {},
     })

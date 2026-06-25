@@ -118,6 +118,7 @@ in
         prettierd
         stylua
         typstyle
+        dockerfmt
       ]
       ++ (builtins.map (lsp: lsp.pkg) lspServers);
   };
