@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Reformat_lua_files________________________________";
+  system.nixos.label = "Remove_outdated_check_____________________________";
 }

@@ -16,10 +16,9 @@ return function()
         vim.lsp.enable(server)
     end
 
-    local has_native_hints = vim.fn.has("nvim-0.10") == 1
     clangd_extensions.setup({
         extensions = {
-            autoSetHints = not has_native_hints,
+            autoSetHints = false,
         },
     })
 
