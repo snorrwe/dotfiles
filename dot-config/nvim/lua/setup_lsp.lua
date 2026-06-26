@@ -12,9 +12,7 @@ return function()
         cmd = { "clangd", "--background-index", "--log=verbose", "--clang-tidy" },
     }
 
-    for _, server in ipairs(vim.g.lsp_servers or {}) do
-        vim.lsp.enable(server)
-    end
+    vim.lsp.enable(vim.g.lsp_servers or {})
 
     clangd_extensions.setup({
         extensions = {
