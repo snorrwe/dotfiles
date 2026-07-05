@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-07-02__________________________";
+  system.nixos.label = "Use_leadertl_to_toggle_lines_in_line_with_other_to";
 }

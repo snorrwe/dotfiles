@@ -143,7 +143,7 @@ return {
                         virtual_text = false,
                         virtual_lines = true,
                     })
-                    vim.keymap.set({ "n" }, "<leader>l", lsp_lines.toggle, { desc = "Toggle lsp_lines" })
+                    vim.keymap.set({ "n" }, "<leader>tl", lsp_lines.toggle, { desc = "Toggle lsp_lines" })
                 end,
             },
             "ibhagwan/fzf-lua",
