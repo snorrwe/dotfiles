@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_neovim_plugins_____________________________";
+  system.nixos.label = "Enable_nix-direnv_________________________________";
 }
