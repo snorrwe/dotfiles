@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_nixpkgs_gradia________________________________";
+  system.nixos.label = "Add_just_render-dotfiles__________________________";
 }

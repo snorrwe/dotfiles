@@ -40,3 +40,6 @@ lint:
 # builds the config and sets it as the boot default - but does not switch
 boot *args:
     nh os boot '.' --hostname={{ hostname }} {{ args }}
+
+render-dotfiles out="/tmp/hm-render":
+    nix build .#homeConfigurations.snorrwe.activationPackage -o {{ out }}
