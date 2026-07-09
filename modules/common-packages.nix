@@ -29,6 +29,7 @@ with pkgs;
     swaylock
     cloudflared
     brightnessctl
+    gradia
   ]
 )
 ++ optionals features.enableGamedev (

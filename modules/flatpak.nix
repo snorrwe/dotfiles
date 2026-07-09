@@ -23,7 +23,6 @@ in
       "flathub:app/app.zen_browser.zen//stable"
       "flathub:app/org.chromium.Chromium//stable"
       "flathub:app/dev.restfox.Restfox//stable"
-      "flathub:app/be.alexandervanhee.gradia//stable"
       "flathub:app/org.libreoffice.LibreOffice//stable"
       "flathub:app/org.telegram.desktop//stable"
       "flathub:app/com.github.tchx84.Flatseal//stable"
