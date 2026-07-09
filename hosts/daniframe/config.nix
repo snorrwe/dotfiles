@@ -79,17 +79,6 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  programs.direnv = {
-    package = pkgs.direnv;
-    silent = false;
-    loadInNixShell = true;
-    direnvrcExtra = "";
-    nix-direnv = {
-      enable = true;
-      package = pkgs.nix-direnv;
-    };
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username}.packages =
     with pkgs;

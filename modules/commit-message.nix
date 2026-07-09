@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_just_render-dotfiles__________________________";
+  system.nixos.label = "Remove_redundant_direnv_config____________________";
 }
