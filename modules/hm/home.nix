@@ -82,6 +82,7 @@
     ./symlinks.nix
     ./tmux.nix
     ./distrobox.nix
+    ./direnv.nix
   ];
   programs = {
     # Let Home Manager install and manage itself.

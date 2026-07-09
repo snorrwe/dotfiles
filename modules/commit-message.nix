@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Silence_direnv____________________________________";
+  system.nixos.label = "Factor_out_direnv.nix_____________________________";
 }
