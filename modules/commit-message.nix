@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_nix-direnv_________________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
