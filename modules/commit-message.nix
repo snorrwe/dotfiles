@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_direnv.nix_____________________________";
+  system.nixos.label = "Configure_direnv__________________________________";
 }
