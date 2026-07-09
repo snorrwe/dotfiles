@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_redundant_direnv_config____________________";
+  system.nixos.label = "Silence_direnv____________________________________";
 }
