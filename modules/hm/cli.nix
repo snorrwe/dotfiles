@@ -14,6 +14,8 @@
     fzf = {
       enable = true;
       tmux.enableShellIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
 
     eza = {
@@ -36,6 +38,7 @@
     atuin = {
       enable = true;
       enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
 
     # colorful, syntax highlighted cat alternative
