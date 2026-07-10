@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_nushell_integration_for_fzf_and_atuin______";
+  system.nixos.label = "Fix_history_manager_warning_______________________";
 }

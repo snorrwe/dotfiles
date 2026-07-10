@@ -16,6 +16,8 @@
       tmux.enableShellIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+      historyWidget.command = "";
+      historyWidget.nushell.command = "";
     };
 
     eza = {
