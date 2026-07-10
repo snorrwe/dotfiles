@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Lazy_load_completions_____________________________";
+  system.nixos.label = "Add_markdown_oxide_lsp____________________________";
 }

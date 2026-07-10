@@ -7,6 +7,10 @@ let
 
   lspServers = [
     {
+      pkg = pkgs.markdown-oxide;
+      nvim_name = "markdown_oxide";
+    }
+    {
       pkg = pkgs.bash-language-server;
       nvim_name = "bashls";
     }
