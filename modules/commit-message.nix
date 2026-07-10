@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_history_manager_warning_______________________";
+  system.nixos.label = "Lazy_load_completions_____________________________";
 }

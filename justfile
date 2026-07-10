@@ -30,6 +30,9 @@ install: generate-hardware-config && setup-git-hooks
 clean-zsh-cache:
     rm -rf ~/.cache/zsh-snap
 
+zsh-refresh-completions:
+    zsh -i -c zsh-refresh-completions
+
 setup-git-hooks:
     rm -rf .git/hooks
     ln -s "$PWD/.githooks" ./.git/hooks

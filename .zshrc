@@ -70,12 +70,20 @@ aliases
 unset aliases
 
 function completions() {
-    # znap fpath _kubectl 'kubectl completion  zsh'
-    znap fpath _rustup  'rustup  completions zsh'
-    znap fpath _cargo   'rustup  completions zsh cargo'
-    znap fpath _just   'just --completions zsh'
-    znap fpath _watchexec 'watchexec --completions zsh'
-    znap fpath _atuin 'atuin gen-completions --shell zsh'
+    local sitefuncdir=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
+    # znap fpath has no cache: it reruns the generator + wipes the compdump
+    # on every shell start. Skip regeneration once the file already exists.
+    [[ -f $sitefuncdir/_rustup ]]    || znap fpath _rustup    'rustup  completions zsh'
+    [[ -f $sitefuncdir/_cargo ]]     || znap fpath _cargo     'rustup  completions zsh cargo'
+    [[ -f $sitefuncdir/_just ]]      || znap fpath _just      'just --completions zsh'
+    [[ -f $sitefuncdir/_watchexec ]] || znap fpath _watchexec 'watchexec --completions zsh'
+    [[ -f $sitefuncdir/_atuin ]]     || znap fpath _atuin     'atuin gen-completions --shell zsh'
+}
+
+function zsh-refresh-completions {
+    local sitefuncdir=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
+    rm -f $sitefuncdir/_{rustup,cargo,just,watchexec,atuin}
+    exec zsh
 }
 
 completions
