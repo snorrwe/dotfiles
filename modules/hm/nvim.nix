@@ -88,7 +88,7 @@ let
   ];
 
   formatters = with pkgs; [
-    mdformat
+    rumdl
     prettierd
     stylua
     typstyle
