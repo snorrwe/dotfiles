@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_rust_via_rust-overlay_____________________";
+  system.nixos.label = "Remove_unused_tmux_keybind________________________";
 }

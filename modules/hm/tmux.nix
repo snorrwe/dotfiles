@@ -66,9 +66,7 @@
         bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
         bind -T copy-mode y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
 
-        # some key-binding changes
         bind x kill-pane
-        bind Z previous-layout
 
         set-option -g detach-on-destroy off
 
@@ -80,10 +78,7 @@
         bind-key y neww -c "#{pane_current_path}" yazi
         bind-key b neww -c "#{pane_current_path}" btop
 
-        unbind s
-
         set-option -g renumber-windows on
-
 
         # resize the pane
         bind-key -r J resize-pane -D 3
