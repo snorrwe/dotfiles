@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Migrate_to_rumdl_for_markdown_formatting__________";
+  system.nixos.label = "Factor_out_rust_stuff_____________________________";
 }

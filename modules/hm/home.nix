@@ -29,15 +29,6 @@
       nodejs_22
       curl
 
-      rustup
-      cargo-binstall
-      cargo-nextest
-      cargo-watch
-      cargo-clean-recursive
-      # topgrade deps to manage cargo-installed packages
-      cargo-update
-      cargo-cache
-
       pkg-config
       sccache
       visidata
@@ -83,6 +74,7 @@
     ./tmux.nix
     ./distrobox.nix
     ./direnv.nix
+    ./rust.nix
   ];
   programs = {
     # Let Home Manager install and manage itself.
