@@ -17,6 +17,10 @@
     flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     niri.url = "github:sodiboo/niri-flake";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -26,6 +30,7 @@
       nix-ld,
       nixos-hardware,
       niri,
+      rust-overlay,
       ...
     }@inputs:
     let

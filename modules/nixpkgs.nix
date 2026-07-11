@@ -5,6 +5,9 @@
     config.allowUnfree = true;
     config.permittedInsecurePackages = [
     ];
-    overlays = [ inputs.niri.overlays.niri ];
+    overlays = [
+      inputs.niri.overlays.niri
+      inputs.rust-overlay.overlays.default
+    ];
   };
 }

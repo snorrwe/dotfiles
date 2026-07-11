@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    rustup
+    (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
+
     cargo-binstall
     cargo-nextest
     cargo-watch
