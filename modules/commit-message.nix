@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rename_dot-config_to_dotfiles_____________________";
+  system.nixos.label = "Remove_nvim_0.10_check____________________________";
 }

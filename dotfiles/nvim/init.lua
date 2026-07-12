@@ -73,23 +73,21 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "VimEnter" }, {
     command = "set ft=templ",
 })
 
-if vim.fn.has("nvim-0.10") == 1 then
-    -- enable inlay hints on lsp attach
-    vim.api.nvim_create_augroup("LspAttach_inlayhints", { clear = true })
-    vim.api.nvim_create_autocmd("LspAttach", {
-        group = "LspAttach_inlayhints",
-        callback = function(args)
-            if not (args.data and args.data.client_id) then
-                return
-            end
+-- enable inlay hints on lsp attach
+vim.api.nvim_create_augroup("LspAttach_inlayhints", { clear = true })
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = "LspAttach_inlayhints",
+    callback = function(args)
+        if not (args.data and args.data.client_id) then
+            return
+        end
 
-            local client = vim.lsp.get_client_by_id(args.data.client_id)
-            if client.server_capabilities.inlayHintProvider then
-                vim.lsp.inlay_hint.enable(true)
-            end
-        end,
-    })
-end
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint.enable(true)
+        end
+    end,
+})
 
 -- highlight when yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
