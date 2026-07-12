@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_sapphire_active_background____________________";
+  system.nixos.label = "Fix_browser_icon__________________________________";
 }

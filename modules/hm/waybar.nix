@@ -60,7 +60,7 @@ with lib;
         "niri/workspaces" = {
           "format" = "{value} {icon}";
           "format-icons" = {
-            "browser" = "🌐";
+            "browser" = "";
             "terminal" = "💻";
             "notes" = "󱗖";
             "chat" = "";
