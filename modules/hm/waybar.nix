@@ -10,7 +10,7 @@
 let
   background = "rgba(39, 42, 52, 0.6)";
   color = "#c4c4c4";
-  activeBg = "#89b4fa";
+  activeBg = "#74c7ec";
 
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in

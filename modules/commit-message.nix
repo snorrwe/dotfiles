@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_wallpaper__________________________________";
+  system.nixos.label = "Use_sapphire_active_background____________________";
 }
