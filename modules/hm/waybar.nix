@@ -8,6 +8,10 @@
 }:
 
 let
+  background = "rgba(39, 42, 52, 0.6)";
+  color = "#c4c4c4";
+  activeBg = "#89b4fa";
+
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in
 with lib;
@@ -218,8 +222,8 @@ with lib;
         }
 
         window#waybar {
-          background-color: rgba(39, 42, 52, 0.5);
-          color: #c4c4c4;
+          background-color: ${background};
+          color: ${color};
           transition-property: background-color;
           transition-duration: 0.5s;
         }
@@ -236,19 +240,19 @@ with lib;
         #workspaces button {
           padding: 0 10px;
           background-color: transparent;
-          color: #c4c4c4;
+          color: ${color};
           border-radius: 8px;
           transition: ${betterTransition};
         }
 
         #workspaces button:hover {
-          background-color: #89b4fa;
+          background-color: ${activeBg};
           color: #1e1e2e;
           transition: ${betterTransition};
         }
 
         #workspaces button.active {
-          background-color: #89b4fa;
+          background-color: ${activeBg};
           color: #1e1e2e;
           font-weight: bold;
           min-width: 20px;
@@ -272,8 +276,8 @@ with lib;
         #tray,
         #bluetooth {
           padding: 5px 15px;
-          color: #c4c4c4;
-          background-color: rgba(39, 42, 52, 0.6);
+          color: ${color};
+          background-color: ${background};
         }
 
         #window,
@@ -293,9 +297,9 @@ with lib;
         #disk {
           margin: 0 5px;
           padding: 5px 15px;
-          color: #c4c4c4;
+          color: ${color};
           border-radius: 20px 0 0 20px;
-          background-color: rgba(39, 42, 52, 0.6);
+          background-color: ${background};
         }
 
         #battery.charging {
