@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_configs_into_dot-config______________________";
+  system.nixos.label = "Rename_dot-config_to_dotfiles_____________________";
 }

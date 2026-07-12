@@ -4,7 +4,7 @@ let
   paths = {
     # FIXME: the .dotfiles path probably needs configuring
     dotfiles = "${config.home.homeDirectory}/.dotfiles/";
-    config = "${paths.dotfiles}/dot-config/";
+    config = "${paths.dotfiles}/dotfiles/";
   };
 
   inherit (config.lib.file) mkOutOfStoreSymlink;
@@ -25,12 +25,12 @@ in
     "atuin" = mklinkDir "atuin";
     "nvim" = mklinkDir "nvim";
     ".zshrc" = {
-      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-config/.zshrc";
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/dotfiles/.zshrc";
       target = "../.zshrc";
     };
     "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
     ".visidatarc" = {
-      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-config/.visidatarc";
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/dotfiles/.visidatarc";
       target = "../.visidatarc";
     };
   };
