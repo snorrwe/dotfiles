@@ -108,7 +108,7 @@
     wezterm = {
       enable = features.enableGui;
       enableZshIntegration = true;
-      extraConfig = builtins.readFile ../../.wezterm.lua;
+      extraConfig = builtins.readFile ../../dot-config/.wezterm.lua;
       package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
     };
 

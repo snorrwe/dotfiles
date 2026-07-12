@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_stow_ignore_________________________";
+  system.nixos.label = "Move_configs_into_dot-config______________________";
 }

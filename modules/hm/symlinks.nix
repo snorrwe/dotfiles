@@ -25,12 +25,12 @@ in
     "atuin" = mklinkDir "atuin";
     "nvim" = mklinkDir "nvim";
     ".zshrc" = {
-      source = mkOutOfStoreSymlink "${paths.dotfiles}/.zshrc";
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-config/.zshrc";
       target = "../.zshrc";
     };
     "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
     ".visidatarc" = {
-      source = mkOutOfStoreSymlink "${paths.dotfiles}/.visidatarc";
+      source = mkOutOfStoreSymlink "${paths.dotfiles}/dot-config/.visidatarc";
       target = "../.visidatarc";
     };
   };
