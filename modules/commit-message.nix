@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_terminal_icon______________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
