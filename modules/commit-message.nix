@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_waybar_colors__________________________";
+  system.nixos.label = "Update_wallpaper__________________________________";
 }
