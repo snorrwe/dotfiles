@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_browser_icon__________________________________";
+  system.nixos.label = "Update_terminal_icon______________________________";
 }

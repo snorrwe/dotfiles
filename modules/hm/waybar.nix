@@ -61,7 +61,7 @@ with lib;
           "format" = "{value} {icon}";
           "format-icons" = {
             "browser" = "";
-            "terminal" = "💻";
+            "terminal" = "";
             "notes" = "󱗖";
             "chat" = "";
             "media" = "🎵";
