@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_tmux_keybind________________________";
+  system.nixos.label = "Remove_error_messages_from_tmux-pull-all_for_non-g";
 }
