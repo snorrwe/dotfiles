@@ -79,13 +79,16 @@ let
       pkg = pkgs.yaml-language-server;
       nvim_name = "yamlls";
     }
+    {
+      pkg = pkgs.rust-analyzer;
+      nvim_name = "rust_analyzer";
+    }
   ];
 
   # list of lsp servers to enable in nvim but not installed here
   extraLsp = builtins.map (s: { nvim_name = s; }) [
     "nushell"
     "clangd"
-    "rust_analyzer"
   ];
 
   formatters = with pkgs; [

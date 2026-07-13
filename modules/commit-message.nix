@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Run_Lazy_restore_on_HM_activation.________________";
+  system.nixos.label = "Install_rust-analyzer_____________________________";
 }
