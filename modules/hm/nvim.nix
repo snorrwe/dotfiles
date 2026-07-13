@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  config,
   ...
 }:
 let
@@ -130,4 +131,8 @@ in
       ++ formatters
       ++ (builtins.map (lsp: lsp.pkg) lspServers);
   };
+
+  home.activation.lazyRestore = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${config.programs.neovim.finalPackage}/bin/nvim --headless -c "Lazy! restore" -c ':qa'
+  '';
 }
