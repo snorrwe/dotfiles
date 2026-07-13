@@ -6,81 +6,81 @@
 }:
 let
 
-  lspServers = [
+  lspServers = with pkgs; [
     {
-      pkg = pkgs.markdown-oxide;
+      package = markdown-oxide;
       nvim_name = "markdown_oxide";
     }
     {
-      pkg = pkgs.bash-language-server;
+      package = bash-language-server;
       nvim_name = "bashls";
     }
     {
-      pkg = pkgs.buf;
+      package = buf;
       nvim_name = "buf_ls";
     }
     {
-      pkg = pkgs.gopls;
+      package = gopls;
       nvim_name = "gopls";
     }
     {
-      pkg = pkgs.just-lsp;
+      package = just-lsp;
       nvim_name = "just";
     }
     {
-      pkg = pkgs.lua-language-server;
+      package = lua-language-server;
       nvim_name = "lua_ls";
     }
     {
-      pkg = pkgs.neocmakelsp;
+      package = neocmakelsp;
       nvim_name = "neocmake";
     }
     {
-      pkg = pkgs.nil;
+      package = nil;
       nvim_name = "nil_ls";
     }
     {
-      pkg = pkgs.ruff;
+      package = ruff;
       nvim_name = "ruff";
     }
     {
-      pkg = pkgs.svelte-language-server;
+      package = svelte-language-server;
       nvim_name = "svelte";
     }
     {
-      pkg = pkgs.tailwindcss-language-server;
+      package = tailwindcss-language-server;
       nvim_name = "tailwindcss";
     }
     {
-      pkg = pkgs.taplo;
+      package = taplo;
       nvim_name = "taplo";
     }
     {
-      pkg = pkgs.templ;
+      package = templ;
       nvim_name = "templ";
     }
     {
-      pkg = pkgs.tinymist;
+      package = tinymist;
       nvim_name = "tinymist";
     }
     {
-      pkg = pkgs.ty;
+      package = ty;
       nvim_name = "ty";
     }
     {
-      pkg = pkgs.typescript-language-server;
+      package = typescript-language-server;
       nvim_name = "ts_ls";
     }
     {
-      pkg = pkgs.wgsl-analyzer;
+      package = wgsl-analyzer;
       nvim_name = "wgsl_analyzer";
     }
     {
-      pkg = pkgs.yaml-language-server;
+      package = yaml-language-server;
       nvim_name = "yamlls";
     }
     {
-      pkg = pkgs.rust-analyzer;
+      package = rust-analyzer;
       nvim_name = "rust_analyzer";
     }
   ];
@@ -132,7 +132,7 @@ in
         gcc
       ]
       ++ formatters
-      ++ (builtins.map (lsp: lsp.pkg) lspServers);
+      ++ (builtins.map (lsp: lsp.package) lspServers);
   };
 
   home.activation.lazyRestore = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

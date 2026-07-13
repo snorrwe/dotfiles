@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_rust-analyzer_____________________________";
+  system.nixos.label = "Refactor__________________________________________";
 }
