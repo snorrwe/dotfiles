@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Refactor__________________________________________";
+  system.nixos.label = "Update_lspconfig__________________________________";
 }
