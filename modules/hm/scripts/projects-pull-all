@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# pull all repos open in the projects directory
+# ensures one pull per repo
+
+set -ueo pipefail
+
+projects_dir=${XDG_PROJECTS_DIR:-$HOME/Projects}
+
+fd . "$projects_dir" --type d |
+parallel 'cd {} && git rev-parse --is-inside-work-tree > /dev/null 2>&1 && git rev-parse --show-toplevel' |
+sort -n | uniq |
+parallel 'cd {} && pwd && git pull --autostash --ff-only'
