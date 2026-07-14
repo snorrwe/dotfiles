@@ -136,6 +136,6 @@ in
   };
 
   home.activation.lazyRestore = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${config.programs.neovim.finalPackage}/bin/nvim --headless -c "Lazy! restore" -c ':qa'
+    ${config.programs.neovim.finalPackage}/bin/nvim --headless -c "Lazy! restore" -c "Lazy! clean" -c ':qa'
   '';
 }
