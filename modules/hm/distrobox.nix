@@ -28,6 +28,7 @@
       }
       {
         fedora = {
+          additional_packages = "python3 node";
           image = "registry.fedoraproject.org/fedora-toolbox:latest";
           home = "~/.local/share/distrobox/fedora";
           nvidia = true;
