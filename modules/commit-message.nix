@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-07-15__________________________";
+  system.nixos.label = "Update_nvim-web-devicons__________________________";
 }
