@@ -80,13 +80,14 @@ input {
 }
 
 workspace "browser" 
-workspace "terminal" {
-    open-on-output "DP-3"
-}
 workspace "notes" 
-workspace "chat" 
+workspace "chat"
+
+workspace "terminal" {
+    open-on-output "HDMI-A-4"
+}
 workspace "media" {
-    open-on-output "DP-3"
+    open-on-output "HDMI-A-4"
 }
 
 // You can configure outputs by their name, which you can find
@@ -128,7 +129,7 @@ output "DP-3" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080"
+    mode "2560x1440@143.969"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -147,6 +148,7 @@ output "DP-3" {
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
     // position x=1280 y=0
+    position x=2560 y=0
     backdrop-color "#24273a"
 }
 output "HDMI-A-4" {
@@ -159,7 +161,7 @@ output "HDMI-A-4" {
     // for the resolution.
     // If the mode is omitted altogether or is invalid, niri will pick one automatically.
     // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    mode "1920x1080"
+    mode "2560x1440@143.969"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
     scale 1
@@ -177,7 +179,6 @@ output "HDMI-A-4" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // If the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    // position x=1920 y=0
     backdrop-color "#24273a"
 }
 
