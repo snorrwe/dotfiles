@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim-web-devicons__________________________";
+  system.nixos.label = "Add_dr_alias______________________________________";
 }
