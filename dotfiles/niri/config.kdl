@@ -79,9 +79,15 @@ input {
     focus-follows-mouse max-scroll-amount="0%"
 }
 
-workspace "browser" 
-workspace "notes" 
-workspace "chat"
+workspace "browser" {
+    open-on-output "DP-4"
+}
+workspace "notes" {
+    open-on-output "DP-4"
+}
+workspace "chat"{
+    open-on-output "DP-4"
+}
 
 workspace "terminal" {
     open-on-output "HDMI-A-4"
@@ -119,7 +125,7 @@ output "eDP-1" {
 }
 
 // danipc
-output "DP-3" {
+output "DP-4" {
     // Uncomment this line to disable this output.
     // off
 
