@@ -1,4 +1,6 @@
-# Setup
+# Dotfile
+
+## Setup
 
 ```sh
 git clone https://github.com/snorrwe/dotfiles $HOME/.dotfiles --branch main
@@ -14,7 +16,7 @@ In `configuration.nix`
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
-## Updating
+### Updating
 
 My usual workflow is
 
@@ -34,7 +36,7 @@ My usual workflow is
 
 The reason being NVIDIA driver updates. If updating flatpaks and the system in the same session, sometimes the NVIDIA drivers get out of sync and I find that some programs do not tolerate that well.
 
-# Setup on non-Nixos system
+## Setup on non-Nixos system
 
 - Install Nix
 - Configure Nix
@@ -46,3 +48,19 @@ The reason being NVIDIA driver updates. If updating flatpaks and the system in t
     ```
 
 - Apply the configuration `./install-hm.sh`
+
+## Setup on macOS
+
+Uses plain home-manager (no nix-darwin / system-level management).
+
+- Install Nix (e.g. via the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer) or the official installer)
+- Configure Nix
+
+    ```ini
+    # /etc/nix/nix.conf
+    experimental-features = nix-command flakes
+    ```
+
+- Clone the repo as above
+- First-time install: `./install-darwin.sh`
+- After that, updates go through `just darwin-apply`

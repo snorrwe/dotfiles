@@ -37,6 +37,7 @@
       system = "x86_64-linux";
       username = "snorrwe";
       pkgs = import nixpkgs { inherit system; };
+      pkgsDarwin = import nixpkgs { system = "aarch64-darwin"; };
     in
     {
       nixosConfigurations = builtins.listToAttrs (
@@ -155,6 +156,20 @@
             "dkiss"
             "snorrwe"
           ]
-      );
+      )
+      // {
+        "dkiss@danimac" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsDarwin;
+          extraSpecialArgs = {
+            inherit inputs;
+            username = "dkiss";
+            host = "danimac";
+          };
+          modules = [
+            ./modules/nixpkgs.nix
+            ./modules/hm/home-darwin.nix
+          ];
+        };
+      };
     };
 }

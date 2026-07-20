@@ -19,12 +19,20 @@ apply *args:
 hm-apply *args:
     nh home switch . {{ args }}
 
+# apply home-manager config on macOS, targets the config explicitly
+# (no need to rename the Mac to match)
+darwin-apply *args:
+    nh home switch . -c dkiss@danimac {{ args }}
+
 generate-hardware-config:
     mkdir -p "./hosts/{{ hostname }}"
     sudo nixos-generate-config --show-hardware-config > "./hosts/{{ hostname }}/hardware.nix"
 
 install: generate-hardware-config && setup-git-hooks
     just apply {{ hostname }}
+
+install-darwin: setup-git-hooks
+    just darwin-apply
 
 # clears zsh-snap eval cache use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
 clean-zsh-cache:

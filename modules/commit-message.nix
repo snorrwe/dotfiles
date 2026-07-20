@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-07-19__________________________";
+  system.nixos.label = "Add_Macos_home-manager_config_____________________";
 }
