@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_Macos_home-manager_config_____________________";
+  system.nixos.label = "Fix_devenv_check__________________________________";
 }

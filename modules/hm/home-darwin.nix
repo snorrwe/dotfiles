@@ -48,6 +48,7 @@
     ./direnv.nix
     ./yazi.nix
     ./symlinks.nix
+    ./setup-git-repos.nix
   ];
 
   programs.home-manager.enable = true;

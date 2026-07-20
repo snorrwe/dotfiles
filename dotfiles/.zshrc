@@ -140,6 +140,6 @@ if type git > /dev/null ; then
     alias gd='git diff'
 fi
 
-if type git > /dev/null ; then
+if type devenv > /dev/null ; then
     eval "$(devenv hook zsh)"
 fi
