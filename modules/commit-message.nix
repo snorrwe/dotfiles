@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_homeDirectory_base_path_______________________";
+  system.nixos.label = "Add_obsidian-link-notes_script____________________";
 }

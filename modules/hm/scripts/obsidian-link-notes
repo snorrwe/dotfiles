@@ -1,0 +1,34 @@
+#!/usr/bin/env nu
+
+
+let obsidian = "md.obsidian.Obsidian"
+
+def process_obsidian_output [output_base] : list<string> -> table<absolute: string, relative: string> {
+  let files = lines | str trim | path expand | wrap absolute
+  $files | upsert relative {|row| ($row.absolute | path relative-to $output_base ) }
+}
+
+# Takes a note path and links the note and all notes it links to in the out directory
+# If out is omitted, then the current working directory is used
+def main [file out?: string notes_dir:string = "~/notes"]: nothing -> nothing {
+  let foo = null;
+  let output_base  = match $out {
+    null => pwd
+    _ => $out
+  }
+  let dir = $file | path dirname 
+
+  cd ( $notes_dir | path expand -s ) 
+  let filepath = $file | path expand -s | path relative-to $notes_dir;
+  let backlinks = run-external $obsidian backlinks $"path=($filepath)" | process_obsidian_output $notes_dir
+  let fwlinks = run-external $obsidian links $"path=($filepath)" | process_obsidian_output $notes_dir
+
+  $backlinks | append $fwlinks | uniq | each {|row|
+    mkdir $"($output_base)/($row.relative | path dirname )"
+    run-external ln "-sf" $row.absolute $"($output_base | path join $row.relative)"
+  }
+  let d = $dir | path relative-to $notes_dir
+  mkdir $"($output_base)/($d)/"
+  run-external ln "-sf" ($file | path expand) $"($output_base)/($d)/"
+  null;
+}
