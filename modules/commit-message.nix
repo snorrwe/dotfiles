@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_obsidian-link-notes_script____________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
