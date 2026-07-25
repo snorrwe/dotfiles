@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_check_________________________________________";
+  system.nixos.label = "Only_update_tasks_________________________________";
 }
