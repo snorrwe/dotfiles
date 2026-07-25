@@ -17,5 +17,8 @@
       builtins.readFile ./scripts/wezterm-open-tailscale-ssh
     ))
     (writeScriptBin "obsidian-link-notes" (builtins.readFile ./scripts/obsidian-link-notes))
+    (writeScriptBin "obsidian-maintain-subtask-contexts" (
+      builtins.readFile ./scripts/obsidian-maintain-subtask-contexts
+    ))
   ];
 }

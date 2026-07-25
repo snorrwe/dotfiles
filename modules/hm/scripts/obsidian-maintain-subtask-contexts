@@ -1,0 +1,22 @@
+#!/usr/bin/env nu
+
+let obsidian = "md.obsidian.Obsidian"
+
+# Update file contexts based on its parents' contexts
+# Not recursive, only considers immediate parents
+def main [file notes_dir:string = "~/notes"] {
+  print $"Syncing file contexts ($file)"
+  cd $notes_dir
+  let f = $file | path relative-to $notes_dir
+  let projects = run-external $obsidian property:read name=projects $"path=($f)" | lines | parse --regex '\[\[(?P<link>[\w.-/\s]+)\|?.*\]\]'
+  let file_contexts = run-external $obsidian property:read name=contexts $"path=($f)" | lines | sort
+  let contexts = $projects.link | each {|p|
+    run-external $obsidian property:read name=contexts $"file=($p)" | lines
+  } | flatten | sort | uniq
+
+  # if parents have no contexts, then keep the file's contexts
+  # do not overwrite if they're same, because it might trigger file watchers unnecesserily
+  if (($contexts | length) != 0) and ($file_contexts != $contexts) {
+    run-external $obsidian property:set name=contexts $"path=($f)" $"value=($contexts | to json)" type=list
+  }
+}
