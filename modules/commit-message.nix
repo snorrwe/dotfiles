@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_obsidian-maintain-subtask-contexts____________";
+  system.nixos.label = "Create_Obsidian_TaskNotes_context_maintenance_serv";
 }
