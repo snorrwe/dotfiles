@@ -2,7 +2,7 @@
 
 let obsidian = "md.obsidian.Obsidian"
 
-# TODO: resolve outgoing links from the file, and recursively update child tasks
+# TODO: resolve backlinks from the file, and recursively update child tasks
 
 # Update file contexts based on its parents' contexts
 # Not recursive, only considers immediate parents
