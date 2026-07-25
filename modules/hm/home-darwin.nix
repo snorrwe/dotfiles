@@ -9,7 +9,6 @@
     homeDirectory = "/Users/${username}";
     stateVersion = "26.05";
     packages = with pkgs; [
-      parallel
       unzip
       zip
       dust # nicer du alternative
@@ -49,6 +48,7 @@
     ./yazi.nix
     ./symlinks.nix
     ./setup-git-repos.nix
+    ./parallel.nix
   ];
 
   programs.home-manager.enable = true;

@@ -12,7 +12,6 @@
     homeDirectory = "/home/${username}";
     stateVersion = "26.05";
     packages = with pkgs; [
-      parallel
       unzip
       zip
       dust # nicer du alternative
@@ -53,6 +52,7 @@
   };
 
   imports = [
+    ./parallel.nix
     ./rice.nix
     ./dunst.nix
     ./git.nix
