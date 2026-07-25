@@ -2,6 +2,18 @@
 
 let obsidian = "md.obsidian.Obsidian"
 
+def read_contexts [file] {
+  let file_contexts = run-external $obsidian property:read name=contexts $"path=($file)" | lines | sort
+  try {
+    if ($file_contexts | str starts-with "Error:") {
+      return []
+    }
+  } catch {
+    return []
+  }
+  return $file_contexts
+}
+
 # Update file contexts based on its parents' contexts
 # Not recursive, only considers immediate parents
 def main [file notes_dir:string = "~/notes"] {
@@ -19,15 +31,18 @@ def run_file [file depth: int] {
 
   print $"Syncing file contexts ($file)"
   let projects = run-external $obsidian property:read name=projects $"path=($file)" | lines | parse --regex '\[\[(?P<link>[\w.-/\s]+)\|?.*\]\]'
-  let file_contexts = run-external $obsidian property:read name=contexts $"path=($file)" | lines | sort
+  let file_contexts = read_contexts $file
   let contexts = $projects.link | each {|p|
-    run-external $obsidian property:read name=contexts $"file=($p)" | lines
+    read_contexts $p
   } | flatten | append $file_contexts | sort | uniq
 
   # if parents have no contexts, then keep the file's contexts
   # do not overwrite if they're same, because it might trigger file watchers unnecesserily
   if (($contexts | length) != 0) and ($file_contexts != $contexts) {
+    print $"Updating context of file ($file) to ($contexts)"
     run-external $obsidian property:set name=contexts $"path=($file)" $"value=($contexts | to json)" type=list
+  } else {
+    return
   }
 
   # recursively update children
