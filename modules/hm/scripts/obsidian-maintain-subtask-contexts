@@ -2,23 +2,40 @@
 
 let obsidian = "md.obsidian.Obsidian"
 
-# TODO: resolve backlinks from the file, and recursively update child tasks
-
 # Update file contexts based on its parents' contexts
 # Not recursive, only considers immediate parents
 def main [file notes_dir:string = "~/notes"] {
-  print $"Syncing file contexts ($file)"
   cd $notes_dir
   let f = $file | path relative-to $notes_dir
-  let projects = run-external $obsidian property:read name=projects $"path=($f)" | lines | parse --regex '\[\[(?P<link>[\w.-/\s]+)\|?.*\]\]'
-  let file_contexts = run-external $obsidian property:read name=contexts $"path=($f)" | lines | sort
+  run_file $f 0
+}
+
+def run_file [file depth: int] {
+  if $depth > 10 {
+    # stop recursion. it should stop naturally even if the notes link each-other
+    # but let's make sure in case there are multiple parallel updates that trigger each-other
+    return
+  }
+
+  print $"Syncing file contexts ($file)"
+  let projects = run-external $obsidian property:read name=projects $"path=($file)" | lines | parse --regex '\[\[(?P<link>[\w.-/\s]+)\|?.*\]\]'
+  let file_contexts = run-external $obsidian property:read name=contexts $"path=($file)" | lines | sort
   let contexts = $projects.link | each {|p|
     run-external $obsidian property:read name=contexts $"file=($p)" | lines
-  } | flatten | sort | uniq
+  } | flatten | append $file_contexts | sort | uniq
 
   # if parents have no contexts, then keep the file's contexts
   # do not overwrite if they're same, because it might trigger file watchers unnecesserily
   if (($contexts | length) != 0) and ($file_contexts != $contexts) {
-    run-external $obsidian property:set name=contexts $"path=($f)" $"value=($contexts | to json)" type=list
+    run-external $obsidian property:set name=contexts $"path=($file)" $"value=($contexts | to json)" type=list
   }
+
+  # recursively update children
+  run-external $obsidian backlinks $"path=($file)" format=json | from json
+   | par-each {|l|
+    # if there are no backlinks obsidian outputs a 1 line string which will make the following line fail
+    try { 
+      run_file $l.file ($depth + 1)
+    } 
+  };
 }
