@@ -38,7 +38,7 @@ def run_file [file depth: int] {
 
   # if parents have no contexts, then keep the file's contexts
   # do not overwrite if they're same, because it might trigger file watchers unnecesserily
-  if (($contexts | length) != 0) and ($file_contexts != $contexts) {
+  if $file_contexts != $contexts {
     print $"Updating context of file ($file) to ($contexts)"
     run-external $obsidian property:set name=contexts $"path=($file)" $"value=($contexts | to json)" type=list
   } else {
