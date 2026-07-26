@@ -5,7 +5,7 @@ let obsidian = "md.obsidian.Obsidian"
 def read_contexts [file] {
   let file_contexts = run-external $obsidian property:read name=contexts $"path=($file)" | lines | sort
   try {
-    if ($file_contexts | any {|| $in | str starts-with "Error:"}) {
+    if ($file_contexts | any {|| ($in | str starts-with "Error:") or ($in == "(empty)") }) {
       return []
     }
   } catch {
@@ -28,6 +28,8 @@ def main [file notes_dir:string = "~/notes"] {
   cd $notes_dir
   let f = $file | path relative-to $notes_dir
   run_file $f 0
+
+  null
 }
 
 def run_file [file depth: int] {
@@ -66,4 +68,5 @@ def run_file [file depth: int] {
       run_file $l.file ($depth + 1)
     } 
   };
+  null
 }
