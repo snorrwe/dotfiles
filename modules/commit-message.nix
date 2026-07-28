@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-07-28__________________________";
+  system.nixos.label = "Remove_polars_from_nushell________________________";
 }

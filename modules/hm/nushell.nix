@@ -1,8 +1,5 @@
 {
   pkgs,
-  username,
-  host,
-  inputs,
   ...
 }:
 {
@@ -10,7 +7,6 @@
     enable = true;
     plugins = with pkgs; [
       nushellPlugins.formats
-      nushellPlugins.polars
     ];
   };
 }
