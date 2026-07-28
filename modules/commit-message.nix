@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Allow_configuring_the_dotfiles_checkout_dir_via_op";
+  system.nixos.label = "System_update_2026-07-28__________________________";
 }
