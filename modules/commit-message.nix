@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_deprecationwarning____________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
