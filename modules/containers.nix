@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
 
   virtualisation = {
     docker = {
@@ -14,10 +13,8 @@
     podman = {
       enable = true;
     };
-    containers = {
-      registries = {
-        insecure = [ "docker.local:5000" ];
-      };
+    containers.registries.settings = {
+      insecure = [ "docker.local:5000" ];
     };
   };
 }
