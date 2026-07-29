@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_polars_from_nushell________________________";
+  system.nixos.label = "Fix_pwd___________________________________________";
 }

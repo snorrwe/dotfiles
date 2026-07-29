@@ -24,9 +24,15 @@ def is_task [file]: any -> bool {
 
 # Update file contexts based on its parents' contexts
 # Not recursive, only considers immediate parents
-def main [file notes_dir:string = "~/notes"] {
-  cd $notes_dir
-  let f = $file | path relative-to $notes_dir
+# If notes_dir is omitted $HOME/notes is used
+def main [file notes_dir?:string] {
+  let pwd = if ($notes_dir | is-empty) { 
+    $env.HOME | path join "notes"
+  } else {
+    $notes_dir 
+  };
+  cd $pwd
+  let f = $file | path relative-to $pwd
   run_file $f 0
 
   null
