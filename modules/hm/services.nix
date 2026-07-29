@@ -11,9 +11,7 @@ in
 {
   systemd.user.services.maintain-tasknotes-contexts = {
     Unit = {
-      Description = ''
-        Maintains Obsidian TaskNotes context properties in project hierarchies
-      '';
+      Description = "Maintain Obsidian TaskNotes context properties in project hierarchies";
     };
     Service = {
       ExecStart = pkgs.writeShellScript "maintain-tasknotes-contexts" ''
