@@ -75,7 +75,7 @@
     ./distrobox.nix
     ./direnv.nix
     ./rust.nix
-    ./services.nix
+    ./tasknotes.nix
   ];
   programs = {
     # Let Home Manager install and manage itself.
