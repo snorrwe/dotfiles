@@ -1,8 +1,5 @@
 {
   pkgs,
-  username,
-  host,
-  inputs,
   features,
   ...
 }:

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Read_frontmatter_properties_directly_instead_of_us";
+  system.nixos.label = "Use_dotbar_in_tmux_instead_of_catppuccin__________";
 }

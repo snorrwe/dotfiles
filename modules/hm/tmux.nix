@@ -17,17 +17,21 @@
       baseIndex = 1;
       plugins = with pkgs.tmuxPlugins; [
         {
-          plugin = catppuccin;
+          plugin = dotbar;
           extraConfig = ''
-            # catppucin config
-            set -ogq @catppucin_flavour 'mocha'
-            set -ogq @catppuccin_window_status_style "slanted"
-            set -ogq @catppuccin_window_text " #W"
-            set -ogq @catppuccin_window_current_text " #W #F"
-            set -ogq @catppuccin_window_flags "icon"
-            set -g status-right "#{E:pane_current_path} #{E:@catppuccin_status_session}"
-            set -g status-left ""
+            set -g @tmux-dotbar-position top
+            set -g @tmux-dotbar-bold-status false
+            set -g @tmux-dotbar-bold-current-window true
 
+            set -g @tmux-dotbar-bg "#1e1e2e"
+            set -g @tmux-dotbar-fg "#585b70"
+            set -g @tmux-dotbar-fg-current "#cdd6f4"
+            set -g @tmux-dotbar-fg-session "#9399b2"
+            set -g @tmux-dotbar-fg-prefix "#cba6f7"
+
+            set -g @tmux-dotbar-session-position "right"
+            set -g @tmux-dotbar-justify "left"
+            set -g @tmux-dotbar-window-status-format " #{window_index} #{window_name} "
           '';
         }
         vim-tmux-navigator
