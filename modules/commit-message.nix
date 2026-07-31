@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_zoxide_excludes_________________________";
+  system.nixos.label = "Remove_parallelism_from_tasknotes_updates_________";
 }
