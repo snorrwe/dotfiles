@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_parallelism_from_tasknotes_updates_________";
+  system.nixos.label = "fmt_______________________________________________";
 }
