@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rename_tasknotes_service_module___________________";
+  system.nixos.label = "Configure_zoxide_excludes_________________________";
 }

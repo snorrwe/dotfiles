@@ -1,16 +1,9 @@
-{
-  pkgs,
-  lib,
-  username,
-  ...
-}:
-{
+_: {
+  imports = [
+    ./cli/zoxide.nix
+  ];
+
   programs = {
-    zoxide = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
     fzf = {
       enable = true;
       tmux.enableShellIntegration = true;
