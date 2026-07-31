@@ -16,9 +16,10 @@ def read_contexts [file] {
 
 def is_task [file]: any -> bool {
   try {
-    run-external $obsidian tags format=json $"path=($file)" | from json | get tag | any {|| $in == "#task" or $in == "#project"} 
+    open $file | split list "---" | get "content" | flatten | get 0 | from yaml | get tags |
+    any {|| $in == "task" or $in == "project"}
   } catch {|err|
-    print -e $"is_task: obsidian CLI failed for ($file): ($err)"
+    print -e $"is_task: failed to get tags for ($file): ($err)"
     return false
   }
 }

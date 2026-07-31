@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Log_errors_in_obsidian-maintain-subtask-contexts__";
+  system.nixos.label = "Perform_project_check_using_the_markdown_frontmatt";
 }
