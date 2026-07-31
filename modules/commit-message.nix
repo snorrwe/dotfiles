@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Perform_project_check_using_the_markdown_frontmatt";
+  system.nixos.label = "Read_frontmatter_properties_directly_instead_of_us";
 }

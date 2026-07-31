@@ -2,8 +2,23 @@
 
 let obsidian = "md.obsidian.Obsidian"
 
+def frontmatter [] {
+    split list "---" | get "content" | flatten | get 0 | from yaml
+}
+
+# FIXME: there's got to be a better way
+def optional_list [] {
+  do {
+    if ($in | is-empty) {
+      []
+    } else {
+      $in
+    }
+  }
+}
+
 def read_contexts [file] {
-  let file_contexts = run-external $obsidian property:read name=contexts $"path=($file)" | lines | sort
+  let file_contexts = open $file | frontmatter | get -o contexts | optional_list | sort
   try {
     if ($file_contexts | any {|| ($in | str starts-with "Error:") or ($in == "(empty)") }) {
       return []
@@ -16,8 +31,7 @@ def read_contexts [file] {
 
 def is_task [file]: any -> bool {
   try {
-    open $file | split list "---" | get "content" | flatten | get 0 | from yaml | get tags |
-    any {|| $in == "task" or $in == "project"}
+    open $file | frontmatter | get tags | any {|| $in == "task" or $in == "project"}
   } catch {|err|
     print -e $"is_task: failed to get tags for ($file): ($err)"
     return false
@@ -53,7 +67,7 @@ def run_file [file depth: int] {
   }
 
   print $"Syncing file contexts ($file)"
-  let projects = run-external $obsidian property:read name=projects $"path=($file)" | lines | parse --regex '\[\[(?P<link>[\w.-/\s]+)\|?.*\]\]'
+  let projects = open $file | frontmatter | get projects | optional_list | parse --regex '\[\[(?P<link>[\w.-/\s]+)\|?.*\]\]'
   print $"Projects: ($projects)"
   let file_contexts = read_contexts $file
   let contexts = $projects.link | each {|p|
