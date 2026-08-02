@@ -398,6 +398,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^obsidian$"#
+    match app-id=r#"^md.Obsidian$"#
     match app-id=r#"^org.mozilla.thunderbird_esr$"#
     open-on-workspace "notes"
     opacity 1.0
