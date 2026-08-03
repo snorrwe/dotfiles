@@ -5,50 +5,56 @@
   features,
   ...
 }:
+let
+  inherit (pkgs.lib.lists) optionals;
+in
 {
   home = {
     # Home Manager Settings
     username = "${username}";
     homeDirectory = "/home/${username}";
     stateVersion = "26.05";
-    packages = with pkgs; [
-      unzip
-      zip
-      dust # nicer du alternative
-      go
-      just
-      watchexec
-      ninja
-      starship # for my shell prompt
-      cmake
-      gzip
-      diffutils
-      github-cli
-      git-lfs
-      nodejs_22
-      curl
+    packages =
+      with pkgs;
+      [
+        unzip
+        zip
+        dust # nicer du alternative
+        go
+        just
+        watchexec
+        ninja
+        starship # for my shell prompt
+        cmake
+        gzip
+        diffutils
+        github-cli
+        git-lfs
+        nodejs_22
+        curl
 
-      pkg-config
-      sccache
-      visidata
-      units
-      killall
-      podman-compose
-      docker-compose
-      devenv
+        pkg-config
+        sccache
+        visidata
+        units
+        killall
+        podman-compose
+        docker-compose
+        devenv
 
-      clang
-      clang-tools
+        clang
+        clang-tools
 
-      flamegraph
+        flamegraph
 
-      tokei # count LOC
-      dysk # show disk usage, nicer default format than df
+        tokei # count LOC
+        dysk # show disk usage, nicer default format than df
 
-      hyperfine # cli benchmarking tool
-      sshfs
-      python3
-    ];
+        hyperfine # cli benchmarking tool
+        sshfs
+        python3
+      ]
+      ++ (optionals features.enableGui [ libnotify ]);
   };
 
   imports = [

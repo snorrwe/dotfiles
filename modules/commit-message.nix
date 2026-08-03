@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_--color-failed_to_pull_scripts________________";
+  system.nixos.label = "Add_libnotify_to_GUI_home_________________________";
 }
