@@ -14,6 +14,7 @@
     containers = lib.attrsets.mergeAttrsList [
       {
         ubuntu24 = {
+          additional_packages = "python3 node libnotify";
           image = "ubuntu:24.04";
           home = "~/.local/share/distrobox/ubuntu24";
           nvidia = true;
@@ -28,7 +29,7 @@
       }
       {
         fedora = {
-          additional_packages = "python3 node";
+          additional_packages = "python3 node libnotify";
           image = "registry.fedoraproject.org/fedora-toolbox:latest";
           home = "~/.local/share/distrobox/fedora";
           nvidia = true;
