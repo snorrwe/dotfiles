@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_libnotify_to_boxes____________________________";
+  system.nixos.label = "System_update_2026-08-03__________________________";
 }

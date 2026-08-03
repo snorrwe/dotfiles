@@ -4,11 +4,8 @@
   ...
 }:
 let
-  theme = "Nightfox-Teal-Dark";
-  theme_pkg = pkgs.nightfox-gtk-theme.override {
-    colorVariants = [ "dark" ];
-    themeVariants = [ "teal" ];
-  };
+  theme = "Juno-mirage";
+  theme_pkg = pkgs.juno-theme;
   cursor_package = pkgs.afterglow-cursors-recolored;
   cursor_name = "Afterglow-Recolored-Catppuccin-Macchiato";
 in
