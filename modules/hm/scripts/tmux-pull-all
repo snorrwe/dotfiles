@@ -9,4 +9,4 @@ while read -r dir ; do
     if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
         git rev-parse --show-toplevel
     fi
-done | sort -n | uniq | parallel 'cd {} && pwd && git pull --autostash'
+done | sort -n | uniq | parallel --color-failed 'cd {} && pwd && git pull --autostash'

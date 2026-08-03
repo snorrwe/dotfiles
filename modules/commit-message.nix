@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_obsidian_window-rule__________________________";
+  system.nixos.label = "Add_--color-failed_to_pull_scripts________________";
 }
