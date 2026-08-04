@@ -40,7 +40,6 @@ in
         killall
         podman-compose
         docker-compose
-        devenv
 
         clang
         clang-tools
@@ -82,6 +81,7 @@ in
     ./direnv.nix
     ./rust.nix
     ./tasknotes.nix
+    ./devenv.nix
   ];
   programs = {
     # Let Home Manager install and manage itself.

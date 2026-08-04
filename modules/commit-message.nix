@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_packages______________________________";
+  system.nixos.label = "Config_devenv_____________________________________";
 }
