@@ -1,6 +1,17 @@
 _: {
   imports = [
     ./cli/zoxide.nix
+    ./cli/git.nix
+    ./cli/fastfetch.nix
+    ./cli/nushell.nix
+    ./cli/nvim.nix
+    ./cli/yazi.nix
+    ./cli/nh.nix
+    ./cli/btop.nix
+    ./cli/tmux.nix
+    ./cli/direnv.nix
+    ./cli/devenv.nix
+    ./cli/rust.nix
   ];
 
   programs = {

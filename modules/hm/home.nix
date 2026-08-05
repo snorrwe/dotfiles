@@ -60,28 +60,17 @@ in
     ./parallel.nix
     ./rice.nix
     ./dunst.nix
-    ./git.nix
     ./mime.nix
-    ./fastfetch.nix
-    ./nushell.nix
     ./cli.nix
     ./lockscreen.nix
     ./setup-git-repos.nix
-    ./nvim.nix
     ./waybar.nix
     ./wlogout.nix
     ./fuzzel.nix
-    ./yazi.nix
     ./scripts.nix
-    ./nh.nix
-    ./btop.nix
     ./symlinks.nix
-    ./tmux.nix
     ./distrobox.nix
-    ./direnv.nix
-    ./rust.nix
     ./tasknotes.nix
-    ./devenv.nix
   ];
   programs = {
     # Let Home Manager install and manage itself.
