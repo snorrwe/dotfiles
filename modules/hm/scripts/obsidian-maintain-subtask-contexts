@@ -83,12 +83,15 @@ def run_file [file depth: int] {
   }
 
   # recursively update children
-  run-external $obsidian backlinks $"path=($file)" format=json | from json
-   | each {|l|
-    # if there are no backlinks obsidian outputs a 1 line string which will make the following line fail
-    try { 
-      run_file $l.file ($depth + 1)
-    } 
-  };
+  try {
+    run-external $obsidian backlinks $"path=($file)" format=json | from json
+     | each {|l|
+      try {
+        run_file $l.file ($depth + 1)
+      }
+    };
+  } catch {|err|
+    print -e $"Error getting backlinks for ($file): ($err)"
+  }
   null
 }
