@@ -67,7 +67,7 @@ def run_file [file depth: int] {
   }
 
   print $"Syncing file contexts ($file)"
-  let projects = open $file | frontmatter | get projects | optional_list | parse --regex '\[\[(?P<link>[-\w./\s]+)(\|.*)?\]\]'
+  let projects = open $file | frontmatter | get -o projects | optional_list | parse --regex '\[\[(?P<link>[-\w./\s]+)(\|.*)?\]\]'
   print $"Projects: ($projects)"
   let file_contexts = read_contexts $file
   let contexts = $projects.link | each {|p|
