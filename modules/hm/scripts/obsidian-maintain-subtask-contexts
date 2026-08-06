@@ -49,20 +49,18 @@ def main [file notes_dir?:string] {
   };
   cd $pwd
   let f = $file | path relative-to $pwd
-  run_file $f 0
+  run_file $f []
 
   null
 }
 
-def run_file [file depth: int] {
-  if not (is_task $file) {
-    print $"($file) is not a task"
+def run_file [file seen: list< path>] {
+  if ($seen | any {|r| $r == ($file | path expand) }) {
     return
   }
-  if $depth > 10 {
-    # stop recursion. it should stop naturally even if the notes link each-other
-    # but let's make sure in case there are multiple parallel updates that trigger each-other
-    print "max depth reached"
+  let seen = $seen | append ($file | path expand)
+  if not (is_task $file) {
+    print $"($file) is not a task"
     return
   }
 
@@ -87,7 +85,7 @@ def run_file [file depth: int] {
     run-external $obsidian backlinks $"path=($file)" format=json | from json
      | each {|l|
       try {
-        run_file $l.file ($depth + 1)
+        run_file $l.file $seen
       }
     };
   } catch {|err|
