@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   imports = [
     ./cli/zoxide.nix
     ./cli/git.nix
@@ -59,4 +59,19 @@ _: {
       enable = true;
     };
   };
+  home.packages = with pkgs; [
+    just
+    dust # nicer du alternative
+    watchexec
+    starship # for my shell prompt
+    diffutils
+    github-cli
+    git-lfs
+    tokei # count LOC
+    dysk # show disk usage, nicer default format than df
+    hyperfine # cli benchmarking tool
+    units
+    unzip
+    zip
+  ];
 }

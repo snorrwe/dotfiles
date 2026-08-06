@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Group_CLI_tool_configs_under_the_cli_module_______";
+  system.nixos.label = "Move_cli_packages_into_cli.nix____________________";
 }

@@ -17,26 +17,16 @@ in
     packages =
       with pkgs;
       [
-        unzip
-        zip
-        dust # nicer du alternative
         go
-        just
-        watchexec
         ninja
-        starship # for my shell prompt
         cmake
         gzip
-        diffutils
-        github-cli
-        git-lfs
         nodejs_22
         curl
 
         pkg-config
         sccache
         visidata
-        units
         killall
         podman-compose
         docker-compose
@@ -46,10 +36,6 @@ in
 
         flamegraph
 
-        tokei # count LOC
-        dysk # show disk usage, nicer default format than df
-
-        hyperfine # cli benchmarking tool
         sshfs
         python3
       ]
