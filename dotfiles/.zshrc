@@ -111,7 +111,14 @@ if type direnv > /dev/null; then
     alias da='direnv allow'
     alias dr='direnv reload'
 fi
-alias t='if [[ -n $(tmux ls 2>&1 >/dev/null) ]]; then tmux a; else tmux; fi'
+function t {
+    sessions=$(tmux ls)  
+    if [[ -n $? ]]; then
+        tmux new-session -A -s $(echo $sessions | cut -s -f 1 -d : | head -n1)
+    else
+        tmux
+    fi
+}
 if type starship > /dev/null ; then
     znap eval starship "starship init zsh"
 fi
