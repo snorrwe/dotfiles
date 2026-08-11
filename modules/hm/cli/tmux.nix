@@ -92,6 +92,8 @@
 
         # open a new scratch session
         bind-key -r k new-session -A -s scratch -c $HOME
+
+        set -g extended-keys on
       '';
     };
   };
