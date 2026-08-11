@@ -16,7 +16,7 @@
     };
     flatpaks.url = "github:in-a-dil-emma/declarative-flatpak/latest";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    niri.url = "github:sodiboo/niri-flake";
+    niri.url = "github:epireyn/niri-flake";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -130,46 +130,47 @@
             }
           ]
       );
-      homeConfigurations = builtins.listToAttrs (
-        map
-          (username: {
-            name = username;
-            value = home-manager.lib.homeManagerConfiguration {
-              inherit pkgs;
-              extraSpecialArgs = {
-                inherit inputs;
-                inherit username;
-                features = {
-                  enableGui = false;
-                  enableGaming = false;
-                  enableGamedev = false;
-                  enableDistrobox = false;
+      homeConfigurations =
+        builtins.listToAttrs (
+          map
+            (username: {
+              name = username;
+              value = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                extraSpecialArgs = {
+                  inherit inputs;
+                  inherit username;
+                  features = {
+                    enableGui = false;
+                    enableGaming = false;
+                    enableGamedev = false;
+                    enableDistrobox = false;
+                  };
                 };
+                modules = [
+                  ./modules/nixpkgs.nix
+                  ./modules/hm/home.nix
+                ];
               };
-              modules = [
-                ./modules/nixpkgs.nix
-                ./modules/hm/home.nix
-              ];
+            })
+            [
+              "dkiss"
+              "snorrwe"
+            ]
+        )
+        // {
+          "dkiss@danimac" = home-manager.lib.homeManagerConfiguration {
+            pkgs = pkgsDarwin;
+            extraSpecialArgs = {
+              inherit inputs;
+              username = "dkiss";
+              host = "danimac";
             };
-          })
-          [
-            "dkiss"
-            "snorrwe"
-          ]
-      )
-      // {
-        "dkiss@danimac" = home-manager.lib.homeManagerConfiguration {
-          pkgs = pkgsDarwin;
-          extraSpecialArgs = {
-            inherit inputs;
-            username = "dkiss";
-            host = "danimac";
+            modules = [
+              ./modules/nixpkgs.nix
+              ./modules/hm/home-darwin.nix
+            ];
           };
-          modules = [
-            ./modules/nixpkgs.nix
-            ./modules/hm/home-darwin.nix
-          ];
         };
-      };
     };
 }

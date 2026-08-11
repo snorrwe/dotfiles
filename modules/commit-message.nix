@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-08-10__________________________";
+  system.nixos.label = "Use_epireyn_niri_flake____________________________";
 }
