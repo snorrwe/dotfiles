@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_tmux_extended_keys_________________________";
+  system.nixos.label = "Update_nvim_deps__________________________________";
 }
