@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_libresprite_instead_of_aseprite_______________";
+  system.nixos.label = "Fix_lazygit_pager_________________________________";
 }

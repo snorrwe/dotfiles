@@ -37,9 +37,10 @@
           log = {
             showWholeGraph = false;
           };
-          pagers = [
+          diffRenderers = [
             {
-              externalDiffCommand = "${pkgs.difftastic}/bin/difft --color=always";
+              command = "${pkgs.difftastic}/bin/difft --color=always";
+              type = "extDiff";
             }
           ];
         };
