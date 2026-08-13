@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rename_fzflua_setup_______________________________";
+  system.nixos.label = "Do_not_lazy_load_fzflua___________________________";
 }
