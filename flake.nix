@@ -85,6 +85,7 @@
                   ./modules/boot.nix
                   ./modules/angrr.nix
                   ./modules/localsend.nix
+                  ./modules/gnome-keyring.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager = {
