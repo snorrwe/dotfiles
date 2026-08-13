@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Roll_back_mesa_on_daniframe_______________________";
+  system.nixos.label = "fix_obsidian_ws___________________________________";
 }
