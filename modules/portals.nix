@@ -58,7 +58,6 @@ in
           "gtk"
           "gnome"
         ];
-        "org.freedesktop.impl.portal.ScreenCast" = "wlr"; # NOTE: This is required for screensharing to work properly
         "org.freedesktop.impl.portal.Screenshot" = "wlr";
         "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
       };
