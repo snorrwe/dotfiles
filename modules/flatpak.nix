@@ -31,6 +31,7 @@ in
     ++ optionals features.enableGaming [ "flathub:app/com.usebottles.bottles//stable" ]
     ++ optionals features.enableGamedev [
       "flathub:app/org.blender.Blender//stable"
+      "flathub:app/com.github.libresprite.LibreSprite//stable"
     ];
     overrides = {
       "global".Context = {

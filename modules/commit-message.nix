@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-08-13__________________________";
+  system.nixos.label = "Use_libresprite_instead_of_aseprite_______________";
 }
