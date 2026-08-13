@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_lazygit_pager_________________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
