@@ -2,6 +2,9 @@
   description = "snorrwe";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Pinned for mesa only: mesa 26.2.0 hangs the i915 render engine on
+    # daniframe (see hosts/daniframe/video.nix). Drop once fixed upstream.
+    nixpkgs-mesa.url = "github:nixos/nixpkgs/643809054d65fdd466a63e3155b8c498cb483c04";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
