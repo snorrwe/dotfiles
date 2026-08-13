@@ -60,8 +60,7 @@ return {
         "ibhagwan/fzf-lua",
         -- optional for icon support
         dependencies = { "nvim-tree/nvim-web-devicons" },
-        -- TODO: rename
-        config = require("setup_fzf"),
+        config = require("setup_fzf_lua"),
     },
 
     {
