@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "fix_obsidian_ws___________________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
