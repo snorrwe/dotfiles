@@ -94,6 +94,7 @@
         bind-key -r k new-session -A -s scratch -c $HOME
 
         set -g extended-keys on
+        set -g extended-keys-format csi-u
       '';
     };
   };
