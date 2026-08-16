@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_s3_endpoint___________________________________";
+  system.nixos.label = "Config_sccache____________________________________";
 }

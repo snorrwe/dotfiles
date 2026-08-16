@@ -1,0 +1,5 @@
+[cache.multilevel]
+chain = ["disk", "s3"]
+[cache.disk]
+size = 5368709100 # 5 GiBytes
+# [cache.s3] set via env vars in wrapper

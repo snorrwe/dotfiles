@@ -34,5 +34,6 @@ in
       source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.visidatarc";
       target = "../.visidatarc";
     };
+    "sccache" = mklinkDir "sccache";
   };
 }
