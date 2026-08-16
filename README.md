@@ -64,3 +64,13 @@ Uses plain home-manager (no nix-darwin / system-level management).
 - Clone the repo as above
 - First-time install: `./install-darwin.sh`
 - After that, updates go through `just darwin-apply`
+
+## Adding secrets
+
+See commit 5613beba3186 Setup sccache with the local garage storage
+
+Add the file to ./modules/secrets/secrets.nix
+
+Use `just edit-secret <name>` to edit its contents
+
+Use it in a nixos module as shown.

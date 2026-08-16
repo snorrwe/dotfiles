@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_useless_parenthesis________________________";
+  system.nixos.label = "Document_adding_secrets___________________________";
 }
