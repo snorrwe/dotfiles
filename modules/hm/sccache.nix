@@ -10,6 +10,7 @@ let
     export SCCACHE_ENDPOINT="$AWS_ENDPOINT_URL"
     export SCCACHE_REGION="us-east-1"
     export SCCACHE_S3_USE_SSL=true
+    export SCCACHE_BASE_DIR="''${SCCACHE_BASE_DIR:-${config.home.homeDirectory}}"
     exec ${sccache}/bin/sccache "$@"
   '';
 in
@@ -19,7 +20,9 @@ in
   home = {
     packages = [ sccache-local-s3 ];
     sessionVariables = {
-      RUSTC_WRAPPER = sccache-local-s3;
+      RUSTC_WRAPPER = "${sccache-local-s3}/bin/sccache";
+      CARGO_INCREMENTAL = "0";
+      SCCACHE_BASE_DIR = config.home.homeDirectory;
     };
   };
 }
