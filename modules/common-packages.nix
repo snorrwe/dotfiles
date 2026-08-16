@@ -32,6 +32,6 @@ with pkgs;
     gradia
   ]
 )
-++ optionals features.enableGamedev ([
+++ optionals features.enableGamedev [
   pkgs.renderdoc
-])
+]
