@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_extended-keys_format_to_csi-u_________________";
+  system.nixos.label = "Setup_sccache_with_the_local_garage_storage_______";
 }

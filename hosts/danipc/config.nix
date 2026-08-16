@@ -144,7 +144,6 @@ in
       curl
       networkmanagerapplet
     ];
-    variables.RUSTC_WRAPPER = "${pkgs.sccache}/bin/sccache";
     sessionVariables.DEFAULT_BROWSER = defaultBrowser;
     sessionVariables.NIXOS_OZONE_WL = "1";
     shellInit = ''

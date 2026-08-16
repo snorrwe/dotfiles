@@ -24,6 +24,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs =
@@ -34,6 +35,7 @@
       nixos-hardware,
       niri,
       rust-overlay,
+      agenix,
       ...
     }@inputs:
     let
@@ -154,6 +156,7 @@
                 modules = [
                   ./modules/nixpkgs.nix
                   ./modules/hm/home.nix
+                  agenix.homeManagerModules.default
                 ];
               };
             })

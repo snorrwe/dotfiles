@@ -25,7 +25,6 @@ in
         curl
 
         pkg-config
-        sccache
         visidata
         killall
         podman-compose
@@ -57,6 +56,8 @@ in
     ./symlinks.nix
     ./distrobox.nix
     ./tasknotes.nix
+    ./sccache.nix
+    inputs.agenix.homeManagerModules.default
   ];
   programs = {
     # Let Home Manager install and manage itself.
