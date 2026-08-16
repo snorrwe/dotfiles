@@ -10,7 +10,7 @@ let
     export SCCACHE_ENDPOINT="$AWS_ENDPOINT_URL"
     export SCCACHE_REGION="us-east-1"
     export SCCACHE_S3_USE_SSL=true
-    exec ${sccache}/bin/sccache $@
+    exec ${sccache}/bin/sccache "$@"
   '';
 in
 {

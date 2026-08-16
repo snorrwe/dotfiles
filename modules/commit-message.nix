@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Config_sccache____________________________________";
+  system.nixos.label = "Fix_sccache_wrapper_______________________________";
 }
