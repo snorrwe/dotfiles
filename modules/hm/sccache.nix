@@ -8,7 +8,7 @@ let
     export AWS_SECRET_ACCESS_KEY="$(${jq}/bin/jq -r .secret < ${config.age.secrets.sccache-json.path})"
     export AWS_ENDPOINT_URL="https://s3.snorrwe.org"
     export SCCACHE_ENDPOINT="$AWS_ENDPOINT_URL"
-    export SCCACHE_REGION=auto
+    export SCCACHE_REGION="us-east-1"
     export SCCACHE_S3_USE_SSL=true
     exec ${sccache}/bin/sccache $@
   '';

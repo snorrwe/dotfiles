@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Document_adding_secrets___________________________";
+  system.nixos.label = "Fix_s3_endpoint___________________________________";
 }
