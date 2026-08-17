@@ -156,7 +156,6 @@
                 modules = [
                   ./modules/nixpkgs.nix
                   ./modules/hm/home.nix
-                  agenix.homeManagerModules.default
                 ];
               };
             })
