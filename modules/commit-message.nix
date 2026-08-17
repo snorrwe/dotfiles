@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_image_preview_inside_tmux_____________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
