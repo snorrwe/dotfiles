@@ -53,10 +53,9 @@
       ];
       sensibleOnTop = true;
       extraConfig = ''
-        # screen mode
-        set -g default-terminal "screen-256color"
-        # ensure colors render correctly
-        set-option -sa terminal-overrides ",xterm*:Tc"
+        set -g default-terminal "tmux-256color"
+        # ensure colors render correctly for all terminals
+        set-option -sa terminal-overrides ",wezterm*:Tc"
         # Set new panes to open in current directory
         bind c new-window -c "#{pane_current_path}"
         bind % split-window -c "#{pane_current_path}"
@@ -98,8 +97,10 @@
 
         # yazi image preview fixes
         set -g allow-passthrough on
-        set -ga update-environment TERM
+        # yazi uses these to detect the terminal brand inside tmux
         set -ga update-environment TERM_PROGRAM
+        set -ga update-environment WEZTERM_EXECUTABLE
+        set -ga update-environment WEZTERM_PANE
       '';
     };
   };

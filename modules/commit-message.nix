@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_plugins_______________________________";
+  system.nixos.label = "Set_some_tmux_options_____________________________";
 }
