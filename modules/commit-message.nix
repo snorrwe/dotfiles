@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Accept_home_key_in_agenix_________________________";
+  system.nixos.label = "Fix_image_preview_inside_tmux_____________________";
 }

@@ -95,6 +95,11 @@
 
         set -g extended-keys on
         set -g extended-keys-format csi-u
+
+        # yazi image preview fixes
+        set -g allow-passthrough on
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
       '';
     };
   };
