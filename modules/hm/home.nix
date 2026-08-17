@@ -3,6 +3,7 @@
   username,
   inputs,
   features,
+  config,
   ...
 }:
 let
@@ -81,7 +82,7 @@ in
         };
         git = {
           repos = [
-            "/home/${username}/.local/share/zsh-snap"
+            "${config.home.homeDirectory}/.local/share/zsh-snap"
           ];
           arguments = "--rebase --autostash";
         };
@@ -100,4 +101,9 @@ in
       enable = features.enableGui;
     };
   };
+
+  age.identityPaths = [
+    "${config.home.homeDirectory}/.ssh/id_ed25519"
+    "${config.home.homeDirectory}/.ssh/home"
+  ];
 }
