@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tailscale_systray_____________________________";
+  system.nixos.label = "Update_nvim_deps__________________________________";
 }
