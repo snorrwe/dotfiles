@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_deps__________________________________";
+  system.nixos.label = "Run_lazy_restore_after_network-online_____________";
 }

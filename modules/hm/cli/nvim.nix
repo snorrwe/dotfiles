@@ -135,7 +135,7 @@ in
       ++ (builtins.map (lsp: lsp.package) lspServers);
   };
 
-  home.activation.lazyRestore = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+  home.activation.lazyRestore = lib.hm.dag.entryAfter [ "writeBoundary" "network-online.target" ] ''
     ${config.programs.neovim.finalPackage}/bin/nvim --headless -c "Lazy! restore" -c "Lazy! clean" -c ':qa'
   '';
 }
