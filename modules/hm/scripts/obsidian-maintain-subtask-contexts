@@ -82,6 +82,7 @@ def run_file [file seen: list< path>] {
 
   # recursively update children
   try {
+    print $"Updating children of file ($file) to ($contexts)"
     run-external $obsidian backlinks $"path=($file)" format=json | from json
      | each {|l|
       try {
