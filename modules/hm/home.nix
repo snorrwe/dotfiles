@@ -59,7 +59,9 @@ in
     ./tasknotes.nix
     ./sccache.nix
     inputs.agenix.homeManagerModules.default
+    ./tailscale-gui.nix
   ];
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Set_some_tmux_options_____________________________";
+  system.nixos.label = "Add_tailscale_systray_____________________________";
 }
