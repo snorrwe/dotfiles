@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-08-20__________________________";
+  system.nixos.label = "Disable_middle_mouse_insert_______________________";
 }
