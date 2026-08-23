@@ -26,12 +26,24 @@
     "/" = {
       device = "/dev/disk/by-uuid/c91008bb-d51f-4841-8fea-bd3fd2b95fea";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [
+        "subvol=@"
+        "compress=zstd:1"
+        "noatime"
+        "space_cache=v2"
+        "discard=async"
+      ];
     };
 
     "/home" = {
       device = "/dev/disk/by-uuid/2e1705df-0a65-423b-8038-26dc542548ca";
       fsType = "btrfs";
+      options = [
+        "compress=zstd:1"
+        "noatime"
+        "space_cache=v2"
+        "discard=async"
+      ];
     };
 
     "/boot" = {
