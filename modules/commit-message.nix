@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_btrfs_for_daniframe_____________________";
+  system.nixos.label = "Configure_btrfs_for_danipc________________________";
 }

@@ -4,10 +4,17 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
+let
+  btrfsOptions = [
+    "compress=zstd:1"
+    "noatime"
+    "space_cache=v2"
+    "discard=async"
+  ];
+in
 
 {
   imports = [
@@ -30,12 +37,13 @@
     "/" = {
       device = "/dev/disk/by-uuid/c1c0d08d-ac70-472c-bad9-edff5285e3f9";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [ "subvol=@" ] ++ btrfsOptions;
     };
 
     "/home" = {
       device = "/dev/disk/by-uuid/daf3500d-8235-44e3-9550-2b098d7fd148";
       fsType = "btrfs";
+      options = btrfsOptions;
     };
 
     "/boot" = {
