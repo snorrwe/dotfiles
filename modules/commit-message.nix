@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_BEES_service__________________________________";
+  system.nixos.label = "System_update_2026-08-28__________________________";
 }
