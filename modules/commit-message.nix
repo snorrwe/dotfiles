@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_s3_creds___________________________________";
+  system.nixos.label = "Add_BEES_service__________________________________";
 }
