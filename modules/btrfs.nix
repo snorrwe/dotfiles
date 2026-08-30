@@ -1,4 +1,7 @@
-{ ... }:
+{ config, lib, ... }:
+let
+  uuidOf = mountPoint: lib.removePrefix "/dev/disk/by-uuid/" config.fileSystems.${mountPoint}.device;
+in
 {
   services = {
 
@@ -17,7 +20,7 @@
 
     beesd.filesystems = {
       root = {
-        spec = "LABEL=root";
+        spec = "UUID=${uuidOf "/"}";
         hashTableSizeMB = 2048;
         verbosity = "crit";
         extraOptions = [
