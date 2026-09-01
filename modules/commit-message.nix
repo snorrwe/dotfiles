@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_bees_spec_____________________________________";
+  system.nixos.label = "Revert_Add_BEES_service___________________________";
 }
