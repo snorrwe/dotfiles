@@ -20,5 +20,6 @@
     (writeScriptBin "obsidian-maintain-subtask-contexts" (
       builtins.readFile ./scripts/obsidian-maintain-subtask-contexts
     ))
+    (writeScriptBin "mk-flake-envrc" (builtins.readFile ./scripts/mk-flake-envrc))
   ];
 }
