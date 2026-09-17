@@ -70,8 +70,10 @@ in
     # fix for my wifi dongle disconnecting
     # https://github.com/lwfinger/rtw88/issues/61
     wifi.powersave = false;
-    # for my Intel 6 AX200
-    wifi.backend = "iwd";
+    # Was "iwd" for the Intel 6 AX200, but iwd appears to drop LocalSend's
+    # multicast discovery (224.0.0.167:53317); daniframe works on the default
+    # wpa_supplicant backend. Switch back and watch for AX200 disconnects.
+    wifi.backend = "wpa_supplicant";
     plugins = with pkgs; [
       networkmanager-openvpn
     ];
