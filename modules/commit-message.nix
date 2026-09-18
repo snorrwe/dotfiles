@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_same_wifi_backend_in_danipc_and_daniframe_____";
+  system.nixos.label = "System_update_2026-09-18__________________________";
 }
