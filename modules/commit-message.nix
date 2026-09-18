@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-09-18__________________________";
+  system.nixos.label = "Disable_atuin_ai__________________________________";
 }
