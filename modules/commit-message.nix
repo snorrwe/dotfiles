@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_atuin_ai__________________________________";
+  system.nixos.label = "Fix_my_skullcandy_headphones______________________";
 }
