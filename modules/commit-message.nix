@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Symlink_sccache_config_into_distrobox_homes_______";
+  system.nixos.label = "Increase_sccache_size_to_15GiB____________________";
 }
