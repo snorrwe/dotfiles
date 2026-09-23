@@ -33,8 +33,8 @@ let
     }
   ];
 
-  # Share the host's nvim config and plugin data with every container home.
-  nvimLinks =
+  # Share host configs and nvim plugin data with every container home.
+  containerLinks =
     home:
     let
       rel = lib.removePrefix "~/" home;
@@ -42,6 +42,7 @@ let
     in
     {
       "${rel}/.config/nvim".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nvim";
+      "${rel}/.config/sccache".source = mkOutOfStoreSymlink "${config.xdg.configHome}/sccache";
       "${rel}/.local/share/nvim/lazy".source = mkOutOfStoreSymlink "${hostData}/lazy";
       "${rel}/.local/share/nvim/site".source = mkOutOfStoreSymlink "${hostData}/site";
     };
@@ -59,6 +60,6 @@ in
   };
 
   home.file = lib.mkIf features.enableDistrobox (
-    lib.mkMerge (lib.mapAttrsToList (_: c: nvimLinks c.home) containers)
+    lib.mkMerge (lib.mapAttrsToList (_: c: containerLinks c.home) containers)
   );
 }

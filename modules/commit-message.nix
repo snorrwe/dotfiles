@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Link_nvim_config_into_distrobox_containers________";
+  system.nixos.label = "Symlink_sccache_config_into_distrobox_homes_______";
 }
