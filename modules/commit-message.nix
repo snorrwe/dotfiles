@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_my_skullcandy_headphones______________________";
+  system.nixos.label = "Link_nvim_config_into_distrobox_containers________";
 }
