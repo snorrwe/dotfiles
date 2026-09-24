@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Generalize_local_network_access___________________";
+  system.nixos.label = "Fix_lint__________________________________________";
 }

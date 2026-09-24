@@ -30,16 +30,16 @@ in
     default = "https://s3.snorrwe.org";
     description = "URL of the sccache S3 endpoint";
   };
-
-  config.sccache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
-
-  config.age.secrets.sccache-json.file = ../secrets/s3.local.json;
-  config.home = {
-    packages = [ sccache-local-s3 ];
-    sessionVariables = {
-      RUSTC_WRAPPER = "${sccache-local-s3}/bin/sccache";
-      CARGO_INCREMENTAL = "0";
-      SCCACHE_BASE_DIR = config.home.homeDirectory;
+  config = {
+    sccache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
+    age.secrets.sccache-json.file = ../secrets/s3.local.json;
+    home = {
+      packages = [ sccache-local-s3 ];
+      sessionVariables = {
+        RUSTC_WRAPPER = "${sccache-local-s3}/bin/sccache";
+        CARGO_INCREMENTAL = "0";
+        SCCACHE_BASE_DIR = config.home.homeDirectory;
+      };
     };
   };
 }
