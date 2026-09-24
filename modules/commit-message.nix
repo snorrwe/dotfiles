@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Increase_sccache_size_to_15GiB____________________";
+  system.nixos.label = "Create_v_alias_for_nvim___________________________";
 }

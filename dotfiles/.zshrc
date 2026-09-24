@@ -64,6 +64,7 @@ function aliases {
         alias fgrep='fgrep --color=auto'
         alias egrep='egrep --color=auto'
     fi
+    alias v=nvim
 }
 
 aliases
