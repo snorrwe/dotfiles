@@ -56,6 +56,7 @@
                 enableGamedev = true;
                 enableBluetooth = true;
                 enableDistrobox = true;
+                enableLocalNetwork = false;
               }
               // args.features;
             in
@@ -127,6 +128,7 @@
               host = "danipc";
               features = {
                 enableGaming = true;
+                enableLocalNetwork = true;
               };
               extraModules = [ ];
             }

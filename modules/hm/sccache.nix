@@ -2,7 +2,7 @@
   pkgs,
   config,
   lib,
-  host,
+  features,
   ...
 }:
 let
@@ -15,7 +15,11 @@ let
     export AWS_ENDPOINT_URL="${config.sccache.s3Url}"
     export SCCACHE_ENDPOINT="$AWS_ENDPOINT_URL"
     export SCCACHE_REGION="us-east-1"
-    export SCCACHE_S3_USE_SSL=${lib.escapeShellArg (if (builtins.substring 0 5 config.sccache.s3Url) == "https" then "true" else "false")}
+    export SCCACHE_S3_USE_SSL=${
+      lib.escapeShellArg (
+        if (builtins.substring 0 5 config.sccache.s3Url) == "https" then "true" else "false"
+      )
+    }
     export SCCACHE_BASE_DIR="''${SCCACHE_BASE_DIR:-${config.home.homeDirectory}}"
     exec ${sccache}/bin/sccache "$@"
   '';
@@ -27,7 +31,7 @@ in
     description = "URL of the sccache S3 endpoint";
   };
 
-  config.sccache.s3Url = lib.mkIf (host == "danipc") "http://s3.local";
+  config.sccache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
 
   config.age.secrets.sccache-json.file = ../secrets/s3.local.json;
   config.home = {
