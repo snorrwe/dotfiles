@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Allow_configuring_S3_endpoint_of_sccache__________";
+  system.nixos.label = "Use_local_s3_endpoint_on_danipc___________________";
 }
