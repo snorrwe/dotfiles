@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Create_v_alias_for_nvim___________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
