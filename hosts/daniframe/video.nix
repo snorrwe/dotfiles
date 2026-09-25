@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   host,
   username,
@@ -27,5 +28,13 @@ in
       intel-media-driver
       intel-compute-runtime
     ];
+  };
+
+  # btop reads Intel GPU stats through the i915 perf PMU, which needs CAP_PERFMON
+  security.wrappers.btop = {
+    owner = "root";
+    group = "root";
+    capabilities = "cap_perfmon=+ep";
+    source = lib.getExe config.home-manager.users.${username}.programs.btop.package;
   };
 }

@@ -1,6 +1,10 @@
-_: {
+{ pkgs, ... }:
+{
   programs.btop = {
     enable = true;
+    # btop-cuda adds /run/opengl-driver/lib to the runpath so btop can
+    # dlopen libnvidia-ml.so at runtime
+    package = if pkgs.stdenv.isLinux then pkgs.btop-cuda else pkgs.btop;
     settings = {
       color_theme = "Default";
       theme_background = true;

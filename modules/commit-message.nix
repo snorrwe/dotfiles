@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-09-25__________________________";
+  system.nixos.label = "Enable_GPU_monitoring_in_btop_____________________";
 }
