@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_GPU_monitoring_in_btop_____________________";
+  system.nixos.label = "Add_a_debian_distrobox____________________________";
 }

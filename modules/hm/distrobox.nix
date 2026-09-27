@@ -9,16 +9,24 @@ let
 
   containers = lib.attrsets.mergeAttrsList [
     {
+      debian = {
+        additional_packages = "python3 nodejs libnotify-bin";
+        image = "docker.io/library/debian:trixie";
+        home = "~/.local/share/distrobox/trixie";
+        nvidia = true;
+      };
+    }
+    {
       ubuntu24 = {
         additional_packages = "python3 node libnotify";
-        image = "ubuntu:24.04";
+        image = "docker.io/library/ubuntu:24.04";
         home = "~/.local/share/distrobox/ubuntu24";
         nvidia = true;
       };
     }
     {
       arch = {
-        image = "archlinux:latest";
+        image = "docker.io/library/archlinux:latest";
         home = "~/.local/share/distrobox/arch";
         nvidia = true;
       };
