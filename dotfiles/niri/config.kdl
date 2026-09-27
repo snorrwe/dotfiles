@@ -80,20 +80,20 @@ input {
 }
 
 workspace "browser" {
-    open-on-output "DP-4"
+    open-on-output "DP-2"
 }
 workspace "notes" {
-    open-on-output "DP-4"
+    open-on-output "DP-2"
 }
 workspace "chat"{
-    open-on-output "DP-4"
+    open-on-output "DP-2"
 }
 
 workspace "terminal" {
-    open-on-output "HDMI-A-4"
+    open-on-output "HDMI-A-1"
 }
 workspace "media" {
-    open-on-output "HDMI-A-4"
+    open-on-output "HDMI-A-1"
 }
 
 // You can configure outputs by their name, which you can find
@@ -125,7 +125,7 @@ output "eDP-1" {
 }
 
 // danipc
-output "DP-4" {
+output "DP-2" {
     // Uncomment this line to disable this output.
     // off
 
@@ -157,7 +157,7 @@ output "DP-4" {
     position x=2560 y=0
     backdrop-color "#24273a"
 }
-output "HDMI-A-4" {
+output "HDMI-A-1" {
     // Uncomment this line to disable this output.
     // off
 

@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_distrobox-list-exports________________________";
+  system.nixos.label = "Fix_outputs_______________________________________";
 }
