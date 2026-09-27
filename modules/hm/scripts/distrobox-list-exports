@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+for name in $(distrobox ls | awk 'NR>=2{print $3;}'); do
+    echo "========== <$name> =========="
+    distrobox enter "$name" -- distrobox-export --list-apps 2>/dev/null
+    distrobox enter "$name" -- distrobox-export --list-binaries 2>/dev/null
+    echo "========== </$name> =========="
+done
+

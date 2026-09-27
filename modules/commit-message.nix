@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_a_debian_distrobox____________________________";
+  system.nixos.label = "Add_distrobox-list-exports________________________";
 }
