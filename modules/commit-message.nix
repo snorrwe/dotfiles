@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_outputs_______________________________________";
+  system.nixos.label = "Tweak_danipc_monitor_config_______________________";
 }
