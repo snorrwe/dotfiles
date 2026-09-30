@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Tweak_danipc_monitor_config_______________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
