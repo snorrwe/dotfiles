@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-10-04__________________________";
+  system.nixos.label = "Fix_warning_______________________________________";
 }
