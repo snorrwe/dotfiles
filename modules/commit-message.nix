@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_sesh_completions______________________________";
+  system.nixos.label = "Configure_sesh____________________________________";
 }

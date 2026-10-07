@@ -101,6 +101,10 @@
         set -ga update-environment TERM_PROGRAM
         set -ga update-environment WEZTERM_EXECUTABLE
         set -ga update-environment WEZTERM_PANE
+
+        # sesh
+        bind -N "last-session (via sesh) " L run-shell "sesh last"
+        set-hook -g session-created 'run-shell -b "sesh rename --enrich"'
       '';
     };
   };
