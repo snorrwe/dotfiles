@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_warning_______________________________________";
+  system.nixos.label = "Add_gh-stack______________________________________";
 }

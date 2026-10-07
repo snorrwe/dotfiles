@@ -51,8 +51,9 @@
       settings = {
         editor = "nvim";
       };
-      extensions = [
-        pkgs.gh-dash
+      extensions = with pkgs; [
+        gh-dash
+        gh-stack
       ];
     };
     gh-dash = {
