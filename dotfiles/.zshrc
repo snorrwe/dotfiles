@@ -132,6 +132,9 @@ fi
 if type sccache > /dev/null ; then
     export RUSTC_WRAPPER=$(which sccache)
 fi
+if type sesh > /dev/null ; then
+    znap eval sesh "sesh completion zsh"
+fi
 
 if type eza > /dev/null ; then
     alias e='eza --git --group-directories-first --icons'
