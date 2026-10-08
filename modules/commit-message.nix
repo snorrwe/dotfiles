@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Configure_sesh____________________________________";
+  system.nixos.label = "Remove_enrich_____________________________________";
 }

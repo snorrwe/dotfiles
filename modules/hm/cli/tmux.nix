@@ -104,7 +104,6 @@
 
         # sesh
         bind -N "last-session (via sesh) " L run-shell "sesh last"
-        set-hook -g session-created 'run-shell -b "sesh rename --enrich"'
       '';
     };
   };
