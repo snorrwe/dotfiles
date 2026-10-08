@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_enrich_____________________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
