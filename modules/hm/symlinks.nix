@@ -25,15 +25,18 @@ in
     "niri" = mklinkDir "niri";
     "atuin" = mklinkDir "atuin";
     "nvim" = mklinkDir "nvim";
-    ".zshrc" = {
-      source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.zshrc";
-      target = "../.zshrc";
-    };
     "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
+    "sccache" = mklinkDir "sccache";
+  };
+  config.home.file = {
     ".visidatarc" = {
       source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.visidatarc";
-      target = "../.visidatarc";
     };
-    "sccache" = mklinkDir "sccache";
+    ".zshrc" = {
+      source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.zshrc";
+    };
+    ".agents" = {
+      source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/agents";
+    };
   };
 }
