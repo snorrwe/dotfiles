@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_set-tmux-window-title_skill___________________";
+  system.nixos.label = "Link_each_skill_individually______________________";
 }
