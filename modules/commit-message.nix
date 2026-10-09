@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Link_each_skill_individually______________________";
+  system.nixos.label = "Fix_rename_window_________________________________";
 }
