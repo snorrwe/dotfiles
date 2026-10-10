@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_design_document_writer_skill__________________";
+  system.nixos.label = "Use_a_list_for_projects___________________________";
 }

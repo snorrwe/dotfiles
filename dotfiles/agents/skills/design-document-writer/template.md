@@ -4,7 +4,8 @@ tags:
   - project
 customer:
 date: "{{date}}"
-projects: "{{project}}"
+projects:
+  - "{{project}}"
 ---
 
 # {{title}}
