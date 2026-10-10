@@ -10,8 +10,9 @@ trap 'git stash pop' EXIT
 
 process_commit_msg() {
     local commit_msg="$1"
-    local first_line=$(echo "$commit_msg" | head -n 1)
-    local message=$(echo "$first_line" | sed -E 's/^\s+//g' | sed -E 's/\s+$//g' | sed 's/ /_/g' | sed -E 's/[^a-zA-Z0-9:_\.-]//g')
+    local first_line  message
+    first_line=$(echo "$commit_msg" | head -n 1)
+    message=$(echo "$first_line" | sed -E 's/^\s+//g' | sed -E 's/\s+$//g' | sed 's/ /_/g' | sed -E 's/[^a-zA-Z0-9:_\.-]//g')
 
     if [ ${#message} -gt 50 ]; then
         message="${message:0:50}"

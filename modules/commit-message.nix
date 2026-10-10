@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_tmux-rename-window____________________________";
+  system.nixos.label = "Fix_shellcheck_warning____________________________";
 }
