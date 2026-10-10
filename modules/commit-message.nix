@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_stash_changes_in_post-commit_hook__________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
