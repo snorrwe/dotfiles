@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_a_list_for_projects___________________________";
+  system.nixos.label = "Update_commit_skill_______________________________";
 }
