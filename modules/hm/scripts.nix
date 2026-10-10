@@ -22,5 +22,6 @@
     ))
     (writeScriptBin "mk-flake-envrc" (builtins.readFile ./scripts/mk-flake-envrc))
     (writeScriptBin "distrobox-list-exports" (builtins.readFile ./scripts/distrobox-list-exports))
+    (writeScriptBin "tmux-rename-window" (builtins.readFile ./scripts/tmux-rename-window))
   ];
 }

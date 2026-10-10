@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-10-10__________________________";
+  system.nixos.label = "Add_tmux-rename-window____________________________";
 }
