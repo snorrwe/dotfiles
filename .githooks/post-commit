@@ -4,10 +4,6 @@ set -euo pipefail
 
 commit_msg_file="$(git rev-parse --show-toplevel)/modules/commit-message.nix"
 
-# stash unstaged changes
-git stash push --keep-index
-trap 'git stash pop' EXIT
-
 process_commit_msg() {
     local commit_msg="$1"
     local first_line  message
