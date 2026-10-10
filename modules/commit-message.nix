@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_commit_skill__________________________________";
+  system.nixos.label = "Add_design_document_writer_skill__________________";
 }
