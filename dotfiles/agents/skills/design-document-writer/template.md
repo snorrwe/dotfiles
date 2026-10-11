@@ -2,8 +2,10 @@
 tags:
   - design-document
   - project
+  - ai-assisted
 customer:
 date: "{{date}}"
+agent: "{{agent}}"
 projects:
   - "{{project}}"
 ---
