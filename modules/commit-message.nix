@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_dd_writer_skill____________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
