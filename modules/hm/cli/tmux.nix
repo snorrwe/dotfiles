@@ -103,7 +103,8 @@
         set -ga update-environment WEZTERM_PANE
 
         # sesh
-        bind -N "last-session (via sesh) " L run-shell "sesh last"
+        bind -N "last-session (via sesh) " l run-shell "sesh last"
+        bind -N "open the `editor` window" e run-shell "if sesh window list | grep -Fxq editor; then sesh window connect editor >/dev/null; else sesh window connect editor -c nvim >/dev/null; fi"
       '';
     };
   };

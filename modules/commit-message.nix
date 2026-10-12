@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Make_host_Nix_available_in_Distroboxes____________";
+  system.nixos.label = "Add_prefixe_keybind_to_open_a_window_called_editor";
 }
