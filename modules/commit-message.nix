@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_plugins_______________________________";
+  system.nixos.label = "Make_host_Nix_available_in_Distroboxes____________";
 }

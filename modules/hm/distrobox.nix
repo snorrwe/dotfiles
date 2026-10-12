@@ -2,6 +2,7 @@
   config,
   features,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -57,15 +58,20 @@ let
 in
 {
   programs.distrobox = {
-    inherit containers;
+    containers = lib.mapAttrs (_: c: c // { additional_flags = "--env NIX_REMOTE=daemon"; }) containers;
 
     enable = features.enableDistrobox;
     enableSystemdUnit = true;
     settings = {
       container_user_custom_home = "$HOME/.local/share/container-home";
-      container_additional_volumes = "/nix/store:/nix/store:ro /etc/profiles/per-user:/etc/profiles/per-user:ro /etc/static/profiles/per-user:/etc/static/profiles/per-user:ro";
+      # Use the host store and daemon rather than a separate store inside each box.
+      # /etc/static/nix contains the host's nix.conf and flake registry.
+      container_additional_volumes = "/nix/store:/nix/store:ro /nix/var/nix/daemon-socket:/nix/var/nix/daemon-socket:ro /etc/static/nix:/etc/nix:ro /etc/profiles/per-user:/etc/profiles/per-user:ro /etc/static/profiles/per-user:/etc/static/profiles/per-user:ro";
     };
   };
+
+  # The client lives in the shared profile; the daemon and cache remain on the host.
+  home.packages = lib.optionals features.enableDistrobox [ pkgs.nixVersions.stable ];
 
   home.file = lib.mkIf features.enableDistrobox (
     lib.mkMerge (lib.mapAttrsToList (_: c: containerLinks c.home) containers)
