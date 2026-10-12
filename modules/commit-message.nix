@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_design_doc_skill___________________________";
+  system.nixos.label = "Update_window_title_skill_to_include_agent_prefix_";
 }

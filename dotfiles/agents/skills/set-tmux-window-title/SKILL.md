@@ -7,8 +7,10 @@ description: Give a new agent session or major work topic a descriptive title an
 
 Choose a short, descriptive title for the session's main topic. If the agent environment supports naming the session, use the same title there. Set the tmux window title once at the start of the topic:
 
+Prefix your titles with 'AGENT:'
+
 ```bash
-tmux-rename-window '<title>'
+tmux-rename-window 'AGENT: <title>'
 ```
 
 Replace `<title>` with the chosen title (shell-quote it safely). Use `tmux-rename-window` script. Ignore script failure; continue the work normally. Do not rerun this for routine commands or minor changes within the same topic.
