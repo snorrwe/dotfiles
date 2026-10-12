@@ -103,7 +103,7 @@
         set -ga update-environment WEZTERM_PANE
 
         # sesh
-        bind -N "last-session (via sesh) " l run-shell "sesh last"
+        bind -N "last-session (via sesh) " p run-shell "sesh last"
         bind -N "open the `editor` window" e run-shell "tmux-connect-editor"
       '';
     };
