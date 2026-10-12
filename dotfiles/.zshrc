@@ -49,6 +49,7 @@ function aliases {
     alias lg=lazygit
     alias jt='just test'
     alias jb='just build'
+    alias jc='just check'
     alias ll='ls -alF'
     alias la='ls -Al'
     alias l='ls -CF'
