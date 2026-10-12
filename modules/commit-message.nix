@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_jc_alias______________________________________";
+  system.nixos.label = "Fix_post-commit_hook_hanging_when_there_are_unstag";
 }

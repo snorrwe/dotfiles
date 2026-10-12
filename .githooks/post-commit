@@ -31,10 +31,6 @@ printf "{\n  system.nixos.label = \"%s\";\n}" "$processed_msg" > "$commit_msg_fi
 if [[ -n $(git status -s "$commit_msg_file") ]]; then
     # Stage the changes to the target file
     git add "$commit_msg_file"
-fi
-
-# Amend the current commit to include all changes
-if [[ -n $(git status -s) ]]; then
     git commit --amend --no-edit
 fi
 
