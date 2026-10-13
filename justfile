@@ -3,7 +3,7 @@ hostname := env("NIX_HOST", "NOHOSTSET")
 default:
     just --list
 
-clean:
+clean: && clean-zsh-cache
     nh clean all --nogcroots
 
 update *args:

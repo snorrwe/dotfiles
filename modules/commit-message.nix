@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_leader_p_to_switch_to_last_session____________";
+  system.nixos.label = "Run_just_clean-zsh-cache_after_just_clean_________";
 }
