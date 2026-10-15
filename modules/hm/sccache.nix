@@ -9,6 +9,12 @@ let
   inherit (pkgs) sccache jq;
 
   sccache-local-s3 = pkgs.writeShellScriptBin "sccache" ''
+    # Distrobox has its own disk-only config; do not load S3 credentials there.
+    if [ -n "''${CONTAINER_ID:-}" ]; then
+      unset SCCACHE_BUCKET SCCACHE_ENDPOINT SCCACHE_REGION SCCACHE_S3_USE_SSL
+      exec ${sccache}/bin/sccache "$@"
+    fi
+
     export SCCACHE_BUCKET="sccache";
     export AWS_ACCESS_KEY_ID="$(${jq}/bin/jq -r .key < ${config.age.secrets.sccache-json.path})"
     export AWS_SECRET_ACCESS_KEY="$(${jq}/bin/jq -r .secret < ${config.age.secrets.sccache-json.path})"
