@@ -1,6 +1,7 @@
 ---
 name: design-document-writer
 description: Write or revise technical design documents, RFCs, and architecture proposals. Use when asked to plan a system or feature, document a design decision, or review and improve an existing design doc before implementation.
+disable-model-invocation: true
 ---
 
 # Design document writer

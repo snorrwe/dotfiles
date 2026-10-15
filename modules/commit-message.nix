@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Run_just_clean-zsh-cache_after_just_clean_________";
+  system.nixos.label = "Disable_model_invocation_for_the_design_document_w";
 }
