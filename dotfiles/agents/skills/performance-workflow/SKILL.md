@@ -75,6 +75,8 @@ Create an optimization log. Test ideas against the repeatable experiment until t
 For each optimization attempt record the idea and the outcome as well. Both for successful and unsuccessful trials.
 Cross reference this document when designing new optimization attempt.
 
+Record the baseline as the first entry in the optimization log.
+
 Dispatch a separate subagent for each experiment. They should:
 
 - design the new candidate
