@@ -47,16 +47,6 @@ with lib;
           "custom/exit"
         ];
 
-        "hyprland/workspaces" = {
-          format = "{name}";
-          format-icons = {
-            default = " ";
-            active = " ";
-            urgent = " ";
-          };
-          on-scroll-up = "hyprctl dispatch workspace e+1";
-          on-scroll-down = "hyprctl dispatch workspace e-1";
-        };
         "niri/workspaces" = {
           "format" = "{value} {icon}";
           "format-icons" = {
@@ -79,13 +69,6 @@ with lib;
             "on-click-right" = "mode";
             "on-scroll-up" = "shift_up";
             "on-scroll-down" = "shift_down";
-          };
-        };
-        "hyprland/window" = {
-          max-length = 22;
-          separate-outputs = false;
-          rewrite = {
-            "" = " 🙈 No Windows? ";
           };
         };
         "memory" = {
@@ -169,23 +152,17 @@ with lib;
           on-click = "sleep 0.1 && ${pkgs.wlogout}/bin/wlogout";
         };
         "custom/notification" = {
+          format = "{}";
           tooltip = false;
-          format = "{icon} {}";
-          format-icons = {
-            notification = "<span foreground='red'><sup></sup></span>";
-            none = "";
-            dnd-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-none = "";
-            inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            inhibited-none = "";
-            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "";
-          };
-          return-type = "json";
-          exec-if = "which swaync-client";
-          exec = "swaync-client -swb";
-          on-click = "sleep 0.1 && task-waybar";
-          escape = true;
+          exec = ''
+            if [ "$(${pkgs.dunst}/bin/dunstctl is-paused)" = "true" ]; then
+              printf '\n'
+            else
+              printf '\n'
+            fi
+          '';
+          interval = 2;
+          on-click = "${pkgs.dunst}/bin/dunstctl set-paused toggle";
         };
         "battery" = {
           states = {

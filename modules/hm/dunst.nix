@@ -1,19 +1,12 @@
-{
-  pkgs,
-  username,
-  host,
-  inputs,
-  ...
-}:
+{ pkgs, features, ... }:
 {
   # notifications service
   services.dunst = {
-    enable = true;
+    enable = features.enableGui;
     iconTheme = {
       name = "rose-pine-moon";
       package = pkgs.rose-pine-icon-theme;
     };
-    waylandDisplay = "wayland-1";
     settings = {
       global = {
         font = "MonaspiceNe Nerd Font 10";
