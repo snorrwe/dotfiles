@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Restore_the_notification_toggle_in_Waybar_________";
+  system.nixos.label = "Rename_the_commit_skill___________________________";
 }

@@ -1,5 +1,5 @@
 ---
-name: commit
+name: snorrwe-commit
 description: Create a git commit. Use this skill when commiting in a git repo. Only load this skill if the repo has no commit conventions. Otherwise use the repo's conventions.
 ---
 
