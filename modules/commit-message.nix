@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_baseline_note_________________________________";
+  system.nixos.label = "Install_geeqie_as_a_flatpak_______________________";
 }

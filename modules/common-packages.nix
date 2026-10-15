@@ -21,7 +21,6 @@ with pkgs;
     hotspot # perf GUI
     betterlockscreen
     thunar
-    geeqie
     okteta
     # niri
     wl-clipboard
