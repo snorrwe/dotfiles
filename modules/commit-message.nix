@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-10-16__________________________";
+  system.nixos.label = "Remove_vim-latex-suite_from_nvim__________________";
 }

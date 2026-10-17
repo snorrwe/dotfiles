@@ -124,10 +124,6 @@ return {
         event = "VeryLazy",
     },
     {
-        "gerw/vim-latex-suite",
-        ft = "tex",
-    },
-    {
         "neovim/nvim-lspconfig",
         config = require("setup_lsp"),
         dependencies = {
