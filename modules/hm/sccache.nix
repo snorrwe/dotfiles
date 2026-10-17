@@ -8,6 +8,14 @@
 let
   inherit (pkgs) sccache jq;
   sharedCacheDir = "${config.home.homeDirectory}/.cache/sccache";
+  mkCacheConfig = chain: pkgs.writeTextDir "config" ''
+    [cache.multilevel]
+    chain = ${builtins.toJSON chain}
+    [cache.disk]
+    size = ${toString config.sccache.localCacheSize}
+  '';
+  hostCacheConfig = mkCacheConfig [ "disk" "s3" ];
+  containerCacheConfig = mkCacheConfig [ "disk" ];
 
   sccache-local-s3 = pkgs.writeShellScriptBin "sccache" ''
     export SCCACHE_DIR=${lib.escapeShellArg sharedCacheDir}
@@ -34,14 +42,28 @@ let
   '';
 in
 {
-  options.sccache.s3Url = lib.mkOption {
-    type = lib.types.str;
-    default = "https://s3.snorrwe.org";
-    description = "URL of the sccache S3 endpoint";
+  options.sccache = {
+    s3Url = lib.mkOption {
+      type = lib.types.str;
+      default = "https://s3.snorrwe.org";
+      description = "URL of the sccache S3 endpoint";
+    };
+    localCacheSize = lib.mkOption {
+      type = lib.types.ints.positive;
+      default = 32212254720; # 30 GiB
+      description = "Maximum size of the local sccache disk cache in bytes.";
+    };
   };
   config = {
     sccache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
     age.secrets.sccache-json.file = ../secrets/s3.local.json;
+    xdg.configFile."sccache".source = hostCacheConfig;
+    home.file = lib.mkIf features.enableDistrobox (
+      lib.mapAttrs' (_: container: {
+        name = "${lib.removePrefix "~/" container.home}/.config/sccache";
+        value.source = containerCacheConfig;
+      }) config.programs.distrobox.containers
+    );
     home = {
       packages = [ sccache-local-s3 ];
       sessionVariables = {

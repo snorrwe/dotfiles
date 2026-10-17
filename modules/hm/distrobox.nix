@@ -51,7 +51,6 @@ let
     in
     {
       "${rel}/.config/nvim".source = mkOutOfStoreSymlink "${config.xdg.configHome}/nvim";
-      "${rel}/.config/sccache".source = mkOutOfStoreSymlink "${config.dotfiles.dir}/dotfiles/sccache-distrobox";
       "${rel}/.local/share/nvim/lazy".source = mkOutOfStoreSymlink "${hostData}/lazy";
       "${rel}/.local/share/nvim/site".source = mkOutOfStoreSymlink "${hostData}/site";
     };

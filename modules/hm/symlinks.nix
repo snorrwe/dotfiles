@@ -39,7 +39,6 @@ in
     "atuin" = mklinkDir "atuin";
     "nvim" = mklinkDir "nvim";
     "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
-    "sccache" = mklinkDir "sccache";
   };
   config.home.file = {
     ".visidatarc" = {

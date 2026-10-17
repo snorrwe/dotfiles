@@ -1,4 +1,0 @@
-[cache.multilevel]
-chain = ["disk"]
-[cache.disk]
-size = 16106127000 # 15 GiBytes
