@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_vim-latex-suite_from_nvim__________________";
+  system.nixos.label = "Enable_blink_cmdline_completions__________________";
 }
