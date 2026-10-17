@@ -1,4 +1,3 @@
-# Distroboxes cache locally, without the host's S3 backend.
 [cache.multilevel]
 chain = ["disk"]
 [cache.disk]

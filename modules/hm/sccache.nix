@@ -7,11 +7,14 @@
 }:
 let
   inherit (pkgs) sccache jq;
+  sharedCacheDir = "${config.home.homeDirectory}/.cache/sccache";
 
   sccache-local-s3 = pkgs.writeShellScriptBin "sccache" ''
-    # Distrobox has its own disk-only config; do not load S3 credentials there.
+    export SCCACHE_DIR=${lib.escapeShellArg sharedCacheDir}
     if [ -n "''${CONTAINER_ID:-}" ]; then
       unset SCCACHE_BUCKET SCCACHE_ENDPOINT SCCACHE_REGION SCCACHE_S3_USE_SSL
+      mkdir -p "$HOME/.cache/sccache"
+      export SCCACHE_SERVER_UDS="$HOME/.cache/sccache/server.sock"
       exec ${sccache}/bin/sccache "$@"
     fi
 

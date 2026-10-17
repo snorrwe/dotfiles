@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Enable_blink_cmdline_completions__________________";
+  system.nixos.label = "Share_sccache_disk_cache_across_host_and_Distrobox";
 }
