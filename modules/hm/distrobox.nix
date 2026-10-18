@@ -18,14 +18,6 @@ let
       };
     }
     {
-      ubuntu24 = {
-        additional_packages = "python3 node libnotify";
-        image = "docker.io/library/ubuntu:24.04";
-        home = "~/.local/share/distrobox/ubuntu24";
-        nvidia = true;
-      };
-    }
-    {
       arch = {
         image = "docker.io/library/archlinux:latest";
         home = "~/.local/share/distrobox/arch";
