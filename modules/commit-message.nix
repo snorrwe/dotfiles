@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_the_ubuntu_distrobox_______________________";
+  system.nixos.label = "Add_grill-me_skill________________________________";
 }
