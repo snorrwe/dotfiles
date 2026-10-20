@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_grill-me_skill________________________________";
+  system.nixos.label = "Update_design_doc_skill___________________________";
 }

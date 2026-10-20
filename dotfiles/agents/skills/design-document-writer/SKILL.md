@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 Write a document that helps reviewers understand the problem, evaluate the proposed solution, and identify unresolved decisions. Do not implement the design unless the user asks.
 
+If the repository has a design document convention, follow it, including where to place the document. If the repo has no conventions around design documents place the new document in `docs/design/`.
+
 ## Workflow
 
 1. Understand the problem you're about to solve. If the user did not articulate it explicitly, ask!
