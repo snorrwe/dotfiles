@@ -25,6 +25,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix";
+    snorrwe-cli = {
+      url = "path:./tools/snorrwe-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -36,6 +40,7 @@
       niri,
       rust-overlay,
       agenix,
+      snorrwe-cli,
       ...
     }@inputs:
     let
@@ -43,6 +48,7 @@
       username = "snorrwe";
       pkgs = import nixpkgs { inherit system; };
       pkgsDarwin = import nixpkgs { system = "aarch64-darwin"; };
+      cliPackage = pkgs: snorrwe-cli.packages.${pkgs.stdenv.hostPlatform.system}.default;
     in
     {
       nixosConfigurations = builtins.listToAttrs (
@@ -110,6 +116,7 @@
                   }
                   {
                     environment.variables.NIX_HOST = host;
+                    environment.systemPackages = [ (cliPackage pkgs) ];
                   }
 
                   # enable nix-ld
@@ -159,6 +166,7 @@
                 modules = [
                   ./modules/nixpkgs.nix
                   ./modules/hm/home.nix
+                  { home.packages = [ (cliPackage pkgs) ]; }
                 ];
               };
             })
@@ -178,6 +186,7 @@
             modules = [
               ./modules/nixpkgs.nix
               ./modules/hm/home-darwin.nix
+              { home.packages = [ (cliPackage pkgsDarwin) ]; }
             ];
           };
         };

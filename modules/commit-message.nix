@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_unused_stuff_______________________________";
+  system.nixos.label = "Install_snorrwe-cli_across_NixOS_and_Home_Manager_";
 }
