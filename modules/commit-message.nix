@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Install_snorrwe-cli_across_NixOS_and_Home_Manager_";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
