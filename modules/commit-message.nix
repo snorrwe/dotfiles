@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Bundle_Git_with_snorrwe-cli_at_runtime____________";
+  system.nixos.label = "Remove_unused_stuff_______________________________";
 }
