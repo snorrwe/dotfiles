@@ -9,10 +9,19 @@
     package = pkgs.yazi;
     enableZshIntegration = true;
     plugins = with pkgs.yaziPlugins; {
-      inherit mount starship;
+      inherit
+        mount
+        starship
+        git
+        diff
+        ;
     };
     initLua = ''
       require("starship"):setup()
+      require("git"):setup {
+          -- Order of status signs showing in the linemode
+          order = 1500,
+      }
     '';
     settings = {
       mgr = {
@@ -23,6 +32,20 @@
         show_symlink = true;
         linemode = "mtime";
       };
+
+      plugin.prepend_fetchers = [
+        {
+          url = "*";
+          run = "git";
+          group = "git";
+        }
+        {
+          url = "*/";
+          run = "git";
+          group = "git";
+        }
+      ];
+
     };
     keymap = {
       mgr.prepend_keymap = [
@@ -43,6 +66,11 @@
         {
           on = [ "M" ];
           run = [ "plugin mount" ];
+        }
+        {
+          on = [ "<C-d>" ];
+          run = "plugin diff";
+          desc = "Diff the selected with the hovered file";
         }
       ];
     };
