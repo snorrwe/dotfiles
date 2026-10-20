@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_snorrwe-cli_a_small_tool_for_specific_tasks_I_";
+  system.nixos.label = "Bundle_Git_with_snorrwe-cli_at_runtime____________";
 }

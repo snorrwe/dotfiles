@@ -52,7 +52,11 @@
           // {
             inherit cargoArtifacts;
 
-            nativeBuildInputs = [ ];
+            nativeBuildInputs = [ pkgs.makeWrapper ];
+            postInstall = ''
+              wrapProgram $out/bin/snorrwe-cli \
+                --prefix PATH : ${lib.makeBinPath [ pkgs.git ]}
+            '';
           }
         );
       in
