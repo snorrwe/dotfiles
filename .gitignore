@@ -1,3 +1,4 @@
 .setup/install.log
 .devenv
 dot-config/tmux/plugins
+/tools/snorrwe-cli/target
