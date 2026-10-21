@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_git_and_diff_plugins_to_yazi__________________";
+  system.nixos.label = "Add_rootless_agent_container_with_host_tool_integr";
 }

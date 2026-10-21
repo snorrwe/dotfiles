@@ -43,6 +43,25 @@
       username = "snorrwe";
       pkgs = import nixpkgs { inherit system; };
       pkgsDarwin = import nixpkgs { system = "aarch64-darwin"; };
+      agentHome = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {
+          inherit inputs username;
+          host = "agent";
+          features = {
+            enableGui = false;
+            enableGaming = false;
+            enableGamedev = false;
+            enableDistrobox = false;
+            enableAgents = false;
+            enableLocalNetwork = false;
+          };
+        };
+        modules = [
+          ./modules/nixpkgs.nix
+          ./modules/hm/home-agent.nix
+        ];
+      };
     in
     {
       nixosConfigurations = builtins.listToAttrs (
@@ -56,6 +75,7 @@
                 enableGamedev = true;
                 enableBluetooth = true;
                 enableDistrobox = true;
+                enableAgents = true;
                 enableLocalNetwork = false;
               }
               // args.features;
@@ -64,6 +84,7 @@
               name = host;
               value = nixpkgs.lib.nixosSystem {
                 specialArgs = {
+                  inherit agentHome;
                   inherit system;
                   inherit inputs;
                   inherit username;
@@ -79,6 +100,7 @@
                   ./modules/swaybg.nix
                   ./modules/portals.nix
                   ./modules/containers.nix
+                  ./modules/agents.nix
                   ./modules/nixpkgs.nix
                   ./modules/niri.nix
                   ./modules/users.nix
@@ -152,6 +174,8 @@
                     enableGaming = false;
                     enableGamedev = false;
                     enableDistrobox = false;
+                    enableAgents = false;
+                    enableLocalNetwork = false;
                   };
                 };
                 modules = [
@@ -166,6 +190,7 @@
             ]
         )
         // {
+          agent = agentHome;
           "dkiss@danimac" = home-manager.lib.homeManagerConfiguration {
             pkgs = pkgsDarwin;
             extraSpecialArgs = {

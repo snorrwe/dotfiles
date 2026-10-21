@@ -60,6 +60,21 @@ in
 
   networking.hostName = host;
 
+  dotfiles.agents.sharedDirectories = [
+    {
+      hostPath = config.home-manager.users.${username}.dotfiles.dir;
+      containerPath = "/workspace/dotfiles";
+    }
+    {
+      hostPath = "/home/${username}/Projects";
+      containerPath = "/workspace/Projects";
+    }
+    {
+      hostPath = "/mnt/data-0";
+      containerPath = "/workspace/data-0";
+    }
+  ];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";

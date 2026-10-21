@@ -1,0 +1,23 @@
+set -euo pipefail
+
+# A socket-activated user service. Accept only two fixed host actions, not a
+# shell command or the tmux/D-Bus sockets themselves.
+IFS= read -r -d '' -n 16 action
+case "$action" in
+  tmux)
+    IFS= read -r -d '' -n 32 pane
+    IFS= read -r -d '' -n 121 title
+    [[ "$pane" =~ ^%[0-9]+$ && -n "$title" && ${#title} -le 120 && "$title" != *[[:cntrl:]]* ]] || exit 1
+    window=$(tmux -L default display-message -p -t "$pane" -F '#{window_id}')
+    tmux -L default rename-window -t "$window" "$title"
+    ;;
+  notify)
+    IFS= read -r -d '' -n 121 summary
+    IFS= read -r -d '' -n 501 body
+    [[ -n "$summary" && ${#summary} -le 120 && ${#body} -le 500 && "$summary" != *[[:cntrl:]]* ]] || exit 1
+    export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR:?}/bus"
+    notify-send -- "$summary" "$body"
+    ;;
+  *) exit 1 ;;
+esac
+printf 'ok\n'
