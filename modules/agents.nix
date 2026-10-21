@@ -60,6 +60,7 @@ let
     };
   };
   mounts = cfg.sharedDirectories;
+  langfuseSecret = config.home-manager.users.${username}.age.secrets.langfuse-json.path;
   spec = builtins.hashString "sha256" (
     builtins.toJSON {
       inherit mounts;
@@ -67,6 +68,8 @@ let
       # Invalidate boxes created with per-directory/transient mount semantics.
       workspaceMode = "declared-only";
       image = toString image;
+      # Recreate when Langfuse secret wiring changes (path only; never values).
+      langfuseSecret = toString langfuseSecret;
     }
   );
   agentBox = pkgs.writeShellApplication {
@@ -74,6 +77,7 @@ let
     runtimeInputs = with pkgs; [
       config.virtualisation.podman.package
       coreutils
+      jq
       util-linux
     ];
     # Keep build-time values shell-escaped and separate from launcher logic.
@@ -83,6 +87,8 @@ let
       agent_image_archive=${lib.escapeShellArg (toString image)}
       agent_policy=${lib.escapeShellArg (toString config.environment.etc."containers/policy.json".source)}
       agent_activation=${lib.escapeShellArg (toString agentHome.activationPackage)}
+      # HM agenix paths embed ''${XDG_RUNTIME_DIR}; leave unescaped so the shell expands it.
+      langfuse_secret=${langfuseSecret}
       configured_sources=(${lib.escapeShellArgs (map (m: m.hostPath) mounts)})
       configured_targets=(${lib.escapeShellArgs (map (m: m.containerPath) mounts)})
       configured_read_only=(${lib.escapeShellArgs (map (m: lib.boolToString m.readOnly) mounts)})
@@ -173,6 +179,10 @@ in
       };
     };
 
-    home-manager.users.${username}.home.packages = [ agentBox ];
+    home-manager.users.${username} = {
+      # Host Home Manager decrypts this; agent-box injects LANGFUSE_* into the box.
+      age.secrets.langfuse-json.file = ./secrets/langfuse.json;
+      home.packages = [ agentBox ];
+    };
   };
 }

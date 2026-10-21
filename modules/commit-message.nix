@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Do_not_symlink_skills_into_distroboxes____________";
+  system.nixos.label = "Inject_Langfuse_credentials_into_agent_containers_";
 }

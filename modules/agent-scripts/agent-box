@@ -36,6 +36,25 @@ lock_agent_box() {
     fi
   fi
 }
+# Map host-decrypted agenix JSON (publicKey/secretKey/baseUrl) to Langfuse CLI/SDK env.
+langfuse_env_args=()
+load_langfuse_env() {
+  if [[ ! -r "$langfuse_secret" ]]; then
+    echo "Langfuse secret is not readable: $langfuse_secret" >&2
+    echo "Apply Home Manager so agenix can decrypt modules/secrets/langfuse.json." >&2
+    exit 1
+  fi
+  local public_key secret_key base_url
+  public_key=$(jq -er '.publicKey | select(type == "string" and length > 0)' < "$langfuse_secret")
+  secret_key=$(jq -er '.secretKey | select(type == "string" and length > 0)' < "$langfuse_secret")
+  base_url=$(jq -er '.baseUrl | select(type == "string" and length > 0)' < "$langfuse_secret")
+  langfuse_env_args=(
+    --env "LANGFUSE_PUBLIC_KEY=$public_key"
+    --env "LANGFUSE_SECRET_KEY=$secret_key"
+    --env "LANGFUSE_BASE_URL=$base_url"
+    --env "LANGFUSE_HOST=$base_url"
+  )
+}
 enter_container() {
   exec_args=(-i)
   if [[ -t 0 && -t 1 ]]; then exec_args+=(-t); fi
@@ -45,6 +64,7 @@ enter_container() {
   if [[ "${TMUX_PANE:-}" =~ ^%[0-9]+$ ]]; then
     exec_args+=(--env "AGENT_HOST_TMUX_PANE=$TMUX_PANE")
   fi
+  exec_args+=("${langfuse_env_args[@]}")
   if (( $# )); then
     exec podman exec "${exec_args[@]}" "$container" "$@"
   else
@@ -64,6 +84,7 @@ if (( attach )); then
     echo "$container is not running; launch it with agent-box first" >&2
     exit 1
   fi
+  load_langfuse_env
   flock -u 9
   enter_container "$@"
 fi
@@ -135,6 +156,7 @@ fi
 # Serialize initialization across boxes because they share the home volume.
 # Mount or GUI changes must not silently reuse incompatible grants.
 lock_agent_box
+load_langfuse_env
 gui_mount=()
 if (( gui )); then
   display=${WAYLAND_DISPLAY:-}
@@ -205,6 +227,7 @@ if ! podman container exists "$container"; then
     "${mounts[@]}" "${gui_mount[@]}" "${actions_mount[@]}" \
     --env HOME=/home/agent --env NIX_REMOTE=daemon \
     --env "NIX_CONFIG=experimental-features = nix-command flakes" \
+    "${langfuse_env_args[@]}" \
     "$agent_image" \
     /usr/bin/sleep infinity >/dev/null
 elif [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
