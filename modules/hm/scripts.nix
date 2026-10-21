@@ -21,6 +21,7 @@
       builtins.readFile ./scripts/obsidian-maintain-subtask-contexts
     ))
     (writeScriptBin "mk-flake-envrc" (builtins.readFile ./scripts/mk-flake-envrc))
+    (writeScriptBin "setup-workspace" (builtins.readFile ./scripts/setup-workspace))
     (writeScriptBin "distrobox-list-exports" (builtins.readFile ./scripts/distrobox-list-exports))
     (writeScriptBin "tmux-rename-window" (builtins.readFile ./scripts/tmux-rename-window))
     (writeScriptBin "tmux-connect-editor" (builtins.readFile ./scripts/tmux-connect-editor))

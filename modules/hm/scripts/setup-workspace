@@ -1,0 +1,67 @@
+#!/usr/bin/env nu
+
+# Clone a project into worktrees/, optionally with a separate devenv checkout.
+def clone-workspace [destination: string, git_url: string, devenv_url: any, gitargs: list<string>] {
+    let worktrees = $destination | path join worktrees
+    mkdir $worktrees
+
+    if $devenv_url != null {
+        ^git -C $destination clone ...$gitargs $devenv_url
+    }
+
+    ^git -C $worktrees clone ...$gitargs $git_url
+}
+
+# Set up a workspace with a checkout in worktrees/.
+def main [
+    git_url: string
+    destination: path = "./"
+    --devenv-url(-d): string
+    --force(-f) # Replace an existing destination only after cloning succeeds.
+    ...gitargs: string # Git clone options after -- (e.g. -- --depth 1).
+] {
+    let destination = $destination | path expand --no-symlink
+    let exists = $destination | path exists --no-symlink
+
+    if not ($force and $exists) {
+        clone-workspace $destination $git_url $devenv_url $gitargs
+        return
+    }
+
+    let parent = $destination | path dirname
+    if $parent == $destination { error make "Cannot replace the filesystem root" }
+
+    # Stage on the same filesystem so both moves are atomic. Keep the original
+    # until the new workspace has been cloned successfully.
+    let staging = mktemp -d -p $parent '.setup-workspace.XXXXXXXX'
+    let new = $staging | path join new
+    let old = $staging | path join old
+
+    try {
+        clone-workspace $new $git_url $devenv_url $gitargs
+    } catch {|err|
+        rm --recursive --permanent $staging
+        error make $err
+    }
+
+    try {
+        mv $destination $old
+    } catch {|err|
+        rm --recursive --permanent $staging
+        error make $err
+    }
+
+    try {
+        mv $new $destination
+    } catch {|err|
+        try {
+            mv $old $destination
+        } catch {|rollback|
+            error make "Failed to install workspace: ($err.msg); failed to restore original: ($rollback.msg); original is at ($old)"
+        }
+        rm --recursive --permanent $staging
+        error make $err
+    }
+
+    rm --recursive --permanent $staging
+}
