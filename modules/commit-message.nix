@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Inject_Langfuse_credentials_into_agent_containers_";
+  system.nixos.label = "Rotate_langfuse_secret____________________________";
 }
