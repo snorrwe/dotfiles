@@ -48,15 +48,5 @@ in
       source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.zshrc";
     };
   }
-  // builtins.listToAttrs (map (mapSkill ".agents/skills") skillDirs)
-  // builtins.listToAttrs (
-    lib.concatMap
-      (container: map (mapSkill "${lib.removePrefix "~/" container.home}/.agents/skills") skillDirs)
-      (
-        if config.programs.distrobox.enable then
-          builtins.attrValues config.programs.distrobox.containers
-        else
-          [ ]
-      )
-  );
+  // builtins.listToAttrs (map (mapSkill ".agents/skills") skillDirs);
 }
