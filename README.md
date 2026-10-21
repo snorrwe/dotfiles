@@ -77,7 +77,7 @@ Uses plain home-manager (no nix-darwin / system-level management).
 
 See commit 5613beba3186 Setup sccache with the local garage storage
 
-Add the file to ./modules/secrets/secrets.nix
+Add the file to ./modules/secrets/agenix-rules.nix
 
 Use `just edit-secret <name>` to edit its contents
 

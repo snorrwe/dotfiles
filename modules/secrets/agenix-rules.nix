@@ -12,4 +12,5 @@ let
 in
 {
   "s3.local.json".publicKeys = users;
+  "langfuse.json".publicKeys = users;
 }
