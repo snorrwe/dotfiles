@@ -60,10 +60,11 @@ let
     };
   };
   mounts = cfg.sharedDirectories;
+  networkMode = "host";
   langfuseSecret = config.home-manager.users.${username}.age.secrets.langfuse-json.path;
   spec = builtins.hashString "sha256" (
     builtins.toJSON {
-      inherit mounts;
+      inherit mounts networkMode;
       hostBin = "/home/${username}/.local/bin";
       # Invalidate boxes created with per-directory/transient mount semantics.
       workspaceMode = "declared-only";
@@ -83,6 +84,7 @@ let
     # Keep build-time values shell-escaped and separate from launcher logic.
     text = ''
       agent_spec=${lib.escapeShellArg spec}
+      agent_network_mode=${lib.escapeShellArg networkMode}
       agent_image=${lib.escapeShellArg "${image.imageName}:${image.imageTag}"}
       agent_image_archive=${lib.escapeShellArg (toString image)}
       agent_policy=${lib.escapeShellArg (toString config.environment.etc."containers/policy.json".source)}
@@ -155,8 +157,6 @@ in
         message = "Agent mount targets must be distinct, avoid /workspace/current, and stay under /workspace.";
       }
     ];
-
-    virtualisation.podman.extraPackages = [ pkgs.slirp4netns ];
 
     systemd = {
       user = {

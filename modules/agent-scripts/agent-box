@@ -220,7 +220,7 @@ if ! podman container exists "$container"; then
   fi
   podman run -d --name "$container" --label "agent.spec=$label" \
     --userns=keep-id --user "$(id -u):$(id -g)" \
-    --network=slirp4netns --tmpfs /tmp --tmpfs /run \
+    --network="$agent_network_mode" --tmpfs /tmp --tmpfs /run \
     --mount type=volume,src=agent-box-home,dst=/home/agent \
     --mount type=bind,src=/nix/store,dst=/nix/store,ro=true \
     --mount type=bind,src=/nix/var/nix/daemon-socket,dst=/nix/var/nix/daemon-socket,ro=true \
