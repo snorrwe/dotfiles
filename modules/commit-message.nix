@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_shfmt_________________________________________";
+  system.nixos.label = "Format_scripts____________________________________";
 }

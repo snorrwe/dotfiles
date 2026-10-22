@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if sesh window list | grep -Fxq editor; then
-  sesh window connect editor >/dev/null
+    sesh window connect editor >/dev/null
 else
-  sesh window connect editor -c nvim >/dev/null
+    sesh window connect editor -c nvim >/dev/null
 fi

@@ -7,6 +7,6 @@ set -ueo pipefail
 projects_dir=${XDG_PROJECTS_DIR:-$HOME/Projects}
 
 fd . "$projects_dir" --type d |
-parallel 'cd {} && git rev-parse --is-inside-work-tree > /dev/null 2>&1 && git rev-parse --show-toplevel' |
-sort -n | uniq |
-parallel --color-failed 'cd {} && pwd && git pull --autostash --ff-only'
+    parallel 'cd {} && git rev-parse --is-inside-work-tree > /dev/null 2>&1 && git rev-parse --show-toplevel' |
+    sort -n | uniq |
+    parallel --color-failed 'cd {} && pwd && git pull --autostash --ff-only'

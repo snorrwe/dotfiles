@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cat >> .envrc <<- EOF
+cat >>.envrc <<-EOF
 use flake . --impure --extra-experimental-features "nix-command flakes";
 EOF
 direnv allow

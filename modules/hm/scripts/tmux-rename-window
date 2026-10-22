@@ -5,17 +5,17 @@ set -u
 title=$1
 
 if [ -n "${AGENT_HOST_TMUX_PANE:-}" ]; then
-  if [[ "$title" == *$'\n'* ]]; then
-    echo 'tmux window title must be a single line' >&2
-    exit 1
-  fi
-  response=$(printf 'tmux\0%s\0%s\0' "$AGENT_HOST_TMUX_PANE" "$title" | socat -T 5 - UNIX-CONNECT:/run/agent-host-actions.sock)
-  [ "$response" = ok ]
-  exit
+    if [[ "$title" == *$'\n'* ]]; then
+        echo 'tmux window title must be a single line' >&2
+        exit 1
+    fi
+    response=$(printf 'tmux\0%s\0%s\0' "$AGENT_HOST_TMUX_PANE" "$title" | socat -T 5 - UNIX-CONNECT:/run/agent-host-actions.sock)
+    [ "$response" = ok ]
+    exit
 fi
 
 if [ -n "${TMUX_PANE:-}" ] &&
-   window_id=$(tmux display-message -p -t "$TMUX_PANE" -F '#{window_id}' 2>/dev/null) &&
-   [ -n "$window_id" ]; then
-  tmux rename-window -t "$window_id" "$title" || true
+    window_id=$(tmux display-message -p -t "$TMUX_PANE" -F '#{window_id}' 2>/dev/null) &&
+    [ -n "$window_id" ]; then
+    tmux rename-window -t "$window_id" "$title" || true
 fi
