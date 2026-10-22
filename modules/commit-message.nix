@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Rotate_langfuse_secret____________________________";
+  system.nixos.label = "Add_shfmt_________________________________________";
 }

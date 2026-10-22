@@ -99,6 +99,7 @@ let
     dockerfmt
     sleek
     nixfmt
+    shfmt
   ];
 
 in
