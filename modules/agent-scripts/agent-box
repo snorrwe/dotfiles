@@ -25,6 +25,11 @@ workdir=
 podman() {
   command podman "$@" 9>&-
 }
+# Setgid podman: pasta inherits the agent-box egid that the firewall matches.
+# A shell wrapper would drop that egid, so this must exec the podman binary.
+podman_filtered() {
+  "$agent_exec" "$@" 9>&-
+}
 lock_agent_box() {
   lock="${XDG_RUNTIME_DIR:?XDG_RUNTIME_DIR is required}/agent-box.lock"
   exec 9>"$lock"
@@ -213,12 +218,12 @@ if ! podman container exists "$container"; then
   fi
   # The host Nix store and daemon are mounted below
   if (( new_home )); then
-    podman run --rm --userns=keep-id --user 0 \
+    podman run --rm --userns=keep-id --user 0 --network none \
       --mount type=volume,src=agent-box-home,dst=/home/agent \
       "$agent_image" \
       /usr/bin/chown -R "$(id -u):$(id -g)" /home/agent
   fi
-  podman run -d --name "$container" --label "agent.spec=$label" \
+  podman_filtered run -d --name "$container" --label "agent.spec=$label" \
     --userns=keep-id --user "$(id -u):$(id -g)" \
     --network="$agent_network_mode" --tmpfs /tmp --tmpfs /run \
     --mount type=volume,src=agent-box-home,dst=/home/agent \
@@ -231,7 +236,7 @@ if ! podman container exists "$container"; then
     "$agent_image" \
     /usr/bin/sleep infinity >/dev/null
 elif [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
-  podman start "$container" >/dev/null
+  podman_filtered start "$container" >/dev/null
 fi
 # Nix-store sudo cannot be setuid. Install Fedora's native package after
 # startup, and repair existing containers as well as new ones. keep-id

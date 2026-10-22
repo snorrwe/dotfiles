@@ -60,11 +60,51 @@ let
     };
   };
   mounts = cfg.sharedDirectories;
-  networkMode = "host";
+  # Publish bound TCP ports on host loopback only. Podman splits the suffix on commas.
+  # --host-lo-to-ns-lo keeps servers bound to 127.0.0.1 inside the box reachable.
+  # --map-guest-addr none removes the host.containers.internal path onto the host.
+  networkMode = "pasta:--host-lo-to-ns-lo,--map-guest-addr,none,-t,127.0.0.1/auto,-t,::1/auto,-u,none,-T,none,-U,none";
+  # Kept in the spec hash so boxes already created with this parent are not recreated.
+  cgroupSlice = "agent.slice";
+  # Pasta is started via sg(1) in this group. nft matches meta skgid, which does not
+  # need the cgroup to exist at load time (socket cgroupv2 resolves a path then).
+  egressGroup = "agent-box";
+  # Skip host.containers.internal even if Podman still prefers the pasta guest address.
+  containersConf = pkgs.writeText "agent-box-containers.conf" ''
+    [containers]
+    host_containers_internal_ip = "none"
+  '';
+  # A native nft table, not networking.nftables.enable: that module blacklists
+  # ip_tables, which rootless Docker in modules/containers.nix still needs.
+  egressRules = pkgs.writeText "agent-box-egress.nft" ''
+    table inet agentbox
+    delete table inet agentbox
+    table inet agentbox {
+      chain output {
+        type filter hook output priority filter; policy accept;
+        meta skgid "${egressGroup}" meta l4proto { tcp, udp } th dport 53 ip daddr 127.0.0.0/8 accept
+        meta skgid "${egressGroup}" meta l4proto { tcp, udp } th dport 53 ip6 daddr ::1 accept
+        meta skgid "${egressGroup}" ip daddr {
+          10.0.0.0/8,
+          172.16.0.0/12,
+          192.168.0.0/16,
+          100.64.0.0/10,
+          169.254.0.0/16,
+          127.0.0.0/8
+        } reject with icmpx type admin-prohibited
+        meta skgid "${egressGroup}" ip6 daddr {
+          fc00::/7,
+          fe80::/10,
+          ::1
+        } reject with icmpx type admin-prohibited
+      }
+    }
+  '';
   langfuseSecret = config.home-manager.users.${username}.age.secrets.langfuse-json.path;
   spec = builtins.hashString "sha256" (
     builtins.toJSON {
-      inherit mounts networkMode;
+      inherit mounts networkMode cgroupSlice;
+      hostContainersInternal = "none";
       hostBin = "/home/${username}/.local/bin";
       # Invalidate boxes created with per-directory/transient mount semantics.
       workspaceMode = "declared-only";
@@ -85,6 +125,10 @@ let
     text = ''
       agent_spec=${lib.escapeShellArg spec}
       agent_network_mode=${lib.escapeShellArg networkMode}
+      # Setgid wrapper. sg(1) is not setuid here, so setgroups fails.
+      agent_exec=${lib.escapeShellArg "${config.security.wrapperDir}/agent-box-exec"}
+      agent_containers_conf=${lib.escapeShellArg containersConf}
+      export CONTAINERS_CONF_OVERRIDE="$agent_containers_conf"
       agent_image=${lib.escapeShellArg "${image.imageName}:${image.imageTag}"}
       agent_image_archive=${lib.escapeShellArg (toString image)}
       agent_policy=${lib.escapeShellArg (toString config.environment.etc."containers/policy.json".source)}
@@ -158,8 +202,36 @@ in
       }
     ];
 
+    environment.systemPackages = [ pkgs.nftables ];
+
+    users.groups.${egressGroup} = { };
+    users.users.${username}.extraGroups = [ egressGroup ];
+
+    # Exec the podman binary directly. A shell would drop the setgid egid.
+    security.wrappers.agent-box-exec = {
+      source = lib.getExe config.virtualisation.podman.package;
+      owner = "root";
+      group = egressGroup;
+      setuid = false;
+      setgid = true;
+    };
+
     systemd = {
+      services.agent-box-egress = {
+        description = "Reject agent-box pasta connections into private networks";
+        wantedBy = [ "multi-user.target" ];
+        after = [ "systemd-sysusers.service" ];
+        serviceConfig = {
+          Type = "oneshot";
+          RemainAfterExit = true;
+          ExecStart = "${pkgs.nftables}/bin/nft -f ${egressRules}";
+          ExecStop = "${pkgs.nftables}/bin/nft delete table inet agentbox";
+        };
+      };
       user = {
+        slices.agent = {
+          description = "agent-box containers and their pasta processes";
+        };
         sockets.agent-host-actions = {
           wantedBy = [ "sockets.target" ];
           socketConfig = {

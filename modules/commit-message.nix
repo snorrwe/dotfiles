@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Format_scripts____________________________________";
+  system.nixos.label = "Isolate_agent-box_from_private_networks___________";
 }
