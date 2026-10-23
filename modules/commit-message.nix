@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_notification_widget_to_the_right_____________";
+  system.nixos.label = "Style_notification_widget_________________________";
 }

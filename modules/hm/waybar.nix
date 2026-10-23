@@ -242,6 +242,7 @@ with lib;
           transition: ${betterTransition};
         }
 
+        #custom-notification,
         #clock,
         #battery,
         #cpu,
