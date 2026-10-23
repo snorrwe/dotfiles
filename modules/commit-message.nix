@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Style_notification_widget_________________________";
+  system.nixos.label = "Format_scripts____________________________________";
 }

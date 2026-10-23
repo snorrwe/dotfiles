@@ -7,236 +7,251 @@ gui=0
 share_cwd=1
 show_mounts=0
 attach=0
-while (( $# )); do
-  case "$1" in
-    --gui) gui=1; shift ;;
-    --no-cwd) share_cwd=0; shift ;;
-    --mounts) show_mounts=1; shift ;;
-    --attach) attach=1; shift ;;
-    --) shift; break ;;
+while (($#)); do
+    case "$1" in
+    --gui)
+        gui=1
+        shift
+        ;;
+    --no-cwd)
+        share_cwd=0
+        shift
+        ;;
+    --mounts)
+        show_mounts=1
+        shift
+        ;;
+    --attach)
+        attach=1
+        shift
+        ;;
+    --)
+        shift
+        break
+        ;;
     *) break ;;
-  esac
+    esac
 done
 container=agent-box
-if (( gui )); then container=agent-box-gui; fi
+if ((gui)); then container=agent-box-gui; fi
 workdir=
 # Podman can launch detached helpers. Do not pass them the lock fd,
 # or a helper may keep the lock held after this launcher exits.
 podman() {
-  command podman "$@" 9>&-
+    command podman "$@" 9>&-
 }
 # Setgid podman: pasta inherits the agent-box egid that the firewall matches.
 # A shell wrapper would drop that egid, so this must exec the podman binary.
 podman_filtered() {
-  "$agent_exec" "$@" 9>&-
+    "$agent_exec" "$@" 9>&-
 }
 lock_agent_box() {
-  lock="${XDG_RUNTIME_DIR:?XDG_RUNTIME_DIR is required}/agent-box.lock"
-  exec 9>"$lock"
-  if ! flock -n 9; then
-    echo "Waiting for another agent-box launch to finish (lock: $lock)" >&2
-    if ! flock -w 60 9; then
-      echo "Timed out waiting for $lock. Check the lock holder with: lslocks -o PID,COMMAND,PATH" >&2
-      exit 1
+    lock="${XDG_RUNTIME_DIR:?XDG_RUNTIME_DIR is required}/agent-box.lock"
+    exec 9>"$lock"
+    if ! flock -n 9; then
+        echo "Waiting for another agent-box launch to finish (lock: $lock)" >&2
+        if ! flock -w 60 9; then
+            echo "Timed out waiting for $lock. Check the lock holder with: lslocks -o PID,COMMAND,PATH" >&2
+            exit 1
+        fi
     fi
-  fi
 }
 # Map host-decrypted agenix JSON (publicKey/secretKey/baseUrl) to Langfuse CLI/SDK env.
 langfuse_env_args=()
 load_langfuse_env() {
-  if [[ ! -r "$langfuse_secret" ]]; then
-    echo "Langfuse secret is not readable: $langfuse_secret" >&2
-    echo "Apply Home Manager so agenix can decrypt modules/secrets/langfuse.json." >&2
-    exit 1
-  fi
-  local public_key secret_key base_url
-  public_key=$(jq -er '.publicKey | select(type == "string" and length > 0)' < "$langfuse_secret")
-  secret_key=$(jq -er '.secretKey | select(type == "string" and length > 0)' < "$langfuse_secret")
-  base_url=$(jq -er '.baseUrl | select(type == "string" and length > 0)' < "$langfuse_secret")
-  langfuse_env_args=(
-    --env "LANGFUSE_PUBLIC_KEY=$public_key"
-    --env "LANGFUSE_SECRET_KEY=$secret_key"
-    --env "LANGFUSE_BASE_URL=$base_url"
-    --env "LANGFUSE_HOST=$base_url"
-  )
+    if [[ ! -r "$langfuse_secret" ]]; then
+        echo "Langfuse secret is not readable: $langfuse_secret" >&2
+        echo "Apply Home Manager so agenix can decrypt modules/secrets/langfuse.json." >&2
+        exit 1
+    fi
+    local public_key secret_key base_url
+    public_key=$(jq -er '.publicKey | select(type == "string" and length > 0)' <"$langfuse_secret")
+    secret_key=$(jq -er '.secretKey | select(type == "string" and length > 0)' <"$langfuse_secret")
+    base_url=$(jq -er '.baseUrl | select(type == "string" and length > 0)' <"$langfuse_secret")
+    langfuse_env_args=(
+        --env "LANGFUSE_PUBLIC_KEY=$public_key"
+        --env "LANGFUSE_SECRET_KEY=$secret_key"
+        --env "LANGFUSE_BASE_URL=$base_url"
+        --env "LANGFUSE_HOST=$base_url"
+    )
 }
 enter_container() {
-  exec_args=(-i)
-  if [[ -t 0 && -t 1 ]]; then exec_args+=(-t); fi
-  if [[ -n "$workdir" ]]; then exec_args+=(-w "$workdir"); fi
-  if [[ -n "${TERM:-}" ]]; then exec_args+=(--env "TERM=$TERM"); fi
-  if [[ -n "${COLORTERM:-}" ]]; then exec_args+=(--env "COLORTERM=$COLORTERM"); fi
-  if [[ "${TMUX_PANE:-}" =~ ^%[0-9]+$ ]]; then
-    exec_args+=(--env "AGENT_HOST_TMUX_PANE=$TMUX_PANE")
-  fi
-  exec_args+=("${langfuse_env_args[@]}")
-  if (( $# )); then
-    exec podman exec "${exec_args[@]}" "$container" "$@"
-  else
-    exec podman exec "${exec_args[@]}" "$container" /usr/bin/bash --login
-  fi
+    exec_args=(-i)
+    if [[ -t 0 && -t 1 ]]; then exec_args+=(-t); fi
+    if [[ -n "$workdir" ]]; then exec_args+=(-w "$workdir"); fi
+    if [[ -n "${TERM:-}" ]]; then exec_args+=(--env "TERM=$TERM"); fi
+    if [[ -n "${COLORTERM:-}" ]]; then exec_args+=(--env "COLORTERM=$COLORTERM"); fi
+    if [[ "${TMUX_PANE:-}" =~ ^%[0-9]+$ ]]; then
+        exec_args+=(--env "AGENT_HOST_TMUX_PANE=$TMUX_PANE")
+    fi
+    exec_args+=("${langfuse_env_args[@]}")
+    if (($#)); then
+        exec podman exec "${exec_args[@]}" "$container" "$@"
+    else
+        exec podman exec "${exec_args[@]}" "$container" /usr/bin/bash --login
+    fi
 }
-if (( attach )); then
-  if (( show_mounts )); then
-    echo "--attach cannot be combined with --mounts" >&2
-    exit 1
-  fi
-  # Explicitly reuse the existing box's grants without initialization.
-  # Do not load an image, change mounts, or run initialization on attach.
-  lock_agent_box
-  if ! podman container exists "$container" \
-    || [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
-    echo "$container is not running; launch it with agent-box first" >&2
-    exit 1
-  fi
-  load_langfuse_env
-  flock -u 9
-  enter_container "$@"
+if ((attach)); then
+    if ((show_mounts)); then
+        echo "--attach cannot be combined with --mounts" >&2
+        exit 1
+    fi
+    # Explicitly reuse the existing box's grants without initialization.
+    # Do not load an image, change mounts, or run initialization on attach.
+    lock_agent_box
+    if ! podman container exists "$container" ||
+        [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
+        echo "$container is not running; launch it with agent-box first" >&2
+        exit 1
+    fi
+    load_langfuse_env
+    flock -u 9
+    enter_container "$@"
 fi
 mounts=()
 host_sources=()
 container_targets=()
 mount_info=()
 for i in "${!configured_sources[@]}"; do
-  host_path="${configured_sources[$i]}"
-  source=$(realpath -e -- "$host_path")
-  if [[ "$source" != "$host_path" || ! -d "$source" ]]; then
-    echo "Agent mount must be an existing, non-symlinked directory: $host_path" >&2
-    exit 1
-  fi
-  target="${configured_targets[$i]}"
-  read_only="${configured_read_only[$i]}"
-  mounts+=(--mount "type=bind,src=$source,dst=$target,ro=$read_only")
-  host_sources+=("$source")
-  container_targets+=("$target")
-  mode=rw
-  if [[ "$read_only" == true ]]; then mode=ro; fi
-  mount_info+=("$source -> $target ($mode)")
+    host_path="${configured_sources[$i]}"
+    source=$(realpath -e -- "$host_path")
+    if [[ "$source" != "$host_path" || ! -d "$source" ]]; then
+        echo "Agent mount must be an existing, non-symlinked directory: $host_path" >&2
+        exit 1
+    fi
+    target="${configured_targets[$i]}"
+    read_only="${configured_read_only[$i]}"
+    mounts+=(--mount "type=bind,src=$source,dst=$target,ro=$read_only")
+    host_sources+=("$source")
+    container_targets+=("$target")
+    mode=rw
+    if [[ "$read_only" == true ]]; then mode=ro; fi
+    mount_info+=("$source -> $target ($mode)")
 done
 host_bin="${HOME:?HOME is required}/.local/bin"
 if [[ "$(realpath -m -- "$host_bin")" != "$host_bin" ]]; then
-  echo "Host bin path must not contain symlinks: $host_bin" >&2
-  exit 1
+    echo "Host bin path must not contain symlinks: $host_bin" >&2
+    exit 1
 fi
 mkdir -p -- "$host_bin"
 bin_source=$(realpath -e -- "$host_bin")
 if [[ "$bin_source" != "$host_bin" || ! -d "$bin_source" ]]; then
-  echo "Host bin must be a non-symlinked directory: $host_bin" >&2
-  exit 1
+    echo "Host bin must be a non-symlinked directory: $host_bin" >&2
+    exit 1
 fi
 mounts+=(--mount "type=bind,src=$bin_source,dst=/run/agent-host-bin,ro=false")
 mount_info+=("$bin_source -> /run/agent-host-bin (rw)")
 workdir=
-if (( share_cwd )); then
-  cwd=$(pwd -P)
-  best_source=
-  for i in "${!host_sources[@]}"; do
-    source="${host_sources[$i]}"
-    if [[ "$cwd" == "$source" || "$cwd" == "$source/"* ]]; then
-      if (( ${#source} > ${#best_source} )); then
-        best_source="$source"
-        workdir="${container_targets[$i]}${cwd#"$source"}"
-      fi
+if ((share_cwd)); then
+    cwd=$(pwd -P)
+    best_source=
+    for i in "${!host_sources[@]}"; do
+        source="${host_sources[$i]}"
+        if [[ "$cwd" == "$source" || "$cwd" == "$source/"* ]]; then
+            if ((${#source} > ${#best_source})); then
+                best_source="$source"
+                workdir="${container_targets[$i]}${cwd#"$source"}"
+            fi
+        fi
+    done
+    if [[ -z "$workdir" ]]; then
+        echo "Current directory is outside the configured agent mounts: $cwd" >&2
+        echo "cd to a shared project, configure dotfiles.agents.sharedDirectories, or use --no-cwd to start in the private agent home." >&2
+        exit 1
     fi
-  done
-  if [[ -z "$workdir" ]]; then
-    echo "Current directory is outside the configured agent mounts: $cwd" >&2
-    echo "cd to a shared project, configure dotfiles.agents.sharedDirectories, or use --no-cwd to start in the private agent home." >&2
-    exit 1
-  fi
 fi
 actions_socket="${XDG_RUNTIME_DIR:-}/agent-host-actions.sock"
 actions_mount=()
 actions_id=none
 if [[ -n "${XDG_RUNTIME_DIR:-}" && -S "$actions_socket" ]]; then
-  actions_mount=(--mount "type=bind,src=$actions_socket,dst=/run/agent-host-actions.sock")
-  actions_id=$(stat -Lc '%d:%i' -- "$actions_socket")
-  mount_info+=("$actions_socket -> /run/agent-host-actions.sock (socket)")
+    actions_mount=(--mount "type=bind,src=$actions_socket,dst=/run/agent-host-actions.sock")
+    actions_id=$(stat -Lc '%d:%i' -- "$actions_socket")
+    mount_info+=("$actions_socket -> /run/agent-host-actions.sock (socket)")
 fi
-if (( show_mounts )); then
-  for mount in "${mount_info[@]}"; do printf '%s\n' "$mount"; done
-  if [[ -n "$workdir" ]]; then printf 'workdir: %s\n' "$workdir"; fi
-  exit 0
+if ((show_mounts)); then
+    for mount in "${mount_info[@]}"; do printf '%s\n' "$mount"; done
+    if [[ -n "$workdir" ]]; then printf 'workdir: %s\n' "$workdir"; fi
+    exit 0
 fi
 # Serialize initialization across boxes because they share the home volume.
 # Mount or GUI changes must not silently reuse incompatible grants.
 lock_agent_box
 load_langfuse_env
 gui_mount=()
-if (( gui )); then
-  display=${WAYLAND_DISPLAY:-}
-  if [[ ! "$display" =~ ^[a-zA-Z0-9_-]+$ || ! -S "${XDG_RUNTIME_DIR}/$display" ]]; then
-    echo "A live Wayland socket is required for --gui" >&2
-    exit 1
-  fi
-  gui_mount=(
-    --tmpfs "/run/agent-wayland:rw,mode=0700,uid=$(id -u),gid=$(id -g)"
-    --mount "type=bind,src=${XDG_RUNTIME_DIR}/$display,dst=/run/agent-wayland/$display"
-    --env "XDG_RUNTIME_DIR=/run/agent-wayland" --env "WAYLAND_DISPLAY=$display"
-  )
+if ((gui)); then
+    display=${WAYLAND_DISPLAY:-}
+    if [[ ! "$display" =~ ^[a-zA-Z0-9_-]+$ || ! -S "${XDG_RUNTIME_DIR}/$display" ]]; then
+        echo "A live Wayland socket is required for --gui" >&2
+        exit 1
+    fi
+    gui_mount=(
+        --tmpfs "/run/agent-wayland:rw,mode=0700,uid=$(id -u),gid=$(id -g)"
+        --mount "type=bind,src=${XDG_RUNTIME_DIR}/$display,dst=/run/agent-wayland/$display"
+        --env "XDG_RUNTIME_DIR=/run/agent-wayland" --env "WAYLAND_DISPLAY=$display"
+    )
 fi
 label="$agent_spec-$actions_id"
-if (( gui )); then
-  label="$label-$display"
+if ((gui)); then
+    label="$label-$display"
 fi
 if podman container exists "$container"; then
-  old=$(podman inspect -f '{{ index .Config.Labels "agent.spec" }}' "$container")
-  if [[ "$old" != "$label" ]]; then
-    if [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" == true ]]; then
-      echo "$container is running with different mounts or configuration." >&2
-      echo "Explicitly stop it with podman stop $container before recreating it. Recreation discards root-filesystem changes. --attach reuses its existing configuration." >&2
-      exit 1
+    old=$(podman inspect -f '{{ index .Config.Labels "agent.spec" }}' "$container")
+    if [[ "$old" != "$label" ]]; then
+        if [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" == true ]]; then
+            echo "$container is running with different mounts or configuration." >&2
+            echo "Explicitly stop it with podman stop $container before recreating it. Recreation discards root-filesystem changes. --attach reuses its existing configuration." >&2
+            exit 1
+        fi
+        podman rm "$container" >/dev/null
     fi
-    podman rm "$container" >/dev/null
-  fi
 fi
-if podman container exists "$container" \
-  && [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" == true ]] \
-  && podman exec "$container" /usr/bin/test -f /run/agent-box-ready; then
-  flock -u 9
-  enter_container "$@"
+if podman container exists "$container" &&
+    [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" == true ]] &&
+    podman exec "$container" /usr/bin/test -f /run/agent-box-ready; then
+    flock -u 9
+    enter_container "$@"
 fi
 if ! podman container exists "$container"; then
-  if ! podman image exists "$agent_image"; then
-    # Supply the user policy path without replacing an existing policy.
-    user_policy="${HOME:?HOME is required}/.config/containers/policy.json"
-    if [[ ! -f "$user_policy" ]]; then
-      if [[ -e "$user_policy" || -L "$user_policy" ]]; then
-        echo "Container signature policy is not a regular file: $user_policy" >&2
-        exit 1
-      fi
-      mkdir -p -- "$(dirname -- "$user_policy")"
-      ln -s -- "$agent_policy" "$user_policy"
+    if ! podman image exists "$agent_image"; then
+        # Supply the user policy path without replacing an existing policy.
+        user_policy="${HOME:?HOME is required}/.config/containers/policy.json"
+        if [[ ! -f "$user_policy" ]]; then
+            if [[ -e "$user_policy" || -L "$user_policy" ]]; then
+                echo "Container signature policy is not a regular file: $user_policy" >&2
+                exit 1
+            fi
+            mkdir -p -- "$(dirname -- "$user_policy")"
+            ln -s -- "$agent_policy" "$user_policy"
+        fi
+        podman load -i "$agent_image_archive" >/dev/null
     fi
-    podman load -i "$agent_image_archive" >/dev/null
-  fi
-  if ! podman volume exists agent-box-home; then
-    podman volume create agent-box-home >/dev/null
-    new_home=1
-  else
-    new_home=0
-  fi
-  # The host Nix store and daemon are mounted below
-  if (( new_home )); then
-    podman run --rm --userns=keep-id --user 0 --network none \
-      --mount type=volume,src=agent-box-home,dst=/home/agent \
-      "$agent_image" \
-      /usr/bin/chown -R "$(id -u):$(id -g)" /home/agent
-  fi
-  podman_filtered run -d --name "$container" --label "agent.spec=$label" \
-    --userns=keep-id --user "$(id -u):$(id -g)" \
-    --network="$agent_network_mode" --tmpfs /tmp --tmpfs /run \
-    --mount type=volume,src=agent-box-home,dst=/home/agent \
-    --mount type=bind,src=/nix/store,dst=/nix/store,ro=true \
-    --mount type=bind,src=/nix/var/nix/daemon-socket,dst=/nix/var/nix/daemon-socket,ro=true \
-    "${mounts[@]}" "${gui_mount[@]}" "${actions_mount[@]}" \
-    --env HOME=/home/agent --env NIX_REMOTE=daemon \
-    --env "NIX_CONFIG=experimental-features = nix-command flakes" \
-    "${langfuse_env_args[@]}" \
-    "$agent_image" \
-    /usr/bin/sleep infinity >/dev/null
+    if ! podman volume exists agent-box-home; then
+        podman volume create agent-box-home >/dev/null
+        new_home=1
+    else
+        new_home=0
+    fi
+    # The host Nix store and daemon are mounted below
+    if ((new_home)); then
+        podman run --rm --userns=keep-id --user 0 --network none \
+            --mount type=volume,src=agent-box-home,dst=/home/agent \
+            "$agent_image" \
+            /usr/bin/chown -R "$(id -u):$(id -g)" /home/agent
+    fi
+    podman_filtered run -d --name "$container" --label "agent.spec=$label" \
+        --userns=keep-id --user "$(id -u):$(id -g)" \
+        --network="$agent_network_mode" --tmpfs /tmp --tmpfs /run \
+        --mount type=volume,src=agent-box-home,dst=/home/agent \
+        --mount type=bind,src=/nix/store,dst=/nix/store,ro=true \
+        --mount type=bind,src=/nix/var/nix/daemon-socket,dst=/nix/var/nix/daemon-socket,ro=true \
+        "${mounts[@]}" "${gui_mount[@]}" "${actions_mount[@]}" \
+        --env HOME=/home/agent --env NIX_REMOTE=daemon \
+        --env "NIX_CONFIG=experimental-features = nix-command flakes" \
+        "${langfuse_env_args[@]}" \
+        "$agent_image" \
+        /usr/bin/sleep infinity >/dev/null
 elif [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
-  podman_filtered start "$container" >/dev/null
+    podman_filtered start "$container" >/dev/null
 fi
 # Nix-store sudo cannot be setuid. Install Fedora's native package after
 # startup, and repair existing containers as well as new ones. keep-id
@@ -262,17 +277,17 @@ podman exec --user 0 "$container" /usr/bin/bash -euc '
   install -o 0 -g 0 -m 0440 "$rule" /etc/sudoers.d/agent
 ' bash "$(id -u)"
 if [[ "$(podman exec "$container" /usr/bin/sudo -n /usr/bin/id -u)" != 0 ]]; then
-  echo "Agent passwordless sudo setup failed" >&2
-  exit 1
+    echo "Agent passwordless sudo setup failed" >&2
+    exit 1
 fi
 # A volume can survive a failed first launch before its ownership is
 # initialized. Check existing containers too, not only new volumes.
 if ! podman exec "$container" /usr/bin/test -w /home/agent; then
-  if ! podman exec --user 0 "$container" /usr/bin/chown -R "$(id -u):$(id -g)" /home/agent \
-    || ! podman exec "$container" /usr/bin/test -w /home/agent; then
-    echo "Agent home volume is not writable. Repair agent-box-home's ownership on the host; do not delete the volume." >&2
-    exit 1
-  fi
+    if ! podman exec --user 0 "$container" /usr/bin/chown -R "$(id -u):$(id -g)" /home/agent ||
+        ! podman exec "$container" /usr/bin/test -w /home/agent; then
+        echo "Agent home volume is not writable. Repair agent-box-home's ownership on the host; do not delete the volume." >&2
+        exit 1
+    fi
 fi
 # Retire only the launcher's old Neovim links. Never remove a real
 # directory or unrelated user link; configs and caches now live in the box.
@@ -290,7 +305,7 @@ podman exec "$container" /usr/bin/bash -euc '
 # Activate as the keep-id user, never root. Back up conflicting files;
 # Home Manager aborts rather than overwriting an existing backup.
 podman exec --env HOME_MANAGER_BACKUP_EXT=before-home-manager "$container" \
-  "$agent_activation"/activate
+    "$agent_activation"/activate
 # /run is ephemeral: a restart retries initialization, and a failed launch
 # never takes the automatic attach path.
 podman exec --user 0 "$container" /usr/bin/touch /run/agent-box-ready

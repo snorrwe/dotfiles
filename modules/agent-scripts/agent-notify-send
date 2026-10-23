@@ -1,8 +1,12 @@
+#!/usr/bin/env bash
 set -euo pipefail
 
-if (( $# < 1 || $# > 2 )); then
-  echo 'Usage: notify-send SUMMARY [BODY]' >&2
-  exit 2
+if (($# < 1 || $# > 2)); then
+    echo 'Usage: notify-send SUMMARY [BODY]' >&2
+    exit 2
 fi
 response=$(printf 'notify\0%s\0%s\0' "$1" "${2:-}" | socat -T 5 - UNIX-CONNECT:/run/agent-host-actions.sock)
-[[ "$response" == ok ]] || { echo 'Host notification failed' >&2; exit 1; }
+[[ "$response" == ok ]] || {
+    echo 'Host notification failed' >&2
+    exit 1
+}
