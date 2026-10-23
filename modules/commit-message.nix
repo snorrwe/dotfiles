@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_nvim_plugins_______________________________";
+  system.nixos.label = "Keep_agent-box_image_tools_in_the_system_closure__";
 }

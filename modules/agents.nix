@@ -17,12 +17,18 @@ let
     finalImageName = "registry.fedoraproject.org/fedora";
     finalImageTag = "43";
   };
-  exportBin = pkgs.writeShellScriptBin "agent-box-export" (builtins.readFile ./agent-scripts/agent-box-export);
-  notifyBin = pkgs.writeShellScriptBin "agent-notify-send" (builtins.readFile ./agent-scripts/agent-notify-send);
+  exportBin = pkgs.writeShellScriptBin "agent-box-export" (
+    builtins.readFile ./agent-scripts/agent-box-export
+  );
+  notifyBin = pkgs.writeShellScriptBin "agent-notify-send" (
+    builtins.readFile ./agent-scripts/agent-notify-send
+  );
   renameBin = pkgs.writeShellScriptBin "agent-tmux-rename-window" (
     builtins.readFile ./hm/scripts/tmux-rename-window
   );
-  hostActions = pkgs.writeShellScript "agent-host-actions" (builtins.readFile ./agent-scripts/agent-host-actions);
+  hostActions = pkgs.writeShellScript "agent-host-actions" (
+    builtins.readFile ./agent-scripts/agent-host-actions
+  );
   # Home Manager provides general tools. Keep only container helpers here;
   # privileged programs such as sudo must come from Fedora, not the Nix store.
   agentTools = pkgs.runCommand "agent-tools" { } ''
@@ -138,7 +144,8 @@ let
       configured_sources=(${lib.escapeShellArgs (map (m: m.hostPath) mounts)})
       configured_targets=(${lib.escapeShellArgs (map (m: m.containerPath) mounts)})
       configured_read_only=(${lib.escapeShellArgs (map (m: lib.boolToString m.readOnly) mounts)})
-    '' + builtins.readFile ./agent-scripts/agent-box;
+    ''
+    + builtins.readFile ./agent-scripts/agent-box;
   };
 in
 {
@@ -204,6 +211,17 @@ in
 
     environment.systemPackages = [ pkgs.nftables ];
 
+    # The image tarball is gzip-compressed, so the Nix scanner does not see the
+    # /usr/local/bin symlinks inside it. Without this, nix-collect-garbage
+    # deletes these tools, and the running container keeps the dangling links.
+    system.extraDependencies = [
+      exportBin
+      notifyBin
+      renameBin
+      pkgs.socat
+      agentHome.config.home.path
+    ];
+
     users.groups.${egressGroup} = { };
     users.users.${username}.extraGroups = [ egressGroup ];
 
@@ -243,7 +261,12 @@ in
         };
         services."agent-host-actions@".serviceConfig = {
           ExecStart = hostActions;
-          Environment = "PATH=${lib.makeBinPath [ pkgs.tmux pkgs.libnotify ]}";
+          Environment = "PATH=${
+            lib.makeBinPath [
+              pkgs.tmux
+              pkgs.libnotify
+            ]
+          }";
           StandardInput = "socket";
           StandardOutput = "socket";
           TimeoutStartSec = "6s";
