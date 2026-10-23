@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Let_exported_commands_pass_agent-box_flags________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
