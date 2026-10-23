@@ -32,7 +32,6 @@ with lib;
         modules-left = [ "niri/workspaces" ];
         modules-center = [
           "niri/window"
-          "custom/notification"
         ];
         modules-right = [
           "pulseaudio"
@@ -43,6 +42,7 @@ with lib;
           "disk#data-0"
           "battery"
           "clock"
+          "custom/notification"
           "tray"
           "custom/exit"
         ];
