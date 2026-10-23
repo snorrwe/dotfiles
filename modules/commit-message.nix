@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_agent_box_in_topgrade______________________";
+  system.nixos.label = "Disable_agent_updates_in_host_topgrade____________";
 }

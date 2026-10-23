@@ -43,6 +43,7 @@ in
   };
 
   imports = [
+    ./topgrade.nix
     ./parallel.nix
     ./rice.nix
     ./dunst.nix
@@ -66,35 +67,6 @@ in
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
-    topgrade = {
-      enable = true;
-      package = pkgs.topgrade;
-      settings = {
-        run_in_tmux = true;
-        commands = {
-          "Agent Box update" = "agent-box --no-cwd -- topgrade";
-        };
-        misc = {
-          assume_yes = true;
-          cleanup = true;
-          disable = [
-            "system"
-            "nix"
-            "home_manager"
-            "rustup"
-          ];
-          skip_notify = false;
-          pre_sudo = true;
-        };
-        git = {
-          repos = [
-            "${config.home.homeDirectory}/.local/share/zsh-snap"
-          ];
-          arguments = "--rebase --autostash";
-        };
-      };
-
-    };
     wezterm = {
       enable = features.enableGui;
       enableZshIntegration = true;
