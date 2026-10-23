@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_agent_box_upgrade_inside_the_agent_box____";
+  system.nixos.label = "Put_the_agent_homes_.localbin_on_PATH_____________";
 }

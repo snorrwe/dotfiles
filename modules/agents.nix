@@ -45,12 +45,13 @@ let
     contents = [ agentTools ];
     extraCommands = ''
       mkdir -p home/agent nix/var/nix workspace etc/profile.d
-      # Fedora's login shell resets PATH; restore the agent's own tools too.
-      printf '%s\n' 'export PATH="/usr/local/bin:$PATH:${agentHome.config.home.path}/bin"' > etc/profile.d/agent-tools.sh
+      # Fedora's login shell resets PATH; restore container helpers, the
+      # persistent home's user bins, and the agent's own tools.
+      printf '%s\n' 'export PATH="/usr/local/bin:$HOME/.local/bin:$PATH:${agentHome.config.home.path}/bin"' > etc/profile.d/agent-tools.sh
     '';
     config = {
       Env = [
-        "PATH=/usr/local/bin:/usr/bin:/bin:${agentHome.config.home.path}/bin"
+        "PATH=/usr/local/bin:/home/agent/.local/bin:/usr/bin:/bin:${agentHome.config.home.path}/bin"
         "HOME=/home/agent"
         "EDITOR=nvim"
         "NIX_REMOTE=daemon"
