@@ -12,9 +12,14 @@ in
     enable = true;
     package = pkgs.topgrade;
     settings = {
-      commands = {
-        "Agent Box update" = "agent-box --no-cwd -- topgrade";
-      };
+      commands = builtins.listToAttrs (
+        optionals (host != "agent") [
+          {
+            name = "Agent Box update";
+            value = "agent-box --no-cwd -- topgrade";
+          }
+        ]
+      );
       misc = {
         assume_yes = true;
         cleanup = true;
