@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Keep_agent-box_image_tools_in_the_system_closure__";
+  system.nixos.label = "Update_agent_box_in_topgrade______________________";
 }

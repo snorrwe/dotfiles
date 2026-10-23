@@ -70,6 +70,10 @@ in
       enable = true;
       package = pkgs.topgrade;
       settings = {
+        run_in_tmux = true;
+        commands = {
+          "Agent Box update" = "agent-box --no-cwd -- topgrade";
+        };
         misc = {
           assume_yes = true;
           cleanup = true;
