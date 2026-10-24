@@ -4,10 +4,7 @@ _: {
     btrfs.autoScrub = {
       enable = true;
       interval = "monthly";
-      fileSystems = [
-        "/"
-        "/home"
-      ];
+      fileSystems = [ "/" ];
     };
 
     # Periodic SSD TRIM

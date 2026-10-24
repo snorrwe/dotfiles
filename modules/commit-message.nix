@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Put_the_agent_homes_.localbin_on_PATH_____________";
+  system.nixos.label = "Fix_btrfs_scrub_filesystems_______________________";
 }
