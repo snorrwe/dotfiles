@@ -28,6 +28,7 @@ in
       "flathub:app/com.github.tchx84.Flatseal//stable"
       "flathub:app/org.kde.kdenlive//stable"
       "flathub:app/org.geeqie.Geeqie//stable"
+      "flathub:app/org.gnome.SimpleScan//stable"
     ]
     ++ optionals features.enableGaming [ "flathub:app/com.usebottles.bottles//stable" ]
     ++ optionals features.enableGamedev [
