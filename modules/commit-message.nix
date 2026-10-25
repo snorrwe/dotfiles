@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_btrfs_scrub_filesystems_______________________";
+  system.nixos.label = "System_update_2026-10-25__________________________";
 }

@@ -14,7 +14,7 @@ in
     # Home Manager Settings
     username = "${username}";
     homeDirectory = "/home/${username}";
-    stateVersion = "26.05";
+    stateVersion = "26.11";
     packages =
       with pkgs;
       [
