@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-10-25__________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
