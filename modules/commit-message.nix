@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_document_scanner______________________________";
+  system.nixos.label = "Fix_session_picker_style__________________________";
 }

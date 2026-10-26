@@ -103,6 +103,7 @@
         set -ga update-environment WEZTERM_PANE
 
         # sesh
+        set -g popup-style 'bg=default,fg=default'
         bind -N "last-session (via sesh) " p run-shell "sesh last"
         bind -N "open the `editor` window" e run-shell "tmux-connect-editor"
       '';
