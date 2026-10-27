@@ -3,16 +3,11 @@
 # Runtime dependencies: podman, coreutils, util-linux (see ../agents.nix).
 set -euo pipefail
 
-gui=0
 share_cwd=1
 show_mounts=0
 attach=0
 while (($#)); do
     case "$1" in
-    --gui)
-        gui=1
-        shift
-        ;;
     --no-cwd)
         share_cwd=0
         shift
@@ -33,7 +28,6 @@ while (($#)); do
     esac
 done
 container=agent-box
-if ((gui)); then container=agent-box-gui; fi
 workdir=
 # Podman can launch detached helpers. Do not pass them the lock fd,
 # or a helper may keep the lock held after this launcher exits.
@@ -173,27 +167,11 @@ if ((show_mounts)); then
     if [[ -n "$workdir" ]]; then printf 'workdir: %s\n' "$workdir"; fi
     exit 0
 fi
-# Serialize initialization across boxes because they share the home volume.
-# Mount or GUI changes must not silently reuse incompatible grants.
+# Serialize initialization to protect the persistent home volume.
+# Mount changes must not silently reuse incompatible grants.
 lock_agent_box
 load_langfuse_env
-gui_mount=()
-if ((gui)); then
-    display=${WAYLAND_DISPLAY:-}
-    if [[ ! "$display" =~ ^[a-zA-Z0-9_-]+$ || ! -S "${XDG_RUNTIME_DIR}/$display" ]]; then
-        echo "A live Wayland socket is required for --gui" >&2
-        exit 1
-    fi
-    gui_mount=(
-        --tmpfs "/run/agent-wayland:rw,mode=0700,uid=$(id -u),gid=$(id -g)"
-        --mount "type=bind,src=${XDG_RUNTIME_DIR}/$display,dst=/run/agent-wayland/$display"
-        --env "XDG_RUNTIME_DIR=/run/agent-wayland" --env "WAYLAND_DISPLAY=$display"
-    )
-fi
 label="$agent_spec-$actions_id"
-if ((gui)); then
-    label="$label-$display"
-fi
 if podman container exists "$container"; then
     old=$(podman inspect -f '{{ index .Config.Labels "agent.spec" }}' "$container")
     if [[ "$old" != "$label" ]]; then
@@ -244,7 +222,7 @@ if ! podman container exists "$container"; then
         --mount type=volume,src=agent-box-home,dst=/home/agent \
         --mount type=bind,src=/nix/store,dst=/nix/store,ro=true \
         --mount type=bind,src=/nix/var/nix/daemon-socket,dst=/nix/var/nix/daemon-socket,ro=true \
-        "${mounts[@]}" "${gui_mount[@]}" "${actions_mount[@]}" \
+        "${mounts[@]}" "${actions_mount[@]}" \
         --env HOME=/home/agent --env NIX_REMOTE=daemon \
         --env "NIX_CONFIG=experimental-features = nix-command flakes" \
         "${langfuse_env_args[@]}" \

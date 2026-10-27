@@ -3,7 +3,7 @@
 # Similar to distrobox-export
 #
 # The generated host command reads AGENT_BOX_ARGS when it runs. Set it to
-# whitespace-separated agent-box flags, for example --no-cwd or --gui.
+# whitespace-separated agent-box flags, for example --no-cwd.
 # Values are not stored at export time, and flags that contain spaces are not supported.
 set -euo pipefail
 
