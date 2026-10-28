@@ -203,19 +203,8 @@ if ! podman container exists "$container"; then
         fi
         podman load -i "$agent_image_archive" >/dev/null
     fi
-    if ! podman volume exists agent-box-home; then
-        podman volume create agent-box-home >/dev/null
-        new_home=1
-    else
-        new_home=0
-    fi
-    # The host Nix store and daemon are mounted below
-    if ((new_home)); then
-        podman run --rm --userns=keep-id --user 0 --network none \
-            --mount type=volume,src=agent-box-home,dst=/home/agent \
-            "$agent_image" \
-            /usr/bin/chown -R "$(id -u):$(id -g)" /home/agent
-    fi
+    podman volume create --ignore agent-box-home >/dev/null
+    # Home ownership is checked after startup, including for existing volumes.
     podman_filtered run -d --name "$container" --label "agent.spec=$label" \
         --userns=keep-id --user "$(id -u):$(id -g)" \
         --network="$agent_network_mode" --tmpfs /tmp --tmpfs /run \
@@ -231,23 +220,11 @@ if ! podman container exists "$container"; then
 elif [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
     podman_filtered start "$container" >/dev/null
 fi
-# Nix-store sudo cannot be setuid. Install Fedora's native package after
-# startup, and repair existing containers as well as new ones. keep-id
-# supplies the passwd entry; grant the actual host UID, not a group.
+# Packages and sudo's setuid permissions are baked into the image.
+# keep-id supplies the passwd entry; grant the actual host UID, not a group.
 podman exec --user 0 "$container" /usr/bin/bash -euc '
   uid=$1
   getent passwd "$uid" >/dev/null
-  if ! rpm -q sudo uv >/dev/null; then
-    /usr/bin/dnf -y install sudo uv
-  fi
-  for program in sudo uv; do
-    if [[ -L /usr/local/bin/$program && "$(readlink "/usr/local/bin/$program")" == /nix/store/*/bin/"$program" ]]; then
-      rm -- "/usr/local/bin/$program"
-    fi
-  done
-  test -u /usr/bin/sudo
-  test "$(stat -c %u /usr/bin/sudo)" = 0
-  mkdir -p /etc/sudoers.d
   rule=$(mktemp /etc/sudoers.d/.agent.XXXXXXXX)
   trap "rm -f -- \"$rule\"" EXIT
   printf "#%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$uid" > "$rule"

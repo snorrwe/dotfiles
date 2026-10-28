@@ -29,10 +29,20 @@ let
   hostActions = pkgs.writeShellScript "agent-host-actions" (
     builtins.readFile ./agent-scripts/agent-host-actions
   );
-  # Home Manager provides general tools. Keep only container helpers here;
-  # privileged programs such as sudo must come from Fedora, not the Nix store.
   agentTools = pkgs.runCommand "agent-tools" { } ''
-    mkdir -p $out/usr/local/bin
+    mkdir -p $out/usr/local/bin $out/usr/sbin $out/etc/pam.d
+    ln -s ${pkgs.sudo}/bin/visudo $out/usr/sbin/visudo
+    # NOPASSWD-only policy, using the Nix sudo's PAM modules.
+    printf '%s\n' \
+      'auth required ${pkgs.pam}/lib/security/pam_deny.so' \
+      'account required ${pkgs.pam}/lib/security/pam_permit.so' \
+      'session required ${pkgs.pam}/lib/security/pam_permit.so' \
+      > $out/etc/pam.d/sudo
+    cp $out/etc/pam.d/sudo $out/etc/pam.d/sudo-i
+    ln -s ${pkgs.uv}/bin/uv $out/usr/local/bin/uv
+    for program in ${pkgs.perl}/bin/* ${pkgs.python3}/bin/* ${pkgs.nodejs}/bin/*; do
+      ln -s "$program" "$out/usr/local/bin/$(basename "$program")"
+    done
     ln -s ${pkgs.socat}/bin/socat $out/usr/local/bin/socat
     ln -s ${exportBin}/bin/agent-box-export $out/usr/local/bin/agent-box-export
     ln -s ${notifyBin}/bin/agent-notify-send $out/usr/local/bin/notify-send
@@ -44,10 +54,17 @@ let
     fromImage = fedoraBase;
     contents = [ agentTools ];
     extraCommands = ''
-      mkdir -p home/agent nix/var/nix workspace etc/profile.d
+      mkdir -p home/agent nix/var/nix workspace etc/profile.d etc/sudoers.d usr/bin
+      # Copy sudo: a symlink into the read-only store cannot be setuid.
+      cp ${pkgs.sudo}/bin/sudo usr/bin/sudo
+      printf '%s\n' '@includedir /etc/sudoers.d' > etc/sudoers
       # Fedora's login shell resets PATH; restore container helpers, the
       # persistent home's user bins, and the agent's own tools.
       printf '%s\n' 'export PATH="/usr/local/bin:$HOME/.local/bin:$PATH:${agentHome.config.home.path}/bin"' > etc/profile.d/agent-tools.sh
+    '';
+    fakeRootCommands = ''
+      chmod 4755 usr/bin/sudo
+      chmod 0440 etc/sudoers
     '';
     config = {
       Env = [
@@ -220,6 +237,12 @@ in
       notifyBin
       renameBin
       pkgs.socat
+      pkgs.sudo
+      pkgs.pam
+      pkgs.uv
+      pkgs.perl
+      pkgs.python3
+      pkgs.nodejs
       agentHome.config.home.path
     ];
 
