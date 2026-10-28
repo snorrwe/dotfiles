@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Move_agent-box_package_setup_into_image_build_____";
+  system.nixos.label = "Use_clippy_in_rust_anlayzer_instead_of_check______";
 }

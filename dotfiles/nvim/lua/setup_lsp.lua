@@ -6,6 +6,17 @@ return function()
         capabilities = require("blink.cmp").get_lsp_capabilities(),
     })
 
+    vim.lsp.config("rust_analyzer", {
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = true,
+                check = {
+                    command = "clippy",
+                },
+            },
+        },
+    })
+
     -- clangd: system install via clang-tools in home.packages
     vim.lsp.config.clangd = {
         filetypes = { "cpp", "c", "cuda" },
