@@ -7,6 +7,7 @@
     cargo-nextest
     cargo-watch
     cargo-clean-recursive
+    cargo-edit
     # topgrade deps to manage cargo-installed packages
     cargo-update
     cargo-cache

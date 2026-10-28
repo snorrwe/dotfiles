@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Fix_session_picker_style__________________________";
+  system.nixos.label = "Add_cargo-edit____________________________________";
 }
