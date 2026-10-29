@@ -37,6 +37,7 @@ vim.cmd([[set relativenumber]])
 vim.cmd([[set ignorecase]])
 vim.cmd([[set smartcase]])
 vim.cmd([[set list]])
+vim.cmd([[set exrc]])
 
 vim.keymap.set("v", "//", 'y/<C-R>"<cr>')
 
