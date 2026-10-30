@@ -128,6 +128,8 @@ let
   spec = builtins.hashString "sha256" (
     builtins.toJSON {
       inherit mounts networkMode cgroupSlice;
+      # Recreate boxes whose PID 1 does not reap orphaned children.
+      init = true;
       hostContainersInternal = "none";
       hostBin = "/home/${username}/.local/bin";
       # Invalidate boxes created with per-directory/transient mount semantics.

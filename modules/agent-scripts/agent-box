@@ -205,7 +205,7 @@ if ! podman container exists "$container"; then
     fi
     podman volume create --ignore agent-box-home >/dev/null
     # Home ownership is checked after startup, including for existing volumes.
-    podman_filtered run -d --name "$container" --label "agent.spec=$label" \
+    podman_filtered run -d --init --name "$container" --label "agent.spec=$label" \
         --userns=keep-id --user "$(id -u):$(id -g)" \
         --network="$agent_network_mode" --tmpfs /tmp --tmpfs /run \
         --mount type=volume,src=agent-box-home,dst=/home/agent \
