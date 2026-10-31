@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-10-31__________________________";
+  system.nixos.label = "Remove_cloudflared________________________________";
 }

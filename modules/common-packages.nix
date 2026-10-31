@@ -26,7 +26,6 @@ with pkgs;
     wl-clipboard
     xwayland-satellite
     swaylock
-    cloudflared
     brightnessctl
     gradia
   ]
