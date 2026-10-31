@@ -22,22 +22,22 @@ vim.opt.incsearch = true
 vim.opt.smartindent = true
 vim.o.completeopt = "menuone,noselect"
 
-vim.cmd([[set nocompatible]])
+vim.opt.compatible = false
 vim.cmd([[filetype plugin indent on]])
 -- show existing tab with 4 spaces width
-vim.cmd([[set tabstop=4]])
+vim.opt.tabstop = 4
 -- when indenting with '>', use 4 spaces width
-vim.cmd([[set shiftwidth=4]])
+vim.opt.shiftwidth = 4
 -- On pressing tab, insert 4 spaces
-vim.cmd([[set expandtab]])
+vim.opt.expandtab = true
 vim.opt.autoread = true
 
-vim.cmd([[set number]])
-vim.cmd([[set relativenumber]])
-vim.cmd([[set ignorecase]])
-vim.cmd([[set smartcase]])
-vim.cmd([[set list]])
-vim.cmd([[set exrc]])
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+vim.opt.list = true
+vim.opt.exrc = true
 
 vim.keymap.set("v", "//", 'y/<C-R>"<cr>')
 
