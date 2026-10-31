@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Remove_cloudflared________________________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
