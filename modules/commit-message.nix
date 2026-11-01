@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Open_markdown_files_in_Obsidian___________________";
+  system.nixos.label = "Config_Open_opener_in_yazi________________________";
 }

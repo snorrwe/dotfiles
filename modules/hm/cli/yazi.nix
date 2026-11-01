@@ -24,6 +24,14 @@
       }
     '';
     settings = {
+      opener = {
+        open = [
+          {
+            run = "xdg-open %s1";
+            desc = "Open";
+          }
+        ];
+      };
       mgr = {
         show_hidden = true;
         sort_dir_first = true;
