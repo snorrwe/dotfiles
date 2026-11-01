@@ -43,6 +43,7 @@ in
       "x-scheme-handler/unknown" = [ browser ];
       "application/pdf" = [ browser ];
       "x-scheme-handler/slack" = [ "com.slack.Slack.desktop" ];
+      "text/markdown" = [ "md.obsidian.Obsidian" ];
     };
   };
 }

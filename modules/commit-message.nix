@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_vim.opt_instead_of_vim.cmd_set________________";
+  system.nixos.label = "Open_markdown_files_in_Obsidian___________________";
 }
