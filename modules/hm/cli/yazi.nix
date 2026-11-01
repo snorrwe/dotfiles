@@ -32,6 +32,14 @@
           }
         ];
       };
+      open = {
+        prepend_rules = [
+          {
+            url = "*.md";
+            use = "open";
+          }
+        ];
+      };
       mgr = {
         show_hidden = true;
         sort_dir_first = true;
