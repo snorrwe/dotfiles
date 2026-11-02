@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Add_edit_open_rule_for_md_files_in_yazi___________";
+  system.nixos.label = "Remove_render-markdown____________________________";
 }

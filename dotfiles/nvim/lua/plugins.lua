@@ -306,12 +306,4 @@ return {
             require("blame").setup()
         end,
     },
-    {
-        "MeanderingProgrammer/render-markdown.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        opts = {
-            sign = { enabled = false },
-        },
-    },
 }
