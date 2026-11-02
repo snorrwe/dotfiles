@@ -32,6 +32,9 @@
             set -g @tmux-dotbar-session-position "right"
             set -g @tmux-dotbar-justify "left"
             set -g @tmux-dotbar-window-status-format " #{window_index} #{window_name} "
+            set -g @tmux-dotbar-session-status-format " #{window_index} #{window_name} "
+            set -g @tmux-dotbar-session-text " #H [#S] "
+
           '';
         }
         vim-tmux-navigator
