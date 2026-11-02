@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Open_markdown_files_with_open_____________________";
+  system.nixos.label = "Add_edit_open_rule_for_md_files_in_yazi___________";
 }

@@ -36,7 +36,10 @@
         prepend_rules = [
           {
             url = "*.md";
-            use = "open";
+            use = [
+              "open"
+              "edit"
+            ];
           }
         ];
       };
