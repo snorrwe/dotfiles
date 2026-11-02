@@ -213,6 +213,7 @@ if ! podman container exists "$container"; then
         --mount type=bind,src=/nix/var/nix/daemon-socket,dst=/nix/var/nix/daemon-socket,ro=true \
         "${mounts[@]}" "${actions_mount[@]}" \
         --env HOME=/home/agent --env NIX_REMOTE=daemon \
+        --env "AGENT_HOME_PATH=$agent_home_path" --env "PATH=$agent_path" \
         --env "NIX_CONFIG=experimental-features = nix-command flakes" \
         "${langfuse_env_args[@]}" \
         "$agent_image" \

@@ -59,8 +59,9 @@ let
       cp ${pkgs.sudo}/bin/sudo usr/bin/sudo
       printf '%s\n' '@includedir /etc/sudoers.d' > etc/sudoers
       # Fedora's login shell resets PATH; restore container helpers, the
-      # persistent home's user bins, and the agent's own tools.
-      printf '%s\n' 'export PATH="/usr/local/bin:$HOME/.local/bin:$PATH:${agentHome.config.home.path}/bin"' > etc/profile.d/agent-tools.sh
+      # persistent home's user bins, and the agent's Home Manager tools from
+      # AGENT_HOME_PATH.
+      printf '%s\n' 'export PATH="/usr/local/bin:$HOME/.local/bin:$AGENT_HOME_PATH/bin:$PATH"' > etc/profile.d/agent-tools.sh
     '';
     fakeRootCommands = ''
       chmod 4755 usr/bin/sudo
@@ -68,7 +69,7 @@ let
     '';
     config = {
       Env = [
-        "PATH=/usr/local/bin:/home/agent/.local/bin:/usr/bin:/bin:${agentHome.config.home.path}/bin"
+        "PATH=/usr/local/bin:/home/agent/.local/bin:/usr/bin:/bin"
         "HOME=/home/agent"
         "EDITOR=nvim"
         "NIX_REMOTE=daemon"
@@ -135,6 +136,8 @@ let
       # Invalidate boxes created with per-directory/transient mount semantics.
       workspaceMode = "declared-only";
       image = toString image;
+      # Recreate when the standalone agent home changes.
+      agentHome = toString agentHome.activationPackage;
       # Recreate when Langfuse secret wiring changes (path only; never values).
       langfuseSecret = toString langfuseSecret;
     }
@@ -159,6 +162,8 @@ let
       agent_image_archive=${lib.escapeShellArg (toString image)}
       agent_policy=${lib.escapeShellArg (toString config.environment.etc."containers/policy.json".source)}
       agent_activation=${lib.escapeShellArg (toString agentHome.activationPackage)}
+      agent_home_path=${lib.escapeShellArg (toString agentHome.config.home.path)}
+      agent_path=${lib.escapeShellArg "/usr/local/bin:/home/agent/.local/bin:${agentHome.config.home.path}/bin:/usr/bin:/bin"}
       # HM agenix paths embed ''${XDG_RUNTIME_DIR}; leave unescaped so the shell expands it.
       langfuse_secret=${langfuseSecret}
       configured_sources=(${lib.escapeShellArgs (map (m: m.hostPath) mounts)})
@@ -245,7 +250,6 @@ in
       pkgs.perl
       pkgs.python3
       pkgs.nodejs
-      agentHome.config.home.path
     ];
 
     users.groups.${egressGroup} = { };
