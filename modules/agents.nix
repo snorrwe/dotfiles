@@ -85,10 +85,10 @@ let
     };
   };
   mounts = cfg.sharedDirectories;
-  # Publish bound TCP ports on host loopback only. Podman splits the suffix on commas.
   # --host-lo-to-ns-lo keeps servers bound to 127.0.0.1 inside the box reachable.
   # --map-guest-addr none removes the host.containers.internal path onto the host.
-  networkMode = "pasta:--host-lo-to-ns-lo,--map-guest-addr,none,-t,127.0.0.1/auto,-t,::1/auto,-u,none,-T,none,-U,none";
+  # TCP publication is configured below: Podman splits this suffix on commas.
+  networkMode = "pasta:--host-lo-to-ns-lo,--map-guest-addr,none,-u,none,-T,none,-U,none";
   # Kept in the spec hash so boxes already created with this parent are not recreated.
   cgroupSlice = "agent.slice";
   # Pasta is started via sg(1) in this group. nft matches meta skgid, which does not
@@ -98,6 +98,10 @@ let
   containersConf = pkgs.writeText "agent-box-containers.conf" ''
     [containers]
     host_containers_internal_ip = "none"
+    [network]
+    # Never publish the reverse relay onto the host: it would steal the API port
+    # while the host server is stopped, and could forward back into itself.
+    pasta_options = ["-t", "127.0.0.1/auto,~9931", "-t", "::1/auto,~9931"]
   '';
   # A native nft table, not networking.nftables.enable: that module blacklists
   # ip_tables, which rootless Docker in modules/containers.nix still needs.
@@ -129,9 +133,11 @@ let
   spec = builtins.hashString "sha256" (
     builtins.toJSON {
       inherit mounts networkMode cgroupSlice;
+      containersConf = toString containersConf;
       # Recreate boxes whose PID 1 does not reap orphaned children.
       init = true;
       hostContainersInternal = "none";
+      gpuApiRelay = "127.0.0.1:9931";
       hostBin = "/home/${username}/.local/bin";
       # Invalidate boxes created with per-directory/transient mount semantics.
       workspaceMode = "declared-only";
@@ -288,6 +294,24 @@ in
             RemoveOnStop = true;
             Accept = true;
           };
+        };
+        # Only this fixed TCP endpoint is exposed, not arbitrary host networking.
+        sockets.agent-gpu-api = {
+          wantedBy = [ "sockets.target" ];
+          socketConfig = {
+            ListenStream = "%t/agent-gpu-api.sock";
+            SocketMode = "0600";
+            RemoveOnStop = true;
+            Accept = true;
+          };
+        };
+        services."agent-gpu-api@".serviceConfig = {
+          ExecStart = "${pkgs.socat}/bin/socat STDIO TCP4:127.0.0.1:9931";
+          StandardInput = "socket";
+          StandardOutput = "socket";
+          NoNewPrivileges = true;
+          ProtectSystem = "strict";
+          ProtectHome = true;
         };
         services."agent-host-actions@".serviceConfig = {
           ExecStart = hostActions;

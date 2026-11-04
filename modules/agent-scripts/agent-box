@@ -162,6 +162,15 @@ if [[ -n "${XDG_RUNTIME_DIR:-}" && -S "$actions_socket" ]]; then
     actions_id=$(stat -Lc '%d:%i' -- "$actions_socket")
     mount_info+=("$actions_socket -> /run/agent-host-actions.sock (socket)")
 fi
+gpu_socket="${XDG_RUNTIME_DIR:?XDG_RUNTIME_DIR is required}/agent-gpu-api.sock"
+if [[ ! -S "$gpu_socket" ]]; then
+    echo "GPU API relay socket is missing: $gpu_socket" >&2
+    echo "Apply the NixOS configuration and run: systemctl --user start agent-gpu-api.socket" >&2
+    exit 1
+fi
+gpu_id=$(stat -Lc '%d:%i' -- "$gpu_socket")
+mounts+=(--mount "type=bind,src=$gpu_socket,dst=/run/agent-gpu-api.sock,ro=true")
+mount_info+=("$gpu_socket -> /run/agent-gpu-api.sock (127.0.0.1:9931 relay)")
 if ((show_mounts)); then
     for mount in "${mount_info[@]}"; do printf '%s\n' "$mount"; done
     if [[ -n "$workdir" ]]; then printf 'workdir: %s\n' "$workdir"; fi
@@ -171,7 +180,7 @@ fi
 # Mount changes must not silently reuse incompatible grants.
 lock_agent_box
 load_langfuse_env
-label="$agent_spec-$actions_id"
+label="$agent_spec-$actions_id-$gpu_id"
 if podman container exists "$container"; then
     old=$(podman inspect -f '{{ index .Config.Labels "agent.spec" }}' "$container")
     if [[ "$old" != "$label" ]]; then
@@ -262,6 +271,23 @@ podman exec "$container" /usr/bin/bash -euc '
 # Home Manager aborts rather than overwriting an existing backup.
 podman exec --env HOME_MANAGER_BACKUP_EXT=before-home-manager "$container" \
     "$agent_activation"/activate
+# Forward only container loopback to the host's fixed-endpoint Unix relay.
+# Launches are serialized; a retry after partial initialization reuses a listener.
+podman exec "$container" /usr/bin/bash -euc '
+  if ! (: > /dev/tcp/127.0.0.1/9931) 2>/dev/null; then
+    exit 1
+  fi
+' || podman exec -d "$container" /usr/local/bin/socat \
+    TCP4-LISTEN:9931,bind=127.0.0.1,reuseaddr,fork UNIX-CONNECT:/run/agent-gpu-api.sock
+# Wait for the listener, without requiring the host API server to be running yet.
+podman exec "$container" /usr/bin/bash -euc '
+  for ((i=0; i<50; i++)); do
+    if (: > /dev/tcp/127.0.0.1/9931) 2>/dev/null; then exit 0; fi
+    sleep 0.1
+  done
+  echo "GPU API relay failed to listen on 127.0.0.1:9931" >&2
+  exit 1
+'
 # /run is ephemeral: a restart retries initialization, and a failed launch
 # never takes the automatic attach path.
 podman exec --user 0 "$container" /usr/bin/touch /run/agent-box-ready
