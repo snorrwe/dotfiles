@@ -1,6 +1,7 @@
 ---
 name: notify
 description: Send a desktop notification when work is finished or the user's input is needed. Use when the user needs to return to the session, not for routine progress updates.
+disable-model-invocation: true
 ---
 
 # Notify the user

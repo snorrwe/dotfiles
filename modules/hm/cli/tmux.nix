@@ -79,6 +79,7 @@
         bind-key p switch-client -l
 
         set -g status-position top
+        set -g window-status-bell-style 'fg=#1e1e2e,bg=#f9e2af,bold'
 
         bind-key g neww -c "#{pane_current_path}" lazygit
         bind-key y neww -c "#{pane_current_path}" yazi

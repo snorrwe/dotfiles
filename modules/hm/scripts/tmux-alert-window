@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if (($# != 0)); then
+    echo 'Usage: tmux-alert-window' >&2
+    exit 2
+fi
+
+if [ -n "${AGENT_HOST_TMUX_PANE:-}" ]; then
+    response=$(printf 'tmux-alert\0%s\0' "$AGENT_HOST_TMUX_PANE" | socat -T 5 - UNIX-CONNECT:/run/agent-host-actions.sock)
+    [[ "$response" == ok ]]
+    exit
+fi
+
+[ -n "${TMUX_PANE:-}" ] || exit 0
+[[ "$TMUX_PANE" =~ ^%[0-9]+$ ]] || exit 1
+
+window=$(tmux display-message -p -t "$TMUX_PANE" -F '#{window_id}')
+tty=$(tmux display-message -p -t "$TMUX_PANE" -F '#{pane_tty}')
+[[ -n "$window" && -c "$tty" && -w "$tty" ]] || exit 1
+
+tmux set-window-option -t "$window" monitor-bell on
+# Write to the pane's terminal, not this process's stdout (which may be captured
+# by an agent tool). Tmux observes the bell and flags the window until visited.
+printf '\a' >"$tty"

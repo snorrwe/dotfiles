@@ -26,6 +26,9 @@ let
   renameBin = pkgs.writeShellScriptBin "agent-tmux-rename-window" (
     builtins.readFile ./hm/scripts/tmux-rename-window
   );
+  alertBin = pkgs.writeShellScriptBin "tmux-alert-window" (
+    builtins.readFile ./hm/scripts/tmux-alert-window
+  );
   hostActions = pkgs.writeShellScript "agent-host-actions" (
     builtins.readFile ./agent-scripts/agent-host-actions
   );
@@ -47,6 +50,7 @@ let
     ln -s ${exportBin}/bin/agent-box-export $out/usr/local/bin/agent-box-export
     ln -s ${notifyBin}/bin/agent-notify-send $out/usr/local/bin/notify-send
     ln -s ${renameBin}/bin/agent-tmux-rename-window $out/usr/local/bin/tmux-rename-window
+    ln -s ${alertBin}/bin/tmux-alert-window $out/usr/local/bin/tmux-alert-window
   '';
   image = pkgs.dockerTools.buildLayeredImage {
     name = "agent";
@@ -319,6 +323,7 @@ in
             lib.makeBinPath [
               pkgs.tmux
               pkgs.libnotify
+              alertBin
             ]
           }";
           StandardInput = "socket";

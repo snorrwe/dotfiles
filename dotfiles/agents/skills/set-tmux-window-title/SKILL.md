@@ -1,6 +1,7 @@
 ---
 name: set-tmux-window-title
 description: Give a new agent session or major work topic a descriptive title and set the tmux window title. Use once when starting a new session or switching to a new main topic, not for every command or small task.
+disable-model-invocation: true
 ---
 
 # Set tmux window title
