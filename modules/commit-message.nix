@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Allow_using_relative_filenames____________________";
+  system.nixos.label = "Revert_Enable_workspace-auto-back-and-forth_in_nir";
 }
