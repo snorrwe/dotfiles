@@ -12,7 +12,7 @@ let
     IN("create", "modify")) and (.path.filetype == "file")) | .path.absolute' < /dev/stdin \
     | sort -n | uniq \
     | tee >(cat >&2) \
-    | xargs -I{} ${config.home.profileDirectory}/bin/obsidian-maintain-subtask-contexts {} ${notes_dir}
+    | xargs -I{} ${config.home.profileDirectory}/bin/obsidian-maintain-subtask-contexts {} --notes-dir=${notes_dir}
   '';
 in
 {
