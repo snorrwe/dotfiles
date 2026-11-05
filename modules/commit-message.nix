@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Use_a_flag_for_the_notes_dir______________________";
+  system.nixos.label = "Allow_using_relative_filenames____________________";
 }

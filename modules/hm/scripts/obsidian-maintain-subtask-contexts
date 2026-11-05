@@ -51,7 +51,7 @@ def main [
     $notes_dir 
   };
   cd $pwd
-  let f = $file | path relative-to $pwd
+  let f = $file | path expand | path relative-to $pwd
   run_file $f []
 
   null
