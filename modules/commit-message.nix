@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Update_README_____________________________________";
+  system.nixos.label = "Add_inkscape______________________________________";
 }
