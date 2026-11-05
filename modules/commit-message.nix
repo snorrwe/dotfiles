@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Revert_Enable_workspace-auto-back-and-forth_in_nir";
+  system.nixos.label = "Disable_model_invokation_for_snorrwe-awareness____";
 }
