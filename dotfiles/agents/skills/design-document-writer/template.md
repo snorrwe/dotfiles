@@ -6,6 +6,7 @@ tags:
 customer:
 date: "{{date}}"
 agent: "{{agent}}"
+status: proposed
 projects:
   - "{{project}}"
 ---
@@ -16,11 +17,11 @@ projects:
 
 <!-- Describe the pain point or opportunity, who it affects, and why the current situation needs to change. -->
 
-### Goals
+## Goals
 
 <!-- List specific outcomes this design must achieve; make them verifiable where possible. -->
 
-### Non-goals
+## Non-goals
 
 <!-- State what is deliberately out of scope or deferred, so implementers do not assume it is included. -->
 
@@ -54,13 +55,15 @@ projects:
 
 ## Detailed design
 
+<!-- Add one subsection per interface or artifact this design actually changes. Rename or drop the example headings below when they do not apply; do not leave "No new …" placeholders. -->
+
 ### Data model
 
-<!-- Describe new or changed entities, fields, relationships, indexes, persistence, and migrations where applicable. -->
+<!-- Example. New or changed entities, fields, relationships, indexes, persistence, and migrations. Drop this heading if the design changes none. -->
 
 ### API design
 
-<!-- Specify any changed interfaces: endpoints or commands, inputs and outputs, authentication, validation, errors, and compatibility. -->
+<!-- Example. Changed interfaces: endpoints or commands, inputs and outputs, authentication, validation, errors, compatibility. Drop this heading if the design changes none. -->
 
 ## Alternatives considered
 
