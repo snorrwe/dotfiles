@@ -230,21 +230,6 @@ if ! podman container exists "$container"; then
 elif [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then
     podman_filtered start "$container" >/dev/null
 fi
-# Packages and sudo's setuid permissions are baked into the image.
-# keep-id supplies the passwd entry; grant the actual host UID, not a group.
-podman exec --user 0 "$container" /usr/bin/bash -euc '
-  uid=$1
-  getent passwd "$uid" >/dev/null
-  rule=$(mktemp /etc/sudoers.d/.agent.XXXXXXXX)
-  trap "rm -f -- \"$rule\"" EXIT
-  printf "#%s ALL=(ALL:ALL) NOPASSWD: ALL\n" "$uid" > "$rule"
-  /usr/sbin/visudo -cf "$rule"
-  install -o 0 -g 0 -m 0440 "$rule" /etc/sudoers.d/agent
-' bash "$(id -u)"
-if [[ "$(podman exec "$container" /usr/bin/sudo -n /usr/bin/id -u)" != 0 ]]; then
-    echo "Agent passwordless sudo setup failed" >&2
-    exit 1
-fi
 # A volume can survive a failed first launch before its ownership is
 # initialized. Check existing containers too, not only new volumes.
 if ! podman exec "$container" /usr/bin/test -w /home/agent; then
