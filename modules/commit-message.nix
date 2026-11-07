@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_pre_sudo_in_topgrade______________________";
+  system.nixos.label = "Update_nvim_plugins_______________________________";
 }
