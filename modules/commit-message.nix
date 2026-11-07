@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Factor_out_just_update-flake______________________";
+  system.nixos.label = "System_update_2026-11-07__________________________";
 }
