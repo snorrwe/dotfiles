@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "Disable_model_invokation_for_snorrwe-awareness____";
+  system.nixos.label = "Disable_pre_sudo_in_topgrade______________________";
 }

@@ -38,7 +38,7 @@ in
           "cursor_agent"
         ];
         skip_notify = false;
-        pre_sudo = true;
+        pre_sudo = false;
       };
       git = {
         repos = [
