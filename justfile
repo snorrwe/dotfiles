@@ -6,11 +6,12 @@ default:
 clean: && clean-zsh-cache
     nh clean all --nogcroots
 
-update *args:
+update-flake:
     nix flake update
     git add flake.lock
     git commit -m "System update $(date +%F)"
-    just apply {{ args }}
+
+update *args: update-flake (apply args)
 
 apply *args:
     nh os switch "." --hostname={{ hostname }} {{ args }}
