@@ -1,3 +1,3 @@
 {
-  system.nixos.label = "System_update_2026-11-07__________________________";
+  system.nixos.label = "Wider_focus_ring__________________________________";
 }
