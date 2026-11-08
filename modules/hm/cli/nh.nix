@@ -1,11 +1,14 @@
-{ inputs, ... }:
 {
-  programs.nh = {
-    enable = true;
-    clean = {
-      enable = true;
-      extraArgs = "--keep-since 4d --keep 3 --nogcroots";
+  flake.modules.homeManager.cli =
+    { inputs, ... }:
+    {
+      programs.nh = {
+        enable = true;
+        clean = {
+          enable = true;
+          extraArgs = "--keep-since 4d --keep 3 --nogcroots";
+        };
+        flake = toString inputs.self;
+      };
     };
-    flake = toString inputs.self;
-  };
 }

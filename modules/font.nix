@@ -1,8 +1,11 @@
-{ pkgs, ... }:
 {
-  fonts = {
-    fontDir.enable = true;
-    fontconfig.enable = true;
-    packages = with pkgs; [ nerd-fonts.monaspace ];
-  };
+  flake.modules.nixos.common =
+    { pkgs, ... }:
+    {
+      fonts = {
+        fontDir.enable = true;
+        fontconfig.enable = true;
+        packages = with pkgs; [ nerd-fonts.monaspace ];
+      };
+    };
 }

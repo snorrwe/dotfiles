@@ -1,30 +1,33 @@
-{ pkgs, ... }:
 {
+  flake.modules.homeManager.common =
+    { pkgs, ... }:
+    {
 
-  home.packages = with pkgs; [
-    lsof
-    gawk
-    imagemagick
-    (writeScriptBin "portlocate" (builtins.readFile ./scripts/portlocate))
-    (writeScriptBin "bincmp" (builtins.readFile ./scripts/bincmp))
-    (writeScriptBin "imgcmp" (builtins.readFile ./scripts/imgcmp))
-    (writeScriptBin "tmux-reset-shells" (builtins.readFile ./scripts/tmux-reset-shells))
-    (writeScriptBin "tmux-pull-all" (builtins.readFile ./scripts/tmux-pull-all))
-    (writeScriptBin "projects-pull-all" (builtins.readFile ./scripts/projects-pull-all))
-    jq
-    (writeScriptBin "niri-fuzzel-select-window" (builtins.readFile ./scripts/niri-fuzzel-select-window))
-    (writeScriptBin "wezterm-open-tailscale-ssh" (
-      builtins.readFile ./scripts/wezterm-open-tailscale-ssh
-    ))
-    (writeScriptBin "obsidian-link-notes" (builtins.readFile ./scripts/obsidian-link-notes))
-    (writeScriptBin "obsidian-maintain-subtask-contexts" (
-      builtins.readFile ./scripts/obsidian-maintain-subtask-contexts
-    ))
-    (writeScriptBin "mk-flake-envrc" (builtins.readFile ./scripts/mk-flake-envrc))
-    (writeScriptBin "setup-workspace" (builtins.readFile ./scripts/setup-workspace))
-    (writeScriptBin "distrobox-list-exports" (builtins.readFile ./scripts/distrobox-list-exports))
-    (writeScriptBin "tmux-rename-window" (builtins.readFile ./scripts/tmux-rename-window))
-    (writeScriptBin "tmux-alert-window" (builtins.readFile ./scripts/tmux-alert-window))
-    (writeScriptBin "tmux-connect-editor" (builtins.readFile ./scripts/tmux-connect-editor))
-  ];
+      home.packages = with pkgs; [
+        lsof
+        gawk
+        imagemagick
+        (writeScriptBin "portlocate" (builtins.readFile ./scripts/portlocate))
+        (writeScriptBin "bincmp" (builtins.readFile ./scripts/bincmp))
+        (writeScriptBin "imgcmp" (builtins.readFile ./scripts/imgcmp))
+        (writeScriptBin "tmux-reset-shells" (builtins.readFile ./scripts/tmux-reset-shells))
+        (writeScriptBin "tmux-pull-all" (builtins.readFile ./scripts/tmux-pull-all))
+        (writeScriptBin "projects-pull-all" (builtins.readFile ./scripts/projects-pull-all))
+        jq
+        (writeScriptBin "niri-fuzzel-select-window" (builtins.readFile ./scripts/niri-fuzzel-select-window))
+        (writeScriptBin "wezterm-open-tailscale-ssh" (
+          builtins.readFile ./scripts/wezterm-open-tailscale-ssh
+        ))
+        (writeScriptBin "obsidian-link-notes" (builtins.readFile ./scripts/obsidian-link-notes))
+        (writeScriptBin "obsidian-maintain-subtask-contexts" (
+          builtins.readFile ./scripts/obsidian-maintain-subtask-contexts
+        ))
+        (writeScriptBin "mk-flake-envrc" (builtins.readFile ./scripts/mk-flake-envrc))
+        (writeScriptBin "setup-workspace" (builtins.readFile ./scripts/setup-workspace))
+        (writeScriptBin "distrobox-list-exports" (builtins.readFile ./scripts/distrobox-list-exports))
+        (writeScriptBin "tmux-rename-window" (builtins.readFile ./scripts/tmux-rename-window))
+        (writeScriptBin "tmux-alert-window" (builtins.readFile ./scripts/tmux-alert-window))
+        (writeScriptBin "tmux-connect-editor" (builtins.readFile ./scripts/tmux-connect-editor))
+      ];
+    };
 }

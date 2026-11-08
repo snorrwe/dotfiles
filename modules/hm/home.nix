@@ -1,87 +1,71 @@
 {
-  pkgs,
-  username,
-  inputs,
-  features,
-  config,
-  ...
-}:
-let
-  inherit (pkgs.lib.lists) optionals;
-in
-{
-  home = {
-    # Home Manager Settings
-    username = "${username}";
-    homeDirectory = "/home/${username}";
-    stateVersion = "26.11";
-    packages =
-      with pkgs;
-      [
-        go
-        ninja
-        cmake
-        gzip
-        nodejs_22
-        curl
+  flake.modules.homeManager.linux =
+    {
+      pkgs,
+      username,
+      inputs,
+      features,
+      config,
+      ...
+    }:
+    let
+      inherit (pkgs.lib.lists) optionals;
+    in
+    {
+      imports = [ inputs.agenix.homeManagerModules.default ];
 
-        pkg-config
-        visidata
-        killall
-        podman-compose
-        docker-compose
+      home = {
+        # Home Manager Settings
+        username = "${username}";
+        homeDirectory = "/home/${username}";
+        stateVersion = "26.11";
+        packages =
+          with pkgs;
+          [
+            go
+            ninja
+            cmake
+            gzip
+            nodejs_22
+            curl
 
-        clang
-        clang-tools
+            pkg-config
+            visidata
+            killall
+            podman-compose
+            docker-compose
 
-        flamegraph
+            clang
+            clang-tools
 
-        sshfs
-        python3
-      ]
-      ++ (optionals features.enableGui [ libnotify ]);
-  };
+            flamegraph
 
-  imports = [
-    ./topgrade.nix
-    ./parallel.nix
-    ./rice.nix
-    ./dunst.nix
-    ./mime.nix
-    ./cli.nix
-    ./lockscreen.nix
-    ./setup-git-repos.nix
-    ./waybar.nix
-    ./wlogout.nix
-    ./fuzzel.nix
-    ./scripts.nix
-    ./symlinks.nix
-    ./distrobox.nix
-    ./tasknotes.nix
-    ./sccache.nix
-    inputs.agenix.homeManagerModules.default
-    ./tailscale-gui.nix
-  ];
+            sshfs
+            python3
+          ]
+          ++ (optionals features.enableGui [ libnotify ]);
+      };
 
-  programs = {
-    # Let Home Manager install and manage itself.
-    home-manager.enable = true;
+      programs = {
+        # Let Home Manager install and manage itself.
+        home-manager.enable = true;
 
-    wezterm = {
-      enable = features.enableGui;
-      enableZshIntegration = true;
-      extraConfig = builtins.readFile ../../dotfiles/.wezterm.lua;
-      package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        wezterm = {
+          enable = features.enableGui;
+          enableZshIntegration = true;
+          extraConfig = builtins.readFile ../../dotfiles/.wezterm.lua;
+          package = inputs.wezterm.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        };
+
+        # media player, used by yazi by default
+        mpv = {
+          enable = features.enableGui;
+        };
+      };
+
+      age.identityPaths = [
+        "${config.home.homeDirectory}/.ssh/id_ed25519"
+        "${config.home.homeDirectory}/.ssh/home"
+      ];
     };
-
-    # media player, used by yazi by default
-    mpv = {
-      enable = features.enableGui;
-    };
-  };
-
-  age.identityPaths = [
-    "${config.home.homeDirectory}/.ssh/id_ed25519"
-    "${config.home.homeDirectory}/.ssh/home"
-  ];
 }

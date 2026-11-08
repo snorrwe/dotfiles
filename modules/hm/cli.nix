@@ -1,77 +1,65 @@
-{ pkgs, ... }: {
-  imports = [
-    ./cli/zoxide.nix
-    ./cli/git.nix
-    ./cli/fastfetch.nix
-    ./cli/nushell.nix
-    ./cli/nvim.nix
-    ./cli/yazi.nix
-    ./cli/nh.nix
-    ./cli/btop.nix
-    ./cli/tmux.nix
-    ./cli/direnv.nix
-    ./cli/devenv.nix
-    ./cli/rust.nix
-  ];
+{
+  flake.modules.homeManager.cli = { pkgs, ... }: {
 
-  programs = {
-    fzf = {
-      enable = true;
-      tmux.enableShellIntegration = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-      historyWidget.command = "";
-      historyWidget.nushell.command = "";
-    };
+    programs = {
+      fzf = {
+        enable = true;
+        tmux.enableShellIntegration = true;
+        enableZshIntegration = true;
+        enableNushellIntegration = true;
+        historyWidget.command = "";
+        historyWidget.nushell.command = "";
+      };
 
-    eza = {
-      enable = true;
-      git = true;
-    };
+      eza = {
+        enable = true;
+        git = true;
+      };
 
-    fd = {
-      enable = true;
-    };
+      fd = {
+        enable = true;
+      };
 
-    ripgrep = {
-      enable = true;
-    };
+      ripgrep = {
+        enable = true;
+      };
 
-    jq = {
-      enable = true;
-    };
+      jq = {
+        enable = true;
+      };
 
-    atuin = {
-      enable = true;
-      enableZshIntegration = true;
-      enableNushellIntegration = true;
-    };
+      atuin = {
+        enable = true;
+        enableZshIntegration = true;
+        enableNushellIntegration = true;
+      };
 
-    # colorful, syntax highlighted cat alternative
-    bat = {
-      enable = true;
-      config = {
-        theme = "Coldark-Dark";
+      # colorful, syntax highlighted cat alternative
+      bat = {
+        enable = true;
+        config = {
+          theme = "Coldark-Dark";
+        };
+      };
+
+      lazydocker = {
+        enable = true;
       };
     };
-
-    lazydocker = {
-      enable = true;
-    };
+    home.packages = with pkgs; [
+      just
+      dust # nicer du alternative
+      watchexec
+      starship # for my shell prompt
+      diffutils
+      github-cli
+      git-lfs
+      tokei # count LOC
+      dysk # show disk usage, nicer default format than df
+      hyperfine # cli benchmarking tool
+      units
+      unzip
+      zip
+    ];
   };
-  home.packages = with pkgs; [
-    just
-    dust # nicer du alternative
-    watchexec
-    starship # for my shell prompt
-    diffutils
-    github-cli
-    git-lfs
-    tokei # count LOC
-    dysk # show disk usage, nicer default format than df
-    hyperfine # cli benchmarking tool
-    units
-    unzip
-    zip
-  ];
 }

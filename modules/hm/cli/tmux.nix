@@ -1,116 +1,119 @@
-{ pkgs, ... }:
 {
-  programs = {
-    sesh = {
-      enable = true;
-      enableTmuxIntegration = true;
-      enableAlias = true;
+  flake.modules.homeManager.cli =
+    { pkgs, ... }:
+    {
+      programs = {
+        sesh = {
+          enable = true;
+          enableTmuxIntegration = true;
+          enableAlias = true;
+        };
+        fzf.tmux.enableShellIntegration = true;
+        tmux = {
+          enable = true;
+          mouse = true;
+          escapeTime = 0;
+          focusEvents = true;
+          keyMode = "vi";
+          prefix = "`";
+          baseIndex = 1;
+          plugins = with pkgs.tmuxPlugins; [
+            {
+              plugin = dotbar;
+              extraConfig = ''
+                set -g @tmux-dotbar-position top
+                set -g @tmux-dotbar-bold-status false
+                set -g @tmux-dotbar-bold-current-window true
+
+                set -g @tmux-dotbar-bg "#1e1e2e"
+                set -g @tmux-dotbar-fg "#585b70"
+                set -g @tmux-dotbar-fg-current "#cdd6f4"
+                set -g @tmux-dotbar-fg-session "#9399b2"
+                set -g @tmux-dotbar-fg-prefix "#cba6f7"
+
+                set -g @tmux-dotbar-session-position "right"
+                set -g @tmux-dotbar-justify "left"
+                set -g @tmux-dotbar-window-status-format " #{window_index} #{window_name} "
+                set -g @tmux-dotbar-session-status-format " #{window_index} #{window_name} "
+                set -g @tmux-dotbar-session-text " #H [#S] "
+
+              '';
+            }
+            vim-tmux-navigator
+            tmux-fzf
+            {
+              plugin = resurrect;
+              extraConfig = ''
+                set -g @resurrect-dir '$HOME/.local/share/tmux/resurrect/'
+                set -g @resurrect-strategy-nvim 'session'
+              '';
+            }
+            sensible
+            {
+              plugin = continuum;
+              extraConfig = ''
+                set -g @continuum-restore 'on'
+              '';
+            }
+          ];
+          sensibleOnTop = true;
+          extraConfig = ''
+            set -g default-terminal "tmux-256color"
+            # ensure colors render correctly for all terminals
+            set-option -sa terminal-overrides ",wezterm*:Tc"
+            # Set new panes to open in current directory
+            bind c new-window -c "#{pane_current_path}"
+            bind % split-window -c "#{pane_current_path}"
+            bind '"' split-window -h -c "#{pane_current_path}"
+
+            # don't rename windows automatically
+            set-option -g allow-rename off
+
+            # copy to system clipboard
+            set -g set-clipboard on
+            bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+            bind -T copy-mode y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+
+            bind x kill-pane
+
+            set-option -g detach-on-destroy off
+
+            bind-key p switch-client -l
+
+            set -g status-position top
+            set -g window-status-bell-style 'fg=#1e1e2e,bg=#f9e2af,bold'
+
+            bind-key g neww -c "#{pane_current_path}" lazygit
+            bind-key y neww -c "#{pane_current_path}" yazi
+            bind-key b neww -c "#{pane_current_path}" btop
+
+            set-option -g renumber-windows on
+
+            # resize the pane
+            bind-key -r J resize-pane -D 3
+            bind-key -r K resize-pane -U 3
+            bind-key -r H resize-pane -L 3
+            bind-key -r L resize-pane -R 3
+
+            # open a new scratch session
+            bind-key -r k new-session -A -s scratch -c $HOME
+
+            set -g extended-keys on
+            set -g extended-keys-format csi-u
+
+            # yazi image preview fixes
+            set -g allow-passthrough on
+            # yazi uses these to detect the terminal brand inside tmux
+            set -ga update-environment TERM_PROGRAM
+            set -ga update-environment WEZTERM_EXECUTABLE
+            set -ga update-environment WEZTERM_PANE
+
+            # sesh
+            set -g popup-style 'bg=default,fg=default'
+            bind -N "last-session (via sesh) " p run-shell "sesh last"
+            bind -N "open the `editor` window" e run-shell "tmux-connect-editor"
+          '';
+        };
+      };
     };
-    fzf.tmux.enableShellIntegration = true;
-    tmux = {
-      enable = true;
-      mouse = true;
-      escapeTime = 0;
-      focusEvents = true;
-      keyMode = "vi";
-      prefix = "`";
-      baseIndex = 1;
-      plugins = with pkgs.tmuxPlugins; [
-        {
-          plugin = dotbar;
-          extraConfig = ''
-            set -g @tmux-dotbar-position top
-            set -g @tmux-dotbar-bold-status false
-            set -g @tmux-dotbar-bold-current-window true
-
-            set -g @tmux-dotbar-bg "#1e1e2e"
-            set -g @tmux-dotbar-fg "#585b70"
-            set -g @tmux-dotbar-fg-current "#cdd6f4"
-            set -g @tmux-dotbar-fg-session "#9399b2"
-            set -g @tmux-dotbar-fg-prefix "#cba6f7"
-
-            set -g @tmux-dotbar-session-position "right"
-            set -g @tmux-dotbar-justify "left"
-            set -g @tmux-dotbar-window-status-format " #{window_index} #{window_name} "
-            set -g @tmux-dotbar-session-status-format " #{window_index} #{window_name} "
-            set -g @tmux-dotbar-session-text " #H [#S] "
-
-          '';
-        }
-        vim-tmux-navigator
-        tmux-fzf
-        {
-          plugin = resurrect;
-          extraConfig = ''
-            set -g @resurrect-dir '$HOME/.local/share/tmux/resurrect/'
-            set -g @resurrect-strategy-nvim 'session'
-          '';
-        }
-        sensible
-        {
-          plugin = continuum;
-          extraConfig = ''
-            set -g @continuum-restore 'on'
-          '';
-        }
-      ];
-      sensibleOnTop = true;
-      extraConfig = ''
-        set -g default-terminal "tmux-256color"
-        # ensure colors render correctly for all terminals
-        set-option -sa terminal-overrides ",wezterm*:Tc"
-        # Set new panes to open in current directory
-        bind c new-window -c "#{pane_current_path}"
-        bind % split-window -c "#{pane_current_path}"
-        bind '"' split-window -h -c "#{pane_current_path}"
-
-        # don't rename windows automatically
-        set-option -g allow-rename off
-
-        # copy to system clipboard
-        set -g set-clipboard on
-        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-        bind -T copy-mode y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
-
-        bind x kill-pane
-
-        set-option -g detach-on-destroy off
-
-        bind-key p switch-client -l
-
-        set -g status-position top
-        set -g window-status-bell-style 'fg=#1e1e2e,bg=#f9e2af,bold'
-
-        bind-key g neww -c "#{pane_current_path}" lazygit
-        bind-key y neww -c "#{pane_current_path}" yazi
-        bind-key b neww -c "#{pane_current_path}" btop
-
-        set-option -g renumber-windows on
-
-        # resize the pane
-        bind-key -r J resize-pane -D 3
-        bind-key -r K resize-pane -U 3
-        bind-key -r H resize-pane -L 3
-        bind-key -r L resize-pane -R 3
-
-        # open a new scratch session
-        bind-key -r k new-session -A -s scratch -c $HOME
-
-        set -g extended-keys on
-        set -g extended-keys-format csi-u
-
-        # yazi image preview fixes
-        set -g allow-passthrough on
-        # yazi uses these to detect the terminal brand inside tmux
-        set -ga update-environment TERM_PROGRAM
-        set -ga update-environment WEZTERM_EXECUTABLE
-        set -ga update-environment WEZTERM_PANE
-
-        # sesh
-        set -g popup-style 'bg=default,fg=default'
-        bind -N "last-session (via sesh) " p run-shell "sesh last"
-        bind -N "open the `editor` window" e run-shell "tmux-connect-editor"
-      '';
-    };
-  };
 }

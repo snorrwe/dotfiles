@@ -16,7 +16,6 @@ in
     ./hardware.nix
     ./sound.nix
     ./video.nix
-    ../../modules/battery-management.nix
     ./udev.nix
   ];
 
@@ -91,16 +90,13 @@ in
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username}.packages =
-    with pkgs;
-    [
-      pavucontrol
-      pamixer
-      pulseaudio
-      acpi # battery status
-      powertop
-    ]
-    ++ (import ../../modules/common-packages.nix { inherit pkgs features lib; });
+  users.users.${username}.packages = with pkgs; [
+    pavucontrol
+    pamixer
+    pulseaudio
+    acpi # battery status
+    powertop
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

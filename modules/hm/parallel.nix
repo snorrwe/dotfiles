@@ -1,6 +1,8 @@
-_: {
-  programs.parallel = {
-    enable = true;
-    will-cite = true;
+{
+  flake.modules.homeManager.common = _: {
+    programs.parallel = {
+      enable = true;
+      will-cite = true;
+    };
   };
 }

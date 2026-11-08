@@ -1,15 +1,18 @@
-{ config, ... }:
 {
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-    enableNushellIntegration = true;
-  };
-  home.sessionVariables =
-    let
-      inherit (config.home) homeDirectory;
-    in
+  flake.modules.homeManager.cli =
+    { config, ... }:
     {
-      _ZO_EXCLUDE_DIRS = "${homeDirectory}:/mnt/**/*";
+      programs.zoxide = {
+        enable = true;
+        enableZshIntegration = true;
+        enableNushellIntegration = true;
+      };
+      home.sessionVariables =
+        let
+          inherit (config.home) homeDirectory;
+        in
+        {
+          _ZO_EXCLUDE_DIRS = "${homeDirectory}:/mnt/**/*";
+        };
     };
 }

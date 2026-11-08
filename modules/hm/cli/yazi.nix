@@ -1,97 +1,100 @@
-{ pkgs, ... }:
 {
-  # yazi deps
-  home.packages = with pkgs; [
-    ueberzugpp
-  ];
-  programs.yazi = {
-    enable = true;
-    package = pkgs.yazi;
-    enableZshIntegration = true;
-    plugins = with pkgs.yaziPlugins; {
-      inherit
-        mount
-        starship
-        git
-        diff
-        ;
-    };
-    initLua = ''
-      require("starship"):setup()
-      require("git"):setup {
-          -- Order of status signs showing in the linemode
-          order = 1500,
-      }
-    '';
-    settings = {
-      opener = {
-        open = [
-          {
-            run = "xdg-open %s1";
-            desc = "Open";
+  flake.modules.homeManager.cli =
+    { pkgs, ... }:
+    {
+      # yazi deps
+      home.packages = with pkgs; [
+        ueberzugpp
+      ];
+      programs.yazi = {
+        enable = true;
+        package = pkgs.yazi;
+        enableZshIntegration = true;
+        plugins = with pkgs.yaziPlugins; {
+          inherit
+            mount
+            starship
+            git
+            diff
+            ;
+        };
+        initLua = ''
+          require("starship"):setup()
+          require("git"):setup {
+              -- Order of status signs showing in the linemode
+              order = 1500,
           }
-        ];
-      };
-      open = {
-        prepend_rules = [
-          {
-            url = "*.md";
-            use = [
-              "open"
-              "edit"
+        '';
+        settings = {
+          opener = {
+            open = [
+              {
+                run = "xdg-open %s1";
+                desc = "Open";
+              }
             ];
-          }
-        ];
-      };
-      mgr = {
-        show_hidden = true;
-        sort_dir_first = true;
-        sort_by = "natural";
-        sort_reverse = true;
-        show_symlink = true;
-        linemode = "mtime";
-      };
+          };
+          open = {
+            prepend_rules = [
+              {
+                url = "*.md";
+                use = [
+                  "open"
+                  "edit"
+                ];
+              }
+            ];
+          };
+          mgr = {
+            show_hidden = true;
+            sort_dir_first = true;
+            sort_by = "natural";
+            sort_reverse = true;
+            show_symlink = true;
+            linemode = "mtime";
+          };
 
-      plugin.prepend_fetchers = [
-        {
-          url = "*";
-          run = "git";
-          group = "git";
-        }
-        {
-          url = "*/";
-          run = "git";
-          group = "git";
-        }
-      ];
-
-    };
-    keymap = {
-      mgr.prepend_keymap = [
-        {
-          on = [ "<C-s>" ];
-          run = ''shell "$SHELL" --block --confirm'';
-          desc = "Open shell here";
-        }
-        {
-          on = [ "y" ];
-          run = [
-            ''
-              	shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
-            ''
-            "yank"
+          plugin.prepend_fetchers = [
+            {
+              url = "*";
+              run = "git";
+              group = "git";
+            }
+            {
+              url = "*/";
+              run = "git";
+              group = "git";
+            }
           ];
-        }
-        {
-          on = [ "M" ];
-          run = [ "plugin mount" ];
-        }
-        {
-          on = [ "<C-d>" ];
-          run = "plugin diff";
-          desc = "Diff the selected with the hovered file";
-        }
-      ];
+
+        };
+        keymap = {
+          mgr.prepend_keymap = [
+            {
+              on = [ "<C-s>" ];
+              run = ''shell "$SHELL" --block --confirm'';
+              desc = "Open shell here";
+            }
+            {
+              on = [ "y" ];
+              run = [
+                ''
+                  	shell 'echo "$@" | xclip -i -selection clipboard -t text/uri-list' --confirm
+                ''
+                "yank"
+              ];
+            }
+            {
+              on = [ "M" ];
+              run = [ "plugin mount" ];
+            }
+            {
+              on = [ "<C-d>" ];
+              run = "plugin diff";
+              desc = "Diff the selected with the hovered file";
+            }
+          ];
+        };
+      };
     };
-  };
 }

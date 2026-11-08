@@ -142,14 +142,11 @@ in
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username}.packages =
-    with pkgs;
-    [
-      pavucontrol
-      pamixer
-      pulseaudio
-    ]
-    ++ (import ../../modules/common-packages.nix { inherit pkgs features lib; });
+  users.users.${username}.packages = with pkgs; [
+    pavucontrol
+    pamixer
+    pulseaudio
+  ];
 
   hardware.nvidia-container-toolkit.enable = true;
   environment = {

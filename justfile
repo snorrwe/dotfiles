@@ -57,9 +57,9 @@ render-dotfiles out="/tmp/hm-render":
     nix build .#homeConfigurations.snorrwe.activationPackage -o {{ out }}
 
 agenix *args:
-    cd ./modules/secrets && nix run github:ryantm/agenix -- {{ args }}
+    cd ./modules/_secrets && nix run github:ryantm/agenix -- {{ args }}
 
 edit-secret name: (agenix "-e" name)
 
 list-secrets:
-    @find modules/secrets -type f -not -name agenix-rules.nix -exec basename {} \;
+    @find modules/_secrets -type f -not -name agenix-rules.nix -exec basename {} \;

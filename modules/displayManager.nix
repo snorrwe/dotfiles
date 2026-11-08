@@ -1,5 +1,7 @@
-_: {
-  services.displayManager.ly = {
-    enable = true;
+{
+  flake.modules.nixos.common = _: {
+    services.displayManager.ly = {
+      enable = true;
+    };
   };
 }

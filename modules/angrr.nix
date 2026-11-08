@@ -1,5 +1,7 @@
-_: {
-  services.angrr = {
-    enable = true;
+{
+  flake.modules.nixos.common = _: {
+    services.angrr = {
+      enable = true;
+    };
   };
 }

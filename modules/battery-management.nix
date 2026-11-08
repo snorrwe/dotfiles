@@ -1,18 +1,21 @@
-{ config, pkgs, ... }:
 {
-  powerManagement.powertop.enable = true;
-  services.thermald.enable = true;
-  services.auto-cpufreq = {
-    enable = true;
-    settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "never";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
+  flake.modules.nixos.daniframe =
+    { config, pkgs, ... }:
+    {
+      powerManagement.powertop.enable = true;
+      services.thermald.enable = true;
+      services.auto-cpufreq = {
+        enable = true;
+        settings = {
+          battery = {
+            governor = "powersave";
+            turbo = "never";
+          };
+          charger = {
+            governor = "performance";
+            turbo = "auto";
+          };
+        };
       };
     };
-  };
 }

@@ -1,69 +1,72 @@
 {
-  pkgs,
-  ...
-}:
-{
-  programs = {
-    git = {
-      enable = true;
-      settings = {
-        user = {
-          name = "Daniel Kiss";
-          email = "littlesnorrboy@gmail.com";
-        };
-        merge = {
-          ours.driver = true;
-          union.driver = true;
-        };
-        push.autoSetupRemote = true;
-      };
-      lfs.enable = true;
-    };
-    difftastic = {
-      enable = true;
-      options = {
-        background = "dark";
-        display = "inline";
-      };
-      git.enable = true;
-    };
-    lazygit = {
-      enable = true;
-      settings = {
-        gui = {
-          nerdFontsVersion = "3";
-        };
+  flake.modules.homeManager.cli =
+    {
+      pkgs,
+      ...
+    }:
+    {
+      programs = {
         git = {
-          log = {
-            showWholeGraph = false;
+          enable = true;
+          settings = {
+            user = {
+              name = "Daniel Kiss";
+              email = "littlesnorrboy@gmail.com";
+            };
+            merge = {
+              ours.driver = true;
+              union.driver = true;
+            };
+            push.autoSetupRemote = true;
           };
-          diffRenderers = [
-            {
-              command = "${pkgs.difftastic}/bin/difft --color=always";
-              type = "extDiff";
-            }
+          lfs.enable = true;
+        };
+        difftastic = {
+          enable = true;
+          options = {
+            background = "dark";
+            display = "inline";
+          };
+          git.enable = true;
+        };
+        lazygit = {
+          enable = true;
+          settings = {
+            gui = {
+              nerdFontsVersion = "3";
+            };
+            git = {
+              log = {
+                showWholeGraph = false;
+              };
+              diffRenderers = [
+                {
+                  command = "${pkgs.difftastic}/bin/difft --color=always";
+                  type = "extDiff";
+                }
+              ];
+            };
+          };
+        };
+        gh = {
+          enable = true;
+          settings = {
+            editor = "nvim";
+          };
+          extensions = with pkgs; [
+            gh-dash
+            gh-stack
           ];
         };
-      };
-    };
-    gh = {
-      enable = true;
-      settings = {
-        editor = "nvim";
-      };
-      extensions = with pkgs; [
-        gh-dash
-        gh-stack
-      ];
-    };
-    gh-dash = {
-      enable = true;
-      settings = {
-        smartFilteringAtLaunch = false;
-        pager = {
-          diff = "${pkgs.delta}/bin/delta -s --paging always";
+        gh-dash = {
+          enable = true;
+          settings = {
+            smartFilteringAtLaunch = false;
+            pager = {
+              diff = "${pkgs.delta}/bin/delta -s --paging always";
+            };
+          };
         };
       };
     };
-  };
 }

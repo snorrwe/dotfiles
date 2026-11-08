@@ -1,76 +1,84 @@
 {
-  pkgs,
-  config,
-  lib,
-  features,
-  ...
-}:
-let
-  inherit (pkgs) sccache jq;
-  sharedCacheDir = "${config.home.homeDirectory}/.cache/sccache";
-  mkCacheConfig = chain: pkgs.writeTextDir "config" ''
-    [cache.multilevel]
-    chain = ${builtins.toJSON chain}
-    [cache.disk]
-    size = ${toString config.sccache.localCacheSize}
-  '';
-  hostCacheConfig = mkCacheConfig [ "disk" "s3" ];
-  containerCacheConfig = mkCacheConfig [ "disk" ];
+  flake.modules.homeManager.sccache =
+    {
+      pkgs,
+      config,
+      lib,
+      features,
+      ...
+    }:
+    let
+      inherit (pkgs) sccache jq;
+      sharedCacheDir = "${config.home.homeDirectory}/.cache/sccache";
+      mkCacheConfig =
+        chain:
+        pkgs.writeTextDir "config" ''
+          [cache.multilevel]
+          chain = ${builtins.toJSON chain}
+          [cache.disk]
+          size = ${toString config.sccache.localCacheSize}
+        '';
+      hostCacheConfig = mkCacheConfig [
+        "disk"
+        "s3"
+      ];
+      containerCacheConfig = mkCacheConfig [ "disk" ];
 
-  sccache-local-s3 = pkgs.writeShellScriptBin "sccache" ''
-    export SCCACHE_DIR=${lib.escapeShellArg sharedCacheDir}
-    if [ -n "''${CONTAINER_ID:-}" ]; then
-      unset SCCACHE_BUCKET SCCACHE_ENDPOINT SCCACHE_REGION SCCACHE_S3_USE_SSL
-      mkdir -p "$HOME/.cache/sccache"
-      export SCCACHE_SERVER_UDS="$HOME/.cache/sccache/server.sock"
-      exec ${sccache}/bin/sccache "$@"
-    fi
+      sccache-local-s3 = pkgs.writeShellScriptBin "sccache" ''
+        export SCCACHE_DIR=${lib.escapeShellArg sharedCacheDir}
+        if [ -n "''${CONTAINER_ID:-}" ]; then
+          unset SCCACHE_BUCKET SCCACHE_ENDPOINT SCCACHE_REGION SCCACHE_S3_USE_SSL
+          mkdir -p "$HOME/.cache/sccache"
+          export SCCACHE_SERVER_UDS="$HOME/.cache/sccache/server.sock"
+          exec ${sccache}/bin/sccache "$@"
+        fi
 
-    export SCCACHE_BUCKET="sccache";
-    export AWS_ACCESS_KEY_ID="$(${jq}/bin/jq -r .key < ${config.age.secrets.sccache-json.path})"
-    export AWS_SECRET_ACCESS_KEY="$(${jq}/bin/jq -r .secret < ${config.age.secrets.sccache-json.path})"
-    export AWS_ENDPOINT_URL="${config.sccache.s3Url}"
-    export SCCACHE_ENDPOINT="$AWS_ENDPOINT_URL"
-    export SCCACHE_REGION="us-east-1"
-    export SCCACHE_S3_USE_SSL=${
-      lib.escapeShellArg (
-        if (builtins.substring 0 5 config.sccache.s3Url) == "https" then "true" else "false"
-      )
-    }
-    export SCCACHE_BASE_DIR="''${SCCACHE_BASE_DIR:-${config.home.homeDirectory}}"
-    exec ${sccache}/bin/sccache "$@"
-  '';
-in
-{
-  options.sccache = {
-    s3Url = lib.mkOption {
-      type = lib.types.str;
-      default = "https://s3.snorrwe.org";
-      description = "URL of the sccache S3 endpoint";
-    };
-    localCacheSize = lib.mkOption {
-      type = lib.types.ints.positive;
-      default = 32212254720; # 30 GiB
-      description = "Maximum size of the local sccache disk cache in bytes.";
-    };
-  };
-  config = {
-    sccache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
-    age.secrets.sccache-json.file = ../secrets/s3.local.json;
-    xdg.configFile."sccache".source = hostCacheConfig;
-    home.file = lib.mkIf features.enableDistrobox (
-      lib.mapAttrs' (_: container: {
-        name = "${lib.removePrefix "~/" container.home}/.config/sccache";
-        value.source = containerCacheConfig;
-      }) config.programs.distrobox.containers
-    );
-    home = {
-      packages = [ sccache-local-s3 ];
-      sessionVariables = {
-        RUSTC_WRAPPER = "${sccache-local-s3}/bin/sccache";
-        CARGO_INCREMENTAL = "0";
-        SCCACHE_BASE_DIR = config.home.homeDirectory;
+        export SCCACHE_BUCKET="sccache";
+        export AWS_ACCESS_KEY_ID="$(${jq}/bin/jq -r .key < ${config.age.secrets.sccache-json.path})"
+        export AWS_SECRET_ACCESS_KEY="$(${jq}/bin/jq -r .secret < ${config.age.secrets.sccache-json.path})"
+        export AWS_ENDPOINT_URL="${config.sccache.s3Url}"
+        export SCCACHE_ENDPOINT="$AWS_ENDPOINT_URL"
+        export SCCACHE_REGION="us-east-1"
+        export SCCACHE_S3_USE_SSL=${
+          lib.escapeShellArg (
+            if (builtins.substring 0 5 config.sccache.s3Url) == "https" then "true" else "false"
+          )
+        }
+        export SCCACHE_BASE_DIR="''${SCCACHE_BASE_DIR:-${config.home.homeDirectory}}"
+        exec ${sccache}/bin/sccache "$@"
+      '';
+    in
+    {
+      options.sccache = {
+        s3Url = lib.mkOption {
+          type = lib.types.str;
+          default = "https://s3.snorrwe.org";
+          description = "URL of the sccache S3 endpoint";
+        };
+        localCacheSize = lib.mkOption {
+          type = lib.types.ints.positive;
+          default = 32212254720; # 30 GiB
+          description = "Maximum size of the local sccache disk cache in bytes.";
+        };
+      };
+      config = {
+        sccache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
+        age.secrets.sccache-json.file = ../_secrets/s3.local.json;
+        xdg.configFile."sccache".source = hostCacheConfig;
+        home.file = lib.mkIf features.enableDistrobox (
+          lib.mapAttrs' (_: container: {
+            name = "${lib.removePrefix "~/" container.home}/.config/sccache";
+            value.source = containerCacheConfig;
+          }) config.programs.distrobox.containers
+        );
+        home = {
+          packages = [ sccache-local-s3 ];
+          sessionVariables = {
+            RUSTC_WRAPPER = "${sccache-local-s3}/bin/sccache";
+            CARGO_INCREMENTAL = "0";
+            SCCACHE_BASE_DIR = config.home.homeDirectory;
+          };
+        };
       };
     };
-  };
 }

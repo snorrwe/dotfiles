@@ -1,30 +1,33 @@
-{ pkgs, ... }:
 {
-  programs.btop = {
-    enable = true;
-    # btop-cuda adds /run/opengl-driver/lib to the runpath so btop can
-    # dlopen libnvidia-ml.so at runtime
-    package = if pkgs.stdenv.hostPlatform.isLinux then pkgs.btop-cuda else pkgs.btop;
-    settings = {
-      color_theme = "Default";
-      theme_background = true;
-      truecolor = true;
-      force_tty = false;
-      presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
-      vim_keys = true;
-      rounded_corners = true;
-      graph_symbol = "block";
-      graph_symbol_cpu = "default";
-      graph_symbol_gpu = "default";
-      graph_symbol_mem = "default";
-      graph_symbol_net = "default";
-      graph_symbol_proc = "default";
-      shown_boxes = "cpu mem net proc";
-      update_ms = 1000;
-      proc_sorting = "cpu direct";
-      proc_reversed = false;
-      proc_tree = true;
-      proc_aggregate = true;
+  flake.modules.homeManager.cli =
+    { pkgs, ... }:
+    {
+      programs.btop = {
+        enable = true;
+        # btop-cuda adds /run/opengl-driver/lib to the runpath so btop can
+        # dlopen libnvidia-ml.so at runtime
+        package = if pkgs.stdenv.hostPlatform.isLinux then pkgs.btop-cuda else pkgs.btop;
+        settings = {
+          color_theme = "Default";
+          theme_background = true;
+          truecolor = true;
+          force_tty = false;
+          presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
+          vim_keys = true;
+          rounded_corners = true;
+          graph_symbol = "block";
+          graph_symbol_cpu = "default";
+          graph_symbol_gpu = "default";
+          graph_symbol_mem = "default";
+          graph_symbol_net = "default";
+          graph_symbol_proc = "default";
+          shown_boxes = "cpu mem net proc";
+          update_ms = 1000;
+          proc_sorting = "cpu direct";
+          proc_reversed = false;
+          proc_tree = true;
+          proc_aggregate = true;
+        };
+      };
     };
-  };
 }

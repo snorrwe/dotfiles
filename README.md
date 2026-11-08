@@ -1,5 +1,10 @@
 # Dotfile
 
+## Layout
+
+Dendritic flake: `flake-parts` + [`vic/import-tree`](https://github.com/vic/import-tree) recursively imports every `.nix` file under `modules/` (paths containing `/_` are skipped). Leaf modules contribute to `flake.modules.nixos.*` / `flake.modules.homeManager.*` profiles; host/home entrypoints under `modules/configurations/` select those profiles.
+
+
 ## Setup
 
 ```sh
@@ -70,7 +75,7 @@ Uses plain home-manager (no nix-darwin / system-level management).
 
 See commit 5613beba3186 Setup sccache with the local garage storage
 
-Add the file to ./modules/secrets/agenix-rules.nix
+Add the file to ./modules/_secrets/agenix-rules.nix
 
 Use `just edit-secret <name>` to edit its contents
 

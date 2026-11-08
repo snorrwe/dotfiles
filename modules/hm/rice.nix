@@ -1,76 +1,79 @@
 {
-  pkgs,
-  features,
-  ...
-}:
-let
-  theme = "Juno-mirage";
-  theme_pkg = pkgs.juno-theme;
-  cursor_package = pkgs.afterglow-cursors-recolored;
-  cursor_name = "Afterglow-Recolored-Catppuccin-Macchiato";
-in
-{
-  home = {
-    packages = with pkgs; [
-      # needed by gtk
-      dconf
-    ];
+  flake.modules.homeManager.linux =
+    {
+      pkgs,
+      features,
+      ...
+    }:
+    let
+      theme = "Juno-mirage";
+      theme_pkg = pkgs.juno-theme;
+      cursor_package = pkgs.afterglow-cursors-recolored;
+      cursor_name = "Afterglow-Recolored-Catppuccin-Macchiato";
+    in
+    {
+      home = {
+        packages = with pkgs; [
+          # needed by gtk
+          dconf
+        ];
 
-    pointerCursor = {
-      enable = features.enableGui;
-      name = cursor_name;
-      package = cursor_package;
-      x11.enable = true;
-      gtk.enable = true;
+        pointerCursor = {
+          enable = features.enableGui;
+          name = cursor_name;
+          package = cursor_package;
+          x11.enable = true;
+          gtk.enable = true;
+        };
+
+        sessionVariables.GTK_THEME = theme;
+      };
+      dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+
+      gtk = {
+        enable = features.enableGui;
+        font.name = "MonaspiceNe Nerd Font";
+        font.package = pkgs.monaspace;
+
+        theme = {
+          name = theme;
+          package = theme_pkg;
+        };
+        iconTheme = {
+          name = "rose-pine-moon";
+          package = pkgs.rose-pine-icon-theme;
+        };
+        cursorTheme = {
+          name = cursor_name;
+          package = cursor_package;
+        };
+
+        gtk2.extraConfig = ''
+          gtk-application-prefer-dark-theme = 1;
+        '';
+
+        gtk3.extraConfig = {
+          gtk-application-prefer-dark-theme = 1;
+        };
+
+        gtk4.extraConfig = {
+          gtk-application-prefer-dark-theme = 1;
+        };
+
+      };
+
+      qt = {
+        enable = features.enableGui;
+        platformTheme.name = theme;
+        style = {
+          name = "catppuccin-mocha-mauve";
+          package = pkgs.catppuccin-qt5ct;
+        };
+
+      };
     };
-
-    sessionVariables.GTK_THEME = theme;
-  };
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
-
-  gtk = {
-    enable = features.enableGui;
-    font.name = "MonaspiceNe Nerd Font";
-    font.package = pkgs.monaspace;
-
-    theme = {
-      name = theme;
-      package = theme_pkg;
-    };
-    iconTheme = {
-      name = "rose-pine-moon";
-      package = pkgs.rose-pine-icon-theme;
-    };
-    cursorTheme = {
-      name = cursor_name;
-      package = cursor_package;
-    };
-
-    gtk2.extraConfig = ''
-      gtk-application-prefer-dark-theme = 1;
-    '';
-
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-
-  };
-
-  qt = {
-    enable = features.enableGui;
-    platformTheme.name = theme;
-    style = {
-      name = "catppuccin-mocha-mauve";
-      package = pkgs.catppuccin-qt5ct;
-    };
-
-  };
 }
