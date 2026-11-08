@@ -6,14 +6,14 @@ commit_msg_file="$(git rev-parse --show-toplevel)/modules/commit-message.nix"
 
 process_commit_msg() {
     local commit_msg="$1"
-    local first_line  message
+    local first_line message
     first_line=$(echo "$commit_msg" | head -n 1)
     message=$(echo "$first_line" | sed -E 's/^\s+//g' | sed -E 's/\s+$//g' | sed 's/ /_/g' | sed -E 's/[^a-zA-Z0-9:_\.-]//g')
 
     if [ ${#message} -gt 50 ]; then
         message="${message:0:50}"
     else
-        message="${message}$(printf '%*s' $((50-${#message})) | tr ' ' '_')"
+        message="${message}$(printf '%*s' $((50 - ${#message})) | tr ' ' '_')"
     fi
 
     echo "$message"
@@ -26,7 +26,7 @@ commit_msg=$(git log -1 --pretty=%B)
 processed_msg=$(process_commit_msg "$commit_msg")
 
 # Write the message to the target file
-printf "{\n  system.nixos.label = \"%s\";\n}" "$processed_msg" > "$commit_msg_file"
+sed -i -e "s/\(system.nixos.label = \).*;$/\1\"$processed_msg\";/" "$commit_msg_file"
 # Check if there are changes to commit
 if [[ -n $(git status -s "$commit_msg_file") ]]; then
     # Stage the changes to the target file
@@ -35,4 +35,3 @@ if [[ -n $(git status -s "$commit_msg_file") ]]; then
 fi
 
 exit 0
-

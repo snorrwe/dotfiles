@@ -1,3 +1,5 @@
 {
-  system.nixos.label = "Migrate_flake_to_the_dendritic_pattern____________";
+  flake.modules.nixos.common = {
+    system.nixos.label = "Fix_post-commit_hook_and_commit-message.nix_______";
+  };
 }
