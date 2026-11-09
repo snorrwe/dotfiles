@@ -26,8 +26,17 @@ darwin-apply *args:
     nh home switch . -c dkiss@danimac {{ args }}
 
 generate-hardware-config:
-    mkdir -p "./hosts/{{ hostname }}"
-    sudo nixos-generate-config --show-hardware-config > "./hosts/{{ hostname }}/hardware.nix"
+    #!/usr/bin/env bash
+    set -euo pipefail
+    mkdir -p "./modules/hosts/{{ hostname }}"
+    tmp="$(mktemp)"
+    sudo nixos-generate-config --show-hardware-config >"$tmp"
+    {
+      printf '{\n  flake.modules.nixos.{{ hostname }} =\n'
+      cat "$tmp"
+      printf ';\n}\n'
+    } >"./modules/hosts/{{ hostname }}/hardware.nix"
+    rm -f "$tmp"
 
 install: generate-hardware-config && setup-git-hooks
     just apply {{ hostname }}

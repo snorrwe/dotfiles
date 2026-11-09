@@ -1,9 +1,7 @@
 {
-  pkgs,
-  ...
-}:
-
-{
+  flake.modules.nixos.danipc =
+    { pkgs, ... }:
+    {
   security.rtkit.enable = true;
   services = {
     # Enable sound with pipewire.
@@ -23,4 +21,5 @@
       };
     };
   };
+    };
 }

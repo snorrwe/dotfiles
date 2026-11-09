@@ -2,7 +2,7 @@
 
 ## Layout
 
-Dendritic flake: `flake-parts` + [`vic/import-tree`](https://github.com/vic/import-tree) recursively imports every `.nix` file under `modules/` (paths containing `/_` are skipped). Leaf modules contribute to `flake.modules.nixos.*` / `flake.modules.homeManager.*` profiles; host/home entrypoints under `modules/configurations/` select those profiles.
+Dendritic flake: `flake-parts` + [`vic/import-tree`](https://github.com/vic/import-tree) recursively imports every `.nix` file under `modules/` (paths containing `/_` are skipped). Leaf modules contribute to `flake.modules.nixos.*` / `flake.modules.homeManager.*` profiles; host/home entrypoints under `modules/configurations/` select those profiles. Per-machine modules live in `modules/hosts/<host>/` and merge into `flake.modules.nixos.<host>`.
 
 ## Setup
 

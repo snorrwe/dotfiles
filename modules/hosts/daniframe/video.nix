@@ -1,14 +1,16 @@
 {
-  config,
-  lib,
-  pkgs,
-  host,
-  username,
-  options,
-  inputs,
-  system,
-  ...
-}:
+  flake.modules.nixos.daniframe =
+    {
+      config,
+      lib,
+      pkgs,
+      host,
+      username,
+      options,
+      inputs,
+      system,
+      ...
+    }:
 
 let
   # mesa 26.2.0 wedges the i915 render engine on this machine (GPU HANG in the
@@ -37,4 +39,5 @@ in
     capabilities = "cap_perfmon=+ep";
     source = lib.getExe config.home-manager.users.${username}.programs.btop.package;
   };
+    };
 }

@@ -1,24 +1,19 @@
 {
-  config,
-  pkgs,
-  host,
-  username,
-  lib,
-  features,
-  ...
-}:
+  flake.modules.nixos.daniframe =
+    {
+      config,
+      pkgs,
+      host,
+      username,
+      lib,
+      features,
+      ...
+    }:
 let
   defaultBrowser = "app.zen_browser.zen";
 
 in
 {
-  imports = [
-    ./hardware.nix
-    ./sound.nix
-    ./video.nix
-    ./udev.nix
-  ];
-
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -166,4 +161,5 @@ in
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+    };
 }

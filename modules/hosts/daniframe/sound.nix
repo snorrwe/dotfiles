@@ -1,9 +1,7 @@
 {
-  pkgs,
-  ...
-}:
-
-{
+  flake.modules.nixos.daniframe =
+    { pkgs, ... }:
+    {
   services = {
     # Enable sound with pipewire.
     pulseaudio.enable = false;
@@ -41,4 +39,5 @@
     };
   };
   security.rtkit.enable = true;
+    };
 }

@@ -2,11 +2,13 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  config,
-  lib,
-  modulesPath,
-  ...
-}:
+  flake.modules.nixos.danipc =
+    {
+      config,
+      lib,
+      modulesPath,
+      ...
+    }:
 let
   btrfsOptions = [
     "compress=zstd:1"
@@ -72,4 +74,5 @@ in
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    };
 }

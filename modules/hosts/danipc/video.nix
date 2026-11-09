@@ -1,10 +1,7 @@
 {
-  config,
-  pkgs,
-  ...
-}:
-
-{
+  flake.modules.nixos.danipc =
+    { config, pkgs, ... }:
+    {
 
   hardware.graphics = {
     enable = true;
@@ -42,4 +39,5 @@
       }
     ];
   };
+    };
 }
