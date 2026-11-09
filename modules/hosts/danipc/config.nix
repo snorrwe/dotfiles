@@ -1,199 +1,35 @@
 {
-  flake.modules.nixos.danipc =
-    {
-      config,
-      pkgs,
-      host,
-      username,
-      lib,
-      features,
-      ...
-    }:
-let
-  defaultBrowser = "app.zen_browser.zen";
-
-in
-{
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    auto-optimise-store = true;
-  };
-
-  # Bootloader.
-  boot = {
-    # Kernel
-    kernelPackages = pkgs.linuxPackages_zen;
-    # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
-    # Needed For Some Steam Games
-    kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
-    };
-    # Bootloader.
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    # Make /tmp a tmpfs
-    tmp = {
-      useTmpfs = false;
-      tmpfsSize = "30%";
-    };
-    # Appimage Support
-    binfmt.registrations.appimage = {
-      wrapInterpreterInShell = false;
-      interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-      recognitionType = "magic";
-      offset = 0;
-      mask = "\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff";
-      magicOrExtension = "\\x7fELF....AI\\x02";
-    };
-    plymouth.enable = true;
-  };
-
-  networking.hostName = host;
-
-  dotfiles.agents.sharedDirectories = [
-    {
-      hostPath = config.home-manager.users.${username}.dotfiles.dir;
-      containerPath = "/workspace/dotfiles";
-    }
-    {
-      hostPath = "/home/${username}/Projects";
-      containerPath = "/workspace/Projects";
-    }
-    {
-      hostPath = "/mnt/data-0";
-      containerPath = "/workspace/data-0";
-    }
-  ];
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager = {
-    enable = true;
+  flake.modules.nixos.danipc = _: {
     # fix for my wifi dongle disconnecting
     # https://github.com/lwfinger/rtw88/issues/61
-    wifi.powersave = false;
-    # Was "iwd" for the Intel 6 AX200, but iwd appears to drop LocalSend's
-    # multicast discovery (224.0.0.167:53317); daniframe works on the default
-    # wpa_supplicant backend. Switch back and watch for AX200 disconnects.
-    wifi.backend = "wpa_supplicant";
-    plugins = with pkgs; [
-      networkmanager-openvpn
-    ];
-  };
-  # fix for my pcie wifi disconnecting
-  boot.extraModprobeConfig = ''
-    options iwlwifi 11n_disable=1
-    options iwlwifi swcrypto=0
-    options iwlwifi power_save=0
-    options iwlwifi uapsd_disable=1
-    options iwlwifi power_scheme=1
-  '';
+    networking.networkmanager = {
+      wifi.powersave = false;
+      # Was "iwd" for the Intel 6 AX200, but iwd appears to drop LocalSend's
+      # multicast discovery (224.0.0.167:53317); daniframe works on the default
+      # wpa_supplicant backend. Switch back and watch for AX200 disconnects.
+      wifi.backend = "wpa_supplicant";
+    };
+    # fix for my pcie wifi disconnecting
+    boot.extraModprobeConfig = ''
+      options iwlwifi 11n_disable=1
+      options iwlwifi swcrypto=0
+      options iwlwifi power_save=0
+      options iwlwifi uapsd_disable=1
+      options iwlwifi power_scheme=1
+    '';
 
-  # Set your time zone.
-  time.timeZone = "Europe/Budapest";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  services = {
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
-    # programs.mtr.enable = true;
-    # programs.gnupg.agent = {
-    #   enable = true;
-    #   enableSSHSupport = true;
-    # };
-
-    # List services that you want to enable:
-
-    # Enable the OpenSSH daemon.
-    openssh = {
+    services.openssh = {
       enable = true;
       ports = [ 39420 ];
     };
-    logind.settings.Login = {
-      # certain elements in my life might press the button while I'm working :)
-      HandlePowerKey = "ignore";
-      HandlePowerKeyLongPress = "ignore";
-      HandleRebootKey = "ignore";
-      HandleRebootKeyLongPress = "ignore";
-      HandleSuspendKey = "ignore";
-      HandleSuspendKeyLongPress = "ignore";
-    };
 
-    earlyoom = {
-      enable = true;
-    };
-  };
+    hardware.nvidia-container-toolkit.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username}.packages = with pkgs; [
-    pavucontrol
-    pamixer
-    pulseaudio
-  ];
-
-  hardware.nvidia-container-toolkit.enable = true;
-  environment = {
-
-    # List packages installed in system profile. To search, run:
-    # $ nix search wget
-    systemPackages = with pkgs; [
-      neovim
-      curl
-      networkmanagerapplet
+    dotfiles.agents.sharedDirectories = [
+      {
+        hostPath = "/mnt/data-0";
+        containerPath = "/workspace/data-0";
+      }
     ];
-    sessionVariables.DEFAULT_BROWSER = defaultBrowser;
-    sessionVariables.NIXOS_OZONE_WL = "1";
-    shellInit = ''
-      [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
-    '';
   };
-  programs.npm.enable = true;
-  # set default browser
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = defaultBrowser;
-      "x-scheme-handler/http" = defaultBrowser;
-      "x-scheme-handler/https" = defaultBrowser;
-      "x-scheme-handler/about" = defaultBrowser;
-      "x-scheme-handler/unknown" = defaultBrowser;
-    };
-  };
-
-  #Flakes
-  nix = {
-    package = pkgs.nixVersions.stable;
-    extraOptions = ''
-      trusted-users = root ${username}
-      experimental-features = nix-command flakes
-    '';
-  };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
-
-    };
 }

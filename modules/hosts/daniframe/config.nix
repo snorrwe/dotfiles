@@ -1,165 +1,27 @@
 {
   flake.modules.nixos.daniframe =
     {
-      config,
       pkgs,
-      host,
       username,
       lib,
-      features,
       ...
     }:
-let
-  defaultBrowser = "app.zen_browser.zen";
-
-in
-{
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    auto-optimise-store = true;
-  };
-
-  # Bootloader.
-  boot = {
-    # Kernel
-    kernelPackages = pkgs.linuxPackages_zen;
-    # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
-    # Needed For Some Steam Games
-    kernel.sysctl = {
-      "vm.max_map_count" = 2147483642;
-    };
-    # Bootloader.
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    # Make /tmp a tmpfs
-    tmp = {
-      useTmpfs = false;
-      tmpfsSize = "30%";
-    };
-    # Appimage Support
-    binfmt.registrations.appimage = {
-      wrapInterpreterInShell = false;
-      interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-      recognitionType = "magic";
-      offset = 0;
-      mask = "\\xff\\xff\\xff\\xff\\x00\\x00\\x00\\x00\\xff\\xff\\xff";
-      magicOrExtension = "\\x7fELF....AI\\x02";
-    };
-    plymouth.enable = true;
-  };
-
-  networking.hostName = host;
-
-  dotfiles.agents.sharedDirectories = [
     {
-      hostPath = config.home-manager.users.${username}.dotfiles.dir;
-      containerPath = "/workspace/dotfiles";
-    }
-    {
-      hostPath = "/home/${username}/Projects";
-      containerPath = "/workspace/Projects";
-    }
-  ];
+      users.users.${username}.packages = with pkgs; [
+        acpi # battery status
+        powertop
+      ];
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+      nix.settings.trusted-users = [ "agent" ];
 
-  # Enable networking
-  networking.networkmanager = {
-    enable = true;
-    plugins = with pkgs; [
-      networkmanager-openvpn
-    ];
-  };
+      services.logind.settings.Login = {
+        HandleLidSwitchExternalPower = "ignore";
+      };
 
-  # Set your time zone.
-  time.timeZone = "Europe/Budapest";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${username}.packages = with pkgs; [
-    pavucontrol
-    pamixer
-    pulseaudio
-    acpi # battery status
-    powertop
-  ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment = {
-    systemPackages = with pkgs; [
-      neovim
-      curl
-      networkmanagerapplet
-    ];
-    sessionVariables.DEFAULT_BROWSER = defaultBrowser;
-    sessionVariables.NIXOS_OZONE_WL = "1";
-    shellInit = ''
-      [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
-    '';
-  };
-  programs.npm.enable = true;
-  # set default browser
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = defaultBrowser;
-      "x-scheme-handler/http" = defaultBrowser;
-      "x-scheme-handler/https" = defaultBrowser;
-      "x-scheme-handler/about" = defaultBrowser;
-      "x-scheme-handler/unknown" = defaultBrowser;
-    };
-  };
-
-  #Flakes
-  nix = {
-    package = pkgs.nixVersions.stable;
-    extraOptions = ''
-      trusted-users = root ${username} agent
-      experimental-features = nix-command flakes
-    '';
-  };
-  services = {
-    # Enable CUPS to print documents.
-    printing.enable = true;
-
-    earlyoom = {
-      enable = true;
-    };
-
-    logind.settings.Login = {
-      HandleLidSwitchExternalPower = "ignore";
-      # certain elements in my life might press the button while I'm working :)
-      HandlePowerKey = "ignore";
-      HandlePowerKeyLongPress = "ignore";
-      HandleRebootKey = "ignore";
-      HandleRebootKeyLongPress = "ignore";
-      HandleSuspendKey = "ignore";
-      HandleSuspendKeyLongPress = "ignore";
-    };
-  };
-  systemd = {
-    # Keeps timing out during boot
-    units."dev-tpmrm0.device".enable = false;
-    units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
-
+      systemd = {
+        # Keeps timing out during boot
+        units."dev-tpmrm0.device".enable = false;
+        units."dev-tpmrm0.device".wantedBy = lib.mkForce [ ];
+      };
     };
 }

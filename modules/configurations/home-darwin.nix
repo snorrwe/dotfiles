@@ -1,17 +1,13 @@
 { inputs, config, ... }:
 let
-  inherit (inputs) nixpkgs home-manager;
-  pkgs = import nixpkgs { system = "aarch64-darwin"; };
   hm = config.flake.modules.homeManager;
 in
 {
-  flake.homeConfigurations."dkiss@danimac" = home-manager.lib.homeManagerConfiguration {
-    inherit pkgs;
-    extraSpecialArgs = {
-      inherit inputs;
-      username = "dkiss";
-      host = "danimac";
-    };
+  flake.homeConfigurations."dkiss@danimac" = import ../_lib/mk-home.nix {
+    inherit inputs config;
+    username = "dkiss";
+    host = "danimac";
+    system = "aarch64-darwin";
     modules = [
       hm.standaloneNixpkgs
       hm.common

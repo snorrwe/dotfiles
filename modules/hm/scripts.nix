@@ -14,7 +14,6 @@
         (writeScriptBin "tmux-pull-all" (builtins.readFile ./scripts/tmux-pull-all))
         (writeScriptBin "projects-pull-all" (builtins.readFile ./scripts/projects-pull-all))
         jq
-        (writeScriptBin "niri-fuzzel-select-window" (builtins.readFile ./scripts/niri-fuzzel-select-window))
         (writeScriptBin "wezterm-open-tailscale-ssh" (
           builtins.readFile ./scripts/wezterm-open-tailscale-ssh
         ))

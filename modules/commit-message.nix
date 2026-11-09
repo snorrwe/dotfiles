@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Move_host_configs_into_modules____________________";
+    system.nixos.label = "Simplify_dendritic_modules_after_the_host_extracti";
   };
 }

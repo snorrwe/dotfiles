@@ -1,18 +1,17 @@
 { inputs, config, ... }:
 let
-  inherit (inputs) nixpkgs home-manager;
-  system = "x86_64-linux";
-  pkgs = import nixpkgs { inherit system; };
-  features = (import ../_lib/features.nix).standaloneHomeDefaults;
+  features = (import ../_lib/features.nix).homeDefaults;
   hm = config.flake.modules.homeManager;
   mkHome =
     username:
-    home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {
-        inherit inputs username features;
-        host = username;
-      };
+    import ../_lib/mk-home.nix {
+      inherit
+        inputs
+        config
+        username
+        features
+        ;
+      system = "x86_64-linux";
       modules = [
         hm.standaloneNixpkgs
         hm.common

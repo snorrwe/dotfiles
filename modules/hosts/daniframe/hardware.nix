@@ -11,66 +11,66 @@
       ...
     }:
 
-{
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
-  boot = {
-    initrd.availableKernelModules = [
-      "xhci_pci"
-      "nvme"
-    ];
-    initrd.kernelModules = [ ];
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
-  };
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-uuid/c91008bb-d51f-4841-8fea-bd3fd2b95fea";
-      fsType = "btrfs";
-      options = [
-        "subvol=@"
-        "compress=zstd:1"
-        "noatime"
-        "space_cache=v2"
-        "discard=async"
+    {
+      imports = [
+        (modulesPath + "/installer/scan/not-detected.nix")
       ];
-    };
+      boot = {
+        initrd.availableKernelModules = [
+          "xhci_pci"
+          "nvme"
+        ];
+        initrd.kernelModules = [ ];
+        kernelModules = [ "kvm-intel" ];
+        extraModulePackages = [ ];
+      };
+      fileSystems = {
+        "/" = {
+          device = "/dev/disk/by-uuid/c91008bb-d51f-4841-8fea-bd3fd2b95fea";
+          fsType = "btrfs";
+          options = [
+            "subvol=@"
+            "compress=zstd:1"
+            "noatime"
+            "space_cache=v2"
+            "discard=async"
+          ];
+        };
 
-    "/home" = {
-      device = "/dev/disk/by-uuid/2e1705df-0a65-423b-8038-26dc542548ca";
-      fsType = "btrfs";
-      options = [
-        "compress=zstd:1"
-        "noatime"
-        "space_cache=v2"
-        "discard=async"
+        "/home" = {
+          device = "/dev/disk/by-uuid/2e1705df-0a65-423b-8038-26dc542548ca";
+          fsType = "btrfs";
+          options = [
+            "compress=zstd:1"
+            "noatime"
+            "space_cache=v2"
+            "discard=async"
+          ];
+        };
+
+        "/boot" = {
+          device = "/dev/disk/by-uuid/92CE-A248";
+          fsType = "vfat";
+          options = [
+            "fmask=0077"
+            "dmask=0077"
+          ];
+        };
+      };
+
+      swapDevices = [
+        { device = "/dev/disk/by-uuid/72cd05d3-ef74-4e05-b3d3-2f4db4d426da"; }
       ];
-    };
 
-    "/boot" = {
-      device = "/dev/disk/by-uuid/92CE-A248";
-      fsType = "vfat";
-      options = [
-        "fmask=0077"
-        "dmask=0077"
-      ];
-    };
-  };
+      # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
+      # (the default) this is the recommended approach. When using systemd-networkd it's
+      # still possible to use this option, but it's recommended to use it in conjunction
+      # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
+      networking.useDHCP = lib.mkDefault true;
+      # networking.interfaces.enp0s13f0u4.useDHCP = lib.mkDefault true;
+      # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/72cd05d3-ef74-4e05-b3d3-2f4db4d426da"; }
-  ];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s13f0u4.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
-
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+      nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+      hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
     };
 }

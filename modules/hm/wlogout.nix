@@ -1,9 +1,9 @@
 {
-  flake.modules.homeManager.linux =
-    { pkgs, features, ... }:
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     {
       programs.wlogout = {
-        enable = features.enableGui;
+        enable = true;
         layout = [
           {
             label = "lock";

@@ -1,18 +1,13 @@
 {
-  flake.modules.homeManager.linux =
-    {
-      pkgs,
-      lib,
-      features,
-      ...
-    }:
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     let
       timeout = 300;
       font = "MonaspiceNe Nerd Font";
     in
     {
       services.hypridle = {
-        enable = features.enableGui;
+        enable = true;
         settings = {
           listener = [
             {
@@ -31,7 +26,7 @@
           textColor = "rgb(cdd6f4)";
         in
         {
-          enable = features.enableGui;
+          enable = true;
           settings = {
             background = [
               {

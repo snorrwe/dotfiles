@@ -1,10 +1,10 @@
 {
-  flake.modules.homeManager.linux =
-    { pkgs, features, ... }:
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     {
       # notifications service
       services.dunst = {
-        enable = features.enableGui;
+        enable = true;
         iconTheme = {
           name = "rose-pine-moon";
           package = pkgs.rose-pine-icon-theme;

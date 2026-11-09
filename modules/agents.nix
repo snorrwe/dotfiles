@@ -195,6 +195,17 @@
       };
 
       config = lib.mkIf features.enableAgents {
+        dotfiles.agents.sharedDirectories = [
+          {
+            hostPath = config.home-manager.users.${username}.dotfiles.dir;
+            containerPath = "/workspace/dotfiles";
+          }
+          {
+            hostPath = "/home/${username}/Projects";
+            containerPath = "/workspace/Projects";
+          }
+        ];
+
         assertions = [
           {
             assertion = lib.all (

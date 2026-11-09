@@ -51,6 +51,7 @@ nixpkgs.lib.nixosSystem {
           hm.common
           hm.cli
           hm.linux
+          hm.gui
           hm.sccache
         ];
       };

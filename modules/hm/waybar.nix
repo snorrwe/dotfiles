@@ -1,11 +1,10 @@
 {
-  flake.modules.homeManager.linux =
+  flake.modules.homeManager.gui =
     {
       pkgs,
       lib,
       host,
       config,
-      features,
       ...
     }:
 
@@ -19,7 +18,7 @@
     with lib;
     {
       programs.waybar = {
-        enable = features.enableGui;
+        enable = true;
         package = pkgs.waybar;
         systemd = {
           enable = true;

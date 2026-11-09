@@ -10,16 +10,8 @@
     enableLocalNetwork = false;
   };
 
-  standaloneHomeDefaults = {
-    enableGui = false;
-    enableGaming = false;
-    enableGamedev = false;
-    enableDistrobox = false;
-    enableAgents = false;
-    enableLocalNetwork = false;
-  };
-
-  agentDefaults = {
+  # Standalone Home Manager, agent box, and similar non-NixOS homes.
+  homeDefaults = {
     enableGui = false;
     enableGaming = false;
     enableGamedev = false;

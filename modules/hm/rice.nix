@@ -1,10 +1,6 @@
 {
-  flake.modules.homeManager.linux =
-    {
-      pkgs,
-      features,
-      ...
-    }:
+  flake.modules.homeManager.gui =
+    { pkgs, ... }:
     let
       theme = "Juno-mirage";
       theme_pkg = pkgs.juno-theme;
@@ -19,7 +15,7 @@
         ];
 
         pointerCursor = {
-          enable = features.enableGui;
+          enable = true;
           name = cursor_name;
           package = cursor_package;
           x11.enable = true;
@@ -35,7 +31,7 @@
       };
 
       gtk = {
-        enable = features.enableGui;
+        enable = true;
         font.name = "MonaspiceNe Nerd Font";
         font.package = pkgs.monaspace;
 
@@ -67,7 +63,7 @@
       };
 
       qt = {
-        enable = features.enableGui;
+        enable = true;
         platformTheme.name = theme;
         style = {
           name = "catppuccin-mocha-mauve";

@@ -1,13 +1,6 @@
 {
-  flake.modules.homeManager.linux =
-    {
-      pkgs,
-      username,
-      host,
-      inputs,
-      features,
-      ...
-    }:
+  flake.modules.homeManager.gui =
+    _:
     let
       thunderbird = "org.mozilla.Thunderbird.desktop";
       browser = "app.zen_browser.zen.desktop";
@@ -15,7 +8,7 @@
     in
     {
       xdg.mimeApps = {
-        enable = features.enableGui;
+        enable = true;
         defaultApplications = {
           "x-scheme-handler/mailto" = [ thunderbird ];
           "message/rfc822" = [ thunderbird ];

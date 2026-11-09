@@ -1,19 +1,14 @@
 { inputs, config, ... }:
 let
-  inherit (inputs) nixpkgs home-manager;
-  system = "x86_64-linux";
-  pkgs = import nixpkgs { inherit system; };
-  username = "snorrwe";
-  features = (import ../_lib/features.nix).agentDefaults;
+  features = (import ../_lib/features.nix).homeDefaults;
   hm = config.flake.modules.homeManager;
 in
 {
-  flake.homeConfigurations.agent = home-manager.lib.homeManagerConfiguration {
-    inherit pkgs;
-    extraSpecialArgs = {
-      inherit inputs username features;
-      host = "agent";
-    };
+  flake.homeConfigurations.agent = import ../_lib/mk-home.nix {
+    inherit inputs config features;
+    username = "snorrwe";
+    host = "agent";
+    system = "x86_64-linux";
     modules = [
       hm.standaloneNixpkgs
       hm.common
