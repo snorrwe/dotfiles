@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Simplify_dendritic_modules_after_the_host_extracti";
+    system.nixos.label = "Drop_deprecated_pipewire.jack.enable_for_pw-jack__";
   };
 }
