@@ -64,4 +64,6 @@ def main [
     }
 
     rm --recursive --permanent $staging
+
+    mkdir (destination path join "data")
 }

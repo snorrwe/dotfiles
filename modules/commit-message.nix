@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Drop_deprecated_pipewire.jack.enable_for_pw-jack__";
+    system.nixos.label = "Create_a_data_dir_in_setup-workspace______________";
   };
 }
