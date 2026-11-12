@@ -30,6 +30,7 @@
               "nix"
               "home_manager"
               "rustup"
+              "tailscale"
             ]
             ++ optionals (host != "agent") [
               "pi"
