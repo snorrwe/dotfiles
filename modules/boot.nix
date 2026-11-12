@@ -3,9 +3,11 @@
     { config, pkgs, ... }:
     {
       boot = {
-        loader.timeout = 2;
-        loader.systemd-boot.enable = true;
-        loader.efi.canTouchEfiVariables = true;
+        loader = {
+          timeout = 2;
+          systemd-boot.enable = true;
+          efi.canTouchEfiVariables = true;
+        };
 
         kernelPackages = pkgs.linuxPackages_zen;
         # OBS Virtual Cam

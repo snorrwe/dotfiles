@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Fmt_______________________________________________";
+    system.nixos.label = "Fix_lint__________________________________________";
   };
 }
