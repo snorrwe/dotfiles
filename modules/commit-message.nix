@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Fix_lint__________________________________________";
+    system.nixos.label = "Update_nvim_plugins_______________________________";
   };
 }
