@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Disable_tailscale_update_in_topgrade______________";
+    system.nixos.label = "Mount_data_dir_in_mnt_in_the_agent-box_as_well____";
   };
 }

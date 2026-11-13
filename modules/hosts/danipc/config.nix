@@ -28,7 +28,7 @@
     dotfiles.agents.sharedDirectories = [
       {
         hostPath = "/mnt/data-0";
-        containerPath = "/workspace/data-0";
+        containerPath = "/mnt/data-0";
       }
     ];
   };
