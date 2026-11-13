@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Fix_deprecation_warning___________________________";
+    system.nixos.label = "Fix_lint__________________________________________";
   };
 }
