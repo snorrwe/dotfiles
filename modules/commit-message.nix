@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Allow_mounting_to_mnt_in_the_agent-box____________";
+    system.nixos.label = "Replace_sccache_with_Kache_for_Rust_builds________";
   };
 }

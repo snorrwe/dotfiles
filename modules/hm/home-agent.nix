@@ -4,7 +4,7 @@
     {
 
       # Agents reuse the normal CLI tools and configs, but have no host SSH keys
-      # with which to decrypt the S3 cache credentials (sccache profile omitted).
+      # with which to decrypt the S3 cache credentials (kache profile omitted).
 
       home.homeDirectory = lib.mkForce "/home/agent";
       # Store-backed configs are self-contained; no host checkout is required.

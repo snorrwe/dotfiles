@@ -2,6 +2,7 @@
   flake.modules.homeManager.darwin =
     {
       pkgs,
+      inputs,
       username,
       ...
     }:
@@ -18,7 +19,7 @@
           curl
 
           pkg-config
-          sccache
+          inputs.kache.packages.${pkgs.stdenv.hostPlatform.system}.default
           visidata
           killall
 

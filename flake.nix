@@ -24,6 +24,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kache.url = "github:kunobi-ninja/kache/stable";
     agenix.url = "github:ryantm/agenix";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";

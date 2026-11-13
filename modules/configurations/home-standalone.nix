@@ -17,7 +17,7 @@ let
         hm.common
         hm.cli
         hm.linux
-        hm.sccache
+        hm.kache
       ];
     };
 in

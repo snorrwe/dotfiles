@@ -140,6 +140,27 @@
         "type": "github"
       }
     },
+    "kache": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2",
+        "rust-overlay": "rust-overlay",
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1794493703,
+        "narHash": "sha256-5461iJuvDpibacLGgx7dzA6Dix5UleDnqklgmfQ5p8w=",
+        "owner": "kunobi-ninja",
+        "repo": "kache",
+        "rev": "7fe0b281f939ce0b7a99734f22437e0aad69468d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kunobi-ninja",
+        "ref": "stable",
+        "repo": "kache",
+        "type": "github"
+      }
+    },
     "libpng": {
       "flake": false,
       "locked": {
@@ -161,7 +182,7 @@
       "inputs": {
         "niri-stable": "niri-stable",
         "niri-unstable": "niri-unstable",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-stable": "nixpkgs-stable",
         "xwayland-satellite-stable": "xwayland-satellite-stable",
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
@@ -235,7 +256,7 @@
     },
     "nixos-hardware": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1794051415,
@@ -317,6 +338,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1773597492,
+        "narHash": "sha256-hQ284SkIeNaeyud+LS0WVLX+WL2rxcVZLFEaK0e03zg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "a07d4ce6bee67d7c838a8a5796e75dff9caa21ef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1793726008,
         "narHash": "sha256-jQp1wKvbwWdLBASTXkSi/VYmDJ5AbBi1WvcMt9HWJC8=",
         "owner": "NixOS",
@@ -331,7 +368,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1789546076,
         "narHash": "sha256-vWkSk5bbfTqdtMoSgD9FshACO8JCvXTFi+3cqEp0mH0=",
@@ -344,7 +381,7 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_5": {
       "locked": {
         "lastModified": 1793876309,
         "narHash": "sha256-Wojg9lIH/hDH91iDVH2/EPw8oDSpxjxhXONbU1yf4Zg=",
@@ -367,16 +404,38 @@
         "flatpaks": "flatpaks",
         "home-manager": "home-manager",
         "import-tree": "import-tree",
+        "kache": "kache",
         "niri": "niri",
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_5",
         "nixpkgs-mesa": "nixpkgs-mesa",
-        "rust-overlay": "rust-overlay",
+        "rust-overlay": "rust-overlay_2",
         "wezterm": "wezterm"
       }
     },
     "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "kache",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793000331,
+        "narHash": "sha256-6sLQgHX/V/yF8VrhmsJroujeRua1GY3nDTEpnY7tHF4=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "0d0575988e4bb9ebc4cf1afb1cec1ceac0b5914e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -396,7 +455,7 @@
         "type": "github"
       }
     },
-    "rust-overlay_2": {
+    "rust-overlay_3": {
       "inputs": {
         "nixpkgs": [
           "wezterm",
@@ -432,6 +491,27 @@
         "type": "github"
       }
     },
+    "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "kache",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784369104,
+        "narHash": "sha256-47cxbcZODibHv3rELFQ9vZly0vUNkND/atn/U7HLeb0=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "df3c0640565d04a0261253cdd89fce78ec50168a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
     "wezterm": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -441,7 +521,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "rust-overlay": "rust-overlay_2",
+        "rust-overlay": "rust-overlay_3",
         "zlib": "zlib"
       },
       "locked": {

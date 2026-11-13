@@ -80,6 +80,10 @@ Use `just edit-secret <name>` to edit its contents
 
 Use it in a nixos module as shown.
 
+## Build cache
+
+The Linux Home Manager profile installs Kache from `github:kunobi-ninja/kache/stable` and sets `RUSTC_WRAPPER`. Its `~/.config/kache/config.toml` uses the existing S3 bucket and selects the local endpoint on hosts with local networking. The encrypted `s3.local.json` secret supplies credentials at runtime, not in the config or Nix store. Distroboxes use a local-only Kache config and do not receive S3 credentials. Run `kache doctor` to check the setup; Kache flags the plain-HTTP local endpoint as insecure.
+
 ## Agent container (NixOS)
 
 The `enableAgents` feature on NixOS creates a rootless podman container called `agent-box` to run AI agents with some isolation. It bind-mounts `dotfiles.agents.sharedDirectories` and the host Nix store and daemon socket. Both NixOS hosts share this checkout and `~/Projects`; `danipc` also shares `/mnt/data-0`. The launcher uses the current directory as the workdir when it lies inside one of those mounts, and rejects other directories. `agent-box --no-cwd` starts in `/home/agent`. The repo's standalone `homeConfigurations.agent` installs CLI tools and configs into that persistent home; it does not mount the host's Home Manager profile or credentials. Use the command with the same name to enter the container. `agent-box --attach` opens another shell in the running box and leaves its mounts unchanged.

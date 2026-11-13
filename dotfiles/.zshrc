@@ -130,9 +130,6 @@ fi
 if type zoxide > /dev/null ; then
     znap eval zoxide "zoxide init zsh"
 fi
-if type sccache > /dev/null ; then
-    export RUSTC_WRAPPER=$(which sccache)
-fi
 if type sesh > /dev/null ; then
     znap eval sesh "sesh completion zsh"
 fi

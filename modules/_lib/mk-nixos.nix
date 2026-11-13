@@ -52,7 +52,7 @@ nixpkgs.lib.nixosSystem {
           hm.cli
           hm.linux
           hm.gui
-          hm.sccache
+          hm.kache
         ];
       };
     }
