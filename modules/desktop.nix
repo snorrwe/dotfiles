@@ -18,11 +18,14 @@
           neovim
           curl
           networkmanagerapplet
+          xhost
         ];
         sessionVariables.DEFAULT_BROWSER = defaultBrowser;
         sessionVariables.NIXOS_OZONE_WL = "1";
         shellInit = ''
-          [ -n "$DISPLAY" ] && xhost +si:localuser:$USER >/dev/null || true
+          if [ -n "$DISPLAY" ]; then
+            ${pkgs.xhost}/bin/xhost +si:localuser:$USER >/dev/null 2>&1 || true
+          fi
         '';
       };
 
