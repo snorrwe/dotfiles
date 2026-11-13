@@ -14,8 +14,9 @@
       dconf.enable = false;
 
       home.packages = [ pkgs.nixVersions.stable ];
+      # Interactive agent-box uses HM zsh so sessionVariables reach the shell.
+      home.sessionVariables.SHELL = "${pkgs.zsh}/bin/zsh";
       programs = {
-        bash.enable = true;
         # The box uses the host terminal; do not install an inner tmux or its session manager.
         tmux.enable = lib.mkForce false;
         sesh.enable = lib.mkForce false;
