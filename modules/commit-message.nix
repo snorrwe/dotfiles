@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Mount_data_dir_in_mnt_in_the_agent-box_as_well____";
+    system.nixos.label = "Allow_mounting_to_mnt_in_the_agent-box____________";
   };
 }

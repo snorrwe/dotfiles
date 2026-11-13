@@ -228,7 +228,7 @@
             assertion =
               lib.all (
                 m:
-                lib.hasPrefix "/workspace/" m.containerPath
+                (lib.hasPrefix "/workspace/" m.containerPath || lib.hasPrefix "/mnt/" m.containerPath)
                 && !(lib.hasInfix "/.." m.containerPath)
                 && m.containerPath != "/workspace/current"
                 && !(lib.hasPrefix "/workspace/current/" m.containerPath)
@@ -238,7 +238,7 @@
                 ) mounts
               ) mounts
               && lib.length (lib.unique (map (m: m.containerPath) mounts)) == lib.length mounts;
-            message = "Agent mount targets must be distinct, avoid /workspace/current, and stay under /workspace.";
+            message = "Agent mount targets must be distinct, avoid /workspace/current, and stay under /workspace or /mnt.";
           }
         ];
 
