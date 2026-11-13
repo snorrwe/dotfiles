@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Replace_sccache_with_Kache_for_Rust_builds________";
+    system.nixos.label = "Use_zsh_as_the_agent-box_login_shell______________";
   };
 }

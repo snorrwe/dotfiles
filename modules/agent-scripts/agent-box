@@ -79,10 +79,15 @@ enter_container() {
         exec_args+=(--env "AGENT_HOST_TMUX_PANE=$TMUX_PANE")
     fi
     exec_args+=("${langfuse_env_args[@]}")
-    # Match the host: HM sessionVariables (e.g. RUSTC_WRAPPER) load via zsh, not bash.
+    # Interactive login zsh loads HM sessionVariables via .zprofile; exported /
+    # direct commands do not, so source hm-session-vars.sh before exec.
     exec_args+=(--env "SHELL=$agent_home_path/bin/zsh")
     if (($#)); then
-        exec podman exec "${exec_args[@]}" "$container" "$@"
+        exec podman exec "${exec_args[@]}" "$container" \
+            bash --noprofile --norc -c '. "$1" && shift && exec "$@"' \
+            bash \
+            "$agent_home_path/etc/profile.d/hm-session-vars.sh" \
+            "$@"
     else
         exec podman exec "${exec_args[@]}" "$container" "$agent_home_path/bin/zsh" --login
     fi

@@ -33,9 +33,16 @@
         export KACHE_S3_SECRET_KEY="$(${pkgs.jq}/bin/jq -r .secret < ${config.age.secrets.kache-json.path})"
         exec ${kache}/bin/kache "$@"
       '';
+      kacheBin =
+        if config.kache.enableRemote then kache-with-credentials else kache;
     in
     {
       options.kache = {
+        enableRemote = lib.mkOption {
+          type = lib.types.bool;
+          default = true;
+          description = "Use the S3 remote with agenix credentials. Disable for local-only environments such as agent-box.";
+        };
         s3Url = lib.mkOption {
           type = lib.types.str;
           default = "https://s3.snorrwe.org";
@@ -49,19 +56,20 @@
       };
       config = {
         kache.s3Url = lib.mkIf features.enableLocalNetwork "http://s3.local";
-        age.secrets.kache-json.file = ../_secrets/s3.local.json;
-        xdg.configFile."kache/config.toml".source = hostConfig;
-        home.file = lib.mkIf features.enableDistrobox (
+        age.secrets.kache-json = lib.mkIf config.kache.enableRemote {
+          file = ../_secrets/s3.local.json;
+        };
+        xdg.configFile."kache/config.toml".source =
+          if config.kache.enableRemote then hostConfig else containerConfig;
+        home.file = lib.mkIf (config.kache.enableRemote && features.enableDistrobox) (
           lib.mapAttrs' (_: container: {
             name = "${lib.removePrefix "~/" container.home}/.config/kache/config.toml";
             value.source = containerConfig;
           }) config.programs.distrobox.containers
         );
         home = {
-          packages = [ kache-with-credentials ];
-          sessionVariables = {
-            RUSTC_WRAPPER = "${kache-with-credentials}/bin/kache";
-          };
+          packages = [ kacheBin ];
+          sessionVariables.RUSTC_WRAPPER = "${kacheBin}/bin/kache";
         };
       };
     };

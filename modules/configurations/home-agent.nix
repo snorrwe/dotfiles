@@ -14,6 +14,7 @@ in
       hm.common
       hm.cli
       hm.linux
+      hm.kache
       hm.agent
     ];
   };
