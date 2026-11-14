@@ -6,6 +6,17 @@
       config,
       ...
     }:
+    let
+      completions = pkgs.runCommand "zsh-generated-completions" { } ''
+        export HOME="$TMPDIR"
+        mkdir -p "$out/share/zsh/site-functions"
+        ${pkgs.rustup}/bin/rustup completions zsh > "$out/share/zsh/site-functions/_rustup"
+        ${pkgs.rustup}/bin/rustup completions zsh cargo > "$out/share/zsh/site-functions/_cargo"
+        ${pkgs.just}/bin/just --completions zsh > "$out/share/zsh/site-functions/_just"
+        ${pkgs.watchexec}/bin/watchexec --completions zsh > "$out/share/zsh/site-functions/_watchexec"
+        ${config.programs.atuin.package}/bin/atuin gen-completions --shell zsh > "$out/share/zsh/site-functions/_atuin"
+      '';
+    in
     {
       home.sessionVariables = {
         EDITOR = "nvim";
@@ -69,7 +80,8 @@
 
         initContent = lib.mkMerge [
           (lib.mkBefore ''
-            fpath+=(${pkgs.zsh-completions}/share/zsh/site-functions)
+            # Register generated completions before Home Manager runs compinit.
+            fpath=(${completions}/share/zsh/site-functions $fpath ${pkgs.zsh-completions}/share/zsh/site-functions)
             zstyle ':completion:*' menu no
             zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
             zstyle ':completion:*:descriptions' format '[%d]'
@@ -80,8 +92,6 @@
             setopt CORRECT
             bindkey -v
 
-            # Home Manager handles fzf, direnv, atuin and zoxide integrations.
-            eval "$(starship init zsh)"
             if (( $+commands[sesh] )); then
               eval "$(sesh completion zsh)"
             fi

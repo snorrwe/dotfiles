@@ -10,11 +10,6 @@
         source = mklink name;
         recursive = true;
       };
-      mklinkFile = name: {
-        source = mklink name;
-        recursive = false;
-      };
-
       agentsDir = ../../dotfiles/agents;
       skillEntries = builtins.readDir (agentsDir + "/skills");
       skillDirs = builtins.filter (name: skillEntries.${name} == "directory") (
@@ -36,7 +31,6 @@
       };
 
       config.xdg.configFile = {
-        "starship.toml" = mklinkFile "starship.toml";
         "niri" = mklinkDir "niri";
         "atuin" = mklinkDir "atuin";
         "nvim" = mklinkDir "nvim";
