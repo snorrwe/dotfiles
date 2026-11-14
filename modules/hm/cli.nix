@@ -50,7 +50,6 @@
       just
       dust # nicer du alternative
       watchexec
-      starship # for my shell prompt
       diffutils
       github-cli
       git-lfs

@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "System_update_2026-11-14__________________________";
+    system.nixos.label = "Remove_redundant_starship_package_________________";
   };
 }
