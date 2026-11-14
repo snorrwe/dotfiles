@@ -8,8 +8,9 @@
       kache.enableRemote = false;
       home = {
         homeDirectory = lib.mkForce "/home/agent";
-        packages = [ pkgs.nixVersions.stable ];
-        # Interactive agent-box uses HM zsh so sessionVariables reach the shell.
+        packages = [
+          pkgs.nixVersions.stable
+        ];
         sessionVariables.SHELL = "${pkgs.zsh}/bin/zsh";
       };
 
@@ -23,6 +24,8 @@
         tmux.enable = lib.mkForce false;
         sesh.enable = lib.mkForce false;
         fzf.tmux.enableShellIntegration = lib.mkForce false;
+        bash.enable = true;
+        zsh.enable = true;
       };
     };
 }
