@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Configure_zsh_in_nix______________________________";
+    system.nixos.label = "System_update_2026-11-14__________________________";
   };
 }
