@@ -42,6 +42,7 @@
       programs = {
         # Let Home Manager install and manage itself.
         home-manager.enable = true;
+        zsh.enable = true;
       };
 
       age.identityPaths = [
