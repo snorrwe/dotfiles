@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Enable_zsh________________________________________";
+    system.nixos.label = "Configure_zsh_in_nix______________________________";
   };
 }

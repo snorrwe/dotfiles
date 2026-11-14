@@ -43,12 +43,7 @@
         "xdg-desktop-portal-termfilechooser" = mklinkDir "xdg-desktop-portal-termfilechooser";
       };
       config.home.file = {
-        ".visidatarc" = {
-          source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.visidatarc";
-        };
-        ".zshrc" = {
-          source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.zshrc";
-        };
+        ".visidatarc".source = mkOutOfStoreSymlink "${cfg.dir}/dotfiles/.visidatarc";
       }
       // builtins.listToAttrs (map (mapSkill ".agents/skills") skillDirs);
     };
