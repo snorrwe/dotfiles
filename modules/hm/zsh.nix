@@ -14,10 +14,24 @@
         FZF_DEFAULT_OPTS = "--height 60% --layout=reverse";
       };
 
+      home.packages = [ pkgs.zsh-completions ];
+
       programs.zsh = {
         enable = true;
         enableCompletion = true;
-        autosuggestion.enable = true;
+        plugins = [
+          {
+            name = "fzf-tab";
+            src = pkgs.zsh-fzf-tab;
+            file = "share/fzf-tab/fzf-tab.plugin.zsh";
+          }
+          # Load after fzf-tab so its ZLE widgets aren't overwritten.
+          {
+            name = "zsh-autosuggestions";
+            src = pkgs.zsh-autosuggestions;
+            file = "share/zsh-autosuggestions/zsh-autosuggestions.zsh";
+          }
+        ];
         syntaxHighlighting.enable = true;
 
         shellAliases = {
@@ -55,40 +69,16 @@
 
         initContent = lib.mkMerge [
           (lib.mkBefore ''
-            source "$HOME/.local/share/zsh-snap/znap.zsh"
-            zstyle ':znap:*' repos-dir "$HOME/.zsh-plugins/"
-
-            # Load fzf-tab before the completion system is initialized.
+            fpath+=(${pkgs.zsh-completions}/share/zsh/site-functions)
             zstyle ':completion:*' menu no
             zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
             zstyle ':completion:*:descriptions' format '[%d]'
-            znap source Aloxaf/fzf-tab
-            znap source zsh-users/zsh-completions
-            znap source zpm-zsh/clipboard
-            znap source arzzen/calc.plugin.zsh
-
-            function completions {
-              local sitefuncdir=''${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
-              [[ -f $sitefuncdir/_rustup ]]    || znap fpath _rustup    'rustup completions zsh'
-              [[ -f $sitefuncdir/_cargo ]]     || znap fpath _cargo     'rustup completions zsh cargo'
-              [[ -f $sitefuncdir/_just ]]      || znap fpath _just      'just --completions zsh'
-              [[ -f $sitefuncdir/_watchexec ]] || znap fpath _watchexec 'watchexec --completions zsh'
-              [[ -f $sitefuncdir/_atuin ]]     || znap fpath _atuin     'atuin gen-completions --shell zsh'
-            }
-            completions
-            unfunction completions
           '')
           ''
             path=("$HOME/bin" "$HOME/.cargo/bin" "$HOME/.local/bin" $path)
             typeset -U path
             setopt CORRECT
             bindkey -v
-
-            function zsh-refresh-completions {
-              local sitefuncdir=''${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions
-              rm -f "$sitefuncdir"/_{rustup,cargo,just,watchexec,atuin}
-              exec zsh
-            }
 
             # Home Manager handles fzf, direnv, atuin and zoxide integrations.
             eval "$(starship init zsh)"

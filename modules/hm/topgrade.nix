@@ -2,7 +2,6 @@
   flake.modules.homeManager.linux =
     {
       pkgs,
-      config,
       host,
       ...
     }:
@@ -42,12 +41,6 @@
             ];
             skip_notify = false;
             pre_sudo = false;
-          };
-          git = {
-            repos = [
-              "${config.home.homeDirectory}/.local/share/zsh-snap"
-            ];
-            arguments = "--rebase --autostash";
           };
         };
 

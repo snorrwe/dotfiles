@@ -3,7 +3,7 @@ hostname := env("NIX_HOST", "NOHOSTSET")
 default:
     just --list
 
-clean: && clean-zsh-cache
+clean:
     nh clean all --nogcroots
 
 update-flake:
@@ -43,13 +43,6 @@ install: generate-hardware-config && setup-git-hooks
 
 install-darwin: setup-git-hooks
     just darwin-apply
-
-# clears zsh-snap eval cache use when you get errors like _xyz_hook:2: no such file or directory: /nix/store/...
-clean-zsh-cache:
-    rm -rf ~/.cache/zsh-snap
-
-zsh-refresh-completions:
-    zsh -i -c zsh-refresh-completions
 
 setup-git-hooks:
     rm -rf .git/hooks
