@@ -9,7 +9,7 @@
           efi.canTouchEfiVariables = true;
         };
 
-        kernelPackages = pkgs.linuxPackages_zen;
+        kernelPackages = pkgs.linuxPackages_latest;
         # OBS Virtual Cam
         kernelModules = [ "v4l2loopback" ];
         extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
