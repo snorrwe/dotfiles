@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Update_nvim_plugins_______________________________";
+    system.nixos.label = "Restore_agent-box_GUI_support_____________________";
   };
 }
