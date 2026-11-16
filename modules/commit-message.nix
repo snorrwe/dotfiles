@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Use_latest_linux_kernel___________________________";
+    system.nixos.label = "Update_nvim_plugins_______________________________";
   };
 }
