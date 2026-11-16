@@ -85,14 +85,51 @@
       # Pasta is started via sg(1) in this group. nft matches meta skgid, which does not
       # need the cgroup to exist at load time (socket cgroupv2 resolves a path then).
       egressGroup = "agent-box";
+      # Host loopback TCP services relayed into the box as 127.0.0.1:<port> via a
+      # Unix socket + socat. Pasta cannot reach host loopback; this is the path.
+      hostTcpRelays = [
+        {
+          name = "gpu-api";
+          port = 9931;
+        }
+        {
+          name = "app-mcp";
+          port = 9345;
+        }
+        {
+          name = "sim-mcp";
+          port = 9528;
+        }
+        {
+          name = "app-brp";
+          port = 15750;
+        }
+        {
+          name = "sim-brp";
+          port = 16116;
+        }
+        {
+          name = "app-brp-render";
+          port = 15751;
+        }
+        {
+          name = "sim-brp-render";
+          port = 16117;
+        }
+        {
+          name = "sim-dicomweb";
+          port = 8046;
+        }
+      ];
+      pastaTcpExclude = lib.concatMapStringsSep "," (r: "~${toString r.port}") hostTcpRelays;
       # Skip host.containers.internal even if Podman still prefers the pasta guest address.
       containersConf = pkgs.writeText "agent-box-containers.conf" ''
         [containers]
         host_containers_internal_ip = "none"
         [network]
-        # Never publish the reverse relay onto the host: it would steal the API port
-        # while the host server is stopped, and could forward back into itself.
-        pasta_options = ["-t", "127.0.0.1/auto,~9931", "-t", "::1/auto,~9931"]
+        # Never publish reverse relays onto the host: they would steal the port
+        # while the host server is stopped, and could forward back into themselves.
+        pasta_options = ["-t", "127.0.0.1/auto,${pastaTcpExclude}", "-t", "::1/auto,${pastaTcpExclude}"]
       '';
       # A native nft table, not networking.nftables.enable: that module blacklists
       # ip_tables, which rootless Docker in modules/containers.nix still needs.
@@ -128,7 +165,7 @@
           # Recreate boxes whose PID 1 does not reap orphaned children.
           init = true;
           hostContainersInternal = "none";
-          gpuApiRelay = "127.0.0.1:9931";
+          inherit hostTcpRelays;
           hostBin = "/home/${username}/.local/bin";
           # Invalidate boxes created with per-directory/transient mount semantics.
           workspaceMode = "declared-only";
@@ -166,6 +203,8 @@
           configured_sources=(${lib.escapeShellArgs (map (m: m.hostPath) mounts)})
           configured_targets=(${lib.escapeShellArgs (map (m: m.containerPath) mounts)})
           configured_read_only=(${lib.escapeShellArgs (map (m: lib.boolToString m.readOnly) mounts)})
+          agent_host_tcp_names=(${lib.escapeShellArgs (map (r: r.name) hostTcpRelays)})
+          agent_host_tcp_ports=(${lib.escapeShellArgs (map (r: toString r.port) hostTcpRelays)})
         ''
         + builtins.readFile ./agent-scripts/agent-box;
       };
@@ -286,46 +325,59 @@
             slices.agent = {
               description = "agent-box containers and their pasta processes";
             };
-            sockets.agent-host-actions = {
-              wantedBy = [ "sockets.target" ];
-              socketConfig = {
-                ListenStream = "%t/agent-host-actions.sock";
-                SocketMode = "0600";
-                RemoveOnStop = true;
-                Accept = true;
+            sockets = {
+              agent-host-actions = {
+                wantedBy = [ "sockets.target" ];
+                socketConfig = {
+                  ListenStream = "%t/agent-host-actions.sock";
+                  SocketMode = "0600";
+                  RemoveOnStop = true;
+                  Accept = true;
+                };
               };
-            };
-            # Only this fixed TCP endpoint is exposed, not arbitrary host networking.
-            sockets.agent-gpu-api = {
-              wantedBy = [ "sockets.target" ];
-              socketConfig = {
-                ListenStream = "%t/agent-gpu-api.sock";
-                SocketMode = "0600";
-                RemoveOnStop = true;
-                Accept = true;
+            }
+            // lib.listToAttrs (
+              map (r: {
+                name = "agent-${r.name}";
+                value = {
+                  wantedBy = [ "sockets.target" ];
+                  socketConfig = {
+                    ListenStream = "%t/agent-${r.name}.sock";
+                    SocketMode = "0600";
+                    RemoveOnStop = true;
+                    Accept = true;
+                  };
+                };
+              }) hostTcpRelays
+            );
+            services = {
+              "agent-host-actions@".serviceConfig = {
+                ExecStart = hostActions;
+                Environment = "PATH=${
+                  lib.makeBinPath [
+                    pkgs.tmux
+                    pkgs.libnotify
+                    alertBin
+                  ]
+                }";
+                StandardInput = "socket";
+                StandardOutput = "socket";
+                TimeoutStartSec = "6s";
               };
-            };
-            services."agent-gpu-api@".serviceConfig = {
-              ExecStart = "${pkgs.socat}/bin/socat STDIO TCP4:127.0.0.1:9931";
-              StandardInput = "socket";
-              StandardOutput = "socket";
-              NoNewPrivileges = true;
-              ProtectSystem = "strict";
-              ProtectHome = true;
-            };
-            services."agent-host-actions@".serviceConfig = {
-              ExecStart = hostActions;
-              Environment = "PATH=${
-                lib.makeBinPath [
-                  pkgs.tmux
-                  pkgs.libnotify
-                  alertBin
-                ]
-              }";
-              StandardInput = "socket";
-              StandardOutput = "socket";
-              TimeoutStartSec = "6s";
-            };
+            }
+            // lib.listToAttrs (
+              map (r: {
+                name = "agent-${r.name}@";
+                value.serviceConfig = {
+                  ExecStart = "${pkgs.socat}/bin/socat STDIO TCP4:127.0.0.1:${toString r.port}";
+                  StandardInput = "socket";
+                  StandardOutput = "socket";
+                  NoNewPrivileges = true;
+                  ProtectSystem = "strict";
+                  ProtectHome = true;
+                };
+              }) hostTcpRelays
+            );
           };
         };
 

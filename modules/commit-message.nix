@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Restore_agent-box_GUI_support_____________________";
+    system.nixos.label = "Relay_host_MCP_ports_into_agent-box_______________";
   };
 }
