@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Relay_host_MCP_ports_into_agent-box_______________";
+    system.nixos.label = "System_update_2026-11-20__________________________";
   };
 }
