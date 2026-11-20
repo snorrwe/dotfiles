@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "System_update_2026-11-20__________________________";
+    system.nixos.label = "Factor_out_cli_tools______________________________";
   };
 }
