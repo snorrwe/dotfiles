@@ -17,12 +17,10 @@
           gzip
           nodejs_22
           curl
-
           pkg-config
           inputs.kache.packages.${pkgs.stdenv.hostPlatform.system}.default
           visidata
           killall
-
           sshfs
           python3
         ];
