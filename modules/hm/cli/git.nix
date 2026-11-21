@@ -31,6 +31,8 @@
         };
         lazygit = {
           enable = true;
+          enableZshIntegration = true;
+          enableNushellIntegration = true;
           settings = {
             gui = {
               nerdFontsVersion = "3";
