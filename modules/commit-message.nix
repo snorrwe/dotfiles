@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Remove_lazydocker_________________________________";
+    system.nixos.label = "Add_carapace______________________________________";
   };
 }
