@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Add_carapace______________________________________";
+    system.nixos.label = "Add_comment_______________________________________";
   };
 }
