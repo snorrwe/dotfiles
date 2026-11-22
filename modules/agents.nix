@@ -158,6 +158,7 @@
         }
       '';
       langfuseSecret = config.home-manager.users.${username}.age.secrets.langfuse-json.path;
+      hostKacheStore = "${config.home-manager.users.${username}.xdg.cacheHome}/kache";
       spec = builtins.hashString "sha256" (
         builtins.toJSON {
           inherit mounts networkMode cgroupSlice;
@@ -165,7 +166,7 @@
           # Recreate boxes whose PID 1 does not reap orphaned children.
           init = true;
           hostContainersInternal = "none";
-          inherit hostTcpRelays;
+          inherit hostTcpRelays hostKacheStore;
           hostBin = "/home/${username}/.local/bin";
           # Invalidate boxes created with per-directory/transient mount semantics.
           workspaceMode = "declared-only";
@@ -200,6 +201,7 @@
           agent_path=${lib.escapeShellArg "/usr/local/bin:/home/agent/.local/bin:${agentHome.config.home.path}/bin:/usr/bin:/bin"}
           # HM agenix paths embed ''${XDG_RUNTIME_DIR}; leave unescaped so the shell expands it.
           langfuse_secret=${langfuseSecret}
+          host_kache_store=${lib.escapeShellArg hostKacheStore}
           configured_sources=(${lib.escapeShellArgs (map (m: m.hostPath) mounts)})
           configured_targets=(${lib.escapeShellArgs (map (m: m.containerPath) mounts)})
           configured_read_only=(${lib.escapeShellArgs (map (m: lib.boolToString m.readOnly) mounts)})

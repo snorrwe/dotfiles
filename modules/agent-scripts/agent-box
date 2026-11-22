@@ -148,6 +148,22 @@ if [[ "$bin_source" != "$host_bin" || ! -d "$bin_source" ]]; then
 fi
 mounts+=(--mount "type=bind,src=$bin_source,dst=/run/agent-host-bin,ro=false")
 mount_info+=("$bin_source -> /run/agent-host-bin (rw)")
+# This is not a workspace. Keep it out of the cwd mapping and do not pass
+# through a legacy daemon socket: a read-only mount still allows connections.
+kache_store_id=none
+kache_env=()
+if [[ -d "$host_kache_store" ]]; then
+    if [[ "$(realpath -e -- "$host_kache_store")" != "$host_kache_store" ]]; then
+        echo "Skipping host Kache store with a symlinked path: $host_kache_store" >&2
+    elif [[ -S "$host_kache_store/daemon.sock" || -S "$host_kache_store/daemon.ctl" ]]; then
+        echo "Skipping host Kache store: legacy daemon sockets in $host_kache_store (see README.md)." >&2
+    else
+        kache_store_id=$(stat -Lc '%d:%i' -- "$host_kache_store")
+        mounts+=(--mount "type=bind,src=$host_kache_store,dst=/run/kache-host,ro=true")
+        kache_env=(--env KACHE_READONLY_STORE=/run/kache-host)
+        mount_info+=("$host_kache_store -> /run/kache-host (ro)")
+    fi
+fi
 workdir=
 if ((share_cwd)); then
     cwd=$(pwd -P)
@@ -212,7 +228,7 @@ if ((gui)); then
     )
 fi
 relay_label=$(IFS=-; echo "${relay_ids[*]}")
-label="$agent_spec-$actions_id-$relay_label"
+label="$agent_spec-$actions_id-$relay_label-$kache_store_id"
 if ((gui)); then
     label="$label-$display"
 fi
@@ -259,7 +275,7 @@ if ! podman container exists "$container"; then
         --env HOME=/home/agent --env NIX_REMOTE=daemon \
         --env "AGENT_HOME_PATH=$agent_home_path" --env "PATH=$agent_path" \
         --env "NIX_CONFIG=experimental-features = nix-command flakes" \
-        "${langfuse_env_args[@]}" \
+        "${langfuse_env_args[@]}" "${kache_env[@]}" \
         "$agent_image" \
         /usr/bin/sleep infinity >/dev/null
 elif [[ "$(podman inspect -f '{{ .State.Running }}' "$container")" != true ]]; then

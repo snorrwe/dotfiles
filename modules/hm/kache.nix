@@ -13,6 +13,11 @@
       hostConfig = pkgs.writeText "kache-config.toml" ''
         [cache]
         local_max_size = ${builtins.toJSON config.kache.localCacheSize}
+        ${lib.optionalString features.enableAgents ''
+          # agent-box mounts the store, not the host daemon sockets.
+          local_store = ${builtins.toJSON "${config.xdg.cacheHome}/kache"}
+          runtime_dir = ${builtins.toJSON "${config.xdg.cacheHome}/kache-runtime"}
+        ''}
 
         [cache.remote]
         type = "s3"
@@ -33,8 +38,7 @@
         export KACHE_S3_SECRET_KEY="$(${pkgs.jq}/bin/jq -r .secret < ${config.age.secrets.kache-json.path})"
         exec ${kache}/bin/kache "$@"
       '';
-      kacheBin =
-        if config.kache.enableRemote then kache-with-credentials else kache;
+      kacheBin = if config.kache.enableRemote then kache-with-credentials else kache;
     in
     {
       options.kache = {
