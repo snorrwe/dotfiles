@@ -7,6 +7,7 @@
     {
       services.flatpak = {
         enable = true;
+        runWithoutGui = false;
         remotes = {
           "flathub" = "https://dl.flathub.org/repo/flathub.flatpakrepo";
         };
