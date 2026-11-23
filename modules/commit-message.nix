@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Shut_up_warning___________________________________";
+    system.nixos.label = "Open_terminal_on_the_secondary_monitor_in_danifram";
   };
 }
