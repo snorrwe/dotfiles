@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if (($# != 0)); then
-    echo 'Usage: tmux-alert-window' >&2
+    echo 'Usage: tmux-alert' >&2
     exit 2
 fi
 

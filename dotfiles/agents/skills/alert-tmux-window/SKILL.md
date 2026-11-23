@@ -9,7 +9,7 @@ disable-model-invocation: true
 When work finishes or you need the user's input, flag this session's tmux window once:
 
 ```bash
-tmux-alert-window || true
+tmux-alert || true
 ```
 
 The helper targets the agent's pane, including through the container bridge. It rings a terminal bell without switching focus; tmux clears the marker when the window is visited. Sound depends on terminal settings.

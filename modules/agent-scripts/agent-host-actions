@@ -15,7 +15,7 @@ tmux)
 tmux-alert)
     IFS= read -r -d '' -n 32 pane
     [[ "$pane" =~ ^%[0-9]+$ && ${#pane} -lt 32 ]] || exit 1
-    TMUX= AGENT_HOST_TMUX_PANE= TMUX_PANE="$pane" tmux-alert-window
+    TMUX= AGENT_HOST_TMUX_PANE= TMUX_PANE="$pane" tmux-alert
     ;;
 notify)
     IFS= read -r -d '' -n 121 summary
