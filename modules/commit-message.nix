@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Rename_tmux-alert-window_to_tmux-alert____________";
+    system.nixos.label = "Do_open_obsidian_focused__________________________";
   };
 }
