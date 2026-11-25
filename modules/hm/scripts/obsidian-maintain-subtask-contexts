@@ -80,13 +80,13 @@ def run_file [file seen: list< path>] {
   # do not overwrite if they're same, because it might trigger file watchers unnecesserily
   if $file_contexts != $contexts {
     print $"Updating context of file ($file) to ($contexts)"
-    run-external $obsidian property:set name=contexts $"path=($file)" $"value=($contexts | to json)" type=list
+    ^$obsidian property:set name=contexts $"path=($file)" $"value=($contexts | to json)" type=list
   }
 
   # recursively update children
   try {
     print $"Updating children of file ($file) to ($contexts)"
-    run-external $obsidian backlinks $"path=($file)" format=json | from json
+    ^$obsidian backlinks $"path=($file)" format=json | from json
      | each {|l|
       try {
         run_file $l.file $seen

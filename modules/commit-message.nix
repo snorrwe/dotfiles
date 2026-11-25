@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Do_open_obsidian_focused__________________________";
+    system.nixos.label = "Use__instead_of_run-external______________________";
   };
 }
