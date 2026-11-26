@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Use__instead_of_run-external______________________";
+    system.nixos.label = "Add_mergiraf_as_the_git_merge_driver______________";
   };
 }
