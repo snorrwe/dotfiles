@@ -73,6 +73,8 @@ load_langfuse_env() {
         --env "LANGFUSE_SECRET_KEY=$secret_key"
         --env "LANGFUSE_BASE_URL=$base_url"
         --env "LANGFUSE_HOST=$base_url"
+        # pi-langfuse drops JSON-like tool output over this many chars as `[payload too large]`.
+        --env "PI_LANGFUSE_MAX_TOOL_PAYLOAD_LENGTH=100000"
     )
 }
 enter_container() {
