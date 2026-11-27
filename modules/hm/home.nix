@@ -39,10 +39,8 @@
         ];
       };
 
-      programs = {
-        # Let Home Manager install and manage itself.
-        home-manager.enable = true;
-      };
+      # Let Home Manager install and manage itself.
+      programs.home-manager.enable = true;
 
       age.identityPaths = [
         "${config.home.homeDirectory}/.ssh/id_ed25519"

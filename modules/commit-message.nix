@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Update_README_____________________________________";
+    system.nixos.label = "Flatten_home-manager_enalbe_______________________";
   };
 }
