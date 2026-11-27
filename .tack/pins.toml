@@ -12,7 +12,8 @@
 # opt out per-input with exclude_follow
 [all_follow]
 nixpkgs = "nixpkgs"
-# nixpkgs = ["nixpkgs-stable", "nixpkgs-unstable"]
+nixpkgs-stable = "nixpkgs-stable"
+rust-overlay = "rust-overlay"
 
 # inputs.<name> fields
 #   url             required, shorturl ok, ?rev=<sha> pins an exact commit
@@ -30,7 +31,7 @@ url = "github:nixos/nixpkgs/nixos-unstable"
 
 [inputs.nixpkgs-mesa]
 url = "github:nixos/nixpkgs/643809054d65fdd466a63e3155b8c498cb483c04"
-follows = {}
+exclude_follow = ["nixpkgs"]
 
 [inputs.home-manager]
 url = "github:nix-community/home-manager/master"
@@ -65,3 +66,6 @@ url = "github:hercules-ci/flake-parts"
 
 [inputs.import-tree]
 url = "github:vic/import-tree"
+
+[inputs.nixpkgs-stable]
+url = "github:NixOS/nixpkgs/nixos-26.05"

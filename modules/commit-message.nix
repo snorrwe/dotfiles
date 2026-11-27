@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Use_tack_to_manage_inputs_________________________";
+    system.nixos.label = "Dedup_nixpkgs-stable_and_rust-overlay_____________";
   };
 }

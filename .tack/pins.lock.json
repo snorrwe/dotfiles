@@ -87,6 +87,14 @@
     "narHash": "sha256-vUfIeBEfpbAfZ5zjgIkYk7eHBeVfCYVjLbWnMkseYnk=",
     "lastModified": 1785692966
   },
+  "nixpkgs-stable": {
+    "type": "github",
+    "owner": "NixOS",
+    "repo": "nixpkgs",
+    "rev": "0dc498bfe49baeb18b0f9891e800b53bb2603193",
+    "narHash": "sha256-s/0jq8usZtLVOolYBwmyUmd3JsfAu7w3FU+a0dgMqSY=",
+    "lastModified": 1795370043
+  },
   "rust-overlay": {
     "type": "github",
     "owner": "oxalica",
