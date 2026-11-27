@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Move_cli_modules_into_modulescli__________________";
+    system.nixos.label = "Move_bluetooth.nix_into_common____________________";
   };
 }
