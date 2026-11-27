@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Flatten_home-manager_enalbe_______________________";
+    system.nixos.label = "Update_nvim-tree__________________________________";
   };
 }
