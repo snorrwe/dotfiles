@@ -12,7 +12,7 @@
 
         serviceConfig = {
           Type = "simple";
-          ExecStart = "${pkgs.swaybg}/bin/swaybg -m fill -i ${../wallpaper.jpg}";
+          ExecStart = "${pkgs.swaybg}/bin/swaybg -m fill -i ${../../wallpaper.jpg}";
           Restart = "on-failure";
           RestartSec = 1;
         };

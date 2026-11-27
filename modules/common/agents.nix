@@ -20,17 +20,17 @@
         finalImageTag = "43";
       };
       exportBin = pkgs.writeShellScriptBin "agent-box-export" (
-        builtins.readFile ./agent-scripts/agent-box-export
+        builtins.readFile ../agent-scripts/agent-box-export
       );
       notifyBin = pkgs.writeShellScriptBin "agent-notify-send" (
-        builtins.readFile ./agent-scripts/agent-notify-send
+        builtins.readFile ../agent-scripts/agent-notify-send
       );
       renameBin = pkgs.writeShellScriptBin "agent-tmux-rename-window" (
-        builtins.readFile ./hm/scripts/tmux-rename-window
+        builtins.readFile ../hm/scripts/tmux-rename-window
       );
-      alertBin = pkgs.writeShellScriptBin "tmux-alert" (builtins.readFile ./hm/scripts/tmux-alert);
+      alertBin = pkgs.writeShellScriptBin "tmux-alert" (builtins.readFile ../hm/scripts/tmux-alert);
       hostActions = pkgs.writeShellScript "agent-host-actions" (
-        builtins.readFile ./agent-scripts/agent-host-actions
+        builtins.readFile ../agent-scripts/agent-host-actions
       );
       agentTools = pkgs.runCommand "agent-tools" { } ''
         mkdir -p $out/usr/local/bin
@@ -206,7 +206,7 @@
           agent_host_tcp_names=(${lib.escapeShellArgs (map (r: r.name) hostTcpRelays)})
           agent_host_tcp_ports=(${lib.escapeShellArgs (map (r: toString r.port) hostTcpRelays)})
         ''
-        + builtins.readFile ./agent-scripts/agent-box;
+        + builtins.readFile ../agent-scripts/agent-box;
       };
     in
     {
@@ -383,7 +383,7 @@
 
         home-manager.users.${username} = {
           # Host Home Manager decrypts this; agent-box injects LANGFUSE_* into the box.
-          age.secrets.langfuse-json.file = ./_secrets/langfuse.json;
+          age.secrets.langfuse-json.file = ../_secrets/langfuse.json;
           home.packages = [ agentBox ];
         };
       };
