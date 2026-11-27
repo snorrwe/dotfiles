@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Update_nvim_plugins_______________________________";
+    system.nixos.label = "System_update_2026-11-27__________________________";
   };
 }
