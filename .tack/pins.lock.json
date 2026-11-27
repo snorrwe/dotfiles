@@ -51,9 +51,9 @@
     "type": "github",
     "owner": "epireyn",
     "repo": "niri-flake",
-    "rev": "91ec3c3e30726d20419da4da8851d1bc08d818f1",
-    "narHash": "sha256-7aCbtQeJp9iAT3sNFLhmUcMqRocsX1Kil4cMsw+kkfc=",
-    "lastModified": 1795692049
+    "rev": "e2cfca03df5dba790c5d8b5380729733b81fd2a8",
+    "narHash": "sha256-pOn6cRjOYu1Z4KnKqRd1uJ6i3xZYkOTZ4W9yyMCqh1g=",
+    "lastModified": 1795803208
   },
   "nix-ld": {
     "type": "github",
@@ -91,9 +91,9 @@
     "type": "github",
     "owner": "NixOS",
     "repo": "nixpkgs",
-    "rev": "0dc498bfe49baeb18b0f9891e800b53bb2603193",
-    "narHash": "sha256-s/0jq8usZtLVOolYBwmyUmd3JsfAu7w3FU+a0dgMqSY=",
-    "lastModified": 1795370043
+    "rev": "5b31ff946309736077f0c4ee23bb85d0a0a1c181",
+    "narHash": "sha256-CiSQ3/bsP5gXG2SQzOgwhqwl9MkBRhQQqJd3YmpaYL4=",
+    "lastModified": 1795502373
   },
   "rust-overlay": {
     "type": "github",
