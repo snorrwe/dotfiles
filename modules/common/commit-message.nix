@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Move_common_modules_into_modulescommon____________";
+    system.nixos.label = "Move_cli_modules_into_modulescli__________________";
   };
 }
