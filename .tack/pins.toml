@@ -69,3 +69,4 @@ url = "github:vic/import-tree"
 
 [inputs.nixpkgs-stable]
 url = "github:NixOS/nixpkgs/nixos-26.05"
+exclude_follow = ["nixpkgs"]
