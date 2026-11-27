@@ -6,12 +6,12 @@ default:
 clean:
     nh clean all --nogcroots
 
-update-flake:
-    nix flake update
-    git add flake.lock
+update-inputs:
+    tack update
+    git add .tack
     git commit -m "System update $(date +%F)"
 
-update *args: update-flake (apply args)
+update *args: update-inputs (apply args)
 
 apply *args:
     nh os switch "." --hostname={{ hostname }} {{ args }}

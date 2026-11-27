@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "System_update_2026-11-27__________________________";
+    system.nixos.label = "Use_tack_to_manage_inputs_________________________";
   };
 }

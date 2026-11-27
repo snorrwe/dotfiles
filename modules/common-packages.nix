@@ -18,6 +18,8 @@
           quickemu
           # nix linter
           statix
+          # manages the nix inputs
+          tack
         ]
         ++ optionals features.enableGui (
           with pkgs;
