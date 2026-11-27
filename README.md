@@ -80,6 +80,12 @@ Use `just edit-secret <name>` to edit its contents
 
 Use it in a nixos module as shown.
 
+## Inputs
+
+Use [tack](https://github.com/manic-systems/tack) to manage inputs. See ./.tack/pins.toml if you want to edit pins by hand.
+
+Otherwise use `tack add` to add a new input and `tack update` (or rather `just update`) to update.
+
 ## Build cache
 
 The Linux Home Manager profile installs Kache from `github:kunobi-ninja/kache/stable` and sets `RUSTC_WRAPPER`. Its `~/.config/kache/config.toml` uses the existing S3 bucket and selects the local endpoint on hosts with local networking. The encrypted `s3.local.json` secret supplies credentials at runtime, not in the config or Nix store. Distroboxes and `agent-box` use a local-only Kache config and do not receive S3 credentials. Run `kache doctor` to check the setup; Kache flags the plain-HTTP local endpoint as insecure.

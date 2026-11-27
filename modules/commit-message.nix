@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Dedup_nixpkgs-stable_and_rust-overlay_____________";
+    system.nixos.label = "Update_README_____________________________________";
   };
 }
