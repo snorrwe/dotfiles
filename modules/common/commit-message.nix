@@ -1,5 +1,5 @@
 {
   flake.modules.nixos.common = {
-    system.nixos.label = "Move_bluetooth.nix_into_common____________________";
+    system.nixos.label = "Fix_discord_app-id________________________________";
   };
 }
